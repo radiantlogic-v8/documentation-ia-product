@@ -1,6 +1,8 @@
 ---
 title: "Schema 35 upgrade procedure"
 description: "Schema 35 upgrade procedure"
+attachements:
+  - "./sqlscripts/postgresql_2017R2_to_Curie.sql" 
 ---
 
 # PostgreSQL Schema 35 upgrade
