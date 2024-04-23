@@ -31,15 +31,14 @@ The OS support matrix is the following:
 
 Please see footnotes (links available in the above mentioned table) for more information on LTS versions.  
 
-## Java Runtimes  
+## Java development kits  
 
-Java Runtimes are Third Party Software not provided with Brainwave Identity GRC.  
+Java development kits (JDK) are Third Party Software not provided with Brainwave Identity GRC.  
 Please see the following table for more information on the support version of JAVA :  
 
 |                         | **Windows[^2]** |  **Linux  RHEL 9**  |  **Linux  Debian**  |
 | :---------------------: | :-------------: | :-----------------: | :-----------------: |
 |   **Java SE JDK 17**    |      **X**      |                     |                     |
-|   **Java SE JRE 17**    |      **X**      |                     |                     |
 |     **Open JDK 17**     |                 |        **X**        |        **X**        |
 |     **Corretto 17**     |      **X**      |                     |                     |
 | **AdoptOpenJDK 17 LTS** |      **X**      |                     |                     |
