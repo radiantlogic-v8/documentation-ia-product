@@ -132,6 +132,9 @@ For customers under maintenance/subscription contract as well as official partne
   > [Notification rules](/ia/descartes/igrc-platform/notification-rules)  
   > This document provides information on the creation, installation, usage of notification rules.  
 
+  > [Purging data](/ia/descartes/igrc-platform/purge)  
+  > This document provides information on how to configure the purge of old data present in the database.  
+
 </section>
 
 ## Wizards
