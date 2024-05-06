@@ -22,7 +22,7 @@ Using an alias severely limits the capacities of the rule engine. Be careful not
 
 It is preferable to use rules dynamically in the reports by associating the rules in the reports rather than using the 'saved rule results'. This avoids having to store the rule results in the base.
 
-# Create a Rule Using Natural Language Questions
+## Create a Rule Using Natural Language Questions
 
 During the rule creation wizard, you have the possibility to initialize the new rule by asking a natural language question.  
 
