@@ -11,7 +11,7 @@ description: Descartes R3 Release Notes
 
 ### New Features
 
-- **IGRC-1538:** Add perimeter as a main entity in view
+- **COL-1538:** Add perimeter as a main entity in view
 - **IGRC-3104:** allow multivalued parameters in workflow, provisioning, businessview and portal javascript API (executeView, esxceuteProcess, writeMetadata, countView)
 - **IGRC-4334:** Be able to set the priority of an e-mail (notify rule)
 - **IGRC-4479:** Rules: Add a join from rights to accounts (direct) not through group
