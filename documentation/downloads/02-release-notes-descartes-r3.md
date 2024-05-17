@@ -54,6 +54,7 @@ description: Descartes R3 Release Notes
 - **COL-1538:** add join between perimeter and raw permission link and metadata
 - **COL-1539:** Improvements for group and permission children targets
 - **COL-1542:** Set the prefix on the name when doing a join
+- **COL-1545:** Metadata and perimeter links missing in views
 - **COL-1547:** Remove attribute when operator is 'looks like' and 'not looks like'
 - **COL-1552:** Computed manager hierarchy working without `-Duseportalinexecplan=true`
 - **COL-1566:** Optimization of no owner accounts recon
