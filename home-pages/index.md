@@ -56,27 +56,38 @@ This web site will help you make the most of the iGRCanalytics product and metho
 
 For customers under maintenance/subscription contract as well as official partners, you can reach our support website (24/7): [https://support.radiantlogic.com](https://support.radiantlogic.com/)
 
-## IGRCanalytics
-
-<section>
-
-  > [Release Notes](/ia/descartes/downloads/01-downloads)  
-  > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
-
-</section>
-
-## Features
+## Introduction
 
 <section>
 
   > [Getting started](/ia/descartes/igrc-platform/getting-started)  
   > The one stop shop to getting started in using Identity Analytics
 
-  > [Installation Guide](/ia/descartes/igrc-platform/installation-and-deployment)  
-  > The on premise installation guide, including configuration recommendations.
-
   > [Timeslots and Execution Plan](/ia/descartes/igrc-platform/timeslots-and-execution-plan)  
   > All information on how to understand the notion of a timeslots and the execution plan
+
+</section>
+
+## Installation
+
+<section>
+
+  > [On prem installation Guide](/ia/descartes/igrc-platform/installation-and-deployment)  
+  > The on premise installation guide, including configuration recommendations.
+
+  > [Selfmanaged installation Guide](/ia/version-1.5/#2)  
+  > Selfmanaged installation guide, including configuration recommendations.
+
+  > [EOC installation Guide](/eoc/latest/#0)  
+  > EOC installation guide, including configuration recommendations.
+
+</section>
+
+## Configuration
+
+### Studio
+
+<section>
 
   > [The technical configuration](/ia/descartes/igrc-platform/technical-configuration)  
   > The description of the technical configuration usage and best practices
@@ -137,7 +148,16 @@ For customers under maintenance/subscription contract as well as official partne
 
 </section>
 
-## Wizards
+### Webportal
+
+<section>
+
+  > [Smart search](/ia/descartes/igrc-platform/smart-search)  
+  > This document provides information on the creation, installation, usage and migration of the smart search in the portal.  
+
+</section>
+
+### Wizards
 
 <section>
 
@@ -149,15 +169,6 @@ For customers under maintenance/subscription contract as well as official partne
 
   > [Review wizard](/ia/descartes/igrc-platform/review-wizard)  
   > This is a guide to using the review wizard, a tool to automatically generate standard workflows.  
-
-</section>
-
-## Webportal
-
-<section>
-
-  > [Smart search](/ia/descartes/igrc-platform/smart-search)  
-  > This document provides information on the creation, installation, usage and migration of the smart search in the portal.  
 
 </section>
 
@@ -188,12 +199,21 @@ For customers under maintenance/subscription contract as well as official partne
 
 </section>
 
-## Legacy documentation
+## Maintenance
 
 <section>
 
-  > [Legacy documentation site](https://documentation.brainwavegrc.com/)  
-  > This section will redirect you to the legacy documentation of Identity Analytics. This site will continue to host the documentation for Identity Analytics while the documentation sites are being merged.  
+  > [Updating the product](/ia/descartes/update/01-upgrade-igrcanalytics)  
+  > This document provides information on how to update or upgrade the project.  
+
+  > [Updating the project](/ia/descartes/update/02-project-migration)  
+  > This document provides information on how to update and import an existing project into an installation.
+
+  > [Update the selfmanaged solution](/ia/version-1.5/run-ops/upgrading)  
+  > This document provides information on how to update your installation of the selfmanaged solution.
+
+  > [Release Notes](/ia/descartes/downloads/01-downloads)  
+  > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
 
 </section>
 
