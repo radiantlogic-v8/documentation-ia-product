@@ -3,7 +3,7 @@ title: Release Notes
 description: Descartes R3 Release Notes
 ---
 
-# Release Notes Descrates R3
+# Release Notes Descartes R3
 
 ## Version Descartes R3
 

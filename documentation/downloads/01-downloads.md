@@ -30,7 +30,7 @@ This version contains a number of new features and bug fixes including:
 
 Please refer to the full release notes for more information:  
 
-- [**Release notes**](02-release-notes-descartes-r3)
+- [**Release notes**](06-release-notes-descartes-r3)
 
 Please navigate to the following link to download the latest version of the product: Descartes:  
 
@@ -41,13 +41,13 @@ See [below](#how-to-calculate-the-hash) for more information on how to check the
 > [!note] As a reminder iGRCanalytics is provided without any support on Linux.  
 > Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through iGRCanalytics should be made under a Microsoft Windows environment.  
 
-Looking for an older version? have a look at the [archived versions repository](05-archived-version)  
+Looking for an older version? have a look at the [archived versions repository](03-archived-version)  
 
 Please use the following link for the full list of the certified environments:  
 
 [Certified Operating Environment for iGRCanalytics](../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)  
 
-Please see [**here**](04-product-lifecycle) for more information on the product versions lifecycle, including the end of support dates.
+Please see [**here**](02-product-lifecycle) for more information on the product versions lifecycle, including the end of support dates.
 
 ## License key
 
@@ -64,10 +64,16 @@ Please log into your RadiantLogic support account and use "the request a license
 In order to verify the integrity of the downloaded file you can also download the associated .sha1 checksum file that contains the correct sha1 hash.
 
 To verify the file:
-`iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe`  
+
+```sh
+iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
+```  
 
 You can download the checksum file:
-`iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.sha1`
+
+```sh
+iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.sha1
+```
 
 You can calculate the SHA1 of your downloaded file and it should match exactly with the hash in the ".sha1" file.
 
@@ -84,20 +90,25 @@ Please use the following link for more information.
 
 #### Certutil
 
-In windows, you can use the command line tool certutil
-`Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1`
+In windows, you can use the command line tool certutil:
+
+```sh
+Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1
+```
 
 #### Microsoft File Checksum Integrity Verifier
 
 You can also download the Microsoft File Checksum Integrity Verifier ([https://www.microsoft.com/en-us/download/details.aspx?id=11533](https://www.microsoft.com/en-us/download/details.aspx?id=11533))  
 
-`fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe`
+```sh
+fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
+```
 
 ### Unix/Linux
 
 Most unix-like operating systems include the tools shasum and/or sha1sum
 
-```powershell
+```sh
 shasum iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
 sha1sum iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
 ```
