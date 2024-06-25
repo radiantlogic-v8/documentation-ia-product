@@ -14,7 +14,8 @@ The goal is to run controls, that list over-allocations and under-allocations:
 
 ![Theoretical rights model](./images/theoretical_rights_model.png)
 
-There are two ways to collect theoretical rights :
+There are two ways to collect theoretical rights:
+
 - [Permissions are provided with accounts](#collect-iam-rights)
 - [The criteria for obtaining permission are known using model policy](#collect-using-model-policy)
 
@@ -23,6 +24,8 @@ To achieve this goal, you have to implement the following steps:
 1. Collect of the theoretical rights model, from an IAM application
 2. Define the theoretical rights model policy using the ingested data
 3. Run controls for the theoretical rights to return over-allocations and under-allocations
+
+> [!Warning] Please note that when description theoretical rights for a given permission using both the IAM data collection and the Model policy the resulting theoretical rights calculated corresponds to the union of the two sets.  
 
 ## Project & Facets
 
@@ -40,33 +43,34 @@ If possible, don't implement it yourself, but use the facets & what is included 
 
 ## Collect IAM Rights
 
-In IAM Rights collect, it is possible to directly provide accounts in import files.
+Collecting IAM Rights allows the you to directly provide permission/account links in import files. These are often provided by a IAM solution.  
 
-There is a dedicated target in collect, for IAM rights:  
+A dedicated target for collect lines has been added to allow the ingestion of IAM rights directly:  
 ![IAM rights target](./images/iam_rights_target.png)
 
-It requires to point on the target permission and account (which means to point to the couple application/permission and repository/account):  
+It is required to reference in the target to a given unique permission and a given unique account(_i.e._ referencing application/permission and repository/account pairs):  
 ![IAM rights target permission and account](./images/iam_rights_target_permission_account.png)
 
-Role and comment are optional parameters for more information, they don't affect the theoretical rights:  
+Role and comment are optional parameters that provide more information, they don't affect theoretical rights:  
 ![IAM rights target model params](./images/iam_rights_target_optionnal.png)  
 
 Here is some sample data to illustrate:
 
-| Application code | Permission code | Repository code | Account id  | Role            |
-|------------------|-----------------|-----------------|-------------|-----------------|
-| Elyxo            | User            | EKYXO           | VIOLET9     | DFIN_Agents     |
-| RACKSTATION      | FIN_Share       | ACME            | JHORTON19   | DFIN_Agents     |
-| Elyxo            | Admin           | ELYXO           | ROMAIN11    | DFIN_Admins     |
-| RACKSTATION      | FIN_Share       | ACME            | OLIVA8      | DFIN_Admins     |
+| Application code | Permission code | Repository code | Account id | Role            |
+| ---------------- | --------------- | --------------- | ---------- | --------------- |
+| Elyxo            | User            | EKYXO           | VIOLET9    | ``DFIN_Agents`` |
+| RACKSTATION      | FIN_Share       | ACME            | JHORTON19  | ``DFIN_Agents`` |
+| Elyxo            | Admin           | ELYXO           | ROMAIN11   | ``DFIN_Admins`` |
+| RACKSTATION      | FIN_Share       | ACME            | OLIVA8     | ``DFIN_Admins`` |
 
-> The `DFIN_Agents` grants the `Elyxo/User` and `RACKSTATION/FIN_Share` permissions for the accounts `VIOLET9` from the `ELYXO` repository and `JHORTON19` from the `ACME` repository.  
-> The `DFIN_Admins` grants the `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions for the accounts `ROMAIN11` from the `ELYXO` repository and `OLIVA8` from the `ACME` repository.  
-> After this step made during the collect, **theoretical rights** between **Accounts**, **Identities** and **Permissions** are not yet created. They will be created during the `theoretical right model policy` step, just after the manager policy step.
+- ``DFIN_Agents`` role grants `Elyxo/User` and `RACKSTATION/FIN_Share` permissions to the `VIOLET9` account in the `ELYXO` repository and `JHORTON19` account in the `ACME` repository.  
+- ``DFIN_Admins`` role grants `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions to the `ROMAIN11` account in the `ELYXO` repository and `OLIVA8` account in the `ACME` repository.  
+
+Once ingested into the import tables, **theoretical rights** between **Accounts**, **Identities** and **Permissions** are not yet created. They will be created after the activation of the timeslot during the `theoretical right model policy` step, just after the manager policy step.
 
 ## Theoretical rights loading
 
-During the `theoretical right model policy` step, the accounts provided in the collect are converted to the reconciled identities.
+During the `theoretical right model policy` step, the accounts provided in the collect are linked with identities through the reconciliation.
 
 After these steps, refer to [the control section](#controls).
 
@@ -88,31 +92,31 @@ Here is some sample data to illustrate:
 
 Using a *job title* as param1:  
 
-| Rule type | Application code | Permission code | Role        | param1 (Job) |
-|-----------|------------------|-----------------|-------------|--------------|
-| IAMTYPE   | Elyxo            | User            | DFIN_Agents | Actuary      |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Agents | Actuary      |
-| IAMTYPE   | Elyxo            | Admin           | DFIN_Admins | Actuary_adm  |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Admins | Actuary_adm  |
+| Rule type | Application code | Permission code | Role          | param1 (Job) |
+| --------- | ---------------- | --------------- | ------------- | ------------ |
+| IAMTYPE   | Elyxo            | User            | `DFIN_Agents` | Actuary      |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Agents` | Actuary      |
+| IAMTYPE   | Elyxo            | Admin           | `DFIN_Admins` | Actuary_adm  |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Admins` | Actuary_adm  |
 
-> The `DFIN_Agents` grants the `Elyxo/User` and `RACKSTATION/FIN_Share` permissions for the identities having the `Actuary` job title.  
-> The `DFIN_Admins` grants the `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions for the identities having the `Actuary_adm` job title.  
+> The ``DFIN_Agents`` grants the `Elyxo/User` and `RACKSTATION/FIN_Share` permissions for the identities having the `Actuary` job title.  
+> The ``DFIN_Admins`` grants the `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions for the identities having the `Actuary_adm` job title.  
 
 Using an *HRCode* as param1:  
 
-| Rule type | Application code | Permission code | Role        | param1 (HR Code) |
-|-----------|------------------|-----------------|-------------|------------------|
-| IAMTYPE   | Elyxo            | User            | DFIN_Agents | HR000285         |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Agents | HR000285         |
-| IAMTYPE   | Elyxo            | User            | DFIN_Agents | HR000878         |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Agents | HR000878         |
-| IAMTYPE   | Elyxo            | User            | DFIN_Agents | HR000666         |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Agents | HR000666         |
-| IAMTYPE   | Elyxo            | Admin           | DFIN_Admins | HR000007         |
-| IAMTYPE   | RACKSTATION      | FIN_Share       | DFIN_Admins | HR000007         |
+| Rule type | Application code | Permission code | Role          | param1 (HR Code) |
+| --------- | ---------------- | --------------- | ------------- | ---------------- |
+| IAMTYPE   | Elyxo            | User            | `DFIN_Agents` | HR000285         |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Agents` | HR000285         |
+| IAMTYPE   | Elyxo            | User            | `DFIN_Agents` | HR000878         |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Agents` | HR000878         |
+| IAMTYPE   | Elyxo            | User            | `DFIN_Agents` | HR000666         |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Agents` | HR000666         |
+| IAMTYPE   | Elyxo            | Admin           | `DFIN_Admins` | HR000007         |
+| IAMTYPE   | RACKSTATION      | FIN_Share       | `DFIN_Admins` | HR000007         |
 
-> The `DFIN_Agents` grants the `Elyxo/User` and `RACKSTATION/FIN_Share` permissions for the identities having the `HR000285`, `HR000878` and `HR000666` HR Codes.  
-> The `DFIN_Admins` grants the `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions for the identities having the `HR000007` HR Code.  
+- `DFIN_Agents` role grants the `Elyxo/User` and `RACKSTATION/FIN_Share` permissions for the identities having the `HR000285`, `HR000878` and `HR000666` HR Codes.  
+- `DFIN_Admins` role grants the `Elyxo/Admin` and `RACKSTATION/FIN_Share` permissions for the identities having the `HR000007` HR Code.  
 
 The end-result might be the same, even if the model is not build the same way. Some methods require larger files, like using the HR code to define theoretical rights for each identity (instead of using the Job title for instance).  
 
@@ -122,7 +126,7 @@ The data collected using this target in the collector line can be retrieved the 
 The content of this table will be used by the model policy.  
 
 > There is **one** entry for **each** permission.  
-
+>
 > After this step made during the collect, **theoretical rights** between **Identities** and **Permissions** are not yet created. They will be created during the `Entitlement model policy` step, just after the manager policy step.
 
 ## Entitlement model policy
@@ -176,4 +180,3 @@ For each Identity/Permission couple returned by theses rules:
 - If the **Identity** has a **real right** and a **theoretical right** to the **Permission**, no discrepancy returned, we are in the normal situation
 - If the **Identity** has a **real right** but no **theoretical right** to the **Permission**, a `overallocation` discrepancy is returned
 - If the **Identity** has no **real right** but a **theoretical right** to the **Permission**, an `underallocation` discrepancy is returned
-
