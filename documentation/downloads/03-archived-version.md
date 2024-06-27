@@ -9,11 +9,10 @@ description: iGRCanalytics archived versions
 
 Please navigate to one of the following links to download the desired version of the product:  
 
-- [**Download Descartes**](https://download.brainwavegrc.com/index.php/s/CdyRJnNd6P9cTCb)
-- [**Download Curie**](https://download.brainwavegrc.com/index.php/s/N6bNyBfNaMekzFK)
-- [**Download Braille**](https://download.brainwavegrc.com/index.php/s/9EkikkG8mcFrKJq)
-- [**Download an Ader version**](https://download.brainwavegrc.com/index.php/s/xfrYgqZZL8M7CYm)
-- [**Download a 2017 version**](https://download.brainwavegrc.com/index.php/s/HKaQGfdsMtkcQgw)
+- [**Download Descartes**](https://radiantlogicinc246.sharefile.com/d-sf5b6347bfb9d42f7bbe06d2f74d73192)
+- [**Download Curie**](https://radiantlogicinc246.sharefile.com/d-s1c9e7c13b0454b6884259362232d5181)
+
+> [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/Authentication/Login#/ConfirmUser)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
 ## Third party driver installation
 
@@ -26,11 +25,11 @@ Please refer to the following pages for information on how to download and insta
 
 ## Activiti update
 
-Please be aware that as of version `2016 R2 SP12` of the product the version of the Activiti engine used for workflows has been upgraded to Activiti 5.21. Please check the version of activiti used if you are upgrading the product from a version previous to `2016 R2 SP12`.
+Please be aware that as of version `2016 R2 SP12` of the product the version of the Activiti engine used for workflows has been upgraded to Activiti 5.21. Please check the version of Activiti used if you are upgrading the product from a version previous to `2016 R2 SP12`.
 
 See [here](../how-to/workflow/upgrade-activiti) for more information.  
 
-> [!warning] Before performing any maintenance operation on any of your databases schemas please perform a backup of your ledger and activiti schemas.  
+> [!warning] Before performing any maintenance operation on any of your databases schemas please perform a backup of your ledger and Activiti schemas.  
 
 ## Notes
 

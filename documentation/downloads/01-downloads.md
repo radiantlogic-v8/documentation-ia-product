@@ -14,27 +14,28 @@ description: Download all iGRCanalytics information
 
 ### Database migration
 
-No database migration is necessary when upgrading from version `Curie R3` or `Descartes R1`.  
+A database migration is required before installing version Descartes R4.
 
-If you are migrating from a version of the product prior to **Curie R3** see [**here**](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/installation-and-deployment/database/schema-35-upgrade-procedure/) for the detailed procedure.  
+> [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/installation-and-deployment/database/schema-35-upgrade-procedure/) for the detailed procedure.  
 
-## Version Descartes R3
+## Version Descartes R4
 
-We are pleased to announce the release of the latest version of the product: **Descartes R3**
+We are pleased to announce the release of the latest version of the product: **Descartes R4**
 
 This version contains a number of new features and bug fixes including:  
 
-- The possibility to purge review decisions
-- The use of regular expression in views and rules
-- The notion of CI management in the execution plan
+- The possibility to collect theoretical rights
+- Performance enhancements in the handling of metadata insertion and update in the portal
 
 Please refer to the full release notes for more information:  
 
-- [**Release notes**](06-release-notes-descartes-r3)
+- [**Release notes**](07-release-notes-descartes-r4)
 
 Please navigate to the following link to download the latest version of the product: Descartes:  
 
-- [**Download Descartes R3**](https://download.brainwavegrc.com/index.php/s/9mP4KbMQwXacYFm)
+- [**Download Descartes R4**](https://radiantlogicinc246.sharefile.com/d-s14cfb5f9cf1b41e09c0e9b6423d70039)
+
+> [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/Authentication/Login#/ConfirmUser)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
 See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.  
 
