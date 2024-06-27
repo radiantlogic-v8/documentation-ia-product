@@ -55,23 +55,37 @@ The following database servers are supported by Brainwave GRC:
 - PostgreSQL
 - Oracle[^1]
 
-The database support matrix, per operating systems, is as follows:  
+The database certified support matrix, per operating systems, is as follows:  
 
-| **Database**         | **Version** | **Window 10** | **Window Server 2012** | **Windows server 2016** | **Windows server 2019** |  **RHEL 9**  |  **Debian**  |
-| :------------------- | :---------- | :-----------: | :--------------------: | :---------------------: | :---------------------: | :----------: | :----------: |
-| Microsoft SQL server | 2012        |               |         **X**          |                         |                         |              |              |
-| Microsoft SQL server | 2014        |     **X**     |         **X**          |                         |                         |              |              |
-| Microsoft SQL server | 2016        |               |         **X**          |          **X**          |                         |              |              |
-| Microsoft SQL server | 2017        |               |                        |          **X**          |                         |              |              |
-| Microsoft SQL server | 2019        |               |                        |                         |          **X**          |              |              |
-| PostgreSQL           | 12          |               |                        |                         |                         |    **X**     |    **X**     |
-| PostgreSQL           | 13          |               |                        |                         |                         |    **X**     |    **X**     |
-| PostgreSQL           | 14          |               |                        |                         |                         |    **X**     |    **X**     |
-| PostgreSQL           | 15          |               |                        |                         |                         |    **X**     |    **X**     |
-| Oracle[^1]           | 12c         |     **X**     |         **X**          |                         |                         |    **X**     |              |
-| Oracle[^1]           | 19c         |     **X**     |         **X**          |                         |                         |    **X**     |              |
+### Windows environment
 
-> [!warning] Please note that as of version Braille, Oracle is only supported in the case of existing and deployed projects. In the case of a new project only Microsoft SQL server and PostgreSQL are supported.
+| **Database**         | **Version** | **Window 10** | **Window 11** | **Window Server 2012** | **Windows server 2016** | **Windows server 2019** | **Windows server 2022** |
+| :------------------- | :---------- | :-----------: | :-----------: | :--------------------: | :---------------------: | :---------------------: | :---------------------: |
+| Microsoft SQL server | 2014        |     **X**     |               |         **X**          |                         |                         |                         |
+| Microsoft SQL server | 2016        |               |               |         **X**          |          **X**          |                         |                         |
+| Microsoft SQL server | 2017        |               |               |                        |          **X**          |                         |                         |
+| Microsoft SQL server | 2019        |               | **X**         |                        |                         |          **X**          |                         |
+| Microsoft SQL server | 2022        |               | **X**         |                        |                         |          **X**          |          **X**          |
+| Oracle[^1]           | 19c         |     **X**     | **X**         |         **X**          |                         |                         |          **X**          |
+
+### Linux environment
+
+| **Database**         | **Version** | **RHEL 9** | **Debian** |
+| :------------------- | :---------- | :--------: | :--------: |
+| PostgreSQL           | 12          |   **X**    |   **X**    |
+| PostgreSQL           | 13          |   **X**    |   **X**    |
+| PostgreSQL           | 14          |   **X**    |   **X**    |
+| PostgreSQL           | 15          |   **X**    |   **X**    |
+| PostgreSQL           | 16          |   **X**    |   **X**    |
+| Oracle[^1]           | 19c         |   **X**    |            |
+
+> [!warning] Please note that oracle is only supported in the case of existing and deployed projects. In the case of a new project only Microsoft SQL server and PostgreSQL are supported.
+
+Please navigate each RMDS support lifecycle for more information:  
+
+- [postgres](https://www.postgresql.org/support/versioning/)
+- [Microsoft SQL server](https://learn.microsoft.com/en-us/lifecycle/products/?terms=sql%20server)
+- [Oracle](https://endoflife.date/oracle-database)
 
 ## Database drivers  
 

@@ -218,3 +218,15 @@ Next, the sub-directories correspond to the main concepts that are handled by th
 To create a new report, the easiest approach is to start from an existing report by carrying out a copy/paste of a report file. Please refer to the Guide to the report editor for more information about creating reports in Brainwave Identity GRC.
 
 ![Rule file tree](./images/rule-file-explorer-list.png "Rule file tree")
+
+## Regular expressions
+
+It is possible to filter using regular expressions. Please note that due to limitations in SQL server only the following patterns are supported.
+
+- Expression `.*`: multi character wildcard
+- Expression `.+`: multi character wildcard
+- Expression `.`: single character wildcard
+- Expression `^`: represents the start of the string
+- Expression `$`: represents the end of the string
+- Expression `[string]{3}`: Repetition of the string in brackets
+- Expression `a{10}`: Repetition of a single character

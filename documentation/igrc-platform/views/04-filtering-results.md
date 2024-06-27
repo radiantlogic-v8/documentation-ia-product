@@ -92,3 +92,19 @@ Where a filter operation is configured for several attributes, all filter operat
 ![Icon](./images/view-filtering-4.png "Icon")  
 
 > To apply advanced filters, you can also configure an Audit Rule and use it from the Audit View.
+
+## Regular expressions
+
+It is possible to filter using regular expressions.  
+
+![Regular expressions](./images/views-regexp.png "Regular expressions")
+
+Please note that due to limitations in SQL server only the following patterns are supported.
+
+- Expression `.*`: multi character wildcard
+- Expression `.+`: multi character wildcard
+- Expression `.`: single character wildcard
+- Expression `^`: represents the start of the string
+- Expression `$`: represents the end of the string
+- Expression `[string]{3}`: Repetition of the string in brackets
+- Expression `a{10}`: Repetition of a single character

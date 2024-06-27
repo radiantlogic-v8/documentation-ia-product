@@ -25,6 +25,8 @@ It is possible to specify a "CC e-mail list" and a "BCC e-mail list" to have oth
 
 > Use the comma character `,` as a separator if multiple addresses are added to the `cc` ob `bcc` field (e.g. `security@acme.corp, contact@contoso.com`)
 
+It is possible to define a message priority using the "priority" field. This field accepts macros but requires a numerical value from 1 to 5, 1 being the highest priority and 5 the lowest.  
+
 The "Message subject" field corresponds to the subject of the message. As it is the case in most email applications, this is a one line text field. It is possible to customize it with the recipient's information like his name for instance. This personalization of these field can be done using macros that are explained here: [Macros](./03-macros).  
 
 The "Body (HTML)" is the body of the message. The content has to be written using the HTML language. This editor does not a behave as a WYSIWYG (What You See Is What You Get) but is a text editor in which you add HTML tags. To help you configure the layout of the email there is a preview panel on the right side of the editor. This panel shows in real time the final aspect of the email for the recipient. The HTML edition allows the use a template that can be provided by the client. As it is the case for the previous parameters it is possible to customize the email body with information from the ledger. The macro `{dataset.fullname.get()}` for example can be used to add the fullname of the recipient. You can list available information in Dataset entry while clicking on the little light bulb near the Body section.  
