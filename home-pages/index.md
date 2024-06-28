@@ -3,12 +3,10 @@ title: Identity Analytics
 description: Guides to help build, configure and use Identity Analytics
 ---
 
-
 <tabs>
   <tablist>
     <tab>Knowledge</tab>
     <tab>Developer</tab>
-    <tab>Self-Managed</tab>
   </tablist>
 
   <tabpanels>
@@ -20,16 +18,16 @@ Correlate your identity data and add analytics to improve data quality, properly
   
 <section>
 
-  > [Portal](/ia/iap-2.2/identity-analytics/enduser-guide/01-introduction)  
+  > [Portal](/ia/iap-3.0/identity-analytics/enduser-guide/01-introduction)  
   > This section describes the basic principles of IAP (Identity Analytics Platform) interfaces and dashboards.  
 
-  > [Best Practices](/ia/iap-2.2/identity-analytics/integration-guide/01-introduction)
+  > [Best Practices](/ia/iap-3.0/identity-analytics/integration-guide/01-introduction)
   > This section describes the best practices to follow to fulfill the data & to configure the roles.  
 
-  > [User Access Reviews](/ia/iap-2.2/identity-analytics/uar-guide/01-introduction)
+  > [User Access Reviews](/ia/iap-3.0/identity-analytics/uar-guide/01-introduction)
   > This section describes the basic principles of self-service compliance driven User Access Review as well as the best practices to configure reviews and manage remediations.  
 
-  > [Release Notes](/ia/iap-2.2/identity-analytics/iap-release/01-iap-release-overview)
+  > [Release Notes](/ia/iap-3.0/identity-analytics/iap-release/01-iap-release-overview)
   > This section provides information on the different releases of IAP, including the compatibility matrix and the release notes for each version.  
 
 </section>
@@ -38,7 +36,7 @@ Correlate your identity data and add analytics to improve data quality, properly
 
 <section>
 
-  > [Controls Browser](/ia/iap-2.2/controls-browser/controls-browser)  
+  > [Controls Browser](/ia/iap-3.0/controls-browser/controls-browser)  
   > Controls Browser provides administrators with an overview of the configured controls and associated defects to understand current risk.  
 
 </section>
@@ -75,11 +73,11 @@ For customers under maintenance/subscription contract as well as official partne
   > [On prem installation Guide](/ia/descartes/igrc-platform/installation-and-deployment)  
   > The on premise installation guide, including configuration recommendations.
 
-  > [Selfmanaged installation Guide](/ia/version-1.5/#2)  
-  > Selfmanaged installation guide, including configuration recommendations.
+  > [Local docker-compose installation Guide](/ia/version-1.5/#2)  
+  > Local docker-compose installation guide, including configuration recommendations.
 
-  > [EOC installation Guide](/eoc/latest/#0)  
-  > EOC installation guide, including configuration recommendations.
+  > [SaaS installation Guide](/eoc/latest/#0)  
+  > Saas installation guide using the Environment Operations Center (EOC), including configuration recommendations.
 
 </section>
 
@@ -209,8 +207,8 @@ For customers under maintenance/subscription contract as well as official partne
   > [Updating the project](/ia/descartes/update/02-project-migration)  
   > This document provides information on how to update and import an existing project into an installation.
 
-  > [Update the selfmanaged solution](/ia/version-1.5/run-ops/upgrading)  
-  > This document provides information on how to update your installation of the selfmanaged solution.
+  > [Update the local docker-compose solution](/ia/version-1.5/run-ops/upgrading)  
+  > This document provides information on how to update your installation of the local docker-compose solution.
 
   > [Release Notes](/ia/descartes/downloads/01-downloads)  
   > This document provides information on the different releases of iGRCanalytics, including the supported environments and the release notes for each version.  
@@ -219,54 +217,4 @@ For customers under maintenance/subscription contract as well as official partne
 
 </tabpanel>
 <tabpanel>
-
-# Welcome to Identity Analytics self-managed Guide
-
-In order to simplify the installation of Identity Analytics in different environments a new self-managed version of the solution has been implemented and is available.
-
-The following pages will provide you with the necessary information to build and run the updated deliverable.  
-
-Please note that the "standard" installation method of installing the solution is still available for those that require it.  
-
-## Identity Analytics self-managed updates
-
-<section>
-
-  > [Release Notes](/ia/version-1.5/release-notes/)
-  > Please find the release notes for the latest release of the self-managed solution for IDA.  
-
-</section>
-
-## Identity Analytics self-managed Guides
-
-<section>
-
-  > [Pre-requisites](/ia/version-1.5/before-installation/preface)  
-  > The included page will provide you with all the necessary information and processes to implement before the installation of the self-managed solution of Identity Analytics.  
-
-  > [Configuration](/ia/version-1.5/configuration/config-ui)
-  > Learn how to configure the self-managed solution of Identity Analytics.  
-
-  > [Installation guide](/ia/version-1.5/installation/preface)
-  > Learn how to install the self-managed solution on the different supported environments.  
-
-  > [Identity Data Management integration](/ia/version-1.5/integrations/iddm)
-  > Learn how to integrate your Identity Data Management solution with Identity Analytics smoothly.  
-
-  > [Azure Connector configuration](/ia/version-1.5/connectors/azure-connector)
-  > Learn how to configure your connection to an Azure data source to ingest and audit your azure data.  
-
-  > [Controller user guide](/ia/version-1.5/containers/controller)
-  > The linked page is the user guide for the controller. This documentation provides all the necessary information on how to use the controller from email configuration to extraction testing.  
-
-  > [Run ops](/ia/version-1.5/run-ops/preface)
-  > Learn all the necessary commands to ensure a successful run and maintenance of the self-managed solution in time.  
-
-  > [Troubleshooting](/ia/version-1.5/troubleshooting/troubleshooting)
-  > Theses pages include the symptoms and the solutions of common errors encountered when running the solution.  
-
-</section>
-
-</tabpanel>
-</tabpanels>
 </tabs>  
