@@ -35,7 +35,7 @@ Please navigate to the following link to download the latest version of the prod
 
 - [**Download Descartes R4**](https://radiantlogicinc246.sharefile.com/d-s14cfb5f9cf1b41e09c0e9b6423d70039)
 
-> [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/Authentication/Login#/ConfirmUser)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
+> [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
 See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.  
 
