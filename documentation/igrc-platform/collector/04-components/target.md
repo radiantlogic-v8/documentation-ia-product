@@ -578,7 +578,7 @@ The collector will fail if no columns are defined or if the output CSV file cann
 ## Derogation target
 
 This component allow to create a derogation between an identity and a permission in the **theoretical rights** context.  
-For the same concept in regards to **control discrepancies**, see [exceptions](../../workflow/exception-management).  
+For the same concept in regards to **control discrepancies**, see [exceptions](../../workflow/13-exception-management).  
 
 ### Derogation target properties Tab
 
@@ -648,7 +648,7 @@ is empty or missing in the target component configuration
 
 ## File share target
 
-File share rights also known as ACLs (_Access Control Lists_) are collected in the ledger using the "_File share target_" component. It is recomanded to use this target for collecting file share ACLs like (Windows shares, Google Drive, NetApp shares, ...)_._
+File share rights also known as ACLs (_Access Control Lists_) are collected in the ledger using the "_File share target_" component. It is recommended to use this target for collecting file share ACLs like (Windows shares, Google Drive, NetApp shares, ...)_._
 
 From collect editor select _File share target_ in _Ledger targets._  
 
