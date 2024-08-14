@@ -18,22 +18,15 @@ A database migration is required before installing version Descartes R4.
 
 > [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/installation-and-deployment/database/schema-35-upgrade-procedure/) for the detailed procedure.  
 
-## Version Descartes R4
+## Version Descartes R5
 
-We are pleased to announce the release of the latest version of the product: **Descartes R4**
+We are pleased to announce the release of the latest version of the product: **Descartes R5**
 
-This version contains a number of new features and bug fixes including:  
-
-- The possibility to collect theoretical rights
-- Performance enhancements in the handling of metadata insertion and update in the portal
-
-Please refer to the full release notes for more information:  
-
-- [**Release notes**](07-release-notes-descartes-r4)
+This security fix only includes an update of the Eclipse platform.
 
 Please navigate to the following link to download the latest version of the product: Descartes:  
 
-- [**Download Descartes R4**](https://radiantlogicinc246.sharefile.com/d-s14cfb5f9cf1b41e09c0e9b6423d70039)
+- [**Download Descartes R5**](https://radiantlogicinc246.sharefile.com/d-s6b58bd0b33f642e0847ea6fa311aab17)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 

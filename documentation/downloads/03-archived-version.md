@@ -10,6 +10,7 @@ description: iGRCanalytics archived versions
 Please navigate to one of the following links to download the desired version of the product:  
 
 - [**Download Descartes**](https://radiantlogicinc246.sharefile.com/d-sf5b6347bfb9d42f7bbe06d2f74d73192)
+  - [**Download Descartes R4**](https://radiantlogicinc246.sharefile.com/d-s14cfb5f9cf1b41e09c0e9b6423d70039)
 - [**Download Curie**](https://radiantlogicinc246.sharefile.com/d-s1c9e7c13b0454b6884259362232d5181)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
