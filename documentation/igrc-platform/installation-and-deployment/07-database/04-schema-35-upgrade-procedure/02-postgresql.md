@@ -87,7 +87,7 @@ Where:
 - `-W` force prompt password
 
 See below for more information on the usage of `psql`:  
-[https://www.postgresql.org/docs/13/app-psql.html](https://www.postgresql.org/docs/13/app-psql.html)  
+https://www.postgresql.org/docs/13/app-psql.html  
 
 ### Execute VACUUM FULL operation
 

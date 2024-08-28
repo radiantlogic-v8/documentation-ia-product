@@ -49,7 +49,7 @@ Eclipse RAP widgets follow the same interface and behavior as Eclipse SWT (Stand
 
 Useful external links:  
 
-- Eclipse RAP developer' guide: [https://www.eclipse.org/rap/developers-guide/](https://www.eclipse.org/rap/developers-guide/)
+- Eclipse RAP developer' guide: https://www.eclipse.org/rap/developers-guide/
 - Eclipse RAP API Reference: [http://download.eclipse.org/rt/rap/doc/3.4/guide/reference/api/overview-summary.html](http://download.eclipse.org/rt/rap/doc/3.4/guide/reference/api/overview-summary.html)
 - Eclipse RAP widgets API Reference: [http://download.eclipse.org/rt/rap/doc/3.4/guide/reference/api/org/eclipse/swt/widgets/package-summary.html](http://download.eclipse.org/rt/rap/doc/3.4/guide/reference/api/org/eclipse/swt/widgets/package-summary.html)  
 

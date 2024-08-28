@@ -114,7 +114,7 @@ In addition to the modification of the technical configuration, the following st
 > In addition the `hibernate.dialect` defined in the Ledger base tab of the technical configuration during the creation of the datasource in the studio is NOT overridden by the JNDI configuration.  
 > As such, it is important to KEEP the value provided by the Product either in the studio or in the generated `datasource.properties` file.  
 
-For more information on JNDI connectors please refer to Tomcat's documentation, section **JDBC Data Sources** : [https://tomcat.apache.org/tomcat-8.5-doc/jndi-resources-howto.html](https://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html)  
+For more information on JNDI connectors please refer to Tomcat's documentation, section **JDBC Data Sources** : https://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html  
 
 ### Encrypt passwords
 

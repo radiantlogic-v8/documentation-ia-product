@@ -18,7 +18,7 @@ Install-Module -Name SqlServer
 ```
 
 Please refer to the following documentation for more information:  
-[https://docs.microsoft.com/en-us/sql/powershell/download-sql-server-ps-module?view=sql-server-ver15](https://docs.microsoft.com/en-us/sql/powershell/download-sql-server-ps-module?view=sql-server-ver15)
+https://docs.microsoft.com/en-us/sql/powershell/download-sql-server-ps-module?view=sql-server-ver15
 
 ### User rights
 

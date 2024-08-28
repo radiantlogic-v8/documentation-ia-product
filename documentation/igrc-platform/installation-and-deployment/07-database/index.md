@@ -314,7 +314,7 @@ grant unlimited tablespace to "&schema._ACT" ;
 > These are **not recommended** settings for PRODUCTION environments, but rather **sample** configurations for DEVELOPMENT
 
 Before creating your Schema please download the latest version of SQL:
-[https://www.oracle.com/database/sqldeveloper/technologies/download/](https://www.oracle.com/database/sqldeveloper/technologies/download/)
+https://www.oracle.com/database/sqldeveloper/technologies/download/
 
 Once installed you can follow these steps :
 

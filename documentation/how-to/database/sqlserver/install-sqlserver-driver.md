@@ -11,7 +11,7 @@ The latest versions of the product no longer comes with the **Oracle** and **Mic
 
 ### Download the driver
 
-To download the driver navigate to the editors official site : [https://www.microsoft.com/en-us/](https://www.microsoft.com/en-us/)  
+To download the driver navigate to the editors official site : https://www.microsoft.com/en-us/  
 
 Search for the "JDBC drivers for SQL Server". This should display an [MSDN page](https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server) that will allow you to download the latest version of the JDBC driver for SQL Server:
 

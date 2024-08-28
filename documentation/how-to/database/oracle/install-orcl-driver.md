@@ -12,11 +12,11 @@ As such, it is now necessary for you to download from the vendor's site the late
 
 ### Download the driver
 
-To download the driver navigate to the vendor site : [https://www.oracle.com/](https://www.oracle.com/)  
+To download the driver navigate to the vendor site : https://www.oracle.com/  
 
 You can find the latest version of the Oracle drivers by hovering the mouse over the **Downloads** menu and under the Database section click **See All**. This bring you to a page where you should find a Drivers section with a JDBC Drivers link. Click on this link.  
 
-The following link should direct you directly to the correct page : [https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html)  
+The following link should direct you directly to the correct page : https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html  
 
 This will open a new page that lists all available versions of the driver. Select the driver compatible with the version of the database used and click on the link.  
 

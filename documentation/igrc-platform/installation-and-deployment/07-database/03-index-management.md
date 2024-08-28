@@ -13,7 +13,7 @@ description: "Index management"
 >
 > If you have questions please don't hesitate to create a ticket on "Brainwave Online Support":
 >
-> [https://support.radiantlogic.com](https://support.radiantlogic.com)
+> https://support.radiantlogic.com
 
 ## Procedure
 

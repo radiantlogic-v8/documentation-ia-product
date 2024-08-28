@@ -61,7 +61,7 @@ where:
 - `<connect_identifier>` is the Oracle Net database alias (@connect_identifier) of the database you want to connect to
 
 For more information on SQLplus usage please refer to Oracle's documentation:
-[https://docs.oracle.com/cd/A97630_01/server.920/a90842/qstart.htm](https://docs.oracle.com/cd/A97630_01/server.920/a90842/qstart.htm)
+https://docs.oracle.com/cd/A97630_01/server.920/a90842/qstart.htm
 
 #### SQL developer
 

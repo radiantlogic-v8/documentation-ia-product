@@ -21,7 +21,7 @@ You can perform the following customization via a custom CSS file:
 ## Custom CSS file syntax
 
 Brainwave web portal internally uses a web framework known as **Eclipse RAP (Remote Application Platform** ).  
-Eclipse RAP is an open-source project supported by the Eclipse foundation ([https://www.eclipse.org/rap/](https://www.eclipse.org/rap/)).  
+Eclipse RAP is an open-source project supported by the Eclipse foundation (https://www.eclipse.org/rap/).  
 Basically, Eclipse RAP leverages Eclipse **Java SWT** (Standard Widget Kit) coding to automatically produce state-of-the-art HTML5 web application that can be run on any browser.  
 Like HTML applications, Eclipse RAP applications uses CSS files to control the appearance of widgets in the browser.  
 
@@ -92,7 +92,7 @@ Text.important {
 ```
 
 Read more on Eclipse RAP theming and CSS here:  
-[https://www.eclipse.org/rap/developers-guide/devguide.php?topic=theming.html](https://www.eclipse.org/rap/developers-guide/devguide.php?topic=theming.html)  
+https://www.eclipse.org/rap/developers-guide/devguide.php?topic=theming.html  
 
 The comprehensive reference of Eclipse RAP Widget CSS describing all themable elements, properties and states can be found here:  
 [http://download.eclipse.org/rt/rap/doc/3.1/guide/reference/theming/index.html](http://download.eclipse.org/rt/rap/doc/3.1/guide/reference/theming/index.html)  

@@ -52,7 +52,7 @@ This web site will help you make the most of the iGRCanalytics product and metho
 - Project configuration
 - Tips and tricks
 
-For customers under maintenance/subscription contract as well as official partners, you can reach our support website (24/7): [https://support.radiantlogic.com](https://support.radiantlogic.com/)
+For customers under maintenance/subscription contract as well as official partners, you can reach our support website (24/7): https://support.radiantlogic.com/
 
 ## Introduction
 

@@ -238,7 +238,7 @@ In addition, an index maintenance and disk space recovery plan (Vacuum Full) mus
 Performance may be strongly impacted by index fragmentation.
 
 The procedure for rebuilding indexes that can be applied is detailed here:
-[https://www.postgresql.org/docs/13/app-reindexdb.html](https://www.postgresql.org/docs/13/app-reindexdb.html)
+https://www.postgresql.org/docs/13/app-reindexdb.html
 
 Note that statistics are kept up to date during the Brainwave execution plan (at each loading).
 
@@ -247,4 +247,4 @@ It is also recommended, after loading, to recalculate the indexes in order to op
 > [!warning] During a "vacuum full" command, an exclusive lock is set on the table. As such, on very large tables, this mechanism can be problematic if the database is always open for consulting.
 
 An alternative solution is to use the extension `pg_squeeze` that allow to rebuild without lock tables or indexes during this operation.
-[https://www.cybertec-postgresql.com/en/products/pg_squeeze/](https://www.cybertec-postgresql.com/en/products/pg_squeeze/)
+https://www.cybertec-postgresql.com/en/products/pg_squeeze/

@@ -47,7 +47,7 @@ Please see [**here**](02-product-lifecycle) for more information on the product 
 
 Please log into your RadiantLogic support account and use "the request a license" form to request a license:
 
-[https://support.radiantlogic.com](https://support.radiantlogic.com)
+https://support.radiantlogic.com
 
 > Challenge: Copy and paste the challenge found in the product (field "License key" in the following screenshot). See [here](https://support.radiantlogic.com/hc/en-us/articles/17805187130516-iGRCanalytics-licence-requests) for more information
 
@@ -80,7 +80,7 @@ You can calculate the SHA1 of your downloaded file and it should match exactly w
 In Powershell you can use the commandlet `Get-FileHash` to compute the hash value for a file by using a specified hash algorithm.
 
 Please use the following link for more information.
-[https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6)
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6
 
 #### Certutil
 
@@ -92,7 +92,7 @@ Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1
 
 #### Microsoft File Checksum Integrity Verifier
 
-You can also download the Microsoft File Checksum Integrity Verifier ([https://www.microsoft.com/en-us/download/details.aspx?id=11533](https://www.microsoft.com/en-us/download/details.aspx?id=11533))  
+You can also download the Microsoft File Checksum Integrity Verifier (https://www.microsoft.com/en-us/download/details.aspx?id=11533)  
 
 ```sh
 fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
