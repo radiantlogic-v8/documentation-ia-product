@@ -87,6 +87,8 @@ Please navigate each RMDS support lifecycle for more information:
 - [Microsoft SQL server](https://learn.microsoft.com/en-us/lifecycle/products/?terms=sql%20server)
 - [Oracle](https://endoflife.date/oracle-database)
 
+> [!warning] Please retrieve the PostgreSQL version for the target distribution. Do NOT recompile the PostgreSQL kernel.
+
 ## Database drivers  
 
 The used database drivers must be compatible with the corresponding version of JAVA used:  
@@ -137,6 +139,6 @@ https://learn.microsoft.com/en-US/deployedge/microsoft-edge-support-lifecycle
 
 [^2]: all versions of java 17
 
-[^debianLTS]: Please refer to Debian's official documentation for more information: [here](https://wiki.debian.org/LTS)
+[^debianLTS]: Please refer to Debian's official documentation for more information: https://wiki.debian.org/LTS
 
-[^rhel9]: Please refer to Red Hat's official documentation for more information: [here](https://access.redhat.com/support/policy/updates/errata#Maintenance_Support_2_Phase)
+[^rhel9]: Please refer to Red Hat's official documentation for more information: https://access.redhat.com/support/policy/updates/errata#Maintenance_Support_2_Phase

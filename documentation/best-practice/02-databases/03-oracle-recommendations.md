@@ -17,13 +17,7 @@ The global usage of the product and data-loading performances were optimal when 
 
 ### Software
 
-The following versions of oracle are supported:  
-
-|                  Version                  |
-|:-----------------------------------------:|
-| Oracle 12c Standard or Enterprise Edition |
-| Oracle 18c Standard or Enterprise Edition |
-| Oracle 19c Standard or Enterprise Edition |
+The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
 It is recommended that the Oracle environment be entirely dedicated to The solution Brainwave iGRC.  
 

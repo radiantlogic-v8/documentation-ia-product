@@ -19,14 +19,6 @@ The following database repository and Operating systems are supported by Brainwa
 
 Only 64 bits versions are supported, Web and Express Editions are not supported.
 
-| Database        | Windows 10 | Windows Server 2012 | Windows Server 2016 | Windows Server 2019 |
-|:----------------|:----------:|:-------------------:|:-------------------:|:-------------------:|
-| SQL server 2012 |            |          X          |                     |                     |
-| SQL server 2014 |     X      |          X          |                     |                     |
-| SQL server 2016 |            |          X          |          X          |                     |
-| SQL server 2017 |            |                     |          X          |                     |
-| SQL server 2019 |            |                     |                     |          X          |
-
 The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
 ### Hardware requirements

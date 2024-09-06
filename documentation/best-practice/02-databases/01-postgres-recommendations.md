@@ -13,17 +13,9 @@ However, it will be up to the PostgreSQL DBA to adapt parameters according to th
 
 ## Software environment
 
-The following database repository are supported for the following software environments:
+Please refer to the following documentation for the supported versions of Postgres:  
 
-- PostgreSQL 12
-- PostgreSQL 13
-- PostgreSQL 14
-
-We always recommend the latest available minor release for whatever major version is in use.  
-
-It is recommended to dedicate the PostgreSQL environment to the Brainwave solution.  
-
-> Please retrieve the PostgreSQL version for the target distribution. Do NOT recompile the PostgreSQL kernel.
+- [Supported Versions of PostgreSQL](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)
 
 ## Hardware environment
 
