@@ -126,14 +126,14 @@ Depending on the version of the script displayed after the previous SQL request,
 
 |                                       Script                                        |
 |:-----------------------------------------------------------------------------------:|
-|         [mssql\_2017R2\_to\_Curie.sql](../sqlscripts/mssql_2017R2_to_Curie.sql)         |
-|         [mssql\_2017R3\_to\_Curie.sql](../sqlscripts/mssql_2017R3_to_Curie.sql)         |
-|         [mssql\_AderR1\_to\_Curie.sql](../sqlscripts/mssql_AderR1_to_Curie.sql)         |
-|      [mssql\_BrailleR1\_to\_Curie.sql](../sqlscripts/mssql_BrailleR1_to_Curie.sql)      |
-|    [mssql\_noml\_2017R2\_to\_Curie.sql](../sqlscripts/mssql_noml_2017R2_to_Curie.sql)    |
-|    [mssql\_noml\_2017R3\_to\_Curie.sql](../sqlscripts/mssql_noml_2017R3_to_Curie.sql)    |
-|    [mssql\_noml\_AderR1\_to\_Curie.sql](../sqlscripts/mssql_noml_AderR1_to_Curie.sql)    |
-| [mssql\_noml\_BrailleR1\_to\_Curie.sql](../sqlscripts/mssql_noml_BrailleR1_to_Curie.sql) |
+|         [mssql\_2017R2\_to\_Curie.sql](mssql_2017R2_to_Curie.sql)         |
+|         [mssql\_2017R3\_to\_Curie.sql](mssql_2017R3_to_Curie.sql)         |
+|         [mssql\_AderR1\_to\_Curie.sql](mssql_AderR1_to_Curie.sql)         |
+|      [mssql\_BrailleR1\_to\_Curie.sql](mssql_BrailleR1_to_Curie.sql)      |
+|    [mssql\_noml\_2017R2\_to\_Curie.sql](mssql_noml_2017R2_to_Curie.sql)    |
+|    [mssql\_noml\_2017R3\_to\_Curie.sql](mssql_noml_2017R3_to_Curie.sql)    |
+|    [mssql\_noml\_AderR1\_to\_Curie.sql](mssql_noml_AderR1_to_Curie.sql)    |
+| [mssql\_noml\_BrailleR1\_to\_Curie.sql](mssql_noml_BrailleR1_to_Curie.sql) |
 
 ### Execute the script
 
