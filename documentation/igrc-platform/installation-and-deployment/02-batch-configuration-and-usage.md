@@ -160,7 +160,7 @@ Another example: igrc_batch demonstration /var/igrc/config default"
 
 Please refer to the following page for more information on how to break reconciliations:
 
-[Delete Reconciliations](../reconciliation/index#delete-account-reconciliation)
+[Delete Reconciliations](../reconciliation/01-reconciliation-policies#break-report-of-existing-reconciliations)
 
 #### Restart
 
