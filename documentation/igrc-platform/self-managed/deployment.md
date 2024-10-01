@@ -18,7 +18,7 @@ The Identity Analytics Helm chart consists of two components:
 
 The following diagram illustrates a typical deployment, showcasing the Shared Services alongside two instances of Identity Analytics, each in its own namespace:
 
-![Deployment Diagram](link-to-your-diagram)
+![Deployment Diagram](./01-design.png)
 
 ## Prerequisites
 
