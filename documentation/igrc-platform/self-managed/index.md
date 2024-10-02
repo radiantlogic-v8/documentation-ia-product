@@ -11,14 +11,13 @@ You can deploy self-managed Identity Analytics on Amazon EKS or Azure Kubernetes
 The Identity Analytics Helm chart consists of two components:
 
 1. **Ida-shared-helm**: This chart includes Shared Services necessary for Identity Analytics instances. It serves as a prerequisite for the Identity Analytics installation, and only one instance of Shared Services is required per cluster.
-
 2. **Ida-helm**: This chart contains the Identity Analytics stack. You can deploy multiple instances of Identity Analytics if needed. If you do so, ensure that each instance resides in its own namespace.
 
-**Note:** Prior to deploying these charts, you will need to deploy CloudNativePG. The installation details are covered in a later section.
+> Prior to deploying these charts, you will need to deploy CloudNativePG. The installation details are covered in a later section.
 
 The following diagram illustrates a typical deployment, showcasing the Shared Services alongside two instances of Identity Analytics, each in its own namespace:
 
-![Deployment Diagram](./01-design.png)
+![Deployment Diagram](./images/01-design.png)
 
 ## Prerequisites
 
@@ -37,55 +36,63 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 Installing Cloud Native PG for managing Postgres databases in Kubernetes is a prerequisite for Shared Services and Identity Analytics helm chart deployments. Follow these steps for the installation:
 
 1. **Set kube-context**:
-   ```bash
-   kubectl cluster-info
-   kubectl get nodes
-   ```
 
-2. **Create Configuration File**:
-   Create a file named `cnpg-custom-values.yaml` with the following properties and values:
-   ```yaml
-   fullnameOverride: cnpg
-   config:
-     create: true
-     name: cnpg-controller-manager-config
-     data:
-       INHERITED_LABELS: app.kubernetes.io/*, radiantlogic.io/*
-       INHERITED_ANNOTATIONS: meta.helm.sh/*, helm.sh/*, prometheus.io/*
-   ```
+```bash
+kubectl cluster-info
+kubectl get nodes
+```
+
+2. **Create Configuration File**:  
+
+Create a file named `cnpg-custom-values.yaml` with the following properties and values:
+
+```yaml
+fullnameOverride: cnpg
+config:
+  create: true
+  name: cnpg-controller-manager-config
+  data:
+    INHERITED_LABELS: app.kubernetes.io/*, radiantlogic.io/*
+    INHERITED_ANNOTATIONS: meta.helm.sh/*, helm.sh/*, prometheus.io/*
+```
 
 3. **Add CNPG Helm Repository**:
-   ```bash
-   helm repo add cnpg https://cloudnative-pg.github.io/charts
-   helm repo update
-   ```
+
+```bash
+helm repo add cnpg https://cloudnative-pg.github.io/charts
+helm repo update
+```
 
 4. **Deploy CNPG**:
-   ```bash
-   helm upgrade --install cnpg \
-     cnpg/cloudnative-pg \
-     --namespace cnpg-system \
-     --create-namespace \
-     --version 0.21.5 \
-     --wait \
-     --values cnpg-custom-values.yaml
-   ```
+
+```bash
+helm upgrade --install cnpg \
+  cnpg/cloudnative-pg \
+  --namespace cnpg-system \
+  --create-namespace \
+  --version 0.21.5 \
+  --wait \
+  --values cnpg-custom-values.yaml
+```
 
 5. **Verify Pod Health**:
-   ```bash
-   kubectl get pods -n cnpg-system
-   ```
+
+```bash
+kubectl get pods -n cnpg-system
+```
 
 6. **Confirm CRD Installation**:
-   ```bash
-   kubectl get crds
-   ```
 
-   Expected CRDs include:
-   - `scheduledbackups.postgresql.cnpg.io`
-   - `backups.postgresql.cnpg.io`
-   - `imagecatalogs.postgresql.cnpg.io`
-   - `clusters.postgresql.cnpg.io`
+```bash
+kubectl get crds
+```
+
+Expected CRDs include:
+
+- `scheduledbackups.postgresql.cnpg.io`
+- `backups.postgresql.cnpg.io`
+- `imagecatalogs.postgresql.cnpg.io`
+- `clusters.postgresql.cnpg.io`
 
 ### 2. Deploy Shared Services Chart
 
@@ -95,44 +102,48 @@ The `ida-shared-helm` chart must be deployed only once per cluster and is a prer
 2. **Configure DNS for Identity Analytics endpoint**.
 3. **Create Configuration File**:
    Create a file named `shared-minimal.values.yaml` with the following properties:
-   ```yaml
-   global:
-     externalProtocol: "https"
-     externalDns: "<AUTHN_ENDPOINT>" # Provide the authentication DNS endpoint
-     imageCredentials:
-       private: true
-       registry: docker.io
-       existingSecret: ida-registry-credentials
-   ingress: 
-     enabled: true
-     className: "nginx"
-     annotations:
-       kubernetes.io/ingress.class: nginx
-       nginx.ingress.kubernetes.io/proxy-body-size: 8m
-   keycloak:
-     auth:
-       adminPassword: "" # Set a strong password
-   ```
+
+```yaml
+global:
+  externalProtocol: "https"
+  externalDns: "<AUTHN_ENDPOINT>" # Provide the authentication DNS endpoint
+  imageCredentials:
+    private: true
+    registry: docker.io
+    existingSecret: ida-registry-credentials
+ingress: 
+  enabled: true
+  className: "nginx"
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 8m
+keycloak:
+  auth:
+    adminPassword: "" # Set a strong password
+```
 
 4. **Install Shared Services**:
-   ```bash
-   helm upgrade --install $SHARED_HELM_RELEASE \
-     oci://$REGISTRY/radiantone/ida-shared-helm \
-     --namespace $SHARED_NAMESPACE \
-     --create-namespace \
-     --version $SHARED_CHART_VERSION \
-     --values shared-minimal.values.yaml
-   ```
+
+```bash
+helm upgrade --install $SHARED_HELM_RELEASE \
+  oci://$REGISTRY/radiantone/ida-shared-helm \
+  --namespace $SHARED_NAMESPACE \
+  --create-namespace \
+  --version $SHARED_CHART_VERSION \
+  --values shared-minimal.values.yaml
+```
 
 5. **Verify CRD Installation**:
-   ```bash
-   kubectl get crds
-   ```
 
-   Expected CRDs include:
-   - `eventbus.argoproj.io`
-   - `eventsources.argoproj.io`
-   - `sensors.argoproj.io`
+```bash
+kubectl get crds
+```
+
+Expected CRDs include:
+
+- `eventbus.argoproj.io`
+- `eventsources.argoproj.io`
+- `sensors.argoproj.io`
 
 ### 3. Deploy the Identity Analytics Chart
 
@@ -148,79 +159,85 @@ Before installing the Identity Analytics chart, ensure that you have the followi
 Follow these steps to deploy the Identity Analytics helm chart:
 
 1. **Set kube-context**.
-2. **Create Configuration File**:
-   Create a file named `env01.values.yaml` with the following properties:
-   ```yaml
-   global:
-     externalProtocol: "https"
-     externalDns: "<IDA_ENDPOINT>"
-     pathPrefix: "<IDA_URI>"
-     ingress:
-       enabled: true
-       className: "<INGRESS_CLASS_NAME>"
-     technicalAdmin:
-       email: "<IDA_ADM_EMAIL>"
-       password: "<IDA_ADM_INITIAL_PASSWORD>"
-   git:
-     default:
-       repository: "<GIT_DEFAULT_REPO>"
-       branch: "<GIT_DEFAULT_BRANCH>"
-       fromFolder: "brainwave"
-       username: "<GIT_DEFAULT_USER>"
-       password: "<GIT_DEFAULT_PASSWORD>"
-   keycloakSettings:
-     namespace: "<SHARED_NAMESPACE>"
-     externalDns: "<AUTHN_ENDPOINT>"
-   apisix:
-     namespace: "<SHARED_NAMESPACE>"
-   smtp:
-     enabled: true
-     host: "<SMTP_HOST>"
-     port: <SMTP_PORT>
-     auth:
-       enabled: false
-       username: ""
-       password: ""
-     ssl: false
-     startTls: false
-     from:
-       mail: "<SMTP_FROM>"
-       displayName: "<SMTP_FROM_DISPLAY>"
-     replyTo:
-       mail: "<SMTP_TO>"
-       displayName: "<SMTP_TO_DISPLAY>"
-   ```
+2. **Create Configuration File**:  
+
+Create a file named `env01.values.yaml` with the following properties:
+
+```yaml
+global:
+  externalProtocol: "https"
+  externalDns: "<IDA_ENDPOINT>"
+  pathPrefix: "<IDA_URI>"
+  ingress:
+    enabled: true
+    className: "<INGRESS_CLASS_NAME>"
+  technicalAdmin:
+    email: "<IDA_ADM_EMAIL>"
+    password: "<IDA_ADM_INITIAL_PASSWORD>"
+git:
+  default:
+    repository: "<GIT_DEFAULT_REPO>"
+    branch: "<GIT_DEFAULT_BRANCH>"
+    fromFolder: "brainwave"
+    username: "<GIT_DEFAULT_USER>"
+    password: "<GIT_DEFAULT_PASSWORD>"
+keycloakSettings:
+  namespace: "<SHARED_NAMESPACE>"
+  externalDns: "<AUTHN_ENDPOINT>"
+apisix:
+  namespace: "<SHARED_NAMESPACE>"
+smtp:
+  enabled: true
+  host: "<SMTP_HOST>"
+  port: <SMTP_PORT>
+  auth:
+    enabled: false
+    username: ""
+    password: ""
+  ssl: false
+  startTls: false
+  from:
+    mail: "<SMTP_FROM>"
+    displayName: "<SMTP_FROM_DISPLAY>"
+  replyTo:
+    mail: "<SMTP_TO>"
+    displayName: "<SMTP_TO_DISPLAY>"
+```
 
 3. **Install Identity Analytics**:
-   ```bash
-   helm upgrade --install $IDA_HELM_RELEASE \
-     oci://$REGISTRY/radiantone/ida-helm \
-     --namespace $IDA_NAMESPACE \
-     --create-namespace \
-     --version $IDA_CHART_VERSION \
-     --set-file global.licenseFile=$IDA_LICENSE_FILE_PATH \
-     --wait \
-     --values env01.values.yaml
-   ```
+
+```bash
+helm upgrade --install $IDA_HELM_RELEASE \
+  oci://$REGISTRY/radiantone/ida-helm \
+  --namespace $IDA_NAMESPACE \
+  --create-namespace \
+  --version $IDA_CHART_VERSION \
+  --set-file global.licenseFile=$IDA_LICENSE_FILE_PATH \
+  --wait \
+  --values env01.values.yaml
+```
 
 4. **Verify Deployment**:
-   ```bash
-   kubectl get pod --namespace $IDA_NAMESPACE
-   ```
 
-   Ensure that the pod named `portal-0` is up and running.
+```bash
+kubectl get pod --namespace $IDA_NAMESPACE
+```
+
+Ensure that the pod named `portal-0` is up and running.
 
 ### Access Identity Analytics with Keycloak
 
 After successful deployment of the Helm chart, you will find the following information in your terminal:
-* URLs of services, initial username, and instructions on how to retrieve initial credentials. 
+
+- URLs of services, initial username, and instructions on how to retrieve initial credentials.  
+
 Open a browser and connect to the Identity Analytics service using the retrieved credentials.
 
 ### Update Resource Configuration
 
 Customize resource requests and limits for deployed Shared Services based on your cluster's capacity.
 
-**Shared Services Resource Configuration**
+#### Shared Services Resource Configuration
 
 Include the following properties and set appropriate values for these properties in your shared-minimal.values.yaml:
 
@@ -261,7 +278,7 @@ keycloak:
       cpu: "500m"
 ```
 
-**Identity Analytics Resource Configuration**
+#### Identity Analytics Resource Configuration
 
 Include the following properties and set appropriate values for these properties in your env01.values.yaml file:
 
@@ -322,11 +339,15 @@ cnpg:
     requests:
       memory: 4Gi
 ```
+
 ### Pod Assignments
 
 You can define node selectors, tolerations, or affinities in both charts if needed in your values file. For detailed explanations, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
 
-**Example of Shared Services Node Configuration (shared-minimal.values.yaml)**:
+#### Example of Shared Services Node Configuration
+
+These should be added to `shared-minimal.values.yaml`.
+
 ```yaml
 global:
   nodeSelector: {}
@@ -353,7 +374,10 @@ keycloak:
   affinity: {}
 ```
 
-**Example of Identity Analytics Node Configuration (env01.values.yaml)**:
+#### Example of Identity Analytics Node Configuration
+
+These should be added to `env01.values.yaml`.
+
 ```yaml
 global:
   nodeSelector: {}
@@ -396,7 +420,8 @@ database:
 
 Tune the Postgres database with appropriate parameters defined in the values file.
 
-**Example Configuration**:
+#### Example Configuration
+
 ```yaml
 database:
   postgres:
@@ -423,9 +448,7 @@ Once you make necessary changes to your values files, update the Helm chart depl
 
 ```bash
 helm upgrade --install $SHARED_HELM_RELEASE \
- 
-
- oci://$REGISTRY/radiantone/ida-shared-helm \
+  oci://$REGISTRY/radiantone/ida-shared-helm \
   --namespace $SHARED_NAMESPACE \
   --create-namespace \
   --version $SHARED_CHART_VERSION \
@@ -447,14 +470,16 @@ helm upgrade --install $IDA_HELM_RELEASE \
 
 To view the list of values for a specific Helm chart, execute the following command:
 
-**Shared Services Values**:
+#### Shared Services Values
+
 ```bash
 helm show values \
   oci://$REGISTRY/radiantone/ida-shared-helm \
   --version $SHARED_CHART_VERSION
 ```
 
-**Identity Analytics Values**:
+#### Identity Analytics Values
+
 ```bash
 helm show values \
   oci://$REGISTRY/radiantone/ida-helm \
@@ -468,79 +493,92 @@ Note that even if there are additional values available, Radiant Logic doesn’t
 If you would like to uninstall Identity Analytics, you may do so by following these outlined steps. Ensure that Shared Services remain installed during the uninstallation of Identity Analytics.
 
 1. **Uninstall Command**:
-   ```bash
-   helm uninstall $IDA_HELM_RELEASE \
-     --namespace $IDA_NAMESPACE \
-     --ignore-not-found \
-     --wait
-   ```
+
+```bash
+helm uninstall $IDA_HELM_RELEASE \
+  --namespace $IDA_NAMESPACE \
+  --ignore-not-found \
+  --wait
+```
 
 2. **Check for Any Remaining Persistent Volume Claims (PVCs)**:
-   ```bash
-   kubectl get pvc \
-     --namespace $IDA_NAMESPACE \
-     --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
-   ```
 
-   Delete if necessary to free up space:
-   ```bash
-   kubectl delete pvc \
-     --namespace $IDA_NAMESPACE \
-     --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
-   ```
+```bash
+kubectl get pvc \
+  --namespace $IDA_NAMESPACE \
+  --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
+```
+
+Delete if necessary to free up space:
+
+```bash
+  kubectl delete pvc \
+    --namespace $IDA_NAMESPACE \
+    --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
+```
 
 3. **Delete Existing Namespace**:
-   You may choose to delete the namespace used for Identity Analytics:
-   ```bash
-   kubectl delete namespace $IDA_NAMESPACE
-   ```
+
+You may choose to delete the namespace used for Identity Analytics:
+
+```bash
+kubectl delete namespace $IDA_NAMESPACE
+```
 
 ### Uninstall Shared Services Chart
 
 Do not uninstall Shared Services if the Identity Analytics instance is still deployed. Only uninstall Shared Services after uninstalling Identity Analytics.
 
 1. **Uninstall Command**:
-   ```bash
-   helm uninstall $SHARED_HELM_RELEASE \
-     --namespace $SHARED_NAMESPACE \
-     --ignore-not-found \
-     --wait
-   ```
+
+```bash
+helm uninstall $SHARED_HELM_RELEASE \
+  --namespace $SHARED_NAMESPACE \
+  --ignore-not-found \
+  --wait
+```
 
 2. **Check for Any Remaining PVCs**:
-   Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
-   ```bash
-   kubectl get pvc \
-     --namespace $SHARED_NAMESPACE \
-     --selector app.kubernetes.io/instance=$SHARED_HELM_RELEASE
-   ```
 
-   If any PVCs are present, delete them:
-   ```bash
-   kubectl delete pvc --namespace $IDA_NAMESPACE $PVC_NAME
-   ```
+Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
+
+```bash
+kubectl get pvc \
+  --namespace $SHARED_NAMESPACE \
+  --selector app.kubernetes.io/instance=$SHARED_HELM_RELEASE
+```
+
+If any PVCs are present, delete them:
+
+```bash
+kubectl delete pvc --namespace $IDA_NAMESPACE $PVC_NAME
+```
 
 3. **Delete Namespace**:
-   You may choose to delete the namespace used for Shared Services:
-   ```bash
-   kubectl delete namespace $SHARED_NAMESPACE
-   ```
+
+You may choose to delete the namespace used for Shared Services:
+
+```bash
+kubectl delete namespace $SHARED_NAMESPACE
+```
 
 4. **Remove CRDs**:
-   Delete all CRDs installed by Shared Services:
-   ```bash
-   helm show crds oci://$REGISTRY/radiantone/ida-shared-helm \
-     --version $SHARED_CHART_VERSION | kubectl delete -f -
-   ```
+
+Delete all CRDs installed by Shared Services:
+
+```bash
+helm show crds oci://$REGISTRY/radiantone/ida-shared-helm \
+  --version $SHARED_CHART_VERSION | kubectl delete -f -
+```
 
 ### Troubleshooting
 
 If you encounter issues during the installation, consider the following:
 
 - Check the logs of the pods for any error messages:
-  ```bash
-  kubectl logs <pod-name> -n <namespace>
-  ```
+
+```bash
+kubectl logs <pod-name> -n <namespace>
+```
 
 - Ensure that all required resources are available in your cluster.
-
