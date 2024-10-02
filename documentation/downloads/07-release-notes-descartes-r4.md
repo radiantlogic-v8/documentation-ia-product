@@ -1,6 +1,6 @@
 ---
 title: Release Notes
-description: Descartes R3 Release Notes
+description: Descartes R4 Release Notes
 ---
 
 # Release Notes Descartes R4
