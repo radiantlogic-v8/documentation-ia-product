@@ -22,7 +22,7 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 ## Prerequisites
 
 - **Kubernetes Cluster**: Install a Kubernetes cluster of version **1.27** or higher.
-- **Helm**: Install Helm version **3.0** or higher.
+- **Helm**: Install Helm version **3.1** or higher.
 - **kubectl**: Install kubectl version **1.27** or higher and configure it to access your Kubernetes cluster.
 - **Identity Data Analytics License Key**: Provided during onboarding.
 - **Container Registry Access**: Ensure that you have saved the image pull credential file (ida-registry-credentials.yaml) provided during onboarding.
