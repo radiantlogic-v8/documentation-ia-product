@@ -25,7 +25,7 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 - **Helm**: Install Helm version **3.0** or higher.
 - **kubectl**: Install kubectl version **1.27** or higher and configure it to access your Kubernetes cluster.
 - **Identity Data Analytics License Key**: Provided during onboarding.
-- **Container Registry Access**: Access and image pull credential file (ida-registry-credentials) provided during onboarding.
+- **Container Registry Access**: Ensure that you have saved the image pull credential file (ida-registry-credentials.yaml) provided during onboarding.
 - **Storage Provisioners**: Ensure necessary storage provisioners and storage classes are configured for the Kubernetes cluster (e.g., gp2, Azure Disk).
 - **Resource Estimation**: Estimate sufficient resources (CPU, memory, storage) for the deployment. Consult your Radiant Logic solutions engineer for guidance.
 
@@ -448,7 +448,7 @@ Once you make necessary changes to your values files, update the Helm chart depl
 
 ```bash
 helm upgrade --install $SHARED_HELM_RELEASE \
-  oci://$REGISTRY/radiantone/ida-shared-helm \
+ oci://$REGISTRY/radiantone/ida-shared-helm \
   --namespace $SHARED_NAMESPACE \
   --create-namespace \
   --version $SHARED_CHART_VERSION \
