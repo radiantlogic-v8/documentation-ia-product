@@ -423,8 +423,6 @@ Once you make necessary changes to your values files, update the Helm chart depl
 
 ```bash
 helm upgrade --install $SHARED_HELM_RELEASE \
- 
-
  oci://$REGISTRY/radiantone/ida-shared-helm \
   --namespace $SHARED_NAMESPACE \
   --create-namespace \
