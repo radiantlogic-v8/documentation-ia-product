@@ -8,7 +8,7 @@ You can deploy self-managed Identity Analytics on Amazon EKS or Azure Kubernetes
 
 The table below shows the mapping between the Identity Data Analytics application version and the self-managed Helm chart version:
 
-| Identity Data Analytics application version | Helm chart version |
+| Identity Data Analytics application version | Helm chart versions (SHARED_CHART_VERSION and IDA_CHART_VERSION) |
 | -------------------------------------------- | ----------                                                                             
 | 3.1.0                                                                                    | 3.1.0                                |
 
@@ -133,11 +133,11 @@ keycloak:
 4. **Install Shared Services**:
 
 ```bash
-helm upgrade --install $SHARED_HELM_RELEASE \
-  oci://$REGISTRY/radiantone/ida-shared-helm \
-  --namespace $SHARED_NAMESPACE \
+helm upgrade --install rlss \ 
+  oci://docker.io/radiantone/ida-shared-helm \
+  --namespace <SHARED_NAMESPACE> \
   --create-namespace \
-  --version $SHARED_CHART_VERSION \
+  --version <SHARED_CHART_VERSION> \
   --values shared-minimal.values.yaml
 ```
 
@@ -215,12 +215,12 @@ smtp:
 3. **Install Identity Analytics**:
 
 ```bash
-helm upgrade --install $IDA_HELM_RELEASE \
-  oci://$REGISTRY/radiantone/ida-helm \
-  --namespace $IDA_NAMESPACE \
+helm upgrade --install rlia \
+  oci://docker.io/radiantone/ida-helm \
+  --namespace <IDA_NAMESPACE> \
   --create-namespace \
-  --version $IDA_CHART_VERSION \
-  --set-file global.licenseFile=$IDA_LICENSE_FILE_PATH \
+  --version <IDA_CHART_VERSION> \
+  --set-file global.licenseFile=<IDA_LICENSE_FILE_PATH> \
   --wait \
   --values env01.values.yaml
 ```
@@ -228,7 +228,7 @@ helm upgrade --install $IDA_HELM_RELEASE \
 4. **Verify Deployment**:
 
 ```bash
-kubectl get pod --namespace $IDA_NAMESPACE
+kubectl get pod --namespace <IDA_NAMESPACE>
 ```
 
 Ensure that the pod named `portal-0` is up and running.
@@ -455,21 +455,21 @@ database:
 Once you make necessary changes to your values files, update the Helm chart deployments to reflect these changes:
 
 ```bash
-helm upgrade --install $SHARED_HELM_RELEASE \
- oci://$REGISTRY/radiantone/ida-shared-helm \
-  --namespace $SHARED_NAMESPACE \
+helm upgrade --install rlss \
+ oci://docker.io/radiantone/ida-shared-helm \
+  --namespace <SHARED_NAMESPACE> \
   --create-namespace \
-  --version $SHARED_CHART_VERSION \
+  --version <SHARED_CHART_VERSION> \
   --values shared-minimal.values.yaml
 ```
 
 ```bash
-helm upgrade --install $IDA_HELM_RELEASE \
-  oci://$REGISTRY/radiantone/ida-helm \
-  --namespace $IDA_NAMESPACE \
+helm upgrade --install rlia \
+  oci://docker.io/radiantone/ida-helm \
+  --namespace <IDA_NAMESPACE> \
   --create-namespace \
-  --version $IDA_CHART_VERSION \
-  --set-file global.licenseFile=$IDA_LICENSE_FILE_PATH \
+  --version <IDA_CHART_VERSION> \
+  --set-file global.licenseFile=<IDA_LICENSE_FILE_PATH> \
   --wait \
   --values env01.values.yaml
 ```
@@ -482,16 +482,16 @@ To view the list of values for a specific Helm chart, execute the following comm
 
 ```bash
 helm show values \
-  oci://$REGISTRY/radiantone/ida-shared-helm \
-  --version $SHARED_CHART_VERSION
+  oci://docker.io/radiantone/ida-shared-helm \
+  --version <SHARED_CHART_VERSION>
 ```
 
 #### Identity Analytics values
 
 ```bash
 helm show values \
-  oci://$REGISTRY/radiantone/ida-helm \
-  --version $IDA_CHART_VERSION
+  oci://docker.io/radiantone/ida-helm \
+  --version <IDA_CHART_VERSION>
 ```
 
 Note that even if there are additional values available, Radiant Logic doesn’t recommend modifying undocumented values as it may cause issues with your deployment.
@@ -524,8 +524,8 @@ If you would like to uninstall Identity Analytics, you may do so by following th
 1. **Uninstall command**:
 
 ```bash
-helm uninstall $IDA_HELM_RELEASE \
-  --namespace $IDA_NAMESPACE \
+helm uninstall rlia \
+  --namespace <IDA_NAMESPACE> \
   --ignore-not-found \
   --wait
 ```
@@ -534,16 +534,16 @@ helm uninstall $IDA_HELM_RELEASE \
 
 ```bash
 kubectl get pvc \
-  --namespace $IDA_NAMESPACE \
-  --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
+  --namespace <IDA_NAMESPACE> \
+  --selector app.kubernetes.io/instance=rlia
 ```
 
 Delete if necessary to free up space:
 
 ```bash
   kubectl delete pvc \
-    --namespace $IDA_NAMESPACE \
-    --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
+    --namespace <IDA_NAMESPACE> \
+    --selector app.kubernetes.io/instance=rlia
 ```
 
 3. **Delete existing namespace**:
@@ -551,7 +551,7 @@ Delete if necessary to free up space:
 You may choose to delete the namespace used for Identity Analytics:
 
 ```bash
-kubectl delete namespace $IDA_NAMESPACE
+kubectl delete namespace <IDA_NAMESPACE>
 ```
 
 ## Deleting Shared Services chart
@@ -561,8 +561,8 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 1. **Uninstall Command**:
 
 ```bash
-helm uninstall $SHARED_HELM_RELEASE \
-  --namespace $SHARED_NAMESPACE \
+helm uninstall rlss \
+  --namespace <SHARED_NAMESPACE> \
   --ignore-not-found \
   --wait
 ```
@@ -573,14 +573,14 @@ Depending on your PVC retention policy, persistent volumes may not be deleted. V
 
 ```bash
 kubectl get pvc \
-  --namespace $SHARED_NAMESPACE \
-  --selector app.kubernetes.io/instance=$SHARED_HELM_RELEASE
+  --namespace <SHARED_NAMESPACE> \
+  --selector app.kubernetes.io/instance=rlss
 ```
 
 If any PVCs are present, delete them:
 
 ```bash
-kubectl delete pvc --namespace $IDA_NAMESPACE $PVC_NAME
+kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
 ```
 
 3. **Delete namespace**:
@@ -588,7 +588,7 @@ kubectl delete pvc --namespace $IDA_NAMESPACE $PVC_NAME
 You may choose to delete the namespace used for Shared Services:
 
 ```bash
-kubectl delete namespace $SHARED_NAMESPACE
+kubectl delete namespace <SHARED_NAMESPACE>
 ```
 
 4. **Remove CRDs**:
@@ -596,7 +596,7 @@ kubectl delete namespace $SHARED_NAMESPACE
 Delete all CRDs installed by Shared Services:
 
 ```bash
-helm show crds oci://$REGISTRY/radiantone/ida-shared-helm \
-  --version $SHARED_CHART_VERSION | kubectl delete -f -
+helm show crds oci://docker.io/radiantone/ida-shared-helm \
+  --version <SHARED_CHART_VERSION> | kubectl delete -f -
 ```
 
