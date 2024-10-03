@@ -265,7 +265,7 @@ etcd:
       memory: 512Mi
     persistence:
       size: 32Gi
-database:
+:
   storage: 32Gi
 cnpg:
   resources:
@@ -428,7 +428,7 @@ database:
 
 Tune the Postgres database with appropriate parameters defined in the values file.
 
-#### Example of database configuration
+**Example of database configuration**
 
 ```yaml
 database:
@@ -474,7 +474,7 @@ helm upgrade --install rlia \
   --values env01.values.yaml
 ```
 
-### Troubleshooting your Kubernetes environment
+## Troubleshooting your Kubernetes environment
 
 The steps listed here are meant to help you identify and troubleshoot issues related to pod deployments in your Kubernetes environment.
 
