@@ -450,7 +450,7 @@ database:
       auto_explain.log_min_duration: "300s"
 ```
 
-### Updating a deployment
+## Updating a deployment
 
 Once you make necessary changes to your values files, update the Helm chart deployments to reflect these changes:
 
@@ -473,28 +473,6 @@ helm upgrade --install rlia \
   --wait \
   --values env01.values.yaml
 ```
-
-### Viewing Helm chart values
-
-To view the list of values for a specific Helm chart, execute the following command:
-
-**Shared Services values**
-
-```bash
-helm show values \
-  oci://docker.io/radiantone/ida-shared-helm \
-  --version <SHARED_CHART_VERSION>
-```
-
-**Identity Analytics values**
-
-```bash
-helm show values \
-  oci://docker.io/radiantone/ida-helm \
-  --version <IDA_CHART_VERSION>
-```
-
-Note that even if there are additional values available, Radiant Logic doesn’t recommend modifying undocumented values as it may cause issues with your deployment.
 
 ### Troubleshooting your Kubernetes environment
 
