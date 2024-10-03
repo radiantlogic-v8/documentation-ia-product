@@ -6,6 +6,14 @@ This document serves as a guide for deploying Radiant Logic's Identity Analytics
 
 You can deploy self-managed Identity Analytics on Amazon EKS or Azure Kubernetes Service. The installation process exclusively utilizes Helm, meaning you will use `helm install` or `helm upgrade` commands to install and upgrade the deployment.
 
+The table below shows the mapping between the Identity Data Analytics application version and the self-managed Helm chart version:
+
+| Identity Data Analytics application version | Helm chart version |
+| -------------------------------------------- | ----------                                                                             
+| 3.1.0                                                                                    | 3.1.0                                |
+
+Ensure that you specify your target version when running installation and update commands that are listed in this document.  
+
 ## Design
 
 The Identity Analytics Helm chart consists of two components:
@@ -21,17 +29,17 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 
 ## Prerequisites
 
-- **Kubernetes Cluster**: Install a Kubernetes cluster of version **1.27** or higher.
-- **Helm**: Install Helm version **3.1** or higher.
-- **kubectl**: Install kubectl version **1.27** or higher and configure it to access your Kubernetes cluster.
-- **Identity Data Analytics License Key**: Provided during onboarding.
-- **Container Registry Access**: Ensure that you have saved the image pull credential file (ida-registry-credentials.yaml) provided during onboarding.
-- **Storage Provisioners**: Ensure necessary storage provisioners and storage classes are configured for the Kubernetes cluster (e.g., gp2, Azure Disk).
-- **Resource Estimation**: Estimate sufficient resources (CPU, memory, storage) for the deployment. Consult your Radiant Logic solutions engineer for guidance.
+- [Kubernetes cluster](https://kubernetes.io/docs/setup/) of version **1.27** or higher. Refer to the [Sizing a Kubernetes cluster](https://developer.radiantlogic.com/idm/v8.1/installation/https:/developer.radiantlogic.com/idm/v7.4/getting_started/kubernetes/#sizing-a-kubernetes-cluster) document for additional details.
+- Install [Helm](https://helm.sh/) version **3.0** or higher.
+- Install [kubectl](https://kubernetes.io/docs/reference/kubectl/) version **1.27** or higher and configure it to access your Kubernetes cluster.
+- An Identity Data Management license key, which will be provided to you during onboarding.
+- Ensure that you have received Container Registry Access and image pull credentials named (ida-registry-credentials.yaml) from Radiant Logic during onboarding.
+- Ensure that you have necessary storage provisioners and storage classes configured for the Kubernetes cluster. Some examples of supported storage classes are gp2/gp3, Azure disk, etc.
+- Estimate sufficient resources (CPU, memory, storage) for the deployment. Your Radiant Logic solutions engineer may guide you with this depending on your use case.
 
 ## Steps for Deployment
 
-### 1. Install Cloud Native PG (CNPG)
+### Install Cloud Native PG (CNPG)
 
 Installing Cloud Native PG for managing Postgres databases in Kubernetes is a prerequisite for Shared Services and Identity Analytics helm chart deployments. Follow these steps for the installation:
 
@@ -94,7 +102,7 @@ Expected CRDs include:
 - `imagecatalogs.postgresql.cnpg.io`
 - `clusters.postgresql.cnpg.io`
 
-### 2. Deploy Shared Services Chart
+### Deploy Shared Services Chart
 
 The `ida-shared-helm` chart must be deployed only once per cluster and is a prerequisite for deploying Identity Analytics instances. Follow these steps:
 
@@ -145,7 +153,7 @@ Expected CRDs include:
 - `eventsources.argoproj.io`
 - `sensors.argoproj.io`
 
-### 3. Deploy the Identity Analytics Chart
+### Deploy the Identity Analytics Chart
 
 Before installing the Identity Analytics chart, ensure that you have the following:
 
@@ -278,7 +286,7 @@ keycloak:
       cpu: "500m"
 ```
 
-#### Identity Analytics Resource Configuration
+#### Configure Identity Analytics resources
 
 Include the following properties and set appropriate values for these properties in your env01.values.yaml file:
 
@@ -340,11 +348,11 @@ cnpg:
       memory: 4Gi
 ```
 
-### Pod Assignments
+### Configure pod assignments
 
 You can define node selectors, tolerations, or affinities in both charts if needed in your values file. For detailed explanations, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
 
-#### Example of Shared Services Node Configuration
+#### Example of Shared Services node configuration
 
 These should be added to `shared-minimal.values.yaml`.
 
@@ -374,7 +382,7 @@ keycloak:
   affinity: {}
 ```
 
-#### Example of Identity Analytics Node Configuration
+#### Example of Identity Analytics node configuration
 
 These should be added to `env01.values.yaml`.
 
@@ -416,7 +424,7 @@ database:
   tolerations: []
 ```
 
-### Configure Database Parameters
+### Configure database parameters
 
 Tune the Postgres database with appropriate parameters defined in the values file.
 
@@ -442,7 +450,7 @@ database:
       auto_explain.log_min_duration: "300s"
 ```
 
-### Updating a Deployment
+### Updating a deployment
 
 Once you make necessary changes to your values files, update the Helm chart deployments to reflect these changes:
 
@@ -466,11 +474,11 @@ helm upgrade --install $IDA_HELM_RELEASE \
   --values env01.values.yaml
 ```
 
-### Helm Chart Values
+### Viewing Helm chart values
 
 To view the list of values for a specific Helm chart, execute the following command:
 
-#### Shared Services Values
+#### Shared Services values
 
 ```bash
 helm show values \
@@ -478,7 +486,7 @@ helm show values \
   --version $SHARED_CHART_VERSION
 ```
 
-#### Identity Analytics Values
+#### Identity Analytics values
 
 ```bash
 helm show values \
@@ -488,11 +496,32 @@ helm show values \
 
 Note that even if there are additional values available, Radiant Logic doesn’t recommend modifying undocumented values as it may cause issues with your deployment.
 
-### Uninstall Identity Analytics Chart
+### Troubleshooting your Kubernetes environment
+
+The steps listed here are meant to help you identify and troubleshoot issues related to pod deployments in your Kubernetes environment.
+
+1. **Check events for deployment issues**
+
+   This command lists events in the specified namespace, helping to identify any issues related to pod deployment.
+     
+     ```bash
+     kubectl get events -n <namespace>
+      ```
+   
+
+3. **Describe a specific pod**
+
+   This command provides detailed information about the pod, including its status, conditions, and any errors that might be affecting its deployment.
+
+     ```bash
+     kubectl describe pods/fid-0 -n <namespace>
+     ```
+
+## Deleting Identity Analytics chart
 
 If you would like to uninstall Identity Analytics, you may do so by following these outlined steps. Ensure that Shared Services remain installed during the uninstallation of Identity Analytics.
 
-1. **Uninstall Command**:
+1. **Uninstall command**:
 
 ```bash
 helm uninstall $IDA_HELM_RELEASE \
@@ -501,7 +530,7 @@ helm uninstall $IDA_HELM_RELEASE \
   --wait
 ```
 
-2. **Check for Any Remaining Persistent Volume Claims (PVCs)**:
+2. **Check for any remaining Persistent Volume Claims (PVCs)**:
 
 ```bash
 kubectl get pvc \
@@ -517,7 +546,7 @@ Delete if necessary to free up space:
     --selector app.kubernetes.io/instance=$IDA_HELM_RELEASE
 ```
 
-3. **Delete Existing Namespace**:
+3. **Delete existing namespace**:
 
 You may choose to delete the namespace used for Identity Analytics:
 
@@ -525,7 +554,7 @@ You may choose to delete the namespace used for Identity Analytics:
 kubectl delete namespace $IDA_NAMESPACE
 ```
 
-### Uninstall Shared Services Chart
+## Deleting Shared Services chart
 
 Do not uninstall Shared Services if the Identity Analytics instance is still deployed. Only uninstall Shared Services after uninstalling Identity Analytics.
 
@@ -538,7 +567,7 @@ helm uninstall $SHARED_HELM_RELEASE \
   --wait
 ```
 
-2. **Check for Any Remaining PVCs**:
+2. **Check for any remaining PVCs**:
 
 Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
 
@@ -554,7 +583,7 @@ If any PVCs are present, delete them:
 kubectl delete pvc --namespace $IDA_NAMESPACE $PVC_NAME
 ```
 
-3. **Delete Namespace**:
+3. **Delete namespace**:
 
 You may choose to delete the namespace used for Shared Services:
 
@@ -571,14 +600,3 @@ helm show crds oci://$REGISTRY/radiantone/ida-shared-helm \
   --version $SHARED_CHART_VERSION | kubectl delete -f -
 ```
 
-### Troubleshooting
-
-If you encounter issues during the installation, consider the following:
-
-- Check the logs of the pods for any error messages:
-
-```bash
-kubectl logs <pod-name> -n <namespace>
-```
-
-- Ensure that all required resources are available in your cluster.
