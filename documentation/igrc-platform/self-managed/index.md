@@ -39,7 +39,7 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 
 ## Steps for Deployment
 
-### Install Cloud Native PG (CNPG)
+### 1. Install Cloud Native PG (CNPG)
 
 Installing Cloud Native PG for managing Postgres databases in Kubernetes is a prerequisite for Shared Services and Identity Analytics helm chart deployments. Follow these steps for the installation:
 
@@ -102,7 +102,7 @@ Expected CRDs include:
 - `imagecatalogs.postgresql.cnpg.io`
 - `clusters.postgresql.cnpg.io`
 
-### Deploy Shared Services Chart
+### 2. Deploy Shared Services Chart
 
 The `ida-shared-helm` chart must be deployed only once per cluster and is a prerequisite for deploying Identity Analytics instances. Follow these steps:
 
@@ -153,7 +153,7 @@ Expected CRDs include:
 - `eventsources.argoproj.io`
 - `sensors.argoproj.io`
 
-### Deploy the Identity Analytics Chart
+### 3. Deploy the Identity Analytics Chart
 
 Before installing the Identity Analytics chart, ensure that you have the following:
 
@@ -233,7 +233,7 @@ kubectl get pod --namespace $IDA_NAMESPACE
 
 Ensure that the pod named `portal-0` is up and running.
 
-### Access Identity Analytics with Keycloak
+### 4. Access Identity Analytics with Keycloak
 
 After successful deployment of the Helm chart, you will find the following information in your terminal:
 
@@ -241,11 +241,11 @@ After successful deployment of the Helm chart, you will find the following infor
 
 Open a browser and connect to the Identity Analytics service using the retrieved credentials.
 
-### Update Resource Configuration
+### 5. Update resource configuration
 
 Customize resource requests and limits for deployed Shared Services based on your cluster's capacity.
 
-#### Shared Services Resource Configuration
+#### Configure Shared Services resources
 
 Include the following properties and set appropriate values for these properties in your shared-minimal.values.yaml:
 
@@ -428,7 +428,7 @@ database:
 
 Tune the Postgres database with appropriate parameters defined in the values file.
 
-#### Example Configuration
+#### Example of database configuration
 
 ```yaml
 database:
