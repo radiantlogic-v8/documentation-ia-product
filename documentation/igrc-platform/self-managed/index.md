@@ -501,36 +501,36 @@ If you would like to uninstall Identity Analytics, you may do so by following th
 
 1. **Uninstall Identity Analytics**:
 
-```bash
-helm uninstall rlia \
-  --namespace <IDA_NAMESPACE> \
-  --ignore-not-found \
-  --wait
-```
+    ```bash
+    helm uninstall rlia \
+      --namespace <IDA_NAMESPACE> \
+      --ignore-not-found \
+      --wait
+    ```
 
 2. **Check for any remaining Persistent Volume Claims (PVCs)**:
 
-```bash
-kubectl get pvc \
-  --namespace <IDA_NAMESPACE> \
-  --selector app.kubernetes.io/instance=rlia
-```
+    ```bash
+    kubectl get pvc \
+      --namespace <IDA_NAMESPACE> \
+      --selector app.kubernetes.io/instance=rlia
+    ```
 
-Delete if necessary to free up space:
-
-```bash
-  kubectl delete pvc \
-    --namespace <IDA_NAMESPACE> \
-    --selector app.kubernetes.io/instance=rlia
-```
+  Delete if necessary to free up space:
+  
+    ```bash
+      kubectl delete pvc \
+        --namespace <IDA_NAMESPACE> \
+        --selector app.kubernetes.io/instance=rlia
+    ```
 
 3. **Delete existing namespace**:
 
-You may choose to delete the namespace used for Identity Analytics:
-
-```bash
-kubectl delete namespace <IDA_NAMESPACE>
-```
+    You may choose to delete the namespace used for Identity Analytics:
+    
+    ```bash
+    kubectl delete namespace <IDA_NAMESPACE>
+    ```
 
 ## Deleting Shared Services chart
 
@@ -538,43 +538,43 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 
 1. **Uninstall Shared Services**:
 
-  ```bash
-  helm uninstall rlss \
-    --namespace <SHARED_NAMESPACE> \
-    --ignore-not-found \
-    --wait
-  ```
+    ```bash
+    helm uninstall rlss \
+      --namespace <SHARED_NAMESPACE> \
+      --ignore-not-found \
+      --wait
+    ```
 
 2. **Check for any remaining PVCs**:
 
-  Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
-  
-  ```bash
-  kubectl get pvc \
-    --namespace <SHARED_NAMESPACE> \
-    --selector app.kubernetes.io/instance=rlss
-  ```
+    Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
+    
+    ```bash
+    kubectl get pvc \
+      --namespace <SHARED_NAMESPACE> \
+      --selector app.kubernetes.io/instance=rlss
+    ```
 
-  If any PVCs are present, delete them:
-  
-  ```bash
-  kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
-  ```
+    If any PVCs are present, delete them:
+    
+    ```bash
+    kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
+    ```
 
 3. **Delete namespace**:
 
-  You may choose to delete the namespace used for Shared Services:
-  
-  ```bash
-  kubectl delete namespace <SHARED_NAMESPACE>
-  ```
+    You may choose to delete the namespace used for Shared Services:
+    
+    ```bash
+    kubectl delete namespace <SHARED_NAMESPACE>
+    ```
 
 4. **Remove CRDs**:
 
-  Delete all CRDs installed by Shared Services:
-  
-  ```bash
-  helm show crds oci://docker.io/radiantone/ida-shared-helm \
-    --version <SHARED_CHART_VERSION> | kubectl delete -f -
-  ```
+    Delete all CRDs installed by Shared Services:
+    
+    ```bash
+    helm show crds oci://docker.io/radiantone/ida-shared-helm \
+      --version <SHARED_CHART_VERSION> | kubectl delete -f -
+    ```
 
