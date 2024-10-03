@@ -1,4 +1,4 @@
-# Install Self-Managed Identity Analytics Using Helm
+# Self-Managed Identity Analytics Deployment
 
 This document serves as a guide for deploying Radiant Logic's Identity Analytics (IDA) using Helm charts on a Kubernetes cluster. It outlines prerequisites and provides detailed, step-by-step instructions for the deployment.
 
@@ -560,43 +560,43 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 
 1. **Uninstall Command**:
 
-```bash
-helm uninstall rlss \
-  --namespace <SHARED_NAMESPACE> \
-  --ignore-not-found \
-  --wait
-```
+  ```bash
+  helm uninstall rlss \
+    --namespace <SHARED_NAMESPACE> \
+    --ignore-not-found \
+    --wait
+  ```
 
 2. **Check for any remaining PVCs**:
 
-Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
+  Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
+  
+  ```bash
+  kubectl get pvc \
+    --namespace <SHARED_NAMESPACE> \
+    --selector app.kubernetes.io/instance=rlss
+  ```
 
-```bash
-kubectl get pvc \
-  --namespace <SHARED_NAMESPACE> \
-  --selector app.kubernetes.io/instance=rlss
-```
-
-If any PVCs are present, delete them:
-
-```bash
-kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
-```
+  If any PVCs are present, delete them:
+  
+  ```bash
+  kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
+  ```
 
 3. **Delete namespace**:
 
-You may choose to delete the namespace used for Shared Services:
-
-```bash
-kubectl delete namespace <SHARED_NAMESPACE>
-```
+  You may choose to delete the namespace used for Shared Services:
+  
+  ```bash
+  kubectl delete namespace <SHARED_NAMESPACE>
+  ```
 
 4. **Remove CRDs**:
 
-Delete all CRDs installed by Shared Services:
-
-```bash
-helm show crds oci://docker.io/radiantone/ida-shared-helm \
-  --version <SHARED_CHART_VERSION> | kubectl delete -f -
-```
+  Delete all CRDs installed by Shared Services:
+  
+  ```bash
+  helm show crds oci://docker.io/radiantone/ida-shared-helm \
+    --version <SHARED_CHART_VERSION> | kubectl delete -f -
+  ```
 
