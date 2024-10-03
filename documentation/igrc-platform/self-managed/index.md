@@ -4,7 +4,7 @@ This document serves as a guide for deploying Radiant Logic's Identity Analytics
 
 ## Overview
 
-You can deploy self-managed Identity Analytics on Amazon EKS or Azure Kubernetes Service. The installation process exclusively utilizes Helm, meaning you will use `helm install` or `helm upgrade` commands to install and upgrade the deployment.
+You can deploy self-managed Identity Analytics on Amazon EKS, Azure Kubernetes Service or Google Kubernetes Engine. The installation process exclusively utilizes Helm, meaning you will use `helm install` or `helm upgrade` commands to install and upgrade the deployment.
 
 The table below shows the mapping between the Identity Data Analytics application version and the self-managed Helm chart version:
 
@@ -245,7 +245,7 @@ Open a browser and connect to the Identity Analytics service using the retrieved
 
 Customize resource requests and limits for deployed Shared Services based on your cluster's capacity.
 
-#### Configure Shared Services resources
+1. **Configure Shared Services resources**
 
 Include the following properties and set appropriate values for these properties in your shared-minimal.values.yaml:
 
@@ -286,7 +286,7 @@ keycloak:
       cpu: "500m"
 ```
 
-#### Configure Identity Analytics resources
+2. **Configure Identity Analytics resources**
 
 Include the following properties and set appropriate values for these properties in your env01.values.yaml file:
 
@@ -348,11 +348,11 @@ cnpg:
       memory: 4Gi
 ```
 
-### Configure pod assignments
+3. **Configure pod assignments**
 
 You can define node selectors, tolerations, or affinities in both charts if needed in your values file. For detailed explanations, refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/).
 
-#### Example of Shared Services node configuration
+**Example of Shared Services node configuration**
 
 These should be added to `shared-minimal.values.yaml`.
 
@@ -382,7 +382,7 @@ keycloak:
   affinity: {}
 ```
 
-#### Example of Identity Analytics node configuration
+**Example of Identity Analytics node configuration**
 
 These should be added to `env01.values.yaml`.
 
@@ -424,7 +424,7 @@ database:
   tolerations: []
 ```
 
-### Configure database parameters
+4. **Configure database parameters**
 
 Tune the Postgres database with appropriate parameters defined in the values file.
 
@@ -478,7 +478,7 @@ helm upgrade --install rlia \
 
 To view the list of values for a specific Helm chart, execute the following command:
 
-#### Shared Services values
+**Shared Services values**
 
 ```bash
 helm show values \
@@ -486,7 +486,7 @@ helm show values \
   --version <SHARED_CHART_VERSION>
 ```
 
-#### Identity Analytics values
+**Identity Analytics values**
 
 ```bash
 helm show values \
@@ -521,7 +521,7 @@ The steps listed here are meant to help you identify and troubleshoot issues rel
 
 If you would like to uninstall Identity Analytics, you may do so by following these outlined steps. Ensure that Shared Services remain installed during the uninstallation of Identity Analytics.
 
-1. **Uninstall command**:
+1. **Uninstall Identity Analytics**:
 
 ```bash
 helm uninstall rlia \
@@ -558,7 +558,7 @@ kubectl delete namespace <IDA_NAMESPACE>
 
 Do not uninstall Shared Services if the Identity Analytics instance is still deployed. Only uninstall Shared Services after uninstalling Identity Analytics.
 
-1. **Uninstall Command**:
+1. **Uninstall Shared Services**:
 
   ```bash
   helm uninstall rlss \
