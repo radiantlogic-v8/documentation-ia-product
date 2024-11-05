@@ -26,6 +26,7 @@ This Includes among others:
 
 - Addition of monitoring information to the execution plan logs. See [here](../igrc-platform/installation-and-deployment/02-batch-configuration-and-usage.md#java_opts)
 - Performance enhancement when updating tickets
+- Fixes to Theoretical rights collect for IAM
 
 Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes. 
 
