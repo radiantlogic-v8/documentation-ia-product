@@ -190,6 +190,22 @@ A command example for `Linux`:
 ./igrc_batch.sh myProject /opt/igrc/properties/ dev_conf -restart before-activation
 ```
 
+#### `JAVA_OPTS`
+
+The configuration of the `JAVA_OPTS` is centralized, please see [here](#igrc_setenv) for more information.
+
+Starting Descartes R5 SP1 new `JAVA_OPTS` have been added to the batch to help in monitoring and diagnostics.  
+
+As in the portal a monitoring file, `monitoring_XXXXXXX.txt`, is now created that presents monitoring information on the JAVA process run. In this case the CPU and RAM used as well as the frequency of the Garbage collectors executed. The interval is 10s by default but can be fine-tuned if necessary:  
+
+- `-DmonitoringInterval=60000` the value is to be provided in miliseconds.  
+
+It is also possible to automatically create Jstacks files, `jstack_X_XXXXXXX.txt`, that can be sent to the support services in case of issues encountered during the Batch execution. Three options have been added to configure the creation of these dumps:
+
+- `-Djstackenabled=true`: activate or not the creation of Jstack files
+- `-Djstackmaxfile=3`: The number of Jstack files kept
+- `-Djstackinterval=15000`: The interval, in milliseconds, between each dump
+
 ### igrc_extract
 
 This command allows you to run the extraction of data using the extractors as defined in the silos via command line. The configuration is performed in the technical configuration of your project and you can define silos that you wish not to extract the data in the Silos tab of the technical configuration.  
