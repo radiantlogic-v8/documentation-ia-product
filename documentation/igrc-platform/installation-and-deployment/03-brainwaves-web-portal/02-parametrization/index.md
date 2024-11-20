@@ -422,4 +422,4 @@ Once dynamic roles are determined, this list is concatenated to the static user 
 
 ![Portal Identity view](../images/portal_roles_and_features.png)
 
-More information about Roles and Features can be found [here](../../../pages/21-features-and-roles/index).
+More information about Roles and Features can be found [here](../../../pages/21-features-and-roles/).
