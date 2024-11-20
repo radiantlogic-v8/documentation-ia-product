@@ -379,10 +379,10 @@ Dynamic roles are set using business rules based on data from Ledger and are **p
 
 Apache foundation provides standards Tomcat components to authenticate and authorize. Brainwave exploits some of them:
 
-- [Basic form](./01-basic)
-- [LDAP](./02-ldap)
-- [SAML](./03-saml)
-- [HTTP Headers](./04-http-headers)
+- [Basic form](./01-basic.md)
+- [LDAP](./02-ldap.md)
+- [SAML](./03-saml/index.md)
+- [HTTP Headers](./04-http-headers.md)
 
 ### Portal Identity
 
