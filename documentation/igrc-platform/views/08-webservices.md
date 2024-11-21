@@ -395,7 +395,7 @@ In order to activate the web service call, you have to ensure that the authentic
 
 ---
 
-> [!important] Please note that this Valve is provided as an openSource component along with its source without any support.|
+> [!note] Please note that this Valve is provided as an openSource component along with its source without any support.
 
 ---
 
@@ -430,7 +430,7 @@ This means that every time the "HsCnykb8RtMdGpKlu7W7SlJs" token will be presente
 
 ---
 
-> [!important] By default the login defined in the files `sso.xml` must correspond to a reconciled account as the default view used to log into the portal is `br_portalidentity`.
+> [!note] By default the login defined in the files `sso.xml` must correspond to a reconciled account as the default view used to log into the portal is `br_portalidentity`.
 
 ---
 
