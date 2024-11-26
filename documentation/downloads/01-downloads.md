@@ -16,7 +16,7 @@ description: Download all iGRCanalytics information
 
 A database migration is required before installing version Descartes R4.
 
-> [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/installation-and-deployment/database/schema-35-upgrade-procedure/) for the detailed procedure.  
+> [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
 ## Version Descartes R5 SP2
 
@@ -30,22 +30,22 @@ This Includes among others:
 
 Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.  
 
-Please navigate to the following link to download the latest version of the product: Descartes:  
+Please navigate to the following link to download the latest version of the product: Descartes:
 
 - [**Download Descartes R5 SP2**](https://radiantlogicinc246.sharefile.com/d-s0ef6f5793dcd4c92b756d4b16b8e6d3c)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
-See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.  
+See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.
 
 > [!note] As a reminder iGRCanalytics is provided without any support on Linux.  
-> Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through iGRCanalytics should be made under a Microsoft Windows environment.  
+> Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through iGRCanalytics should be made under a Microsoft Windows environment.
 
-Looking for an older version? have a look at the [archived versions repository](03-archived-version)  
+Looking for an older version? have a look at the [archived versions repository](03-archived-version)
 
-Please use the following link for the full list of the certified environments:  
+Please use the following link for the full list of the certified environments:
 
-[Certified Operating Environment for iGRCanalytics](../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)  
+[Certified Operating Environment for iGRCanalytics](../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)
 
 Please see [**here**](02-product-lifecycle) for more information on the product versions lifecycle, including the end of support dates.
 
@@ -67,7 +67,7 @@ To verify the file:
 
 ```sh
 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
-```  
+```
 
 You can download the checksum file:
 
@@ -98,7 +98,7 @@ Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1
 
 #### Microsoft File Checksum Integrity Verifier
 
-You can also download the Microsoft File Checksum Integrity Verifier (https://www.microsoft.com/en-us/download/details.aspx?id=11533)  
+You can also download the Microsoft File Checksum Integrity Verifier (https://www.microsoft.com/en-us/download/details.aspx?id=11533)
 
 ```sh
 fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
