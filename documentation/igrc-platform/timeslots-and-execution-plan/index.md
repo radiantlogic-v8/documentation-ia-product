@@ -28,4 +28,4 @@ See [specific attributes linked to time](../getting-started/index.md#time-manage
 
 You can use **igrc_purge.cmd** either with the purge from the technical configuration (`purge` tab), or by passing the timeslot status (one of the values from above).
 
-> For detailed information on the purge, see [purge of timeslots](./02-purge-of-timeslots.md).
+> For detailed information on the purge, see [purge of timeslots](02-purge-of-timeslots).
