@@ -5,6 +5,14 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP2
+
+### Bug fixes
+
+- **IGRC-4827:** indirect manager links are copied from previous timeslot
+- **IGRC-4828:** Reuse the same global classloader upon several Business View executions
+- **COL-1641:** Leave date of leaver account updated if left identity does not have departure date
+
 ## Version Descartes R5 SP1
 
 ### New Features

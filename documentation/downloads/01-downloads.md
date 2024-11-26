@@ -18,21 +18,21 @@ A database migration is required before installing version Descartes R4.
 
 > [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](https://documentation.brainwavegrc.com/Descartes/docs/igrc-platform/installation-and-deployment/database/schema-35-upgrade-procedure/) for the detailed procedure.  
 
-## Version Descartes R5 SP1
+## Version Descartes R5 SP2
 
-We are pleased to announce the release of the latest version of the product: **Descartes R5 SP1**
+We are pleased to announce the release of the latest version of the product: **Descartes R5 SP2**
 
 This Includes among others:
 
-- Addition of monitoring information to the execution plan logs. See [here](../igrc-platform/installation-and-deployment/02-batch-configuration-and-usage.md#java_opts)
-- Performance enhancement when updating tickets
-- Fixes to Theoretical rights collect for IAM
+- A fix on the calculation of indirect managers when copied from a previous timeslot
+- An update in the handling of classloaders on Business View executions
+- A fiw on the handling of the leave date of a leaver account updated when the identity does not have a departure date
 
-Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes. 
+Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.  
 
 Please navigate to the following link to download the latest version of the product: Descartes:  
 
-- [**Download Descartes R5 SP1**](https://radiantlogicinc246.sharefile.com/f/fof9ced1-6ea1-4887-bc1b-805cf22453bf)
+- [**Download Descartes R5 SP2**](https://radiantlogicinc246.sharefile.com/d-s0ef6f5793dcd4c92b756d4b16b8e6d3c)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
