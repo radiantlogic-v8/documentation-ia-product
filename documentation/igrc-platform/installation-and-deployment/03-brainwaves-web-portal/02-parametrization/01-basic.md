@@ -29,7 +29,7 @@ To ensure this installation procedure, it is admitted that:
 
 ## Installation procedure
 
-In the following procedure, we will use below variables:  
+In the following procedure, we will use below variables:
 
 |        Variable         |           Description           | Example value |
 | :---------------------: | :-----------------------------: | :-----------: |
