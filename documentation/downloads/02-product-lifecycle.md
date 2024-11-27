@@ -19,8 +19,8 @@ description: iGRCanalytics product lifecycle
 
 | Version              | Release date |       Active       |      Passive       |      Limited       | End of support |
 | :------------------- | :----------: | :----------------: | :----------------: | :----------------: | :------------: |
-| Descartes R5 SP1     |  05/11/2024  | :white_check_mark: |                    |                    |   02/05/2026   |
-| Descartes R5 (SP0)   |  13/08/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
+| Descartes R5 SP2     |  26/11/2024  | :white_check_mark: |                    |                    |   02/05/2026   |
+| Descartes R5 (SP0-1) |  13/08/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
 | Descartes R4         |  01/07/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
 | Descartes R3         |  06/05/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
 | Descartes R2 (SP0-2) |  26/09/2023  |                    |                    | :white_check_mark: |   02/05/2026   |

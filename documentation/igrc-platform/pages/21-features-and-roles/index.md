@@ -239,7 +239,7 @@ As of version 2017 R2 SP6, it is possible to use additional parameter in the rul
 - Create a view to get an attribute that will be used as parameter in the perimeter rules
   - This view should refer to the connected user, using the `uid = principalUid`
 
-> Do **not** make the view parameter *optional* (`uid [ = principalUid ]`), as this can cause perfomance issues: the view can be called without parameter and return **all** identities (can happen during report generation)  
+> Do **not** make the view parameter *optional* (`uid [ = principalUid ]`), as this can cause performance issues: the view can be called without parameter and return **all** identities (can happen during report generation)  
 
 ![Root view](../images/root_view_principaluid.png "Root view")  
 
@@ -247,10 +247,10 @@ As of version 2017 R2 SP6, it is possible to use additional parameter in the rul
 
 ![Others perimeters](../images/techconf_perimeterparam.png "Others perimeters")  
 
-- This view contains the attribute needed for the perimeter rules. This attribute should be renamed to have a unique nickname (ie : countrycode)  
+- This view contains the attribute needed for the perimeter rules. This attribute should be renamed to have a unique nickname (_i.e.:_ `countrycode`)  
 
 - Create the rule that will be used to build the perimeters
-  - this rule should use the view attribute as a parameter (ie : repository code is $countrycode)
+  - this rule should use the view attribute as a parameter (_i.e.:_ repository code is `countrycode`)
   - in the rule displayname, it is mandatory to display this parameter  
 
 ![Perimeter rule](../images/perimeter_rule.png "Perimeter rule")  

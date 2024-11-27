@@ -3,6 +3,8 @@ title: "Views and WebServices"
 description: "Configure and use WebServices to retrieve data from Identity Analytics"
 ---
 
+# Views and WebServices
+
 All of the data of the Identity Ledger is accessible from the Web interfaces, two interface families exist:
 
 - The Web portal in order to publish results and analyses to the security and clearance stakeholders
@@ -21,26 +23,22 @@ All of the data being available, it is even possible to develop one's own browsi
 
 This note presents the use of the WebServices in Identity Analytics.
 
-# Basic principles
+## Basic principles
 
 The WebServices follow the REST norm (cf [wikipedia](http://www.google.com/url?q=http%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&sa=D&sntz=1&usg=AFrqEzf1kipVVsK4vgtufB0O48EAo2k9qA)), the URL indicates both the operation and the basic element on which the operation is performed. The results are returned in the JSON format (cf [wikipedia](http://www.google.com/url?q=http%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FJson&sa=D&sntz=1&usg=AFrqEzdsUx9kd8ytDTLZXHJAYE2yYSoQ6A)) and are therefore directly interpretable from standard Javascript, or any programming language with a JSON parser.
 
----
-
 > [note!] You can configure the WebServices to return XML content instead of JSON content by using the `_format=xml` parameter. The XML format is Microsoft Office compliant.|
 
----
+The WebServices allow access to views, whose parameters are set in the project, so it is a simple matter to create your own WebServices, you have only to set parameters for a view in the project. You can refer to the corresponding section of the documentation for more information about [Views](index.md).
 
-The WebServices allow access to views, whose parameters are set in the project, so it is a simple matter to create your own WebServices, you have only to set parameters for a view in the project. You can refer to the corresponding section of the documentation for more information about [Views](./index.md).
-
-WebServices are accessible from the web portal and are activated by default when you deploy a portal. The URL to access the WebServices is protected so that you must identify yourself to the Web portal in order to access the Web Services. The base URL for the webservices resembles http(s)://server:port/projet/ws/ where:
+WebServices are accessible from the web portal and are activated by default when you deploy a portal. The URL to access the WebServices is protected so that you must identify yourself to the Web portal in order to access the Web Services. The base URL for the webservices resembles `http(s)://server:port/projet/ws/` where:
 
 - server:port represents the host on which the portal is deployed
 - project represents the name of the deployed project
 
-# Presentation of the available WebServices
+## Presentation of the available WebServices
 
-## Retrieve the list of results of a view
+### Retrieve the list of results of a view
 
 The corresponding Web service is **"result"**, the REST syntax is:  
 `/ws/results/[view identifier]`
@@ -159,12 +157,12 @@ The results are as follows:
 }
 ```
 
-## Choose which attributes must be displayed
+### Choose which attributes must be displayed
 
 The corresponding Web service is “views”, the REST syntax is:  
 `http://localhost:8080/demonstration/ws/results/[view]?_columns=uid,givenname,surname`
 
-## Retrieve the list of views available
+### Retrieve the list of views available
 
 The corresponding Web service is "**views**", the REST syntax is:  
 `/ws/views`
@@ -200,7 +198,7 @@ The results are as follows:
 ...
 ```
 
-## Retrieve the list of columns returned by a view
+### Retrieve the list of columns returned by a view
 
 The Web service to return specific columns of a view is **"columns"**, the REST syntax is:  
 `/ws/columns/[view identifier]`
@@ -273,7 +271,7 @@ The results are as follows:
 }
 ```
 
-## Retrieve the list of parameters accepted by a view
+### Retrieve the list of parameters accepted by a view
 
 The Web service that allows you to list the available parameters of a view is **"parameters"**. The REST syntax is:  
 `/ws/parameters/[view identifier]`
@@ -297,12 +295,12 @@ The results are as follows:
 }
 ```
 
-## Specify the displayed data format
+### Specify the displayed data format
 
 To choose in which format the data will be displayed (example here is xml):  
 `http://localhost:8080/demonstration/ws/results/[view]?_format=xml`
 
-## Retrieve the list of available timeslots
+### Retrieve the list of available timeslots
 
 The Web service that allows you to list the available timeslots is **"timeslots"**, the REST syntax is:  
 `/ws/timeslots`
@@ -337,7 +335,7 @@ The results are as follows:
 }
 ```
 
-### Managing errors
+#### Managing errors
 
 When an error appears, the engine sends back a response with the attribute `success = false` in the header of the results, for example:
 
@@ -350,9 +348,9 @@ When an error appears, the engine sends back a response with the attribute `succ
 
 The type of error is also displayed allowing you to debug you webservice.
 
-## Security Settings for Service Access
+### Security Settings for Service Access
 
-### Manage access authentication
+#### Manage access authentication
 
 The WebService service relies on the access security of the Tomcat container and thus on the access security as defined in the configuration file of the Web application under `/WEB-INF/web.xml`.  
 By default the section is as follows, note that the URL `ws/*` is protected the same way as the others:
@@ -393,16 +391,12 @@ By default the section is as follows, note that the URL `ws/*` is protected the 
 
 In order to activate the web service call, you have to ensure that the authentication is performed prior to the URL access. Most of the time, as webservices systems have a hard time handling FORM authentication, you should deploy a Single Sign On system (SSO). If you don't have one, you can request the Identity Analytics "SSO Valve" for Tomcat to your RadiantLogic contact.
 
----
-
-> [!note] Please note that this Valve is provided as an openSource component along with its source without any support.
-
----
+> [!warning] Please note that this Valve is provided as an openSource component along with its source without any support.|
 
 To activate Identity Analytics's Tomcat SSO Valve, you need to perform the following steps:
 
-> 1. Copy the **bw-tomcat-XXX-addons.XXX.jar** file into the `/lib` directory of your Tomcat folder
-> 2. Edit your `/conf/server.xml` file and add the following section between the \<Host\> tags :
+- Copy the **bw-tomcat-XXX-addons.XXX.jar** file into the `/lib` directory of your Tomcat folder
+- Edit your `/conf/server.xml` file and add the following section between the \<Host\> tags :
 
 ```xml
 <Valve className="com.brainwave.tomcat.valve.PassthroughAuthenticationValve"
@@ -414,7 +408,7 @@ To activate Identity Analytics's Tomcat SSO Valve, you need to perform the follo
 By doing so, the SSO valve will be actived by default whatever the web application. You can restrict its activation to a subset of URLs by using the urlPattern parameter (standard regex).  
 The SSO valve points to a XML configuration file which is located in /conf/sso.xml. It can be edited on the fly (the valve configuration is updated every "5" seconds if needed in the upper example)
 
-> 1. Create a `/conf/sso.xml` file
+- Create a `/conf/sso.xml` file
 
 The `/conf/sso.xml` file will contain a series of SSO tokens and their users configurations. Here is an example:
 
@@ -428,11 +422,7 @@ The `/conf/sso.xml` file will contain a series of SSO tokens and their users con
 
 This means that every time the "HsCnykb8RtMdGpKlu7W7SlJs" token will be presented along with a HTTP request, an authentication will be performed on the fly with the following login "ABOURGET18" and the following roles (you can add more than one \<role\> tag). This will be valid only if the request is made from the IPpattern source IP address (standard regex). You are strongly encouraged to enforce security by properly configuring the IPpattern parameter.
 
----
-
-> [!note] By default the login defined in the files `sso.xml` must correspond to a reconciled account as the default view used to log into the portal is `br_portalidentity`.
-
----
+> [!warning] By default the login defined in the files `sso.xml` must correspond to a reconciled account as the default view used to log into the portal is `br_portalidentity`.
 
 In order to use your token you can either add an "ssokey" custom HTTP request header with the token value or add an `_ssokey` URL parameter with the token value. Authentication will be done on the fly. Note that custom HTTP header is the preferred method as URL parameters are most of the time stored in HTTP access logs, this can lead to security issues.
 
@@ -441,7 +431,7 @@ Here is an example of an URL:
 
 Here is also an Example of a HTTP header which is the prefered method:
 
-```
+```txt
 GET /PortalReports/ws/views HTTP/1.1
 Host: localhost:9090
 ssokey: HsCnykb8RtMdGpKlu7W7SlJs

@@ -44,9 +44,9 @@ For example if migrating from a **Braille R1** to a **Curie R2** it is necessary
 
 The upgrade scripts are provided for all supported databases:
 
-- [**SQL server**](./01-sqlserver/index.md)
-- [**PostgreSQL**](./02-postgresql.md)
-- [**Oracle**](./03-oracle.md)
+- [**SQL server**](01-sqlserver/index)
+- [**PostgreSQL**](02-postgresql)
+- [**Oracle**](03-oracle)
 
 ## Warning
 
