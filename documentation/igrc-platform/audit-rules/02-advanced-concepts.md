@@ -15,7 +15,7 @@ It is also possible to display the partial results of the criteria of sub-concep
 
 ![Partial results of the audit rule](./images/rule-debug-results.png "Partial results of the audit rule")
 
-Finally, it is possible to display the query carried out in pseudo SQL by double clicking on the icon located on the main concept handled by the audit rule. However, the analysis of this content necessitates intimate knowledge of the technical data model and is in practice reserved solely for use by Brainwave technical support.  
+Finally, it is possible to display the query carried out in pseudo SQL by double clicking on the icon located on the main concept handled by the audit rule. However, the analysis of this content necessitates intimate knowledge of the technical data model and is in practice reserved solely for use by Radiant Logic technical support.  
 
 ![Pseudo SQL Query](./images/rule-debug-hql.png "Pseudo SQL Query")
 
@@ -195,7 +195,7 @@ Once your criterion has been created, it will appear in the form of a library fi
 
 ![Special criterion of a library](./images/rule-criteria-file.png "Special criterion of a library")  
 
-> [!warning] The libraries are loaded when Brainwave Analytics is loaded. Therefore, you will need to restart Analytics before testing your criterion.
+> [!warning] The libraries are loaded when Identity Analytics is loaded. Therefore, you will need to restart Analytics before testing your criterion.
 
 ![Special criterion for a rule](./images/rule-criteria-usage.png "Special criterion for a rule")  
 

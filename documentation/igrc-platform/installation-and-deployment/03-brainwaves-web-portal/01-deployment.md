@@ -127,7 +127,7 @@ As of version 2016 R3 it is possible to detach the webapps workspace, that conta
 
 ## Deployed File generation  
 
-The portal file to be deployed is generated in Brainwave's studio. To show data in the web portal it is necessary to have an activated timeslot in the identity ledger. Once data is activated in the ledger it is no longer possible to delete it.  
+The portal file to be deployed is generated in Identity Analytics's studio. To show data in the web portal it is necessary to have an activated timeslot in the identity ledger. Once data is activated in the ledger it is no longer possible to delete it.  
 To generate the web portal it is recommended to use the main menu tab of the audit project by clicking of **Generate web portal** :  
 
 ![Generate web portal](./images/webportal-generateTab.png "Generate web portal")  

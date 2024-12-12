@@ -9,7 +9,7 @@ Description: Documentation related to the Theoretical Rights and Segregation of 
 
 This document functionally describes the different types of controls provided with iGRC. The technical functionalities are described in the following article available [Control Methods present in Analytics](index.md)
 
-Brainwave Identity GRC incorporates the concept of control. Controls are of several types including:
+Identity Analytics incorporates the concept of control. Controls are of several types including:
 
 - Segregation of Duties (SoD controls). This is the principle of verification of the incompatibility between two tasks or activities.
 - Jurisdictional control based on permission in relation to an organizational unit, or depending on the characteristics of a person. This type of control can be defined as the verification of the implementation of a business rule or a security policy. In other words, a control = a rule +context + a semantic.

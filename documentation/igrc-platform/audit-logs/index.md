@@ -32,7 +32,7 @@ Getting answers to these questions will help you address the following concerns:
 - Pinpoint proven risks on your data
 - and Mitigate potential risks on fraud and data theft.
 
-Using the powerful and flexible extraction and collect capabilities of Brainwave platform, Audit logs can collect virtually any type of log events from any source, ranging from file access logs, directory administration logs, ERP usage and administration log, and so on. Heterogeneous log events are managed in a unified manner, and without losing any information from the original event.
+Using the powerful and flexible extraction and collect capabilities of RadiantOne, audit logs can collect virtually any type of log events from any source, ranging from file access logs, directory administration logs, ERP usage and administration log, and so on. Heterogeneous log events are managed in a unified manner, and without losing any information from the original event.
 
 ## How to Use Audit Logs
 
@@ -51,6 +51,6 @@ Identity Ledger's Usage metrics allow aggregating audit log events and correlati
 - Which transactions/permissions are never used?
 - Which accounts are never used?
 
-Usage metrics are leveraged in Brainwave's User Behavior Analytics in order to help you "find the needle in the haystack" and identify abnormal behaviors through peer groups analysis.  
+Usage metrics are leveraged in Identity Analytics' user behavior analytics in order to help you "find the needle in the haystack" and identify abnormal behaviors through peer groups analysis.  
 
-This chapter explains how to configure, collect and work with Audit Logs in Brainwave's solutions.
+This chapter explains how to configure, collect and work with Audit Logs in RadiantOne solutions.

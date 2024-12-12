@@ -5,7 +5,7 @@ description: "Best practice for installation and deployment"
 
 # Best practice for installation and deployment
 
-The following pages include Brainwave's **Best Practices** to follow when deploying and configuring a project.  
+The following pages include **Best Practices** to follow when deploying and configuring a project.  
 
 ## Technical configuration
 

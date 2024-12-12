@@ -18,7 +18,7 @@ Fulfill the general settings: the nick name of your Brainwave project, a logo, .
 
 Fulfill the SAML attributes:  
 
-The **SAML URI** is `/acs` within your Brainwave portal. For instance, if your deployment is `https://myhost/mybrainwaveapp`.  
+The **SAML URI** is `/acs` within your Identity Analytics portal. For instance, if your deployment is `https://myhost/mybrainwaveapp`.  
 The **SAML URL** to use will be `https://myhost/mybrainwaveapp/acs`.  
 
 The **Audience URI** is `brainwavesaml`, it can be updated if needed (see below).  
@@ -35,7 +35,7 @@ The name will contain the name of the `SAML` attribute which will contain the gr
 ![okta5](./images/okta5.png "okta5")
 
 Once the configuration is done, click on `Identity Provider metadata` to download the idp configuration. Rename the file to `idp-metadata.xml`.  
-You will use it to declare your **Okta** instance in **Brainwave**.  
+You will use it to declare your **Okta** instance in **Identity Analytics**.  
 
 ![okta6](./images/okta6.png "okta6")
 

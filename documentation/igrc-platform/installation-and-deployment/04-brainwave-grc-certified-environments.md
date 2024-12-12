@@ -1,9 +1,9 @@
 ---
-title: "Certified Operating Environment for Brainwave Identity GRC"
-description: "Certified Operating Environment for Brainwave Identity GRC"
+title: "Certified Operating Environment for Identity Analytics"
+description: "Certified Operating Environment for Identity Analytics"
 ---
 
-# Certified Operating Environment for Brainwave Identity GRC
+# Certified Operating Environment for Identity Analytics
 
 Following you will find the list of certified operating environments for Identity Analytics.  
 The following operating systems, databases and web browsers are valid for all versions of the Descartes major release.  

@@ -13,7 +13,7 @@ In order to efficiently investigate performance issues, some information on Iden
 - The list of views
 - And so on  
 
-This article includes a SQL script, and it's associated documentation. The results should be sent to Brainwave's support service to aide in the resolution of performance issues.  
+This article includes a SQL script, and it's associated documentation. The results should be sent to RadiantOne's support service to aide in the resolution of performance issues.  
 
 ## Prerequisites  
 
@@ -48,7 +48,7 @@ Open either script in SQL Management Studio and before running it. It is necessa
 | 18          | `set @dbname = '<database_name>';`     |
 | 19          | `set @dbschema = '<database_schema>';` |
 
-Save the results to an output file and send all to the Brainwave support team.
+Save the results to an output file and send all to the Radiant Logic support team.
 
 ## Downloads  
 

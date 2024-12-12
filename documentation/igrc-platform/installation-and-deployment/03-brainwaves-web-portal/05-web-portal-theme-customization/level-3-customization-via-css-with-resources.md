@@ -105,13 +105,13 @@ Button.nav-main-menu[PUSH][FLAT] {
 }
 ```
 
-### Use case: customizing the browser "fav-icon" for Brainwave web portal
+### Use case: customizing the browser "fav-icon" for Identity Analytics web portal
 
 The browser **fav-icon** is the icon that is displayed in the browser's tab or title bar for each web site.  
 
 ![fav-icon](./images/favicon-browser.png "fav-icon")  
 
-To customize the fav-icon for the Brainwave Web application, for example to match your company's logo, do the following:  
+To customize the fav-icon for the Identity Analytics Web application, for example to match your company's logo, do the following:  
 
 - download the `com.brainwave.theme.template.css_favicon.jar`  file attached below
 - give it a different name (eg. `mycompany.customtheme.jar`)

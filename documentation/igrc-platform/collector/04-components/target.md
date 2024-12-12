@@ -73,7 +73,7 @@ Here you can indicate which attribute contains account manager. If enabled, the 
 ### Account target Example
 
 Example of file, discovery and collect of account target are provided in attachment below.  
-ActiveDirectory add-on is a good example too for collecting accounts, groups and groups members, it is available in brainwave store.
+ActiveDirectory add-on is a good example too for collecting accounts, groups and groups members, it is available in Identity Analytics store.
 
 ## Activity permission pair target
 
@@ -93,7 +93,7 @@ and
   (permission MENU_INVOICE, action COMMIT)
 ```
 
-The Brainwave product allows you to define an activity using several permission pairs. In the above example, a permission pair is (`MENU_INVOICE`, CREATE). Another one is (INVOICE, COMMIT).  
+The Identity Analytics product allows you to define an activity using several permission pairs. In the above example, a permission pair is (`MENU_INVOICE`, CREATE). Another one is (INVOICE, COMMIT).  
 The target expects a permission pair and an operator. The operator is used to know if we have an AND or an OR operator. The previous example can be rewritten as follows:  
 
 | permission1    | permission2 | operator |
@@ -706,7 +706,7 @@ Here you can define a mapping of ACL recipient to a list of replacement recipien
 
 ### File share target Example
 
-FileShare add-on is a good example for collecting files and folders, it is available in brainwave store.  
+FileShare add-on is a good example for collecting files and folders, it is available in Identity Analytics store.  
 
 ## Group target
 
@@ -1051,7 +1051,7 @@ Example of file, discovery and collect of identity target are provided in attach
 
 With this target you will add management information to the Ledger
 
-The concepts (Identity, application, organization for example) on which you want to add on management information must exist in database. For more information, please refer to the article [Understanding the Brainwave Identity GRC data model](../../getting-started/index#brainwaves-data-model).  
+The concepts (Identity, application, organization for example) on which you want to add on management information must exist in database. For more information, please refer to the article [Understanding the Identity Ana;ytics data model](../../getting-started/index#brainwaves-data-model).  
 
 When editing a collect, select _Manager target_ in _Ledger targets_.  
 
@@ -1425,11 +1425,11 @@ If the permission codes are not found, the target exists without inserting any d
 
 Each software vendor has designed a different security model for their applications. And even if looking at a single vendor, all applications do not share the same security model. For example, Microsot Sharepoint security model is completely different than the Share folder security model which is based on ACL with positive and negative rights and inheritance. Microsoft Exchange uses another security model, etc.  
 
-The Brainwave model incorporates all application security models into a unique and generic model using the concepts of repository, accounts, groups, permissions, applications and rights. You can consider that these rights are part of the 'compiled' model. It means that these rights are the results of what people have. But in the real application, the rights may appear differently. To illustrate this difference, we can have a look at ACL for Fileshare.  
+The Identity Analytics model incorporates all application security models into a unique and generic model using the concepts of repository, accounts, groups, permissions, applications and rights. You can consider that these rights are part of the 'compiled' model. It means that these rights are the results of what people have. But in the real application, the rights may appear differently. To illustrate this difference, we can have a look at ACL for Fileshare.  
 
-The security model for a Fileshare is to set ACL on folders. An ACL is a list of allowed or denied rights. Each right is an allowed or denied action for a given account or group. ACL are collected in Brainwave model using the FIleshare taget and goes into ACL tables. This is the exact snapshot of the fileshare security model with positive and negative rights, propagation, inheritance flags, etc. During the activation step, the Brainwave product examine all the ACL and compile them to produce positive rights between groups or accounts and folders. This is useful to answer quickly to the following question; What are the folders readable by John Doe. When answering this question, the product reads the rights in the Leger, not the ACL. ACL are only used and displayed when the user wants to understand the root cause (why John Doe has an access to the "Billing" folder). In the compiled version, there are no more negative rights. The other difference is that the goal of the right is to have a link between an account and a permission regardless how this link was in the original security model. For example, in the Fileshare, John Doe may belong to several groups giving access to the "Billing" folder. But this information is the root cause (stored in ACL tables). The right table contains a single link which is enough to display in a page or a report that he has access to the folder.  
+The security model for a Fileshare is to set ACL on folders. An ACL is a list of allowed or denied rights. Each right is an allowed or denied action for a given account or group. ACL are collected in Identity Analytics model using the FIleshare taget and goes into ACL tables. This is the exact snapshot of the fileshare security model with positive and negative rights, propagation, inheritance flags, etc. During the activation step, the Identity Analytics product examine all the ACL and compile them to produce positive rights between groups or accounts and folders. This is useful to answer quickly to the following question; What are the folders readable by John Doe. When answering this question, the product reads the rights in the Leger, not the ACL. ACL are only used and displayed when the user wants to understand the root cause (why John Doe has an access to the "Billing" folder). In the compiled version, there are no more negative rights. The other difference is that the goal of the right is to have a link between an account and a permission regardless how this link was in the original security model. For example, in the Fileshare, John Doe may belong to several groups giving access to the "Billing" folder. But this information is the root cause (stored in ACL tables). The right table contains a single link which is enough to display in a page or a report that he has access to the folder.  
 
-In the world of data (for example FileShare) ACL are raw rights used for root cause to display the exact information found in the application and rights are the Brainwave compile rights used in views, rules and controls. Raw rights are like ACL in the world of role based application. When an application has a complex security model, this model is stored without any modification in the raw right table using this target. But using this target does not populate automatically the 'compiled' rights because the product does not know how to transform the raw right model into a compiled right model. So, in any case, the standard right target should be used to store the compiled and simplified version of the rights.  
+In the world of data (for example FileShare) ACL are raw rights used for root cause to display the exact information found in the application and rights are the Identity Analytics compile rights used in views, rules and controls. Raw rights are like ACL in the world of role based application. When an application has a complex security model, this model is stored without any modification in the raw right table using this target. But using this target does not populate automatically the 'compiled' rights because the product does not know how to transform the raw right model into a compiled right model. So, in any case, the standard right target should be used to store the compiled and simplified version of the rights.  
 
 ### Raw right target properties Tab
 
@@ -1680,7 +1680,7 @@ Available fields are :
 ## SOD matrix permission pair target
 
 The SOD target matrix is composed of cells where some of them are toxic if one single identity owns both permissions. This target is used to define a cell in the SOD matrix. Only cells corresponding to toxic permission pairs should be defined.  
-Each cell is considered a a SOD control in the Brainwave terminology. During the activation step, the discrepancies are computed by examining the identity rights. If an identity owns a toxic pair, a discrepancy is stored in the Ledger as a control result. It means that a toxic permission pair is defined not only by the permission pair but also by many attributes related to risk and remediation.  
+Each cell is considered a a SOD control in the Identity Analytics terminology. During the activation step, the discrepancies are computed by examining the identity rights. If an identity owns a toxic pair, a discrepancy is stored in the Ledger as a control result. It means that a toxic permission pair is defined not only by the permission pair but also by many attributes related to risk and remediation.  
 The permission pair can be composed of real application permissions (like roles or transactions in SAP) or business ativities. Activities are defined using the Activity permission pair target. It is recommended to use only one kind of permission in the whole matrix.
 
 ### SOD matrix permission pair target properties Tab
@@ -1847,7 +1847,7 @@ For each missing application or permission, an event will be written to an event
 
 ### Theoretical rights target tab Examples
 
-Download theoretical rights examples from Brainwave Marketplace at the following location:
+Download theoretical rights examples from RadiantOne Identity Analytics Marketplace at the following location:
 
 [Theoretical rights examples - collect](https://marketplace.brainwavegrc.com/package/bw_theoreticalrights/)  
 

@@ -21,7 +21,7 @@ Feeding the Identity Ledger requires a number of actions to be performed in orde
 12. Confirm the timeslots
 
 Thankfully, the product is capable of taking on all of these actions automatically, in such a way that it is possible to carry out a new data load with 1 click and even to automate the data load (for example a weekly load every Sunday at 2 am).  
-Automation of the loading actions corresponds to the "execution plan" concept in the Brainwave Identity GRC product.  
+Automation of the loading actions corresponds to the "execution plan" concept in the Identity Analytics product.  
 Execution plans are unique to each project and are set with the help of Analytics during the project configuration under the "Execution Plan" tab.  
 An execution plan can be started in three different ways:
 

@@ -5,7 +5,7 @@ description: "LDAP Access"
 
 # LDAP Access
 
-Brainwave's Web Portal relies on the security of the underlying web application server. Basically, Tomcat will be exposed to end users but it will rely on one or multiple LDAP repositories to authenticate and authorize users.
+Identity Analytics's Web Portal relies on the security of the underlying web application server. Basically, Tomcat will be exposed to end users but it will rely on one or multiple LDAP repositories to authenticate and authorize users.
 
 This post details how to rely on `LDAP Directory` for user authentication and authorization.  
 
@@ -32,7 +32,7 @@ The following procedure should work:
 
 ## Prerequisites
 
-To ensure this installation procedure, you should first download some required Brainwave `<LDAP_BW_LIB>` library available [here](https://download.brainwavegrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:
+To ensure this installation procedure, you should first download some required Identity Analytics `<LDAP_BW_LIB>` library available [here](https://download.brainwavegrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:
 
 - Tomcat 8: bw-tomcat-8.5-addons.jre8-X.jar
 - Tomcat 9: bw-tomcat-9.0-addons.jre8-X.jar
@@ -78,7 +78,7 @@ For each LDAP directory, the client is willing to rely on for the **AuthN** mech
 
 For each LDAP directory, if the client is willing to rely on for the **AuthZ** mechanism, you must ask for the following information (values indicated are examples):
 
-| LDAP name | Brainwave portal role | LDAP group      |
+| LDAP name | Identity Analytics portal role | LDAP group      |
 | :-------- | :-------------------- | :-------------- |
 | ACME      | user                  | brw-users       |
 | ACME      | auditor               | brw-auditors    |
@@ -89,8 +89,8 @@ For each LDAP directory, if the client is willing to rely on for the **AuthZ** m
 Where:
 
 - **LDAP name**: name of the LDAP directory, does not really matter as long as it allows to identify the LDAP directory (not used in technical files)
-- **Brainwave portal role**: role in the Brainwave application. The four roles listed in the above table are the IAP standard roles
-- **LDAP group**: name of the LDAP group giving the Brainwave role to users (in case of authorization process delegated to LDAP). This value MUST be the LDAP group's attribute returned by the LDAP query. This attribute is selected in the previous **AuthN** table, under **Role name** column (the **cn** in our example)
+- **Identity Analytics portal role**: role in the Identity Analytics application. The four roles listed in the above table are the IAP standard roles
+- **LDAP group**: name of the LDAP group giving the Identity Analytics role to users (in case of authorization process delegated to LDAP). This value MUST be the LDAP group's attribute returned by the LDAP query. This attribute is selected in the previous **AuthN** table, under **Role name** column (the **cn** in our example)
 
 ### Tomcat configuration
 
@@ -160,7 +160,7 @@ Once realms configuration are done, the next step is to create the role mapping 
 <LDAP_ROLEn>=<PORTAL_ROLEn>
 ```
 
-> Brainwave Identity GRC needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles](https://developer.radiantlogic.com/ia/iap-2.0/identity-analytics/integration-guide/03-webportal-roles/) article.  
+> Identity Analytics needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles](https://developer.radiantlogic.com/ia/iap-2.0/identity-analytics/integration-guide/03-webportal-roles/) article.  
 
 #### Multiple LDAP
 
@@ -255,7 +255,7 @@ Once realms configuration are done, the next step is to create the role mapping 
 
 > You can create as many mapping files as required by your realms.
 
-> Brainwave Identity GRC needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles]({{ site.baseurl }}{% link docs/ias/integration-guide/web-portal-roles.md %}) article.
+> Identity Analytics needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles]({{ site.baseurl }}{% link docs/ias/integration-guide/web-portal-roles.md %}) article.
 
 ## Debug
 

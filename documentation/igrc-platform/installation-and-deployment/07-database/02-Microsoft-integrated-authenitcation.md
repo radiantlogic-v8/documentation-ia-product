@@ -26,7 +26,7 @@ To use integrated authentication, download the latest version of the JDBC driver
 
 To use Microsoft's integrated authentication in the studio it is necessary to inhibit the connection through DTP and and the path to the location of the used DLL.
 
-This is done by adding the following parameters to the end of the `igrcanalytics.ini` file located in the home installation of Brainwave.
+This is done by adding the following parameters to the end of the `igrcanalytics.ini` file located in the home installation of Identity Analytics.
 
 ```ini
 -Ddisabledtpconnection=true

@@ -23,7 +23,7 @@ First check the current version installed.
 
 ![Facet version](./images/mig-facet-version.png "Facet version")
 
-Then download the latest version of the facet from Brainwave's Marketplace [here](https://marketplace.brainwavegrc.com/).
+Then download the latest version of the facet from Radiant [here](https://marketplace.brainwavegrc.com/).
 
 ![Facet download](./images/mig-download.png "Facet download")
 

@@ -128,7 +128,7 @@ catalina jpda start
 
 Public interface IPortalSkin  
 
-This interface provides a contract for Brainwave custom skin classes base implementation: com.brainwave.portal.ui.skin.PortalSkinBase  
+This interface provides a contract for Identity Analytics custom skin classes base implementation: com.brainwave.portal.ui.skin.PortalSkinBase  
 
 ### Method Summary
 

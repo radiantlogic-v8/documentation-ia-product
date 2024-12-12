@@ -46,7 +46,7 @@ This is a configuration example that can be used in most cases for Linux:
 
 The allocated disk volume will depend on the number of objects present in the database (identities, accounts, groups, permissions, applications, metadatas, ...), the type of control implemented, the data loading frequency, as well as the retention period of the different timeslots.
 
-Brainwave recommends the use of **10 Gb per Time Slot** for the first two or three loads. And to refine according to the project and the average disk space used by timeslot in a second time.
+Radiant Logic recommends the use of **10 Gb per Time Slot** for the first two or three loads. And to refine according to the project and the average disk space used by timeslot in a second time.
 
 With a retention period of 12 months and a loading frequency every two weeks, the required space would be around 240 Gb at the end of a year.
 
@@ -166,7 +166,7 @@ Use the UTF-8 character set encoding.
 
 ### User/schema/tablespace
 
-Before initializing the database from the iGRC studio, it's necessary to have created a user dedicated to the Brainwave solution.
+Before initializing the database from the iGRC studio, it's necessary to have created a user dedicated to the Identity Analytics solution.
 
 We also recommend the creation of a dedicated "tablespace" and "schema" for this user.
 
@@ -223,7 +223,7 @@ Transaction logs (directory named `pg_xlog` in Release 9.6 and `pg_wal` in Relea
 
 ### Backup and maintenance plan of indexes/statistics
 
-Brainwave recommends a regular FULL backup of the database after each loading (`pg_dump`).
+Radiant Logic recommends a regular FULL backup of the database after each loading (`pg_dump`).
 
 In addition, an index maintenance and disk space recovery plan (Vacuum Full) must be integrated into the overall database maintenance process.
 
@@ -232,7 +232,7 @@ Performance may be strongly impacted by index fragmentation.
 The procedure for rebuilding indexes that can be applied is detailed here:
 https://www.postgresql.org/docs/13/app-reindexdb.html
 
-Note that statistics are kept up to date during the Brainwave execution plan (at each loading).
+Note that statistics are kept up to date during the Identity Analytics execution plan (at each loading).
 
 It is also recommended, after loading, to recalculate the indexes in order to optimize the next execution plan.
 

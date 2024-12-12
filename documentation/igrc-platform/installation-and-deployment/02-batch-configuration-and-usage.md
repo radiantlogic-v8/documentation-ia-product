@@ -78,7 +78,7 @@ As an example: `igrc_batch.cmd demo "c:\igrcanalytics\igrc_config" default`
 > "       - datasource.properties: file containing database connection configuration"
 > "       - mail.properties: file containing mail server connection configuration"
 > "       - workflow.properties: file containing workflow database connection configuration"
-> "       - license.lic: file containing the Brainwave product license"
+> "       - license.lic: file containing the Identity Analytics product license"
 > "<config name> is the name of the configuration (defined in a project .configuration file)"
 > "[SIMULATE] simulation mode nothing will be written in Database"
 > "Command line example: igrc_batch demonstration /var/igrc/config default SIMULATE"
@@ -116,7 +116,7 @@ This command allows you to run the execution plan for auditlogs via command line
 "- project.properties: file containing project configuration variables"
 "- auditlog.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "Command line example: igrc_auditlog demonstration /var/igrc/config default SIMULATE"
 "Another example: igrc_auditlog demonstration /var/igrc/config default"
@@ -142,7 +142,7 @@ As of version 2016 R3 it is possible to run the different independent silos in p
 " - datasource.properties: file containing database connection configuration"
 " - mail.properties: file containing mail server connection configuration"
 " - workflow.properties: file containing workflow database connection configuration"
-" - license.lic: file containing the Brainwave product license"
+" - license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "[SIMULATE] simulation mode nothing will be written in Database"
 "[FORCE] Launch execution plan even if non validated timeslot has been found in database"
@@ -216,7 +216,7 @@ This command allows you to run the extraction of data using the extractors as de
 "- project.properties: file containing project configuration variables"
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
-"- license.zip: file containing the Brainwave product license"
+"- license.zip: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<silo name>  is the name of silo containing connectors to be executed. Empty to execute all silo's connectors"
 "Command line example: igrc_extract demonstration C:\config default"
@@ -233,7 +233,7 @@ This command allows you to automatically build facets via command line.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "Command line example: igrc_facetbuild demonstration /var/igrc/config default"
 ```
@@ -250,7 +250,7 @@ This command line allows you to send notify rules via command line. See [here](.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<email campaign name> is a name identifying a single campaign. Used for error recovery."
 "<save directory> is an absolute directory where the reports will be stored."
@@ -274,7 +274,7 @@ This command allows you to perform a data purge via command line. Please see [he
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<keep value> is a positive value expressed in <keep unit>"
 "<keep unit> is either 'days' or 'timeslots' or 'states'"
@@ -353,7 +353,7 @@ This command allows you to validate an activated timeslot via command line.
 "- project.properties: file containing project configuration variables"
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
-"- license.zip: file containing the Brainwave product license"
+"- license.zip: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<activated timeslot uid> is the timeslot uid to validate. Empty to validate the activated timeslot if only one is present"
 "<action> is either 'VALIDATE' or 'SIMULATE'"
@@ -371,7 +371,7 @@ This command allows you to execute a workflow via command line.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<process name> is a name of a workflow definition"
 "This command works on the last activated or validated timeslot."
@@ -389,7 +389,7 @@ This command allows you to check if a campaign should start or execute a specifi
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<campaign code> is a code of a valid campaign"
 "[FORCE] is used to launch the campaign regardless of the disabled flag and the next execution date"
@@ -525,7 +525,7 @@ Usage : igrc_migratereports <project name> <config directory path> <config name>
         - datasource.properties: file containing database connection configuration
         - mail.properties: file containing mail server connection configuration
         - workflow.properties: file containing workflow database connection configuration
-        - license.lic: file containing the Brainwave product license
+        - license.lic: file containing the RadiantOne product license
 <config name> is the name of the configuration (defined in a project .configuration file)
 WITHTEMPLATES to also migrate review template reports
 WITHBACKUP to save a backup (.old) file for migrated reports

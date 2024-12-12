@@ -36,7 +36,7 @@ In this section you can override variables values declared in the collector line
 ## Enumeration filter
 
 Filter enumeration component is used to iterate on multivalued attributes.  
-It is helpful when you have aggregate data in data source file and you need to enumerate before collecting this data in brainwave database.  
+It is helpful when you have aggregate data in data source file and you need to enumerate before collecting this data in Identity Analytics database.  
 
 ### Enumeration Filter Filter
 

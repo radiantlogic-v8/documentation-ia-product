@@ -1,9 +1,9 @@
 ---
-title: "Brainwave's web portal"
-description: "Brainwave's web portal"
+title: "Identity Analytics's web portal"
+description: "Identity Analytics's web portal"
 ---
 
-# Brainwave's web portal
+# Identity Analytics's web portal
 
 Identity Analytics integrates a 2.0 web portal that will allow you to publish the information contained in the identity ledger as well as the results of your personalized data analysis and controls. These results can then be shared with all security and compliance actors of your company.  
 
@@ -17,7 +17,7 @@ The rights model depend on the content of the web portal. As such, it is possibl
 
 > **Note**: This administration guide is destined for the administrator of the web portal and details how to publish, manage and parametrizes the portal. The user guide, however, is contained in the portal itself.  
 
-Screencasts of Identity Analytics are available online. Theses short videos illustrate how to setup and use the software, Identity Analytics. In addition to reading this documentation, we advise you to log onto the following Brainwave web site to watch the video presentations of the main functionalities of the software.  
+Screencasts of Identity Analytics are available online. Theses short videos illustrate how to setup and use the software, Identity Analytics. In addition to reading this documentation, we advise you to log onto the following Identity Analytics web site to watch the video presentations of the main functionalities of the software.  
 
 ## Technical architecture
 

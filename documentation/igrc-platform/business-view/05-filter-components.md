@@ -149,7 +149,7 @@ Results of Business View execution on current timeslot
 - The join filter (Left, Inner, Full, Difference or Exclusion) stores the data from secondary component in a memory cache, it is highly recommended to perform the necessary filtering in ledger view (_i.e._ performed by the database) before performing the join operation in the business view
 - The join filter (Right) stores the data from the primary component in a memory cache, it is highly recommended to perform necessary filtering in ledger view (_i.e._ performed by the database) before performing the join operation in the business view
 
-> [!warning] It is **not** recommended to use a generic Brainwave view, delivered with the default project when you require a limited number of attribute as input. These views return a large number of attributes that will be stored in a memory cache and greatly increase the memory usage, impacting performance.
+> [!warning] It is **not** recommended to use a generic Identity Analytics view, delivered with the default project when you require a limited number of attribute as input. These views return a large number of attributes that will be stored in a memory cache and greatly increase the memory usage, impacting performance.
 
 ## Trend
 
@@ -206,7 +206,7 @@ Result of BusinessView execution (trend operation):
 
 - The trend filter stores all the results of one of the two views a memory cache, it is highly recommended to perform necessary filtering in ledger view before performing the trend operation in the business view
 
-> [!warning] It is **not** recommended to use a generic Brainwave view, delivered with the default project when you require a limited number of attributes as input. These views return a large number of attributes that will be stored in a memory cache and greatly increase the memory usage, impacting performance.
+> [!warning] It is **not** recommended to use a generic Identity Analytics view, delivered with the default project when you require a limited number of attributes as input. These views return a large number of attributes that will be stored in a memory cache and greatly increase the memory usage, impacting performance.
 
 ## Script
 

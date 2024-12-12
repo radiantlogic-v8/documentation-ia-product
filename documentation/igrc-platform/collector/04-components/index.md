@@ -38,7 +38,7 @@ In order to define SoD Matrix, an additional target is available in collector pa
 
 ![Collector palette](../images/SoD_Palet1.png "Collector palette")  
 
-The SOD matrix target creates a new matrix in Brainwave data model:
+The SOD matrix target creates a new matrix in Identity Analytics data model:
 
 ![SOD matrix target](../images/SoD_Collect1.png "SOD matrix target")  
 

@@ -15,7 +15,7 @@ In order to efficiently investigate performance issues, some information on Iden
 - The sizing of objects (Table, Index)
 - And so on
 
-This article includes a SQL script, as  well as it's the associated documentation. The results should be sent to Brainwave's support service to aide in the resolution of performance issues.  
+This article includes a SQL script, as  well as it's the associated documentation. The results should be sent to Radiant Logic support service to aide in the resolution of performance issues.  
 
 ## Prerequisites  
 
@@ -38,7 +38,7 @@ The following commands allow you to run the script and output the results to the
 psql -h hostname -p 5432 -d database_name -U postgres -f <absolute path to file>/DBcheck_postgreSQL_Vxx.sql > /tmp/results_db_check.txt
 ```
 
-Please send the resulting output file to Identity Analytics's support team.
+Please send the resulting output file to Radiant Logic's support team.
 
 ## Long queries
 

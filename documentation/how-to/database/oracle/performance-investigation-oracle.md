@@ -12,7 +12,7 @@ In order to efficiently investigate performance issues, some information on Iden
 - The index fragmentation
 - And so on
 
-This article includes a SQL script, and it's associated documentation. The results should be sent to Brainwave's support service to aide in the resolution of performance issues.
+This article includes a SQL script, and it's associated documentation. The results should be sent to Radiant Logic support service to aide in the resolution of performance issues.
 
 ## Prerequisites
 
@@ -41,4 +41,4 @@ Sqlplus system/<password>@<TNS Connect String>
 Exit;
 ```
 
-- Send the resulting output file to Identity Analytics's support team.
+- Send the resulting output file to Radiant Logic's support team.

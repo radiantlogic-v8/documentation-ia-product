@@ -6,15 +6,15 @@ Description: Documentation related to timeslots
 # Time Management: The Lifecycle of Timeslots
 
 Correct time management is an essential feature of any management tool. Whether for reasons of traceability, retrospective audit, or operations management, time management is a core concept.  
-The Brainwave Identity GRC solution features fully integrated time management. Brainwave Identity GRC works like a camera, taking a complete and detailed snapshot of users and the information system at regular intervals. It is thus possible to:
+The Identity Analytics solution features fully integrated time management. Identity Analytics Identity GRC works like a camera, taking a complete and detailed snapshot of users and the information system at regular intervals. It is thus possible to:
 
 1. Navigate and analyze any snapshot whatsoever;
 2. Identify the changes that have taken place between snapshots.
 
-This is set out in the article relating to the Brainwave data model.  
+This is set out in the article relating to the Identity Analytics data model.  
 To create a more customizable solution, each upload is not directly related to a user-accessible "snapshot" but rather the snapshots follow a lifecycle during which users may add to them, refine them or delete them prior to their final publication on the portal.  
 This lifecycle is crucial to ensure that the data published in the Identity Ledger meets the standard for analysis and validation purposes.  
-The "snapshots" are known as "analysis periods" or "timeslots" in the Brainwave Identity GRC.
+The "snapshots" are known as "analysis periods" or "timeslots" in the Identity Analytics Identity GRC.
 
 ## Timeslot Lifecycle
 
@@ -68,7 +68,7 @@ One final stage is carried out upon validation:
 
 - The deletion attribute of the object (deletedaction) is updated for the previous timeslot. A validated timeslot is read only and as such validated data can no longer be changed in any way, nor is it possible to delete validated timeslots. This is due to high standards of traceability and integrity for the data, because:
 - Data is used to consolidate customer flags and also action plans, which should not be developed after the fact, as these customer flags and action plans are intended to be used by operational teams;
-- Third party auditors may require evidence that the data has not been deliberately misused within Brainwave Identity GRC.
+- Third party auditors may require evidence that the data has not been deliberately misused within Identity Analytics.
 
 Validated timeslots are visible to all portal users.
 

@@ -15,7 +15,7 @@ Following you will find the minimal rights to be associated to the database user
 > It is recommended to have two distinct schemas on the same database, for consistency during backups & restore operations  
 > But it is also possible to use two distinct databases
 
-You will also find included SQL scripts that are used by Brainwave's Support Services and can be used as **examples** to create the databases on the different platforms.  
+You will also find included SQL scripts that are used by Radiant Logic Support Services and can be used as **examples** to create the databases on the different platforms.  
 
 ### Microsoft SQL Server
 

@@ -15,9 +15,9 @@ This documentation is intended for the following personas:
 - _Technical consultants_ that have access to the iGRC platform to perform technical tasks such as installing components, creating or modifying views and rules, managing roles...
 - _Platform Administrators_: administrators of the iGRC platform or users with the **igrc_administrator** role.
 
-### Brainwave Context
+### Identity Analytics Context
 
-As of Identity Analytics 2017 a new functionality has been implemented that allows functional users to design their own dashboards directly from the web portal and share them with selected users.
+As of 2017, a new functionality has been implemented that allows functional users to design their own dashboards directly from the web portal and share them with selected users.
 
 Dashboards include tables, charts (bar, horizontal bar, pies and doughnuts) and gauges. They will display in various formats any data coming from Audit Views (including  Business Views, and Audit Logs Views). Furthermore the displayed data can be optionally filtered to target a given population (_e.g._ people in Finance department, accounts with system privileges, etc.) , leveraging all the richness of iGRC Identity Ledger.
 
@@ -38,7 +38,7 @@ These steps will be detailed in the next pages.
 
 To enable the use and creation of dashboards in the webportal it is required to install some components in the studio and to perform a series of configuration operations before deploying the webportal.
 
-1. Install Identity Analytics Platform 2017 R2 (see installation instructions)
+1. Install the radiantlogic Identity Analytics core product version - Descartes (see installation instructions).
 2. Launch IGRC Studio and open or create an Audit project
 3. Install the required "Mashup Dashboards Support" facet:
     1. Click on the link [Mashup dashboards support](http://marketplace.brainwavegrc.com/package/bw_dashboard/) to Download the Add-on from the **Brainwave MarketPlace**  

@@ -90,8 +90,8 @@ The default name is `sp-metadata.xml`:
 
 ## defaultURI
 
-The default `URI attribute` is not mandatory but is strongly encouraged. It must contains a relative `URI` to the main portal page. In the **Brainwave** context it is a `/portal` URI.  
-When the authentication is **Idp** initiated (the user directly connects to **Okta** and clicks on the **Brainwave** icon in the **Okta** portal), the user will be redirected to this `URL` once authenticated.  
+The default `URI attribute` is not mandatory but is strongly encouraged. It must contains a relative `URI` to the main portal page. In the **Identity Analytics** context it is a `/portal` URI.  
+When the authentication is **Idp** initiated (the user directly connects to **Okta** and clicks on the **Identity Analytics** icon in the **Okta** portal), the user will be redirected to this `URL` once authenticated.  
 
 A value could be: `/[your application]/portal`.  
 
@@ -99,7 +99,7 @@ A value could be: `/[your application]/portal`.
 
 ## forceURI
 
-The `force URI` attribute is not mandatory. It contains a `relative URI` to the main portal page. In the **Brainwave** context it is a `/portal` URI.  
+The `force URI` attribute is not mandatory. It contains a `relative URI` to the main portal page. In the **Identity Analytics** context it is a `/portal` URI.  
 When the authentication is **SP** initiated the user is redirected to this `URL` once authenticated.  
 
 A value could be: `/[your application]/portal`.  
@@ -143,7 +143,7 @@ The attribute is **empty** by default.
 ## roleMapping
 
 The role mapping attribute is **mandatory** if `roleAttribute` is set, it must point to a **property** file. The property file is used to dynamically **map the role** names provided by the **identity provider** to local roles names.  
-This could be useful to map **identity provider** roles to your **Brainwave** application roles (such as `igrc-administrator` for instance).  
+This could be useful to map **identity provider** roles to your **Identity Analytics** application roles (such as `igrc-administrator` for instance).  
 
 The file has to be located in the Tomcat `/conf/` subdirectory. A sample is attached.  
 
@@ -161,21 +161,21 @@ This file is reloaded automatically every 10 minutes.
 ## genericUsers
 
 The generic users attribute is optional, if used it can **substitute** an individual with a **generic account**.  
-It can be useful if you do not load the **identity provider** content in **Brainwave** and thus don't know the users who connect the portal.  
+It can be useful if you do not load the **identity provider** content in **Identity Analytics** and thus don't know the users who connect the portal.  
 
 Here is how you can leverage this parameter:  
 
-- Load some fake identities in your **Brainwave** ledger (for instance `standard user` and `power user`)  
+- Load some fake identities in your **Identity Analytics** ledger (for instance `standard user` and `power user`)  
 - Create `standard user` and `power user` as roles in your **Idp** and attach them to your **Idp** users (only one of those roles at a time)  
 - Configure the genericUsers attribute with the following value: `standard user,power user`  
 
-We assume here that `John Doe` can connect to **Brainwave** and is associated with the `standard user` role:  
+We assume here that `John Doe` can connect to **Identity Analytics** and is associated with the `standard user` role:  
 
-- `John Doe` tries to access the **Brainwave** instance  
+- `John Doe` tries to access the **Identity Analytics** instance  
 - He is redirected to the **Idp**, he authenticates  
-- He is redirected to the **Brainwave** instance  
+- He is redirected to the **Identity Analytics** instance  
 - The `SAML` response is decoded, `John Doe` is assigned the `standard user` role  
-- `standard user` is part of the `genericUsers` attribute, `John Doe` will be connected to the **Brainwave** instance as the `standard user` identity  
+- `standard user` is part of the `genericUsers` attribute, `John Doe` will be connected to the **Identity Analytics** instance as the `standard user` identity  
 
 ## genericUserPattern
 

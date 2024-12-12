@@ -284,7 +284,7 @@ To use an attribute of the current user as a source type, do the following:
 ![User Attributes Source ](./images/params2_03.png "User Attributes Source ")
 
 - The proposed attributes are the columns of the **user.principal.view**  View which is configured in the project's **Configuration** > **Web Portal** > **Other Properties** section.  
-The main purpose of this view is to validate the login used to connect to brainwave portal. It's also used to provide additional user-related attributes.  
+The main purpose of this view is to validate the login used to connect to Identity Analytics portal. It's also used to provide additional user-related attributes.  
 You can design a view of your own to validate the login and provide custom values to use in secondary parameters (restart the server to make them effective).
 
 ![Other Properties](./images/params2_04.png "Other Properties ")
