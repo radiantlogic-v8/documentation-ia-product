@@ -19,7 +19,7 @@ The global usage of the product and data-loading performances were optimal when 
 
 The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
-It is recommended that the Oracle environment be entirely dedicated to The solution Brainwave iGRC.  
+It is recommended that the Oracle environment be entirely dedicated to the Identity Analytics solution.  
 
 The supported OS are:  
 

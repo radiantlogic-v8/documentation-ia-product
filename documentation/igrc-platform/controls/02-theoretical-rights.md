@@ -47,7 +47,7 @@ Example, being Accountant (Task 1) is incompatible with the payer function (Task
 
 ![Activity](./images/activity.PNG "Activity")
 
-Brainwave iGRC analytics includes a "SoD target" for creating SoD controls. The controls are automatically generated in the subdirectory "controls / generated" of the associated project during the data loading process.
+Identity Analytics analytics includes a "SoD target" for creating SoD controls. The controls are automatically generated in the subdirectory "controls / generated" of the associated project during the data loading process.
 
 ## Theoretical Rights Controls
 

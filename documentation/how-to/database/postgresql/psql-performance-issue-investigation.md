@@ -8,7 +8,7 @@ toc: true
 
 # Performance investigation in postgresql  
 
-In order to efficiently investigate performance issues, some information on Brainwave iGRC's infrastructure and configuration is required, such as :  
+In order to efficiently investigate performance issues, some information on Identity Analytics's infrastructure and configuration is required, such as :  
 
 - The list of parameters
 - The sizing of the database
@@ -38,7 +38,7 @@ The following commands allow you to run the script and output the results to the
 psql -h hostname -p 5432 -d database_name -U postgres -f <absolute path to file>/DBcheck_postgreSQL_Vxx.sql > /tmp/results_db_check.txt
 ```
 
-Please send the resulting output file to Brainwave iGRC's support team.
+Please send the resulting output file to Identity Analytics's support team.
 
 ## Long queries
 

@@ -41,4 +41,4 @@ Sqlplus system/<password>@<TNS Connect String>
 Exit;
 ```
 
-- Send the resulting output file to Brainwave iGRC's support team.
+- Send the resulting output file to Identity Analytics's support team.

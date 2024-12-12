@@ -5,7 +5,7 @@ description: "How-To help the support team to investigate performance issues whe
 
 # Performance investigation in SQL server
 
-In order to efficiently investigate performance issues, some information on Brainwave iGRC's infrastructure and configuration is required (dbcheck), such as :  
+In order to efficiently investigate performance issues, some information on Identity Analytics's infrastructure and configuration is required (dbcheck), such as :  
 
 - The list of parameters
 - The sizing of the database
