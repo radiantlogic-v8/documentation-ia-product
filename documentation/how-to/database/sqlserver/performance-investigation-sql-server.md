@@ -32,7 +32,7 @@ The more information provided and the easier the diagnostic will be.
 
 ### SQL Database
 
-This page includes attached, two scripts, that are provided by Brainwave GRC :
+This page includes attached, two scripts, that are provided by Identity Analytics :
 
 - `CheckDB_SQLServer_Vxx.sql` - Provides All information on the database : parameters, sizing, statistics, indexes fragmentation and iGRC schema
 - `SQLserver_iGRC_Schema.sql` - Provides only information on the iGRC schema as number of records per tables, per Time Slots and so on  

@@ -7,7 +7,7 @@ Description: Documentation related to audit logs configuration and usage
 
 ## Definition and Purpose of Audit Logs
 
-Brainwave GRC helps you gain a holistic view of the assets of your company and the people who are interacting with them.  
+Identity Analytics helps you gain a holistic view of the assets of your company and the people who are interacting with them.  
 This includes:  
 
 - People and organizations
@@ -18,7 +18,7 @@ This includes:
 - Usages
 - and now **Audit logs.**
 
-By automatically collecting and consolidating all application-based audit logs, Brainwave GRC helps you answer questions related to **Who has done what and when** , such as the following:  
+By automatically collecting and consolidating all application-based audit logs, Identity Analytics helps you answer questions related to **Who has done what and when** , such as the following:  
 
 - Who has read/deleted this sensible file during the last month?
 - What were the files accessed by John Doe 3 months ago?

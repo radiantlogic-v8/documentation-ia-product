@@ -7,7 +7,7 @@ description: "Batch configuration and usage"
 
 ## Batch script list  
 
-Upon installation of Brainwave GRC a number of batch script files (`.cmd` files for a windows environment and `.sh` files for a linux environment) are included in the the iGRC analytics home folder:  
+Upon installation of Identity Analytics a number of batch script files (`.cmd` files for a windows environment and `.sh` files for a linux environment) are included in the the iGRC analytics home folder:  
 
 - `igrc_batch.cmd[cmd|sh]`: to execute the entire execution plan  
 - `igrc_auditlog.cmd[cmd|sh]`: to execute the data loading of auditlogs  
@@ -24,7 +24,7 @@ Upon installation of Brainwave GRC a number of batch script files (`.cmd` files 
 
 ## Automatic data loading
 
-For more information on how to configure Brainwave GRC to perform automatic data loading please use the following steps. These steps are given for a Windows environment, please adapt accordingly if you wish to use a Linux environment.
+For more information on how to configure Identity Analytics to perform automatic data loading please use the following steps. These steps are given for a Windows environment, please adapt accordingly if you wish to use a Linux environment.
 
 ## Installation and planning
 
@@ -410,7 +410,7 @@ This command allows you to export web portal via command line.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave GRC product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<output directory> is directory path where the output files are exported"
 "<isFolder> can be 'true' or 'false', if true portal will be exported as files and folders otherwise a war file, false by default"
@@ -433,7 +433,7 @@ This command allows you to export project via command line.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave GRC product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<path> is a path that will contain the exported project, according to <isFolder> argument it can be a folder(export as folders and files) or a file(export as an            archive)"
 "<isFolder> can be 'true' or 'false', false by default"
@@ -455,7 +455,7 @@ This command allows you to export a project archive via command line.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave GRC product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<file_path> is the path where the archive file will be saved, must end with '.par' extension"
 "<archive_name> is the name(title) of the the archive"
@@ -480,7 +480,7 @@ This command allows you to export view results to csv file.
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave GRC product license"
+"- license.lic: file containing the Identity Analytics product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<view name> the identifier of the view"
 "<output path> path of the output csv file"

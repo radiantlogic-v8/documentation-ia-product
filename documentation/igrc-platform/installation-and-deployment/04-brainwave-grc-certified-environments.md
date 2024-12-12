@@ -5,7 +5,7 @@ description: "Certified Operating Environment for Brainwave Identity GRC"
 
 # Certified Operating Environment for Brainwave Identity GRC
 
-Following you will find the list of certified operating environments for Brainwave GRC.  
+Following you will find the list of certified operating environments for Identity Analytics.  
 The following operating systems, databases and web browsers are valid for all versions of the Descartes major release.  
 
 ## Operating Systems  
@@ -49,7 +49,7 @@ Please see the following table for more information on the support version of JA
 
 Database servers are Third Party Software not provided with Brainwave Identity GRC.  
 
-The following database servers are supported by Brainwave GRC:  
+The following database servers are supported by Identity Analytics:  
 
 - Microsofts SQL server
 - PostgreSQL
@@ -92,7 +92,7 @@ Please navigate each RMDS support lifecycle for more information:
 ## Database drivers  
 
 The used database drivers must be compatible with the corresponding version of JAVA used:  
-The following database drivers have been certified with Brainwave GRC:  
+The following database drivers have been certified with Identity Analytics:  
 
 - `mssql-jdbc-11.2.1.jre17.jar` and `mssql-jdbc-12.2.0.jre11.jar`
 - `ojdbc11.jar`
@@ -100,7 +100,7 @@ The following database drivers have been certified with Brainwave GRC:
 
 > If using an oracle JDBC driver please download the correct driver in accordance to the version of the database engine used. Please see [here](https://www.oracle.com/fr/database/technologies/appdev/jdbc-downloads.html) for more information.  
 
-> [!warning] Oracle's OCI driver is not supported by Brainwave GRC.  
+> [!warning] Oracle's OCI driver is not supported by Identity Analytics.  
 
 Oracle and Microsoft SQL JDBC drivers are Third Party Software not provided with Brainwave Identity GRC.
 Please refer to the following pages for information on how to download and install the drivers :
@@ -111,11 +111,11 @@ Please refer to the following pages for information on how to download and insta
 ## Java Application Server
 
 The Java Application Server is Third Party Software not provided with Brainwave Identity GRC.  
-Apache Tomcat 9.0 (all Operating Systems) is the only application server supported by Brainwave GRC.  
+Apache Tomcat 9.0 (all Operating Systems) is the only application server supported by Identity Analytics.  
 
 ## Web browsers
 
-Web Browsers are the only web browsers supported by Brainwave GRC are the "long term support" or the "For work" versions. As such, following you will find the list of the supported web browsers.  
+Web Browsers are the only web browsers supported by Identity Analytics are the "long term support" or the "For work" versions. As such, following you will find the list of the supported web browsers.  
 
 ### Firefox
 

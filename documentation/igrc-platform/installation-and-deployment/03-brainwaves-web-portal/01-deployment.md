@@ -7,7 +7,7 @@ description: "Deployment"
 
 ## File Configuration
 
-From the 2015 version of the Brainwave GRC software and onward the project configuration is set via the technical configuration file. Before generating the WAR file, or the archive to be deployed in your tomcat instance you can modify the configuration settings of your portal.  
+From the 2015 version of the Identity Analytics software and onward the project configuration is set via the technical configuration file. Before generating the WAR file, or the archive to be deployed in your tomcat instance you can modify the configuration settings of your portal.  
 
 ![File Configuration](./images/webportal-techConfig.png "File Configuration")  
 

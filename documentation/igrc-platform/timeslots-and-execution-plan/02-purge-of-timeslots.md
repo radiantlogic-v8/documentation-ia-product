@@ -153,7 +153,7 @@ This mode will be based on timeslot retention criteria defined in project config
 ## Legacy methodology
 
 An option has been implemented to allow the user to purge data from the database in order to reduce the size of the stored data.  
-For this you should use the CMD script located in the home installation folder of Brainwave GRC.
+For this you should use the CMD script located in the home installation folder of Identity Analytics.
 Using this script you have to possibility to chose:  
 
 - A given number of timeslots: keep `1<x<N` timeslots in the database, `N` being the initial number of timeslots present in the database.

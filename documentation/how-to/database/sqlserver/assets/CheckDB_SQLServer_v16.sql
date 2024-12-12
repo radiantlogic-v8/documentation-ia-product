@@ -1,7 +1,7 @@
 ----------------------------------------------------------
 -- CheckDB_SQLServer V18
 -- 
--- Copyright Brainwave GRC
+-- Copyright Identity Analytics
 -- Modified : may 2023
 -- add number of index per table
 -- Prerequisites : admin account

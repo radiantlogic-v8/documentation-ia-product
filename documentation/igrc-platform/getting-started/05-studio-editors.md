@@ -803,7 +803,7 @@ Dedicated reports may be created either by performing an operation to copy/paste
 
 #### Introduction  
 
-The aim of the configuration file is to help separate between what belongs to the project configuration and what is specific to a local instance of Brainwave GRC (_e.g._ database configuration, absolute paths etc).
+The aim of the configuration file is to help separate between what belongs to the project configuration and what is specific to a local instance of Identity Analytics (_e.g._ database configuration, absolute paths etc).
 
 This also has the further advantage of preventing data loss when your local configuration or project file gets overwritten. This can occur if you share your project using a version management tool for instance.  
 

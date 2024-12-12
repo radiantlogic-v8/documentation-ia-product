@@ -59,7 +59,7 @@ Brainwave provides some samples regarding some IdP:
 - [G-Suite](./gsuite.md)
 - [ADFS](./adfs.md)
 
-> [!warning] The information listed above is provided as an example only. This methodology is not supported by Brainwave GRC, but has been tested.
+> [!warning] The information listed above is provided as an example only. This methodology is not supported by Identity Analytics, but has been tested.
 
 At the end, no matter the IdP solution, a XML metadata file that represents this SP configuration should be generated and provided by the IdP to be deployed in SP side (see later in this article).
 

@@ -5,7 +5,7 @@ description: "How-To help the support team to investigate performance issues whe
 
 # Performance investigation in oracle
 
-In order to efficiently investigate performance issues, some information on Brainwave GRC's infrastructure and configuration is required, such as :  
+In order to efficiently investigate performance issues, some information on Identity Analytics's infrastructure and configuration is required, such as :  
 
 - The list of parameters
 - The sizing of the database (Oracle SGA and tablespaces)
@@ -22,7 +22,7 @@ An Oracle system account to retrieve all information as all parameters of databa
 
 ## Procedure
 
-The attached file include all the necessary scripts provided by Brainwave GRC :
+The attached file include all the necessary scripts provided by Identity Analytics :
 
 - [DBCheck_Oracle_V5.zip](./assets/DBcheck_Oracle_v5.zip)
 

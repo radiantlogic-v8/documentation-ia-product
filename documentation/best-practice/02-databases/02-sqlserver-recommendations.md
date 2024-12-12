@@ -15,11 +15,11 @@ However, it will be up to the SQL Server DBA to adapt parameters according to th
 
 ### Software environment
 
-The following database repository and Operating systems are supported by Brainwave GRC.
+The following database repository and Operating systems are supported by Identity Analytics.
 
 Only 64 bits versions are supported, Web and Express Editions are not supported.
 
-The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
+The certified environment matrix is available on the Identity Analytics documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
 ### Hardware requirements
 
@@ -82,7 +82,7 @@ The following good practices to apply to the TEMPDB should be kept in mind:
 
 In practice, multiply the highest used space of TEMPDB PRIMARY filegroup (all files included) by 5, then divide that number by the total number of cores on the server to obtain the size of each file.
 
-To get the highest value of TEMPDB, you need to monitor the system during at least 2 or 3 execution plan (Brainwave GRC) because this value can change.
+To get the highest value of TEMPDB, you need to monitor the system during at least 2 or 3 execution plan (Identity Analytics) because this value can change.
 
 For example, if the highest value of used TEMPDB space in a day is 2Gb on a 4 core server then you need about 10Gb of total space . If you have 4 cores then create 4 files of 2.5Gb each and 1 file of 10 Mb.
 

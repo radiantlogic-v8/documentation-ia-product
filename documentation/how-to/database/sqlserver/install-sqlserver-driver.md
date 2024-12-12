@@ -51,7 +51,7 @@ If you are using version 2017 R2 or later please refer to the following article 
 Navigate to the following folder in your installation of the product :  
 
 ```
-<Brainwave GRC home installation folder>\plugins\com.brainwave.iaudit.database.drivers_1.0.0\drivers
+<Identity Analytics home installation folder>\plugins\com.brainwave.iaudit.database.drivers_1.0.0\drivers
 ```
 
 Copy the valid version of the downloaded jar file to the folder and rename the file exactly to the name provided in the **README.txt** file. The valid versions of the drivers depend on the version of JAVA used to run the product.

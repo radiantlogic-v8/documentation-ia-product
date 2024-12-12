@@ -2,7 +2,7 @@ rem --------------------------------------------------------------------------
 rem Filename:   orcl_clean_IAS_temporary_metadata.sql
 rem             using PL/SQL
 rem Purpose :   Clean temporary metadata after migration to CurieR2
-rem COMPANY : BRAINWAVE GRC
+rem COMPANY : Identity Analytics
 rem Date : February 2022
 rem To execute in SQLPLUS session or in SQLDeveloper tool
 rem sqlplus user/password@<TNS CONNECT STRING>

@@ -17,7 +17,7 @@ The global usage of the product and data-loading performances were optimal when 
 
 ### Software
 
-The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
+The certified environment matrix is available on the Identity Analytics documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
 It is recommended that the Oracle environment be entirely dedicated to the Identity Analytics solution.  
 

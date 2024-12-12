@@ -5,7 +5,7 @@ description: "ADFS application declaration"
 
 # ADFS application declaration
 
-> [!warning] The information listed here is provided as an example only. This methodology is not supported by Brainwave GRC, but has been tested.
+> [!warning] The information listed here is provided as an example only. This methodology is not supported by Identity Analytics, but has been tested.
 
 ![ADFS 1](./images/adfs1.png "adfs1")
 

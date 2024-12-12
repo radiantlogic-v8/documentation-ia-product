@@ -5,7 +5,7 @@ description: "InWebo application declaration"
 
 # InWebo application declaration
 
-> [!warning] The information listed here is provided as an example only. This methodology is not supported by Brainwave GRC, but has been tested.
+> [!warning] The information listed here is provided as an example only. This methodology is not supported by Identity Analytics, but has been tested.
 
 Connect to the **inwebo** administration console https://www.myinwebo.com/console/admin and create a new `SAML 2.0` connector.  
 
