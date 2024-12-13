@@ -7,7 +7,7 @@ description: "Metadata life cycle description"
 
 ## Metadata sources
 
-For those familiar with Brainwave, a metadata will follow more or less the the same life cycle as managers.  
+For those familiar with Identity Analytics, a metadata will follow more or less the the same life cycle as managers.  
 
 As such, there are 3 ways to add, update or delete a metadata:
 

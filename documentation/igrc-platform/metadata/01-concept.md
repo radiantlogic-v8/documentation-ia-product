@@ -14,8 +14,8 @@ The schema definition being a list of attributes and a list of entities which th
 Metadata can be used to store in the Ledger information related to:
 
 - a specific existing entity.
-- a relation between 2 or more entities. The relation can be either an existing link in the Brainwave data model or a new one.
-- a new concept not existing in the Brainwave data model.
+- a relation between 2 or more entities. The relation can be either an existing link in the Identity Analytics data model or a new one.
+- a new concept not existing in the Identity Analytics data model.
 
 A metadata is composed of a name (also called a key) and a subkey:
 
@@ -71,7 +71,7 @@ A certification contains the following information:
 - The date when the user passed his certification.
 - The expiration date if any
 
-To be able to save certification information in the Brainwave data model, a metadata is created with the name `acme_certification`.
+To be able to save certification information in the Identity Analytics data model, a metadata is created with the name `acme_certification`.
 This metadata defines these field names along with a display name:
 
 |    Name     |  Type  |         Display name          |

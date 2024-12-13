@@ -30,7 +30,7 @@ Using the Metadata concept is the correct way to attach numbers to entities. It 
 
 ## Adding new links between concepts
 
-It can be useful to store the information that an organization is in charge of an application. This information corresponds to a new link in Brainwave's data model. This link could then be used in the project, in detail pages or in reviews.  
+It can be useful to store the information that an organization is in charge of an application. This information corresponds to a new link in Identity Analytics's data model. This link could then be used in the project, in detail pages or in reviews.  
 
 ![Metadata use case 3](./images/metadata_use_case_3.png "Metadata use case 3")
 

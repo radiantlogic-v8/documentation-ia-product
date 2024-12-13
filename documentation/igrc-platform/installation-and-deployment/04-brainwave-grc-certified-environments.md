@@ -10,8 +10,8 @@ The following operating systems, databases and web browsers are valid for all ve
 
 ## Operating Systems  
 
-Operating Systems are Third Party Software not provided with Brainwave Identity GRC.
-Brainwave Identity GRC is composed of three main modules:
+Operating Systems are Third Party Software not provided with Identity Analytics.
+Identity Analytics is composed of three main modules:
 
 - The studio (or back office)
 - The batch  
@@ -33,7 +33,7 @@ Please see footnotes (links available in the above mentioned table) for more inf
 
 ## Java development kits  
 
-Java development kits (JDK) are Third Party Software not provided with Brainwave Identity GRC.  
+Java development kits (JDK) are Third Party Software not provided with Identity Analytics.  
 Please see the following table for more information on the support version of JAVA :  
 
 |                         | **Windows[^2]** |  **Linux  RHEL 9**  |  **Linux  Debian**  |
@@ -47,7 +47,7 @@ Please see the following table for more information on the support version of JA
 
 ## Database Servers
 
-Database servers are Third Party Software not provided with Brainwave Identity GRC.  
+Database servers are Third Party Software not provided with Identity Analytics.  
 
 The following database servers are supported by Identity Analytics:  
 
@@ -102,7 +102,7 @@ The following database drivers have been certified with Identity Analytics:
 
 > [!warning] Oracle's OCI driver is not supported by Identity Analytics.  
 
-Oracle and Microsoft SQL JDBC drivers are Third Party Software not provided with Brainwave Identity GRC.
+Oracle and Microsoft SQL JDBC drivers are Third Party Software not provided with Identity Analytics.
 Please refer to the following pages for information on how to download and install the drivers :
 
 - [How-To install and use Microsoft SQL server official driver](../../how-to/database/sqlserver/install-sqlserver-driver.md)
@@ -110,7 +110,7 @@ Please refer to the following pages for information on how to download and insta
 
 ## Java Application Server
 
-The Java Application Server is Third Party Software not provided with Brainwave Identity GRC.  
+The Java Application Server is Third Party Software not provided with Identity Analytics.  
 Apache Tomcat 9.0 (all Operating Systems) is the only application server supported by Identity Analytics.  
 
 ## Web browsers

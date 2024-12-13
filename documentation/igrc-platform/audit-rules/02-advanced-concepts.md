@@ -215,7 +215,7 @@ Next, the sub-directories correspond to the main concepts that are handled by th
 - **repository** : Reports on the repository rules
 - **usage** : Reports on the usage rules
 
-To create a new report, the easiest approach is to start from an existing report by carrying out a copy/paste of a report file. Please refer to the Guide to the report editor for more information about creating reports in Brainwave Identity GRC.
+To create a new report, the easiest approach is to start from an existing report by carrying out a copy/paste of a report file. Please refer to the Guide to the report editor for more information about creating reports in Identity Analytics.
 
 ![Rule file tree](./images/rule-file-explorer-list.png "Rule file tree")
 
