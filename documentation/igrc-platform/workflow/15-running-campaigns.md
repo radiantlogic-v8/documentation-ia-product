@@ -14,7 +14,7 @@ A campaign can be monitored to look at the partial results at any time and check
 
 The difference between a campaign and a process is that a campaign is usually repeated on a regular basis. The campaigns are often launched before an annual or semestrial audit. The campaign definition contains both the review perimeter and the launch frequency.  
 
-How does it work in Brainwave product ? There are 3 ways to run campaigns:  
+How does it work in Identity Analytics product ? There are 3 ways to run campaigns:  
 
 - Manually, in the campaign manager
 - Automatically, using a command line to start one specific campaign if conditions are met

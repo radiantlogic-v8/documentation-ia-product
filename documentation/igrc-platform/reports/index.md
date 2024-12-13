@@ -7,13 +7,13 @@ Description: Documentation related to general concepts of creating reports
 
 ## Introduction
 
-The Brainwave Identity GRC report editor relies on the Open Source BIRT solution maintained by the Eclipse community. Many books about this solution are available; we invite you to refer to the first chapter of this guide for a list of these books.  
+The Identity Analytics report editor relies on the Open Source BIRT solution maintained by the Eclipse community. Many books about this solution are available; we invite you to refer to the first chapter of this guide for a list of these books.  
 
-Brainwave Identity GRC brings many improvements to the standard version of BIRT, particularly in how reports are configured to access the data. If you are already familiar with the BIRT reporting solution, we suggest you read at least the chapter 'Datasets' to get an overview of the unique features of the solution.  
+Identity Analytics brings many improvements to the standard version of BIRT, particularly in how reports are configured to access the data. If you are already familiar with the BIRT reporting solution, we suggest you read at least the chapter 'Datasets' to get an overview of the unique features of the solution.  
 
 The reporting engine is a solution which allows you to dynamically generate reports based on data stored in repositories (files, SQL, ...). Reports may be generated in multiple formats. Reports are generated dynamically upon the user's request; as a result, reports can be dynamic and their content can depend on the context of use (e.g., to restrict the data displayed to a subset depending on the role of the user who generates the report). Reports may contain hyperlinks so that you can navigate between reports and thus create Web applications.  
 
-Reports are generated on the basis of report templates. These models are XML files with the `.rptdesign` suffix. There are numerous ready-to-use reports in the 'reports' subdirectory of your audit project. The reports are separated there in subdirectories according to their primary use (browsing, analysis, monitoring, rules' outcomes, ...). Report templates files (`.rptdesign`) are editable with a dedicated graphical editor in Brainwave Identity GRC. To use all the features of the editor, we recommend that you switch to the 'iGRC Reports' perspective when you publish a report.  
+Reports are generated on the basis of report templates. These models are XML files with the `.rptdesign` suffix. There are numerous ready-to-use reports in the 'reports' subdirectory of your audit project. The reports are separated there in subdirectories according to their primary use (browsing, analysis, monitoring, rules' outcomes, ...). Report templates files (`.rptdesign`) are editable with a dedicated graphical editor in Identity Analytics. To use all the features of the editor, we recommend that you switch to the 'iGRC Reports' perspective when you publish a report.  
 When generating a report, the sequence of operation is always the same:
 
 1. Load the report template
@@ -44,12 +44,12 @@ The creation of a report always follows the following steps:
 9. Localization of labels if necessary
 10. Report testing, and addition of the report to the web portal if necessary
 
-The following chapters will allow you to discover, step by step, how to configure the data sets and the different graphical components available in the report editor. We also invite you to refer to the guide, BIRT Report Developer Guide' in the Brainwave Identity GRC for more details about using the report editor.
+The following chapters will allow you to discover, step by step, how to configure the data sets and the different graphical components available in the report editor. We also invite you to refer to the guide, BIRT Report Developer Guide' in Identity Analytics for more details about using the report editor.
 
 ## Datasets
 
-Datasets (Data Sets) allow us to query the Identity Ledger in order to extract data for reporting purposes. The BIRT solution natively provides many ways to extract data: From SQL databases, CSV files, XML files, to BigTable Cloud computing-type systems (Hadoop, ...). Brainwave Identity GRC extends the native features of the BIRT solution by adding a new means to access the Ledger data: The Audit Views (subdirectory 'views' in your audit project). The audit views allow us to extract information from the Identity Ledger without prior knowledge of a technical language like SQL, and without technical knowledge of the Identity Ledger data model. It is thus possible to simply configure Ledger data retrievals queries for reporting or analysis purposes. Over 80 audit views are provided as standard in the product, allowing you to take advantage of the information stored in the Identity Ledger from the very beginning of your audit project.  
-We invite you to refer to the 'Audit Views Editor Guide' for more information on setting up audit views in the Brainwave Identity GRC product.
+Datasets (Data Sets) allow us to query the Identity Ledger in order to extract data for reporting purposes. The BIRT solution natively provides many ways to extract data: From SQL databases, CSV files, XML files, to BigTable Cloud computing-type systems (Hadoop, ...). Identity Analytics extends the native features of the BIRT solution by adding a new means to access the Ledger data: The Audit Views (subdirectory 'views' in your audit project). The audit views allow us to extract information from the Identity Ledger without prior knowledge of a technical language like SQL, and without technical knowledge of the Identity Ledger data model. It is thus possible to simply configure Ledger data retrievals queries for reporting or analysis purposes. Over 80 audit views are provided as standard in the product, allowing you to take advantage of the information stored in the Identity Ledger from the very beginning of your audit project.  
+We invite you to refer to the 'Audit Views Editor Guide' for more information on setting up audit views in the  Identity Analytics product.
 
 ### Create a Dataset
 
@@ -81,7 +81,7 @@ To configure a Dataset, double-click the corresponding Dataset in the 'Data Expl
 
 #### Select the Audit View of the Dataset
 
-Allows you to select the Brainwave Identity GRC Audit View to be used by this Dataset. The Audit View formalizes the way in which the Identity Ledger will be queried in order to make data available to the Dataset. The Audit View concept allows us to completely free ourselves from the notion of SQL language during the design phase of specific reports, allowing us, on one hand, to greatly increase productivity during the report creation or modification phase, and on the other hand, to free ourselves from detailed knowledge of the underlying data model, in particular regarding security constraints, time management, ... Many Audit Views are present by default in your project in the 'views' subdirectory. We also invite you to consult the 'Audit Views Editor Guide' for more information about creating and configuring an audit view.  
+Allows you to select the Identity Analytics Audit View to be used by this Dataset. The Audit View formalizes the way in which the Identity Ledger will be queried in order to make data available to the Dataset. The Audit View concept allows us to completely free ourselves from the notion of SQL language during the design phase of specific reports, allowing us, on one hand, to greatly increase productivity during the report creation or modification phase, and on the other hand, to free ourselves from detailed knowledge of the underlying data model, in particular regarding security constraints, time management, ... Many Audit Views are present by default in your project in the 'views' subdirectory. We also invite you to consult the 'Audit Views Editor Guide' for more information about creating and configuring an audit view.  
 
 ![Audit view on dataset](./images/report-dataset-view-selection.png "Audit view on dataset")  
 
@@ -150,7 +150,7 @@ Datasets are able to take settings dynamically from the report to customize the 
 The parameters that can be positioned in a Dataset are located in the 'Parameters' tab. The list and the type of these parameters are directly inherited from the Audit View on which the Dataset relies.
 The parameters are typed and can be single-valued or multivalued. It is also possible to associate a report parameter directly with a Dataset parameter by double-clicking on a dataset parameter and selecting the report parameter.
 
-> Brainwave Identity GRC extends the standard features of BIRT by integrating the management of multivalued parameters. To do this, it is imperative that you force the parameter type to 'String' when the parameter is multivalued.
+> Identity Analytics extends the standard features of BIRT by integrating the management of multivalued parameters. To do this, it is imperative that you force the parameter type to 'String' when the parameter is multivalued.
 
 ![Audit view on dataset](./images/report-input-parameter.png "Audit view on dataset")  
 
@@ -511,8 +511,8 @@ The table of contents is accessible from the Web viewer by clicking on the first
 
 ### Stylesheets
 
-It is possible to use CSS stylesheets in order to standardize the presentation of data in the various reports. Brainwave Identity GRC includes a stylesheet for this purpose. This stylesheet is available at the following location in your project: 'reports/style/default/brainwave - blue.css'. This stylesheet is referenced by the report libraries and is applied automatically when you create a new report via the wizard.  
-We invite you to refer to the 'Formatting Report Content' chapter of the reference documentation, 'BIRT Report Developer Guide' in Brainwave Analytics if you want more information about the use of CSS in reports.
+It is possible to use CSS stylesheets in order to standardize the presentation of data in the various reports. Identity Analytics includes a stylesheet for this purpose. This stylesheet is available at the following location in your project: 'reports/style/default/brainwave - blue.css'. This stylesheet is referenced by the report libraries and is applied automatically when you create a new report via the wizard.  
+We invite you to refer to the 'Formatting Report Content' chapter of the reference documentation, 'BIRT Report Developer Guide' in Identity Analytics if you want more information about the use of CSS in reports.
 
 ## Sorting and Grouping in Tables
 
@@ -703,7 +703,7 @@ Bookmarks may be static or dynamic. If they are dynamic, bookmarks may be genera
 
 ### Hyperlink to Another Report
 
-Setting up a hyperlink to another report of the project is by far the richest and most interesting feature. It allows automatic navigation between the different reports that make up the web portal of Brainwave Identity GRC, thus making a complete and detailed rights management application available to portal users.
+Setting up a hyperlink to another report of the project is by far the richest and most interesting feature. It allows automatic navigation between the different reports that make up the web portal of Identity Analytics, thus making a complete and detailed rights management application available to portal users.
 It is quite possible to configure your particular reports so that they redirect the user to the portal reports, for example, to access detailed views of objects in the model (detail of an identity, ...). Please refer to the "Reports provided as standard" chapter in order to access to the list of standard reports provided in the portal and the parameters required per report.
 To set up a hyperlink to another report in the project, perform the following steps in the configuration dialog box:
 

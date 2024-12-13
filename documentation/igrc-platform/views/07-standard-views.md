@@ -3,7 +3,7 @@ title: "Standard views"
 description: "Usage of standard rules"
 ---
 
-Brainwave Identity GRC supplies a selection of Audit Views as standard. These are included in the default project and enable the user to make use of the data contained within the Identity Ledger as soon as the data has been loaded. The default audit Views are located in the 'views' sub-folder of your audit project.  
+Identity Analytics supplies a selection of Audit Views as standard. These are included in the default project and enable the user to make use of the data contained within the Identity Ledger as soon as the data has been loaded. The default audit Views are located in the 'views' sub-folder of your audit project.  
 
 > When creating a custom view, you must create these in the /views/custom folder of your audit project. Sub-folders can be created within this folder for sorting and storage of views.
 

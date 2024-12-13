@@ -61,7 +61,7 @@ It is possible to use multiple rules within a single Audit View. If multiple rul
 
 It is possible filtering the results of an Audit View using data from outside the view that is then passed as an input to the view. This is particularly useful when the Audit Views are used in report or pages, as this gives context to the result of Audit Views by supplying parameters directly from the reports and/or pages.  
 
-This function is the basis for reports supplied as standard in the Brainwave Identity GRC product. In fact, the range of Audit views supplied in your Project Audit uses these configuration processes.  
+This function is the basis for reports supplied as standard in the Identity Analytics product. In fact, the range of Audit views supplied in your Project Audit uses these configuration processes.  
 
 View parameters are specified in the Properties Editor of the Audit View.  
 
@@ -156,7 +156,7 @@ The result is then as expect
 ## Exporting Data to CSV
 
 In the results tab of the view it is possible to select the timeslot on which you wish to display the results. This is done by clicking the icon labelled 1 in the caption bellow.  
-It is possible to export the results of an Audit View from Brainwave Analytics to a CSV format file that can then be edited in Microsoft Excel. To do so, simply click pm the Excel button (See label 2 of the caption bellow) tool tipped _'Export to CSV and open linked program'_ in the 'Results' tab.  
+It is possible to export the results of an Audit View from Identity Analytics to a CSV format file that can then be edited in Microsoft Excel. To do so, simply click pm the Excel button (See label 2 of the caption bellow) tool tipped _'Export to CSV and open linked program'_ in the 'Results' tab.  
 
 ![Exporting Data to CSV](./images/viewresultexport.png "Exporting Data to CSV")
 

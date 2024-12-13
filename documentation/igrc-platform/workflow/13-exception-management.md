@@ -5,7 +5,7 @@ description: "Exception management"
 
 # Exception management
 
-Exception management is a powerful feature that allows you to manage the lifecycle of a control defect. As of version 2016 of Brainwaves iGRC platform the feature has been enhanced with the possibility to manage exception through workflows.  
+Exception management is a powerful feature that allows you to manage the lifecycle of a control defect. As of version 2016 of Identity Analyticss platform the feature has been enhanced with the possibility to manage exception through workflows.  
 Exceptions are used to attach a lifecycle information to a control result when:  
 
 - The control defect is a false positive,
@@ -24,7 +24,7 @@ A person is going to move to other responsibilities, in the meantime this person
 From a technical point of view, exceptions are compatible with all control families except "theoretical rights" where a [derogation](../collector/04-components/target#derogation-target) should be used instead.  
 Exception can be managed in two different ways:  
 
-- directly from the studio of Brainwaves iGRC platform:  
+- directly from the studio of Identity Analytics:  
 
 ![High privilege accounts](./images/high_priviledge_accounts_contr.png "High privilege accounts")  
 

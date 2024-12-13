@@ -5,7 +5,7 @@ description: Accessibility
 
 # Accessibility
 
-The following chapter describes how to effectively implement accessibility in Brainwave's web portal.
+The following chapter describes how to effectively implement accessibility in Identity Analytics's web portal.
 
 > The default project has not been updated to be accessible compatible.
 >
@@ -42,7 +42,7 @@ Sometimes, redesigning pages for accessibility may be even beneficial to both en
 
 ## System Requirements
 
-Accessibility of Brainwave web portal has been successfully tested with the following combination:
+Accessibility of Identity Analytics web portal has been successfully tested with the following combination:
 
 - Reader software: *JAWS 2019*-  (from [Freedom Scientific](https://www.freedomscientific.com/products/software/jaws/) )
 - Browsers: *Chrome*- 80+ or *Firefox*- 68 ESR  
@@ -191,7 +191,7 @@ This is a non-comprehensive list of widgets and containers that are not currentl
 
 ## Designing accessible reports
 
-A report as displayed in Brainwave web portal consists of an embedded *BIRT*- report,  plus a set of buttons to navigate across the report, print and export in various formats.
+A report as displayed in Identity Analytics web portal consists of an embedded *BIRT*- report,  plus a set of buttons to navigate across the report, print and export in various formats.
 
 ![Accessible report example](images/a11y_report.png "Accessible report example")
 

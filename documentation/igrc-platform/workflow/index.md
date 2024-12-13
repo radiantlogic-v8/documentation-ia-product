@@ -17,11 +17,11 @@ Finally, before implementing a workflow it is necessary to first install the tas
 
 ### Presentation
 
-A Workflow within Brainwave's iGRC platform refers to a defined series of actions or tasks that are to be performed once a process is initiated. These can be for example the review or remediation processes: "Access remediation" and "Access request".  
+A Workflow within Identity Analytics refers to a defined series of actions or tasks that are to be performed once a process is initiated. These can be for example the review or remediation processes: "Access remediation" and "Access request".  
 
 The workflow engine is implemented as a BPMN 2.0 compliant and uses the Activiti open-source engine ([http://www.activiti.org/](http://www.activiti.org/)). As explained before it requires a separate database to store it's data. Please refer to corresponding documentation on how to configure your database.  
 
-Designing a workflow is done through Brainwave's iGRC platform back-office. It produces workflow definition files which are part of the project (for example "Application Review" ). Once the project is published on the Web Portal, users may start instances of these workflow definitions (for example an instance of "Application Review" on "SAP" and another instance on SharePoint ).  
+Designing a workflow is done through Identity Analytics  back-office. It produces workflow definition files which are part of the project (for example "Application Review" ). Once the project is published on the Web Portal, users may start instances of these workflow definitions (for example an instance of "Application Review" on "SAP" and another instance on SharePoint ).  
 
 There are three kinds of user interface in the portal regarding workflows:  
 

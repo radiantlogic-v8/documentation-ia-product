@@ -19,7 +19,7 @@ A metadata is created from the main menu by selecting `New...` and then `Metadat
 ![Metadata creation](./images/metadata_creation.png "Metadata creation")
 
 This menu opens a wizard to create a new schema extension. The metadata id field is the name of the schema extension and it must be unique among all extensions in the project, created in the project or included in installed add-ons.
-Brainwave add-ons containing metadata always use a prefix `bw` for the metadata id.
+Identity Analytics add-ons containing metadata always use a prefix `bw` for the metadata id.
 The best practice is to use a prefix describing the project (or the customer) and then an explicit schema extension name in order to avoid conflicts, for example `acme_myfirstmetadata`.
 
 The best practice is to fill in the description of the created metadata with the purpose of the extension. This helps document what the schema extension will be used for.
@@ -48,15 +48,15 @@ If a metadata is not computed configuring the 'Metadata computation' is unnecess
 
 A metadata can be associated with no, one or several entities:
 
-- Defining a metadata without an entity means that you create your own concept without any relation with other Brainwave entities. In rare occasions, you need to create a new concept which is not linked to any other Brainwave entities.
-- The usual way to use metadata is to extend a Brainwave concept to add attributes. In this situation, a single concept is selected in the editor. The user has the choice of having an explicit link towards the Brainwave concept or to embed the metadata attributes directly in the Brainwave concept.
+- Defining a metadata without an entity means that you create your own concept without any relation with other Identity Analytics entities. In rare occasions, you need to create a new concept which is not linked to any other Identity Analytics entities.
+- The usual way to use metadata is to extend a Identity Analytics concept to add attributes. In this situation, a single concept is selected in the editor. The user has the choice of having an explicit link towards the Identity Analytics concept or to embed the metadata attributes directly in the Identity Analytics concept.
 - Another usage is to select several concepts. This is the method to use to create a link with attributes between 2 or more concepts.
 
 The following paragraphs explain how to configure the entity or the links.
 
 ### Metadata without entity
 
-The following caption shows a new standalone concept called `acme_my_concept`.  that is not linked to a Brainwave entity.
+The following caption shows a new standalone concept called `acme_my_concept`.  that is not linked to a Identity Analytics entity.
 
 ![Metadata zero entity](./images/metadata_zero_entity.png "Metadata zero entity")
 
@@ -65,16 +65,16 @@ The 'short metadata title' **must** be filled to see the metadata in the view ed
 
 ![Metadata zero entity configuration](./images/metadata_my_concept.png "Metadata zero entity configuration")
 
-As there are no links from the metadata to any Brainwave concept, this mode is rarely used but can be useful to store configuration information for example.
+As there are no links from the metadata to any Identity Analytics concept, this mode is rarely used but can be useful to store configuration information for example.
 
 ### Metadata with attributes embedded in a single entity
 
-This is the most common usage of metadata. The attributes defined in a metadata are added to a Brainwave entity.
+This is the most common usage of metadata. The attributes defined in a metadata are added to a Identity Analytics entity.
 The following picture shows a metadata called `acme_my_extension` extending the Identity concept.
 
 ![Metadata one entity with embedded attributes](./images/metadata_one_embedded_entity.png "Metadata one entity with embedded attributes")
 
-To extend a Brainwave concept check the checkbox named 'Display metadata attributes in the following concept in the view editor'.
+To extend a Identity Analytics concept check the checkbox named 'Display metadata attributes in the following concept in the view editor'.
 
 ![Embed a metadata in single entity](./images/metadata_single_entity.png "Embed a metadata in single entity")
 
@@ -118,7 +118,7 @@ Then select the link called 'Use and activate the link towards identities' and e
 
 ### Metadata with several entities
 
-Defining a metadata with links to several entities is a way to create a new relation in the Brainwave data model.
+Defining a metadata with links to several entities is a way to create a new relation in the Identity Analytics data model.
 The following picture illustrates a new link called `acme_my_link` between an identity and an application.
 
 ![Metadata link with several entities](./images/metadata_several_entities.png "Metadata link with several entities")

@@ -67,7 +67,7 @@ By navigating to "Show Timeslots"  you should be able to see a list of you previ
 
 ### Default Silo
 
-In version 2016 and above, you must define silos (for example one per application) and run the collect so that each data stored in the Brainwave database (account, group, permission,...) belong to a silo. You will find more information about Silos in the Brainwave Wiki ([Silos](../igrc-platform/silos/index.md).  
+In version 2016 and above, you must define silos (for example one per application) and run the collect so that each data stored in the Identity Analytics database (account, group, permission,...) belong to a silo. You will find more information about Silos in the Identity Analytics Wiki ([Silos](../igrc-platform/silos/index.md).  
 
 When upgrading from a version 2014 or bellow, It is possible to create a default Silo that runs your main collect line without taking the new feature into account. To do this under the "Technical configuration"  page open the "Execution plan"  tab and click on the hyperlink "Where is my main collect line".
 

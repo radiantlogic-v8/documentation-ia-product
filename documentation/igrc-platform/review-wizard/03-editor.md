@@ -160,7 +160,7 @@ These actions can be removed from the list if they are not relevant in the custo
 New actions can also be added to the available list.
 These actions are stored in TicketReview status column attached to the item to remember the manager's decision.
 
-The Brainwave product does not know the meaning of each action defined in this list except in the remediation.
+The Identity Analytics product does not know the meaning of each action defined in this list except in the remediation.
 The remediation process gets all the tickets having a status `revoke` or `update` to dispatch them to remediation actors.
 All other actions are ignored by the remediation process.
 If new actions are added in the review process, the remediation process should be modified to accommodate the new list.

@@ -7,7 +7,7 @@ description: Features and Roles
 
 ## General concepts
 
-Brainwave Access rights model is based on roles and features.  
+Identity Analytics Access rights model is based on roles and features.  
 
 The principle is that if a Page or a widget is not associated with any feature, then every user can see it and use it.  
 On the other hand, if a widget is linked to a feature, then only the users that have this feature will be able to see it and use it.  

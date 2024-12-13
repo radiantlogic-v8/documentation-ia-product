@@ -39,7 +39,7 @@ The legacy properties files (`datasource.properties`,`mail.properties`,...) may 
 
 ### JNDI datasource
 
-Now you can use a JNDI datasource. This means that the datasource to access the Brainwave database is declared in the Web container (like Tomcat) and not in `datasource.properties`. The icon is used to export a context.xml file to put in `conf/Catalina/localhost` folder inside Tomcat installation directory. Then this file should be renamed with the name of the webapp  
+Now you can use a JNDI datasource. This means that the datasource to access the Identity Analytics database is declared in the Web container (like Tomcat) and not in `datasource.properties`. The icon is used to export a context.xml file to put in `conf/Catalina/localhost` folder inside Tomcat installation directory. Then this file should be renamed with the name of the webapp  
 
 ![Studio export the JNDI context file](./images/studio_config_jndi.png "Studio export the JNDI context file")
 

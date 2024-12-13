@@ -213,7 +213,7 @@ In the next image we show the resulting `review_list.page` after the second gene
 
 ## Templates migration
 
-The  `bw_reviewtemplates` add-on is the main add-on for the review generation, this add-on can be modified by **Brainwave** for multiple raison, for example:
+The  `bw_reviewtemplates` add-on is the main add-on for the review generation, this add-on can be modified by **RadiantOne** for multiple raison, for example:
 
 - Make improvements to the templates (view, rules, pages, ...)
 - developing new review features
