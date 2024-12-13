@@ -141,7 +141,7 @@ Next step is to create and configure the `SAMLAuthenticator.properties` file. Un
 
 ```properties
 # SAML Authenticator property file
-# copyright Identity Analytics
+# copyright Radiant Logic
 
 # idpMetadata: Identity Provider Metadata as an XML file located in the /conf subdirectory by default
 # spMetadata: Service Provider Metadata as an XML file located in the /conf subdirectory by default

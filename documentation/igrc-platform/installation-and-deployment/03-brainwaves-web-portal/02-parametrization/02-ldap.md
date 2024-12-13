@@ -52,7 +52,7 @@ In the following procedure, we will use the variables below:
 | `TOMCAT_INSTALL_FOLDER`  |                                  Tomcat installation root folder                                   |          /etc/tomcat9/          |
 |   `TOMCAT_CONF_FOLDER`   |                          Folder that contains Tomcat configuration files                           |        /etc/tomcat9/conf        |
 | `TOMCAT_LIB_FOLDER_HOME` |                       Folder that contains all libraries used by the Tomcat                        |     /usr/share/tomcat9/lib      |
-|      `LDAP_BW_LIB`       | Brainwave JAVA library used to perform LDAP AuthN/AuthZ. See prerequisites section to retrieve it. | bw-tomcat-9.0-addons.jre8-X.jar |
+|      `LDAP_BW_LIB`       | Identity Analytics JAVA library used to perform LDAP AuthN/AuthZ. See prerequisites section to retrieve it. | bw-tomcat-9.0-addons.jre8-X.jar |
 | `LDAP_ROLE_MAPPING_FILE` |                   File that contains mapping between AD groups and Portal roles                    |     rolemapping.properties      |
 
 ### LDAP information retrieving

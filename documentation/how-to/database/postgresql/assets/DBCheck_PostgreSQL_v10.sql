@@ -1,5 +1,5 @@
 -- 
--- Copyright RadiantLogic 2024 - Ledger Base - PostgreSQL 9.6 and > 
+-- Copyright Radiant Logic 2024 - Ledger Base - PostgreSQL 9.6 and > 
 -- Date creation : 05/2017
 -- Date updated : 05/2023
 --

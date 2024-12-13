@@ -5,7 +5,7 @@ Unauthorized duplication or distribution of this program, or any portion of it, 
 
 Usage: Execute the migration int to biging and save the results of queries in a file (so no real modification of the database in this first step) 
 
-(c) Brainwave 2021
+(c) Radiant Logic 2021
 
 1) Powershell
 

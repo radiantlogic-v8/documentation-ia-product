@@ -1,8 +1,8 @@
-# Documentation iGRCanalytics
+# Documentation Identity Analytics
 
 ## Introduction
 
-This repository holds the documentation for the core product of Identity Analytics: iGRCAnalytics .  
+This repository holds the documentation for the core product of Identity Analytics.  
 The documentation is used as an input to build the documentation https://developer.radiantlogic.com/
 
 ## Repository Structure

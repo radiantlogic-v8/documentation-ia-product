@@ -76,7 +76,7 @@ At the time of the initial launch of the application, the license configuration 
 ![License files configuration](./images/installation-license.png "License file configuration")
 
 - The "License key" line assigns the unique print of the system on which iGRC is installed. The RadiantOne license is linked to this print and so can only be installed on the system in question;
-- Copy (right click "Select all" then right click "Copy") the license key and provide it to your Brainwave business representative in order to obtain the corresponding license file;
+- Copy (right click "Select all" then right click "Copy") the license key and provide it to your Radiant Logic  representative in order to obtain the corresponding license file;
 - The license file is a .lic file that you must copy on to the local system;
 - Click on the "Browse" button to locate and select the license file;
 - Check that the license details are correct and then click on "OK".

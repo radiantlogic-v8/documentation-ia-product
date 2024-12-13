@@ -15,7 +15,7 @@ Configure your `SAML 2.0` connector. The easiest way is to prepare a `sp-metadat
 
 ![inwebo2](./images/inwebo2.png "inwebo2")
 
-Once this is done, download the **inWebo** `SAML 2.0` metadata file in `XML` format by clicking on the hyperlink, you will have to declare this file in the `Brainwave SAML connector` at a later stage.  
+Once this is done, download the **inWebo** `SAML 2.0` metadata file in `XML` format by clicking on the hyperlink, you will have to declare this file in the `Identity Analytics SAML connector` at a later stage.  
 
 Update the `NameID format` and change it from `Transient` to `Email address (emailAddress)`.  
 
@@ -33,4 +33,4 @@ Select either `give access to all users` or `give access to only defined groups 
 
 ![inwebo5](./images/inwebo5.png "inwebo5")
 
-Once the configuration is done, and depending on the `give access` settings, your **inWebo** users will now be able to access the **Brainwave portal**.  
+Once the configuration is done, and depending on the `give access` settings, your **inWebo** users will now be able to access the **Identity Analytics portal**.  

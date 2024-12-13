@@ -5,7 +5,7 @@ Unauthorized duplication or distribution of this program, or any portion of it, 
 
 Usage: Upgrades The database schema from version 2017 R2 to Curie R1
 
-(c) Brainwave 2021
+(c) Radiant Logic 2021
 
 Usage
 ```

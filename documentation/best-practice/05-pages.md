@@ -5,7 +5,7 @@ description: "Best Practice for pages"
 
 # Best Practice for pages
 
-The Goal is to provide coding/implementation Guidelines for iGRC.  
+The Goal is to provide coding/implementation Guidelines for Identity Analytics.  
 
 ## Pages
 

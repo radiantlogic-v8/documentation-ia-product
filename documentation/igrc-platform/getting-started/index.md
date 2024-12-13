@@ -20,7 +20,7 @@ In order to accomplish this, Identity Analytics' data model integrates the follo
 
 Furthermore, it is possible to attach the organisations to the "assets". Assets usually enable the establishment of patterns within the control model of the different processes of the enterprise.
 
-As we shall see later, Identity Analytics's data model enables the modelling of the most simple to the most complex organisations (hierarchical organisations, multi-hierarchical organisations, matrix organisations, managerial links by department, interpersonal managerial links etc.).
+As we shall see later, Identity Analytics data model enables the modelling of the most simple to the most complex organisations (hierarchical organisations, multi-hierarchical organisations, matrix organisations, managerial links by department, interpersonal managerial links etc.).
 
 ### Finely Grained Standardization of the Representation of Access to the Information Systems
 
@@ -74,7 +74,7 @@ The Identity Analytics data model fully integrates the notion of time. The model
 
 Identity Analytics's data model can be modelled as following :
 
-![Identity Analytics's data model](./images/data_model_overview.jpg "Identity Analytics's data model")
+![Identity Analytics's data model](./images/data_model_overview.jpg "Identity Analytics data model")
 
 Please refer to the included subpages for a more detailed overview.  
 

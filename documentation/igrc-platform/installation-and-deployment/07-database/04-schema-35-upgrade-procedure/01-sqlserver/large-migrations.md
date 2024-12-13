@@ -104,7 +104,7 @@ Execute the final script `STEP4_XXXXX_schema_33_to_schema_35.sql` to finalize th
 
 To ensure the CURIE R1 upgrade script has been executed successfully, two below SQL requests can be launched on the database.  
 
-> Both requests must be executed with **sysadmin** rights on the Brainwave Ledger database.
+> Both requests must be executed with **sysadmin** rights on the Identity Analytics Ledger database.
 
 - Check if all needed columns has been moved from **INT** to **BIGINT** type
 

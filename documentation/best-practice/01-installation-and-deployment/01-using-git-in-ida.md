@@ -5,7 +5,7 @@ description: "THis document describes how to use GIT in IDA"
 
 # How to use GIT in IDA
 
-This is a short introduction to Git in the iGRC context.  
+This is a short introduction to Git in the Identity Analytics context.  
 So: the bare minimum to working with your colleagues on projects where git is required.  
 
 > This assumes that you are in an environment where each user has a workspace, and Git is already setup.  

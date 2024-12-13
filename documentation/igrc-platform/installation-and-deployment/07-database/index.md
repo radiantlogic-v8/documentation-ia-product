@@ -70,7 +70,7 @@ Before using the script please remember to change the necessary information such
 
 ```sql  
 -- ---------------------------------------------------------------------
--- Copyright Brainwave 2017
+-- Copyright Radiant Logic 2017
 -- Date: 04/2017
 -- SAMPLE not to be used as is
 -- ---------------------------------------------------------------------
@@ -251,7 +251,7 @@ Before using the script please remember to change the necessary information such
 
 ```sql  
 -- ---------------------------------------------------------------------
--- Copyright Brainwave 2017
+-- Copyright Radiant Logic 2017
 -- Date: 04/2017
 -- SAMPLE not to be used as is
 -- ---------------------------------------------------------------------
@@ -355,7 +355,7 @@ Before using the script please remember to change the necessary information such
 
 ```sql  
 -- ---------------------------------------------------------------------
--- Copyright Brainwave 2017
+-- Copyright Radiant Logic 2017
 -- Date: 04/2017
 -- SAMPLE not to be used as is
 

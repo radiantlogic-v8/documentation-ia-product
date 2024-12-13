@@ -5,7 +5,7 @@ description: "Exception management"
 
 # Exception management
 
-Exception management is a powerful feature that allows you to manage the lifecycle of a control defect. As of version 2016 of Identity Analyticss platform the feature has been enhanced with the possibility to manage exception through workflows.  
+Exception management is a powerful feature that allows you to manage the lifecycle of a control defect. As of version 2016 of Identity Analytics platform the feature has been enhanced with the possibility to manage exception through workflows.  
 Exceptions are used to attach a lifecycle information to a control result when:  
 
 - The control defect is a false positive,

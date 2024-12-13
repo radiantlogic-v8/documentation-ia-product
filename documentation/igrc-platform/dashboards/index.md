@@ -41,7 +41,7 @@ To enable the use and creation of dashboards in the webportal it is required to 
 1. Install the radiantlogic Identity Analytics core product version - Descartes (see installation instructions).
 2. Launch IGRC Studio and open or create an Audit project
 3. Install the required "Mashup Dashboards Support" facet:
-    1. Click on the link [Mashup dashboards support](http://marketplace.brainwavegrc.com/package/bw_dashboard/) to Download the Add-on from the **Brainwave MarketPlace**  
+    1. Click on the link [Mashup dashboards support](https://marketplace.radiantlogic.com/) to download the Add-on from the **RadiantOne MarketPlace**  
 This add-on includes a large set of predefined views and rules for commonly used data and two predefined resource templates (default and flatcolors) to be used in your dashboard.
     2. Install the facet file in your project
 4. Declare the dashboard resource templates to be used in your dashboards. Resource templates include chart styles and dashboard layout templates.

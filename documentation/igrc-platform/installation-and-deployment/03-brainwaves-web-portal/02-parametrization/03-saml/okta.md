@@ -12,7 +12,7 @@ Select `SAML 2.0` Sign on method.
 
 ![okta1](./images/okta1.png "okta1")
 
-Fulfill the general settings: the nick name of your Brainwave project, a logo, ...  
+Fulfill the general settings: the nick name of your Identity Analytics project, a logo, ...  
 
 ![okta2](./images/okta2.png "okta2")
 
@@ -30,7 +30,7 @@ Keep the default parameters in the advanced settings.
 ![okta4](./images/okta4.png "okta4")
 
 If you want to propagate roles from the Identity Provider you need to fulfill the `group attribute statements`.  
-The name will contain the name of the `SAML` attribute which will contain the groups, the filter will select the groups to send to the Brainwave instance amongst the total list of user groups.  
+The name will contain the name of the `SAML` attribute which will contain the groups, the filter will select the groups to send to the Identity Analytics instance amongst the total list of user groups.  
 
 ![okta5](./images/okta5.png "okta5")
 

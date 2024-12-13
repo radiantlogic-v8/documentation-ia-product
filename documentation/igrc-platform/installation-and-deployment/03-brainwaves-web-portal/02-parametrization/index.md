@@ -15,7 +15,7 @@ Proxy configuration in web portal is quite sensitive, and a bad configuration ma
 The proxy is setup in the technical configuration's `Web portal` page:  
 ![Proxy Configuration](../images/proxy_conf.png)
 
-Here are some guidelines to correctly set **proxy url** in brainwave configuration:
+Here are some guidelines to correctly set **proxy url** in Identity Analyticsconfiguration:
 
 - do not forget protocol (`http://` **or** `https://`)
 - use the frontal web server (proxy) name (**not** the ip adress)
@@ -325,7 +325,7 @@ Once all modifications applied restart the tomcat service.
 
 ## GPortal Access
 
-To login as a user in the Identity Analytics's portal, it needs to retrieve a Principal provided by the Tomcat server hosting the Portal.
+To login as a user in the Identity Analytics portal, it needs to retrieve a Principal provided by the Tomcat server hosting the Portal.
 
 Basically, this Principal is a structure containing:
 
@@ -386,7 +386,7 @@ Apache foundation provides standards Tomcat components to authenticate and autho
 
 ### Portal Identity
 
-Once the user is authenticated and the Principal is built and sent to the Brainwave webapp, the next step is to check the existence of the user in the Identity Analytics Ledger.
+Once the user is authenticated and the Principal is built and sent to the Identity Analyticswebapp, the next step is to check the existence of the user in the Identity Analytics Ledger.
 
 To do so, from the `Principal`, the login is passed on to the view defined in the `user.principal.view` property in the technical configuration's `webportal` tab (`br_portalidentity` by default).
 

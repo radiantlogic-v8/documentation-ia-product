@@ -796,7 +796,7 @@ Here you can define how to find accounts and groups who are members of a group. 
 
 ### Group target Example
 
-ActiveDirectory add-on is a good example for collecting accounts, groups and groups members, it is available in brainwave store.
+ActiveDirectory add-on is a good example for collecting accounts, groups and groups members, it is available in RadiantOne Marketplace.
 
 ## Group members target
 
@@ -863,7 +863,7 @@ Here you can define how to found accounts and groups who are member of a group b
 
 ### Group members target Example
 
-Active Directory add-on is a good example for collecting accounts, groups and groups members, it is available in Brainwave store.  
+Active Directory add-on is a good example for collecting accounts, groups and groups members, it is available in RadiantOne Marketplace.  
 
 ### Resolution of groups and accounts during data collection
 

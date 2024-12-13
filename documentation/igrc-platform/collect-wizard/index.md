@@ -7,7 +7,7 @@ Description: Documentation related to the generation of a collect line
 
 ## Introduction
 
-The data collection wizard provides the user with a dedicated interface to map the original import data to attribute in Identity Analytics's data cube. The product will then automatically generate the corresponding data collection lines.
+The data collection wizard provides the user with a dedicated interface to map the original import data to attribute in Identity Analytics data cube. The product will then automatically generate the corresponding data collection lines.
 
 The generated elements can then be used out of the box to run an execution plan. Further customizations to the generated files can be applied if needed, thanks to the high customization capabilities of Identity Analytics.
 

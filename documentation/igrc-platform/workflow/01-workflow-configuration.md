@@ -7,7 +7,7 @@ description: "User guide workflow configuration"
 
 > [!warning] The in-memory database mode is no longer supported as of Curie R3 version.
 
-Identity Analytics's Workflow engine uses a separate database to store its data. Only SQL server, Oracle and Postgres databases are supported.  
+Identity Analytics Workflow engine uses a separate database to store its data. Only SQL server, Oracle and Postgres databases are supported.  
 
 Configuration of this database is done in a dedicated tab of the technical configuration of the project and is separated into 4 different sections:  
 
