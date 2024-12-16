@@ -7,7 +7,7 @@ description: How to generate a review using the wizard
 
 The idea of the review wizard is to provide an interface to specify review business details and let the product generate the workflow and the user interface.
 The generated review can be run out of the box.
-But further customizations can be applied if needed, thanks to the high customization capacity of the Brainwave product.
+But further customizations can be applied if needed, thanks to the high customization capacity of the Identity Analytics product.
 
 The next paragraphs explain the whole process from the design of the review to the launch of this review:
 

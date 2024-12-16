@@ -7,11 +7,11 @@ description: "Index management"
 
 ## Important notice
 
-> [!warning] Please note that **ALL** information provided in this page has to be done **ONLY** with the approval of Brainwave experts.  
+> [!warning] Please note that **ALL** information provided in this page has to be done **ONLY** with the approval of Identity Analytics experts.  
 >
-> Deleting indexes in the database can drastically impact the performance of the execution plan and the portal. If you perform the following actions without the approval of Brainwave the performance of the solution can no longer be assured.  
+> Deleting indexes in the database can drastically impact the performance of the execution plan and the portal. If you perform the following actions without the approval of Identity Analytics the performance of the solution can no longer be assured.  
 >
-> If you have questions please don't hesitate to create a ticket on "Brainwave Online Support":
+> If you have questions please don't hesitate to create a ticket on Radiant Logic Support:
 >
 > https://support.radiantlogic.com
 

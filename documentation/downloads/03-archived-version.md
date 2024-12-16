@@ -37,4 +37,4 @@ See [here](../how-to/workflow/upgrade-activiti) for more information.
 
 See [here](./01-downloads#checking-the-integrity-of-the-download) for more information on how to check the integrity of your download.  
 
-> [!warning] Identity Analytics is provided without any support on Linux. Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through Brainwave Analytics should be made under a Microsoft Windows environment.  
+> [!warning] Identity Analytics is provided without any support on Linux. Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through Identity Analytics should be made under a Microsoft Windows environment.  

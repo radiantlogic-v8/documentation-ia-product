@@ -68,7 +68,7 @@ You may have a performance issue when using a limit and/or a sort.
 
 The Filtered discovery source allows the product to read data that will be filtered by an existing discovery.  
 
-This is the main source type to use when building your collector lines as the modification of the input data is done in the the discovery file, and the collector line can they simple be used to map the various imported data to the concepts of Brainwave GRC's model.  
+This is the main source type to use when building your collector lines as the modification of the input data is done in the the discovery file, and the collector line can they simple be used to map the various imported data to the concepts of Identity Analytics's model.  
 
 ### Discovery The properties Tab
 

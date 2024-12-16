@@ -16,7 +16,7 @@ A business view works in memory using data queried from the database using ledge
 
 It is recommended to filter the results returned by ledger views using static values or input parameters. Indeed, the fewer records returned by the ledger view, the faster the business view will be. Reducing the data input also reduced the memory usage of the business view.  
 
-> [!warning] Do **not** use the generic Brainwave ledger views included in the default project to build a business view. The generic nature of these ledger views results in returning a large number of attributes that are not all necessary for your use case. It is recommended to create a new ledger view designed to return the minimum number of records and attributes.
+> [!warning] Do **not** use the generic Identity Analytics ledger views included in the default project to build a business view. The generic nature of these ledger views results in returning a large number of attributes that are not all necessary for your use case. It is recommended to create a new ledger view designed to return the minimum number of records and attributes.
 
 As explained, business views always work in memory as opposed to Ledger views which delegates all the work to the underlying database.  
 There are many ways to address the same need. As an example lets assume that we need to consolidate the results using many joins, perform a count and some apply some filters. We could :

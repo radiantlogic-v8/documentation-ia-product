@@ -1,7 +1,7 @@
 -- ------------------------------------------------------------------------
 -- Filename:   sqlserver_clean_IAS_temporary_metadata.sql
 -- Purpose :   Clean temporary metadata after migration to CurieR2
--- COMPANY : BRAINWAVE GRC
+-- COMPANY : Identity Analytics
 --  Date : February 2022
 -- To execute in Microsoft SQL Server Management Studio
 -- ------------------------------------------------------------------------

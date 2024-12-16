@@ -7,7 +7,7 @@ Description: Documentation related to the creation, the installation and the usa
 
 ## Build your Facet
 
-Once you are satisfied with the content of your facet, you can build the .facet file that can be installed in other iGRCanalytics projects. To do this, simply select the action **Build facet** in the **Build** tab. The files that will be included in this build are listed in the table at the bottom of the screen. The empty facet directories are not shown in this list and will be discarded.  
+Once you are satisfied with the content of your facet, you can build the .facet file that can be installed in other Identity Analytics projects. To do this, simply select the action **Build facet** in the **Build** tab. The files that will be included in this build are listed in the table at the bottom of the screen. The empty facet directories are not shown in this list and will be discarded.  
 
 ![Build](../add-ons/images/build.png "Build")
 

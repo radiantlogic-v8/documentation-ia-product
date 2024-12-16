@@ -9,7 +9,7 @@ description: "Ticket configuration"
 
 Tickets are used to keep a trace of workflow instances and the actions requested during their execution.  
 They allow you to do delta reviews, list remediations, produce compliance reports, etc.  
-Tickets are created in the Brainwave Ledger, and can be retrieved via views.  
+Tickets are created in the Identity Analytics Ledger, and can be retrieved via views.  
 There are three type of tickets:  
 
 - ticketLog  

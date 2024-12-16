@@ -134,7 +134,7 @@ var1 = Variable {
 
 ## Binding variables
 
-The Brainwave page engine takes care of propagating all changes automatically.  
+The Identity Analytics page engine takes care of propagating all changes automatically.  
 This means that when a variable value changes, all other changes are operated with in waterfall manner, including GUI refresh.  
 
 This is a powerful feature as you don't have to care for GUI refreshes, this is done automatically, you just have to deal with your variables.  

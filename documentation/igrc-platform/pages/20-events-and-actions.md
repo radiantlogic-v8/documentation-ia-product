@@ -170,7 +170,7 @@ Those default concept pages can accept parameters with the 'with' keyword. For i
 
 `GoTo Activity Identity Detail with myVariable to identityUid`  
 
-The target page is declared through a dedicated syntax in the Page language. All Brainwave concepts have default activity pages associated to them, you will find those declaration under the activities.page in each concept subdirectory (for instance webportal/pages/account/activities.page)  
+The target page is declared through a dedicated syntax in the Page language. All Identity Analytics concepts have default activity pages associated to them, you will find those declaration under the activities.page in each concept subdirectory (for instance webportal/pages/account/activities.page)  
 
 ```page
 Activity {

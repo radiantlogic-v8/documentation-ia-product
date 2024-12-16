@@ -165,7 +165,7 @@ Where `<DATABASE>` is the database and `<USER>` is the user with which to execut
 
 To ensure the CURIE R1 upgrade script has been executed successfully, two below SQL requests can be launched on the database.  
 
-> Both requests must be executed with **sysadmin** rights on the Brainwave Ledger database.
+> Both requests must be executed with **sysadmin** rights on the Identity Analytics Ledger database.
 
 - Check if all needed columns has been moved from **INT** to **BIGINT** type
 

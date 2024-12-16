@@ -6,7 +6,7 @@ description: "How to review Metadata"
 # Reviewing Metadata
 
 As metadata can be used to document Ledger concepts and add or update information to many concepts in the portal, there is a need to review the modified information.
-Reviewing information in the Brainwave product is done using a workflow which stores the reviewer's decisions in tickets (TicketReviews) in the Ledger.
+Reviewing information in the Identity Analytics product is done using a workflow which stores the reviewer's decisions in tickets (TicketReviews) in the Ledger.
 
 ## Creating metadata tickets
 

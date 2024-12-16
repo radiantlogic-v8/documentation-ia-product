@@ -81,7 +81,7 @@ When the campaign is launched, the item list is reduced to the items belonging t
 
 When selecting multiple filters, the item are kept if they match at least one filter.
 
-The filters are implemented as rules in the Brainwave product which means that complex filtering is available.
+The filters are implemented as rules in the Identity Analytics product which means that complex filtering is available.
 Here are some examples (from basic to sophisticated):
 
 - accounts from the Elyxo repository

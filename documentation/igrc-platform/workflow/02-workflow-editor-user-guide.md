@@ -5,7 +5,7 @@ description: "Workflow editor User guide"
 
 # Workflow editor User guide
 
-This document presents the Workflow editor functionalities in the studio of Brainwave's iGRC platform.  
+This document presents the Workflow editor functionalities in the studio of Identity Analytics platform.  
 This editor provides a user-friendly interface along with a series of wizards to allow you to create, configure and deploy a workflow. It is composed of five main tabs presented below.  
 
 The audit workflow file, which has a .workflow extension, as well as the associated javascript file are created under the workflow folder into the project explorer:  

@@ -24,7 +24,7 @@ Audit views are found in the `/views` folder of your audit project.
 - `/views/rules`: Views referring to rules
 - `/views/usage`: Views based on usage status  
 
-Views provided by Brainwave are given an identifier prefixed by `br_` .  
+Views provided by Identity Analytics are given an identifier prefixed by `br_` .  
 File names of Audit Views are based on the view identifier but do not feature a prefix.  
 File names start with the main concept that the view processes.  
 The '_Notes_' tab of the Audit View contains the description of the view. This information is displayed when selecting an Audit View from the Report Editor.  
@@ -46,13 +46,13 @@ In a similar fashion, is is recommended to filter your results in Audit View rat
 
 ## Reports
 
-Brainwave Identity GRC provides many pre-configured and multi-format reports for security and compliance services. These reports allow these services to navigate through the data and conduct many analyses allowing them to rationalize permissions and reduce operational risks.  
-It is often necessary to adapt the information presented to the client context. For this reason Brainwave Identity GRC incorporates a powerful report editor allowing you to customize existing reports or even to create your own reports.  
-Brainwave Identity GRC reports are based on the Open Source BIRT solution (BI Reporting Tool) from the eclipse community.  
+Identity Analytics provides many pre-configured and multi-format reports for security and compliance services. These reports allow these services to navigate through the data and conduct many analyses allowing them to rationalize permissions and reduce operational risks.  
+It is often necessary to adapt the information presented to the client context. For this reason Identity Analytics incorporates a powerful report editor allowing you to customize existing reports or even to create your own reports.  
+Identity Analytics reports are based on the Open Source BIRT solution (BI Reporting Tool) from the eclipse community.  
 
-You will find a complete online BIRT documentation in English integrated within Brainwave Identity GRC. This documentation is available by pressing F1 and clicking on the 'Content' section.  
+You will find a complete online BIRT documentation in English integrated within Identity Analytics. This documentation is available by pressing F1 and clicking on the 'Content' section.  
 
-> The BIRT online documentation is the reference documentation for the report editor. Brainwave documentation allows you to get started with the report editor and highlights the specificities related to Brainwave Identity GRC. If you want to use advanced settings in BIRT, we suggest you consult the reference materials in English after reading this documentation.|
+> The BIRT online documentation is the reference documentation for the report editor. Identity Analytics documentation allows you to get started with the report editor and highlights the specificities related to  Identity Analytics. If you want to use advanced settings in BIRT, we suggest you consult the reference materials in English after reading this documentation.|
 
 The following sites can provide you with more information on BIRT:  
 
@@ -69,14 +69,14 @@ Language: English
 ISBN-10: 0321733584  
 ISBN-13: 978-0321733580  
 
-### Differences between the standard version of BIRT and Brainwave Identity GRC
+### Differences between the standard version of BIRT and Identity Analytics
 
-Brainwave Identity GRC relies on the BIRT solution for all layout actions and report creation, allowing you to capitalize on skills already acquired on the BIRT open source solution. The BIRT solution has nevertheless been extended to facilitate the creation and maintenance of relationships within Brainwave Identity GRC.
+Identity Analytics relies on the BIRT solution for all layout actions and report creation, allowing you to capitalize on skills already acquired on the BIRT open source solution. The BIRT solution has nevertheless been extended to facilitate the creation and maintenance of relationships within Identity Analytics.
 
 ### Dedicated data source
 
-BIRT is a reporting solution capable of putting together information from many sources: files, SQL databases, data from the Cloud (Hadoop), ... This concept is represented in the 'Dataset' concept in the report editor. Brainwave Identity GRC extends the functionality of BIRT standards by providing a dedicated information source to the product (Dataset). This data source has the distinction of being configurable without requiring prior knowledge of SQL and without technical knowledge of the data model. This concept is called 'Audit View' in the Brainwave Identity GRC solution. Many audit views are available to those in security services when they wish to generate new reports. It is also possible to create new audit views in order to adjust settings for particular reports.
+BIRT is a reporting solution capable of putting together information from many sources: files, SQL databases, data from the Cloud (Hadoop), ... This concept is represented in the 'Dataset' concept in the report editor. Identity Analytics extends the functionality of BIRT standards by providing a dedicated information source to the product (Dataset). This data source has the distinction of being configurable without requiring prior knowledge of SQL and without technical knowledge of the data model. This concept is called 'Audit View' in the Identity Analytics solution. Many audit views are available to those in security services when they wish to generate new reports. It is also possible to create new audit views in order to adjust settings for particular reports.
 
 ### Templates and wizards
 
-In order to facilitate the creation of new reports, Brainwave Identity GRC includes many report templates as well as a pre-configured environment for their layout: Main pages, stylesheets, icons, ... Allowing you to create new reports in just a few clicks, without having to reinvent the wheel with each new report.
+In order to facilitate the creation of new reports,  Identity Analytics includes many report templates as well as a pre-configured environment for their layout: Main pages, stylesheets, icons, ... Allowing you to create new reports in just a few clicks, without having to reinvent the wheel with each new report.

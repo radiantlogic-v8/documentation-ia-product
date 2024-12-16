@@ -1,9 +1,9 @@
 ---
-title: Brainwave's Data Model
-Description: Documentation related to Brainwave's Data Model
+title: Identity Analytics Data Model
+Description: Documentation related to Identity Analytics Data Model
 ---
 
-# Brainwave's Data Model
+# Identity Analytics Data Model
 
 ## General principles
 
@@ -11,7 +11,7 @@ Description: Documentation related to Brainwave's Data Model
 
 In practice, carrying out controls usually corresponds to identifying inconsistencies between a person's role and his or her access to the Information Systems. As an example, only people whose occupation is "payroll manager" in HR are authorised to access the payroll files in the HR system.
 
-In order to accomplish this, Brainwave's data model integrates the following concepts:
+In order to accomplish this, Identity Analytics' data model integrates the following concepts:
 
 - Organisations
 - Occupations
@@ -20,7 +20,7 @@ In order to accomplish this, Brainwave's data model integrates the following con
 
 Furthermore, it is possible to attach the organisations to the "assets". Assets usually enable the establishment of patterns within the control model of the different processes of the enterprise.
 
-As we shall see later, Brainwave's data model enables the modelling of the most simple to the most complex organisations (hierarchical organisations, multi-hierarchical organisations, matrix organisations, managerial links by department, interpersonal managerial links etc.).
+As we shall see later, Identity Analytics data model enables the modelling of the most simple to the most complex organisations (hierarchical organisations, multi-hierarchical organisations, matrix organisations, managerial links by department, interpersonal managerial links etc.).
 
 ### Finely Grained Standardization of the Representation of Access to the Information Systems
 
@@ -38,13 +38,13 @@ Only then does the need arise to take an interest in groups and roles in order t
 This applies over all the enterprise's systems (the key processes of the enterprise often depending in practice on several applications in order to be completed successfully).  
 The link chain for a control model is thus the following: A user has several access accounts. These accounts enable fine transactions on the systems and this is because the user has roles and profiles within the authorization model.
 
-The Brainwave data model takes up this paradigm:
+The Identity Analytics data model takes up this paradigm:
 
 1. It prioritizes the loading of fine permissions of all types of IT systems (applications, file servers, physical access, ECM systems etc.).
 2. It homogenizes the fine permissions of different systems by putting them on the same level, so that it is then possible to carry out controls mixing fine transactions, access to shared repositories, physical access etc. For this, permissions are "revealed" in order to recreate account links \> fine permissions (by abstracting from roles, profiles, interlinked groups etc.).
 3. It enables the paradigm to be changed easily, thus enabling as it goes along, refinement of the controls (and the increasing maturity of the client) and the loading of increasingly finer permissions into the model (for example, we begin with a simple yes/no access, then by loading the profiles, then finally the fine transactions).
 
-In order to do this, Brainwave data model integrates the following concepts:
+In order to do this, Identity Analytics data model integrates the following concepts:
 
 - Access accounts
 - Applications
@@ -52,7 +52,7 @@ In order to do this, Brainwave data model integrates the following concepts:
 - Rights
 - Perimeters
 
-It should be noted that, in the Brainwave data model, everything is modelled in the form of an "application", whether it be IT applications, file servers or even physical access security systems. The notion of permission is in itself declarative. These are the permissions declared in the "applications" (profiles, roles, transactions, shared directories, SharePoint nodes, physical access typology etc.). Finally, as for the concept of "right", this plays the role of link between the access account and the permission. It can carry the information linked to the instantiation of the permission (for example, access to the directory type permission in a single reading, access to the transaction type payment permission with a limit of 10,000€ and on the Perimeter (transaction authorized with regard to Europe clients only etc.)).  
+It should be noted that, in the Identity Analytics data model, everything is modelled in the form of an "application", whether it be IT applications, file servers or even physical access security systems. The notion of permission is in itself declarative. These are the permissions declared in the "applications" (profiles, roles, transactions, shared directories, SharePoint nodes, physical access typology etc.). Finally, as for the concept of "right", this plays the role of link between the access account and the permission. It can carry the information linked to the instantiation of the permission (for example, access to the directory type permission in a single reading, access to the transaction type payment permission with a limit of 10,000€ and on the Perimeter (transaction authorized with regard to Europe clients only etc.)).  
 Finally, it is possible to attach permissions to assets, in order to identify which permissions participate in which of the assets of the enterprise. One speaks therefore of support assets in the meaning of standard ISO 27005.
 
 ### Integration of Fine Time Management
@@ -68,13 +68,13 @@ It is vital in a control system to be able at least to identify the changes that
 
 Management identity systems integrate this historic notion through tracks left by the different management workflows of the life cycle of the users. Unfortunately, these workflows are inadequate when it comes to controlling authorizations, since they do not give a picture of the fine permissions actually assigned in the systems and they supply a partial and event driven picture, such that it is not possible to map the enterprise at a particular moment. This information is nevertheless vital when it comes to making analyses a posteriori.
 
-The Brainwave Identity GRC data model fully integrates the notion of time. The model is constructed according to the "discreet time linear" principles. In other words, the product acts as a camera and takes snapshots at regular time intervals of the whole of the information (for example, every week). On the one hand, Brainwave Identity GRC identifies all the modifications occurring between each "snapshot" and, on the other, enables analysis of the mapping of any snapshot (no information is deleted from the model).
+The Identity Analytics data model fully integrates the notion of time. The model is constructed according to the "discreet time linear" principles. In other words, the product acts as a camera and takes snapshots at regular time intervals of the whole of the information (for example, every week). On the one hand, Identity Analytics identifies all the modifications occurring between each "snapshot" and, on the other, enables analysis of the mapping of any snapshot (no information is deleted from the model).
 
 ## Data Model Overview
 
-Brainwave's data model can be modelled as following :
+Identity Analytics's data model can be modelled as following :
 
-![Brainwave's data model](./images/data_model_overview.jpg "Brainwave's data model")
+![Identity Analytics's data model](./images/data_model_overview.jpg "Identity Analytics data model")
 
 Please refer to the included subpages for a more detailed overview.  
 
@@ -263,7 +263,7 @@ This information comes from extraction from applications (SAP etc) or from infra
 The accounts and groups are stored in different repositories. The notion of repository enables modelling in the Ledger of the account bases: Asset Directory, RACF, Top Secret and also the application accounts bases (SAP etc.).
 
 Several applications may depend on the same repository. This is mainly the case at the time the applications delegate the management of their accounts to a Repository (Asset Directory, for example).
-Some Brainwave Identity GRC processing and analyses make direct reference to the notion of repository. This is mainly the case for reconciliation of accounts.
+Some Identity Analytics processing and analyses make direct reference to the notion of repository. This is mainly the case for reconciliation of accounts.
 
 > The groups may well be interlinked (acyclic oriented graph).
 
@@ -334,7 +334,7 @@ Here is a preview :
 ### Reconciliation: Matching Accounts and Identities
 
 In order to be able to complete the controls successfully, it is necessary to match up the users with their access on the Information System. For this reason it is necessary to know to which accounts each person has access. This operation that consists of matching up the accounts and the identities is called "reconciliation".  
-Reconciliation is the only information that is deduced from the data in accordance with the rules for reconciliation. The parameters for these rules are set within the Brainwave Identity GRC.  
+Reconciliation is the only information that is deduced from the data in accordance with the rules for reconciliation. The parameters for these rules are set within the Identity Analytics.  
 This information is declarative, which corresponds to a parameter set-up in the product.
 
 ### Usage: Operations Carried Out
@@ -345,7 +345,7 @@ This information comes out of the access logs of the applications and systems.
 
 #### Modeling of uses
 
-Brainwave Identity GRC consolidates within the Identities Ledger all the information concerning:
+Identity Analytics consolidates within the Identities Ledger all the information concerning:
 
 - The users
 - Their physical or logical permissions
@@ -433,19 +433,19 @@ Whether it be a question of control, audit and even direction, it is vital to id
 In practice, the control intervals usually result in inconsistencies between the HR assignments to a person and his or her access on the information systems. Highlighting the modifications enables concentration on the sources of new anomalies and thus to tighter management of the System's security.
 
 Identifying movements is also important when the volume of data to be processed is large. Once the situation returns to a nominally stable state, it is more efficient to concentrate on the movements rather than recommence global control and data validation operations.  
-The Brainwave data model integrates time management. The mode of operation is a discreet time linear mode, which means that the data model will to "take a photograph" at a regular time interval of the whole of the information (for example every week) and conduct analysis based on these photographs.
+The Identity Analytics data model integrates time management. The mode of operation is a discreet time linear mode, which means that the data model will to "take a photograph" at a regular time interval of the whole of the information (for example every week) and conduct analysis based on these photographs.
 
 ![General time management principles](./images/worddavfd36acbb1ed104390c556708621c009f.png "General time management principles")
 
 The advantages of this time management model are multiple:
 
-- Brainwave preserves the photographs taken in their entirety, which means that it is possible to "go back in time" and analyze any photograph. This is especially powerful in the case of forensic analysis, used in conjunction with log analysis tools (SIEM) since Brainwave can even supply the full context of the situations (who was working in such and such a department, what was their access to applications, who was able to write in such and such directory three months ago etc.)
-- Brainwave reconstructs the movements on the basis of simple abstractions from the systems. The systems do not need to supply the list of modifications occurring from one period to another, a simple global export of data suffices. This functionality is vital to the extent that the majority of systems and applications are not able to extract the actions added to their data over a period of time. In the case of Brainwave, for example, a simple weekly HR extraction from the list of employees enables reconstruction of the arrivals, departures, alterations, organizational changes etc.
+- Identity Analytics preserves the photographs taken in their entirety, which means that it is possible to "go back in time" and analyze any photograph. This is especially powerful in the case of forensic analysis, used in conjunction with log analysis tools (SIEM) since Identity Analytics can even supply the full context of the situations (who was working in such and such a department, what was their access to applications, who was able to write in such and such directory three months ago etc.)
+- Identity Analytics reconstructs the movements on the basis of simple abstractions from the systems. The systems do not need to supply the list of modifications occurring from one period to another, a simple global export of data suffices. This functionality is vital to the extent that the majority of systems and applications are not able to extract the actions added to their data over a period of time. In the case of Identity Analytics, for example, a simple weekly HR extraction from the list of employees enables reconstruction of the arrivals, departures, alterations, organizational changes etc.
 Each "photograph" is processed autonomously in the Ledger. It is complete, giving the whole of the information of the organization, identity, account, access etc. This means that at the time of a new loading of data it is necessary to supply the whole of the information.
 
 In practice, the data loaded is "tagged" with the date/time of the data source (file) in the Ledger. Good practice is therefore to work in "best effort" mode at the time of a new loading of data: loading all the information using older files if the recent data has not been made available. Note, however, that this can lead to inconsistencies in the analyses (unidentified departures etc.).  
 
-At the time of a new loading of data, Brainwave Identity GRC automatically processes a certain number of operations:
+At the time of a new loading of data, Identity Analytics  automatically processes a certain number of operations:
 
 - It reconciles the newly loaded concepts with those already previously loaded into the Ledger in order to link them
 - It reports the account reconciliation information
@@ -453,7 +453,7 @@ At the time of a new loading of data, Brainwave Identity GRC automatically proce
 
 The whole of the previous information corresponds to dedicated attributes in the data model.
 
-- One case is quite specifically processed: the departure of an identity of the enterprise. When a person leaves the enterprise, good practice is not to load the corresponding identity concept into the Ledger. This may be implicit (the person disappears from the HR extraction) or explicit (filtering is done at the time of loading of data with the leaving date of the individual). Brainwave Identity GRC automatically detects who has disappeared, changes their status in the Ledger and switches all the accounts that were associated with this person to a "reconciled without owner" status, the reason for which is "leave" and the description is the full name of the person with whom this account was associated.
+- One case is quite specifically processed: the departure of an identity of the enterprise. When a person leaves the enterprise, good practice is not to load the corresponding identity concept into the Ledger. This may be implicit (the person disappears from the HR extraction) or explicit (filtering is done at the time of loading of data with the leaving date of the individual). Identity Analytics automatically detects who has disappeared, changes their status in the Ledger and switches all the accounts that were associated with this person to a "reconciled without owner" status, the reason for which is "leave" and the description is the full name of the person with whom this account was associated.
 
 - The discreet time linear data model implies that several "instances" of the same item are present in the Ledger. For example, for a weekly loading of data the same identity will thus be present 52 times at the Ledger year end: once per photograph.
 
@@ -487,7 +487,7 @@ The Identity items have a certain number of attributes enabling easy identificat
 - **accountchanged** : is a Boolean attribute. It enables identification if the Identity has had a change that has intervened at the level of accounts since the last loading of data: New accounts reconciled, accounts deleted. This attribute also takes account of the "deactivated" status of accounts. It is therefore true if an Identity account has been deactivated, reactivated etc.
 - **permissionchanged** : is a Boolean attribute. It enables identification if the Identity has had a change that has intervened at the level of its permissions since the last loading of data. The calculation of this attribute passes through the accounts reconciled to the identity. This attribute takes account of the "deactivated" status of accounts. It only takes account of "asset" accounts reconciled to the identity.
 
-Brainwave Identity GRC performs an implicit filtering on the rights inherited in the hierarchies of rights (directories etc). This enables, for example, the avoidance of this attribute passing as true if the Ledger contains file trees, that an Identity has a right of access on a directory and that a file has been added to this directory since the last loading.
+Identity Analytics performs an implicit filtering on the rights inherited in the hierarchies of rights (directories etc). This enables, for example, the avoidance of this attribute passing as true if the Ledger contains file trees, that an Identity has a right of access on a directory and that a file has been added to this directory since the last loading.
 
 #### Specific Attributes on the Accounts
 
@@ -495,6 +495,6 @@ Similarly to Identity items, Account items have a certain number of attributes e
 
 - **permissionchanged** : is a Boolean attribute. It enables identification if the account has had a change that has intervened at the level of its permissions since the last loading of data.
 
-Brainwave Identity GRC performs an implicit filtering on the rights inherited in the hierarchies of rights (directories etc). This enables, for example, the avoidance of this attribute passing as true if the Ledger contains trees of files, that an Identity has a right of access on a directory and that a file has been added to this directory since the last loading.
+Identity Analytics performs an implicit filtering on the rights inherited in the hierarchies of rights (directories etc). This enables, for example, the avoidance of this attribute passing as true if the Ledger contains trees of files, that an Identity has a right of access on a directory and that a file has been added to this directory since the last loading.
 
-- **groupchanged** : is a Boolean attribute. It enables identification if the account has had a change that has intervened at the level of its attachments to groups since the last loading of data. Brainwave Identity GRC only takes account of direct attachments to groups; the modification of a group (addition to a group within a group) will therefore not have an effect on passing this attribute as "true".  
+- **groupchanged** : is a Boolean attribute. It enables identification if the account has had a change that has intervened at the level of its attachments to groups since the last loading of data. Identity Analytics only takes account of direct attachments to groups; the modification of a group (addition to a group within a group) will therefore not have an effect on passing this attribute as "true".  

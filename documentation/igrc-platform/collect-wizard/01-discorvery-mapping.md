@@ -5,7 +5,7 @@ Description: Documentation related to the attribute mapping in Discovery File
 
 # Attribute Mapping in Discovery File
 
-In order to configure the mapping between the data in the import files and Brainwave's data cube a new editor has been added:
+In order to configure the mapping between the data in the import files and Identity Analytics's data cube a new editor has been added:
 
 - The Discovery editor
 

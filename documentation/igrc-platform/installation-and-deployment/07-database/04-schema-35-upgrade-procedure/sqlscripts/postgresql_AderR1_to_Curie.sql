@@ -5,7 +5,7 @@ Unauthorized duplication or distribution of this program, or any portion of it, 
 
 Usage: Upgrades The database schema from version Ader R1 to Curie R1
 
-(c) Brainwave 2021
+(c) Radiant Logic 2021
 
 Execute the script 
 psql -U user -d database -a -f "<ABSOLUTE PATH TO FILE>/postgresql_XXXXX_to_Curie.sql" -W > /tmp/output.txt 2>&1
@@ -507,7 +507,7 @@ CREATE TABLE texecplanmonitor (
 
 UPDATE tproperties SET cvalue='33' WHERE cpropertiesuid='VERSION';
 --
--- Copyright Brainwave 2021 
+-- Copyright Radiant Logic 2021 
 -- Execute this script inside psql session as following or pgadmin tool.
 -- Allow to drop all views used in Braille version (63 views)
 
@@ -655,7 +655,7 @@ select integer_to_bigint(:SchemaVariable);
 -- Drop the function
 drop function IF EXISTS integer_to_bigint(text);
 --
--- Copyright Brainwave 2021 
+-- Copyright Radiant Logic 2021 
 -- Execute this script inside psql session as following or pgadmin tool.
 -- Allow to re-create all views used in Braille version.
 

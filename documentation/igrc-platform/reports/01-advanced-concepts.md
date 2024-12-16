@@ -9,7 +9,7 @@ Description: Documentation related to advanced concepts of creating reports
 
 When formatting complex reports, it can sometimes be useful to present the information by following a master/detail type logic: For each main element listed (for example, each identity from the ledger), display a set of characteristics of this element (for example, its organizations, groups, ...).  
 If the concept of grouping in the table allows you to handle the simplest cases, it quickly becomes impossible to limit yourself to this functionality because information retrieval requires running multiple queries on the identity ledger (usually n + 1: A query to list the master elements, followed by n queries to retrieve additional information for each of the master elements listed).  
-The report editor allows you to contextualize queries run on the ledger, and thus handle the constraints related to master/detail type displays. Many reports available as standard in Brainwave Identity GRC use this feature. We suggest that after reading this chapter, you edit these reports in order to access examples of implementation (`templateanalysis.rptdesign`, ...).  
+The report editor allows you to contextualize queries run on the ledger, and thus handle the constraints related to master/detail type displays. Many reports available as standard in Identity Analytics use this feature. We suggest that after reading this chapter, you edit these reports in order to access examples of implementation (`templateanalysis.rptdesign`, ...).  
 The set-up of subreports is based on the nesting of List and Table type components, as well as the dynamic configuration of Datasets referenced by the sub-components.  
 Let's look at the example of a report that lists the applications for each identity. We will create this report not by relying on a grouping of rows in a table, but by configuring a subreport.  
 To do this, we will insert a Table in our report and associate a Dataset which is based on the audit view 'br_identity' to this Table. This component displays the ordered list of all the identities in the ledger.  
@@ -152,7 +152,7 @@ The first three steps of creating a chart are based on the three tabs of the Cha
 - Select Data
 - Format Chart
 
-The contents of the 'Select Data' and 'Format Data' tabs may vary depending on the type of chart you selected. Therefore, in this documentation, we will focus on describing the general configuration logic and we invite you to play around with the settings on each type of chart by relying directly on the Brainwave Identity GRC report editor.
+The contents of the 'Select Data' and 'Format Data' tabs may vary depending on the type of chart you selected. Therefore, in this documentation, we will focus on describing the general configuration logic and we invite you to play around with the settings on each type of chart by relying directly on the Identity Analytics report editor.
 
 ### Retrieve the Chart Data
 
@@ -233,7 +233,7 @@ The available functions depend on the type of chart selected. It is possible to 
 - Legend formatting
 - Interactivity configuration by clicking on a chart area
 
-We invite you to discover these features directly by using the Chart Editor. See also the chapter "Laying Out and Formatting a Chart' in the 'BIRT Report Developer Guide' Brainwave Analytics documentation.
+We invite you to discover these features directly by using the Chart Editor. See also the chapter "Laying Out and Formatting a Chart' in the 'BIRT Report Developer Guide' Identity Analytics documentation.
 
 ## Pivot Tables
 
@@ -277,7 +277,7 @@ Once formatted, your pivot table will appear as follows in your reports:
 
 ## Localization
 
-Brainwave Identity GRC supports the configuration of multiple languages. English and French are standard throughout the product, including in the reports.
+ Identity Analytics supports the configuration of multiple languages. English and French are standard throughout the product, including in the reports.
 
 It is also possible to add new languages in the web portal and reports. This chapter describes the method used to localize your reports.
 
@@ -294,7 +294,7 @@ Configure a properties file in a report by selecting the 'Resources' tab in the 
 
 ![Properties file in a report](./images/worddav35d83e758c43f1632d27a44732c1d026.png "Properties file in a report")
 
-> There is a properties file referenced by default in reports created with the Brainwave Identity GRC wizard. This is the 'concepts.properties' file.
+> There is a properties file referenced by default in reports created with Identity Analytics. This is the 'concepts.properties' file.
 
 This file has a localized version of all the concepts present in the product, including all the columns for all the Identity Ledger items. The use of these properties is to be preferred in order to ensure the consistency of all reports. This file is located in the '/reports/resources' subdirectory of your audit project. To localize text, select the component in question in the editor and select the 'Localization' tab of the properties editor.
 
@@ -306,9 +306,9 @@ It is then possible to select existing text in the properties file, or create ne
 
 A dedicated localization editor is also present when setting up the association of text to a column value ('Map' function in most of the components).
 
-> The properties file that will be modified is the one corresponding to the working language of Brainwave Analytics; this language is the default language of the operating system. If the file corresponding to the language does not exist, then the default will be changed.
+> The properties file that will be modified is the one corresponding to the working language of Identity Analytics; this language is the default language of the operating system. If the file corresponding to the language does not exist, then the default will be changed.
 
-A dedicated properties editor is available to you in Brainwave Analytics; it allows you to handle the batch translation of a report by creating a new properties file and comparing values â€‹â€‹in pairs with reference values while editing. Simply edit a properties file in the editor. Brainwave Analytics deduces the default file and all the language files present from your file. It allows you to choose the language with which to perform the pairs comparison when editing.  
+A dedicated properties editor is available to you in Identity Analytics; it allows you to handle the batch translation of a report by creating a new properties file and comparing values â€‹â€‹in pairs with reference values while editing. Simply edit a properties file in the editor. Identity Analytics deduces the default file and all the language files present from your file. It allows you to choose the language with which to perform the pairs comparison when editing.  
 We recommend that you only translate your reports once they are finalized using the dedicated localization files editor.
 
 ![Localized text editor](./images/worddav3e8df826043f4feaa3770fc64ef7de2c.png "Localized text editor")
@@ -316,7 +316,7 @@ We recommend that you only translate your reports once they are finalized using 
 ## Scripting
 
 The reporting engine includes the Mozilla Rhino foundation's JavaScript language. BIRT has many events on which scripts may be triggered to customize data presentation or the report layout.  
-A detailed presentation of this functionality is beyond the scope of this guide. We invite you to consult the 'Scripting Reference' chapter of the 'BIRT Report Developer Guide' documentation available in Brainwave Analytics as well as online documentation of the Eclipse foundation: [documentation](http://www.eclipse.org/birt/documentation/integrating/scripting.php) for more information about the scripting capabilities offered by the solution.
+A detailed presentation of this functionality is beyond the scope of this guide. We invite you to consult the 'Scripting Reference' chapter of the 'BIRT Report Developer Guide' documentation available in Identity Analytics as well as online documentation of the Eclipse foundation: [documentation](http://www.eclipse.org/birt/documentation/integrating/scripting.php) for more information about the scripting capabilities offered by the solution.
 
 ## Assigning a Reliability Index to a Reconciliation Rule
 

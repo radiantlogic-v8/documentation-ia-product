@@ -5,7 +5,7 @@ description: "Oracle configuration recommendations"
 
 # Oracle configuration recommendations
 
-> [!warning] Oracle is supported by Brainwave only for existing clients and projects. In the case of a new project the Oracle database management system is not supported.  
+> [!warning] Oracle is supported by RadiantOne only for existing clients and projects. In the case of a new project the Oracle database management system is not supported.  
 
 The following recommendations are based on a usage of the iGRC product in an integration environment using the volume of data equivalent to a production environment.  
 
@@ -17,9 +17,9 @@ The global usage of the product and data-loading performances were optimal when 
 
 ### Software
 
-The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
+The certified environment matrix is available on the Identity Analytics documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
-It is recommended that the Oracle environment be entirely dedicated to The solution Brainwave iGRC.  
+It is recommended that the Oracle environment be entirely dedicated to the Identity Analytics solution.  
 
 The supported OS are:  
 
@@ -56,7 +56,7 @@ The standard configuration for windows and/or linux systems:
 
 The required storage space of the database is dependent of the number of objects (identities, accounts, groups, permissions, applications ...), of the frequency of data ingestion and of the retention period of the different timeslots.  
 
-From experience Brainwave recommends to plan for 10Go per timeslot, not including the storage space of the UNDO and TEMP tablespaces.  
+Radiant Logic recommends to plan for 10Go per timeslot, not including the storage space of the UNDO and TEMP tablespaces.  
 
 Considering a retention period of 12 months and a frequency of data loads every 2 weeks the final storage space would be of the order 240Go in a year.  
 

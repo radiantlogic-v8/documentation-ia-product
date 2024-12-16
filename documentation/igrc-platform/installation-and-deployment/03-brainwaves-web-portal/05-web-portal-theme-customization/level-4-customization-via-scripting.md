@@ -44,7 +44,7 @@ A portal Skin java class is a regular java class that must implement the interfa
 - it provides a default implementation for the top header
 - it's also the superclass for the default Classic and Default skin classes.  
 
-The UI widgets, containers and layouts that you can use in your custom skin class are those provided by Eclipse RAP, plus a number of brainwave custom widgets, such as a vertical and horizontal navigation panels.  
+The UI widgets, containers and layouts that you can use in your custom skin class are those provided by Eclipse RAP, plus a number of Identity Analytics custom widgets, such as a vertical and horizontal navigation panels.  
 Eclipse RAP widgets follow the same interface and behavior as Eclipse SWT (Standard Widget Toolkit) but will generate HTML/Javascript/CSS output.  
 
 Useful external links:  
@@ -73,7 +73,7 @@ The table bellow lists the files included in the package and the possible modifi
 |  reference/ PortalSkinBase.java |  Source code for abstract implementation <br>of IPortalSkin interface for documentation purposes <br>Not used in the build and not included in the JAR |  |  |
 |   reference/PortalLeftSkin.java <br>PortalSkin.java | \* source code for the **Default theme**  skin class , <br>with top header and left vertical navigation panel <br><br>\* source code for the **Classic theme**  skin class, <br>with top header and top horizontal navigation panel<br><br>Not used in the build and not included in the JAR |  |  |
 
-It's out of the scope of this documentation to explain in deep Eclipse RAP widgets or the internals of Brainwave web portal implementation.  
+It's out of the scope of this documentation to explain in deep Eclipse RAP widgets or the internals of Identity Analytics web portal implementation.  
 We recommend to read the source code of the different classes provided in the package, to gain familiarity and inspiration when writing your own skin class.
 
 ### Packaging and deploying a custom theme with a skin class
@@ -128,7 +128,7 @@ catalina jpda start
 
 Public interface IPortalSkin  
 
-This interface provides a contract for Brainwave custom skin classes base implementation: com.brainwave.portal.ui.skin.PortalSkinBase  
+This interface provides a contract for Identity Analytics custom skin classes base implementation: com.brainwave.portal.ui.skin.PortalSkinBase  
 
 ### Method Summary
 

@@ -7,9 +7,9 @@ Description: Documentation related to the generation of a collect line
 
 ## Introduction
 
-The data collection wizard provides the user with a dedicated interface to map the original import data to attribute in Brainwave's data cube. The product will then automatically generate the corresponding data collection lines.
+The data collection wizard provides the user with a dedicated interface to map the original import data to attribute in Identity Analytics data cube. The product will then automatically generate the corresponding data collection lines.
 
-The generated elements can then be used out of the box to run an execution plan. Further customizations to the generated files can be applied if needed, thanks to the high customization capabilities of Brainwave.
+The generated elements can then be used out of the box to run an execution plan. Further customizations to the generated files can be applied if needed, thanks to the high customization capabilities of Identity Analytics.
 
 The following paragraphs detail the process from the design of the application model to the launch of generated collect:
 
@@ -87,4 +87,4 @@ The following screenshot shows the Build tab:
 
 ## Execution Plan
 
-Once all the previously described steps have been completed it is possible to launch an execution plan to load the data to brainwave ledger.
+Once all the previously described steps have been completed it is possible to launch an execution plan to load the data to Identity Analytics ledger.

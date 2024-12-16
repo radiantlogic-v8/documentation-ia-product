@@ -39,7 +39,7 @@ The initial data provided to the source component is based on data queried by an
 
 #### Examples
 
-In the flowing example we will show a sample business View that contain only a view source component, it will be based on `br_application` (standard brainwave view)
+In the flowing example we will show a sample business View that contain only a view source component, it will be based on `br_application` (standard Identity Analytics view)
 
 Here is the definition of the `br_application` ledger view:
 

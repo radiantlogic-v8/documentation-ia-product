@@ -125,7 +125,7 @@ Several components can be declared at the same time. The list of applicable comp
 
 ## Search Page timeouts
 
-In version 2015 of brainwave the webportal it is possible to create your own search rules.  
+In version 2015 of Identity Analytics the webportal it is possible to create your own search rules.  
 The effect is, that depending on the data collected, the execution of these search rules can take significant amounts of time before returning a result. During this time your navigator is frozen.  
 
 In order to avoid these delays a timeout has been positioned.  

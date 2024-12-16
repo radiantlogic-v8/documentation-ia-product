@@ -11,8 +11,8 @@ Business views are a new concept introduced in the product as of version 2017.
 
 During the project lifecycle, the customer often wants to adapt pages or reports to his specific needs or asks for new reports. The work needed to produce these pages or reports is split into two technical parts :
 
-- The data query (_i.e._ the view in the Brainwave architecture). This phase is used to configure what data is shown.
-- The presentation (_i.e._ the page or report in the Brainwave architecture). This phase is used to configure how data is shown.
+- The data query (_i.e._ the view in the Identity Analytics architecture). This phase is used to configure what data is shown.
+- The presentation (_i.e._ the page or report in the Identity Analytics architecture). This phase is used to configure how data is shown.
 
 The best practice is to address the filtering and computation phases (what data to show) with views using criteria and computed attributes. Depending on the complexity of the customer need, views may not offer enough features to produce the data expected by the page or the report. In such cases, part of the filtering or computation must be done in the pages or in the reports. Both the Pages language and Birt support a type of dataset to make application joins (compared to database joins) or trends. Typically, this kind of dataset is an application logic which could be called business logic.
 

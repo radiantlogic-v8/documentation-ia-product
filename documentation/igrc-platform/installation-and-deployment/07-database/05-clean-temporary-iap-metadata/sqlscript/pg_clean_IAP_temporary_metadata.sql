@@ -2,7 +2,7 @@
 -- Filename:   pg_clean_IAS_temporary_metadata.sql
 --             using PSQL command
 -- Purpose :   Clean temporary metadata after migration to CurieR2
--- COMPANY : BRAINWAVE GRC
+-- COMPANY : Identity Analytics
 -- Date : February 2022
 -- To execute in PSQL session
 -- Example : psql -h localhost -p 5433 -d curie -U postgres -a -c '\timing' -f <full path name>\orcl_clean_IAS_temporary_metadata.sql -W > C:\temp\exec_delete_postgresql.txt 2>&1

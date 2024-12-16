@@ -249,7 +249,7 @@ joinDataset = Dataset {
 
 "# Computing trends
 
-You can compute trends automatically on dataset. This is a powerful feature which can be used with any kind of information within the Brainwave data model as long as you calculate a metric.  
+You can compute trends automatically on dataset. This is a powerful feature which can be used with any kind of information within the Identity Analytics data model as long as you calculate a metric.  
 
 Here is an example:  
 

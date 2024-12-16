@@ -7,7 +7,7 @@ Description: Documentation related to the control methods present in Analytics
 
 ## Control Methods Present in Analytics
 
-There are different types of control methods within Brainwave Identity GRC. You will find below a succinct description of each.  
+There are different types of control methods within Identity Analytics. You will find below a succinct description of each.  
 
 ## Arbitrary Set
 
@@ -20,7 +20,7 @@ For example:
 - Unused groups/permissions
 
 Or, moreover, macroscopic controls, such as which persons in a department X have access to an application (regardless of associated authorizations).
-Setting this control returns a reference to a rule. Click here for documents related to setting up rules within Brainwave Identity GRC.
+Setting this control returns a reference to a rule. Click here for documents related to setting up rules within Identity Analytics.
 
 ![Control definition](./images/control-definition-main.png "Control definition")
 

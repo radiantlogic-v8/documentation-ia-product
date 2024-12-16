@@ -21,11 +21,11 @@ Reports are present in the `/reports` subtree of your audit project. Several sub
 - **/reports/scripts/** : Scripts on which all the standard reports rely. Do not modify the content of this directory
 - **/reports/style/** : Stylesheet used by standard reports
 
-You must create your own reports in the '/reports/custom' subdirectory; this will facilitate the reversibility and the migration of your reports to a new version of Brainwave Identity GRC.  
+You must create your own reports in the '/reports/custom' subdirectory; this will facilitate the reversibility and the migration of your reports to a new version of  Identity Analytics.  
 We recommend that you rely on existing reports to help create your own reports. Feel free to copy/paste reports or report elements.  
-You can modify existing reports entirely, for example, to add or change detail texts in identity reports, account reports ... We advise you to keep track of the reports you have modified in order to facilitate upgrading the Brainwave Identity GRC software. Brainwave Analytics supports the majority of version control managers. The best way to keep track of changes is fork your audit project in a version control manager such as SVN.
+You can modify existing reports entirely, for example, to add or change detail texts in identity reports, account reports ... We advise you to keep track of the reports you have modified in order to facilitate upgrading the  Identity Analytics software. Identity Analytics supports the majority of version control managers. The best way to keep track of changes is fork your audit project in a version control manager such as SVN.
 We recommend that you give your reports simple names that remind you of the concept presented by the report as well as the primary purpose of the report.  
-Standard Brainwave Identity GRC reports adopt the following naming convention:
+Standard Identity Analytics reports adopt the following naming convention:
 
 - The reports bear the name of their main concept
 - `_[concept name]_search` for search reports
@@ -43,9 +43,9 @@ The `/reports/rules/` subdirectory contains a series of reports used by the rule
 - **/reports/rules/organization** : Organizations rules results reports
 - **/reports/rules/permission** : Permissions rules results reports
 
-You can add your own rules reports in these directories to extend the standard Brainwave Identity GRC functionalities. To do so, copy/paste an existing rules report, and use it as a model or use the following report templates: _Rule results, landscape report, Rule results report._
+You can add your own rules reports in these directories to extend the standard Identity Analytics functionalities. To do so, copy/paste an existing rules report, and use it as a model or use the following report templates: _Rule results, landscape report, Rule results report._
 
-> Do not forget to read the _/reports/README FIRST.txt_ file before using Brainwave Identity GRC reports.
+> Do not forget to read the _/reports/README FIRST.txt_ file before using Identity Analytics reports.
 
 ## Audit Views
 
@@ -72,7 +72,7 @@ And lastly, we recommend that whenever possible, you set a limit on the number o
 
 ## Standard Reports
 
-Many reports are available as standard in Brainwave Identity GRC. These reports allow you to navigate in the Identity Ledger as soon as you have loaded a first dataset. Many analyses are also available.
-Reports allow you to focus on your immediate control and audit activities. In this chapter you will find a brief description of the various reports that comprise Brainwave Identity GRC.
+Many reports are available as standard in Identity Analytics. These reports allow you to navigate in the Identity Ledger as soon as you have loaded a first dataset. Many analyses are also available.
+Reports allow you to focus on your immediate control and audit activities. In this chapter you will find a brief description of the various reports that comprise Identity Analytics.
 
 ![Standard analysis reports available](./images/report-analytics.png "Standard analysis reports available")

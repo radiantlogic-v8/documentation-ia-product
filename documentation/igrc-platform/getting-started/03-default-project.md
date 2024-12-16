@@ -145,7 +145,7 @@ By default, users in this role will be able to see the menu Admin. In this menu 
 ## Reports Featuresets
 
 <u>Version</u>
-Applicable as of Brainwave's iGRC version 2016 R3.
+Applicable as of Identity Analytics's iGRC version 2016 R3.
 
 All the reports that are delivered with the default project and that are accessible in the webportal are declared in a page file that is located in :
 `webportal/pages/reports/standard.page`

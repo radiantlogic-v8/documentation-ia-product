@@ -9,7 +9,7 @@ description: "Configuration and usage of silos in the execution plan"
 
 In previous versions of the product, all data files were collected as a whole. There was no way to delete all data related to an application or a repository like SAP (accounts, groups, rights, permissions,...). The whole sandbox or timeslot is deleted.  
 
-In the new version, you can define different silos (for example one per application) and run the collect so that each data stored in the Brainwave database (account, group, permission,...) belong to a silo.  
+In the new version, you can define different silos (for example one per application) and run the collect so that each data stored in the Identity Analytics database (account, group, permission,...) belong to a silo.  
 
 The Timeslot view of the product displays the list of silos collected and you can delete just one silo and reload it after modifying the collect line.  
 

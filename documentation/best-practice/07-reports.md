@@ -5,7 +5,7 @@ description: "Best Practice for reports"
 
 # Best Practice for reports
 
-The Goal is to provide coding/implementation Guidelines for iGRC.
+The Goal is to provide coding/implementation Guidelines for Identity Analytics.
 
 ## General principles
 

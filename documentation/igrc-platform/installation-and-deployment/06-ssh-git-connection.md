@@ -77,7 +77,7 @@ IdentityFile ~/.ssh/id_rsa
 User <GIT_ACCOUNT_LOGIN> 
 ```
 
-Here is an example for Brainwave Bitbucket:
+Here is an example for Identity Analytics Bitbucket:
 
 ![config file example](./images/git_ssh_connection_config_file.png)
 

@@ -5,7 +5,7 @@ description: "G-Suite application declaration"
 
 # G-Suite application declaration
 
-> [!warning] The information listed here is provided as an example only. This methodology is not supported by Brainwave GRC, but has been tested.
+> [!warning] The information listed here is provided as an example only. This methodology is not supported by Identity Analytics, but has been tested.
 
 Open your **Google suite** admin console and click on `applications`.  
 

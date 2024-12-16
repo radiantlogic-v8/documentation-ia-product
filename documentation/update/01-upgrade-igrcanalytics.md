@@ -63,7 +63,7 @@ To check that the upgrade went well, you can check either the release notes:
 
 ![Release-notes](./images/release-notes.png "Release-notes")
 
-Or the actual version of the product in `Window > Preference > Brainwave > License`:
+Or the actual version of the product in `Window > Preference > RadiantOne > License`:
 
 ![Product Version](./images/productVersion.png "Product Version")
 

@@ -5,7 +5,7 @@ description: "How-To help the support team to investigate performance issues whe
 
 # Performance investigation in SQL server
 
-In order to efficiently investigate performance issues, some information on Brainwave iGRC's infrastructure and configuration is required (dbcheck), such as :  
+In order to efficiently investigate performance issues, some information on Identity Analytics's infrastructure and configuration is required (dbcheck), such as :  
 
 - The list of parameters
 - The sizing of the database
@@ -13,7 +13,7 @@ In order to efficiently investigate performance issues, some information on Brai
 - The list of views
 - And so on  
 
-This article includes a SQL script, and it's associated documentation. The results should be sent to Brainwave's support service to aide in the resolution of performance issues.  
+This article includes a SQL script, and it's associated documentation. The results should be sent to RadiantOne's support service to aide in the resolution of performance issues.  
 
 ## Prerequisites  
 
@@ -32,7 +32,7 @@ The more information provided and the easier the diagnostic will be.
 
 ### SQL Database
 
-This page includes attached, two scripts, that are provided by Brainwave GRC :
+This page includes attached, two scripts, that are provided by Identity Analytics :
 
 - `CheckDB_SQLServer_Vxx.sql` - Provides All information on the database : parameters, sizing, statistics, indexes fragmentation and iGRC schema
 - `SQLserver_iGRC_Schema.sql` - Provides only information on the iGRC schema as number of records per tables, per Time Slots and so on  
@@ -48,7 +48,7 @@ Open either script in SQL Management Studio and before running it. It is necessa
 | 18          | `set @dbname = '<database_name>';`     |
 | 19          | `set @dbschema = '<database_schema>';` |
 
-Save the results to an output file and send all to the Brainwave support team.
+Save the results to an output file and send all to the Radiant Logic support team.
 
 ## Downloads  
 

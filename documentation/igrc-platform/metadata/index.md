@@ -5,15 +5,15 @@ description: "Configuration and usage of Metadata"
 
 # Metadata
 
-## Extending Brainwave's data model
+## Extending Identity Analytics data model
 
-Brainwave uses a predefined data model.
-In order to ingest a new data source in brainwave's ledger, one must define the mapping between the application entitlement model and Brainwave's data model.
-This means that Brainwave's data model is a superset of all the entitlement models that can be found in third party applications.
-The Brainwave data model is composed of HR and entitlement data model. It defines a number of entities and the available links between these entities.
-HR and entitlement model must match the concepts and the links found in Brainwave's data model.
+Identity Analytics uses a predefined data model.
+In order to ingest a new data source in Identity Analytics's ledger, one must define the mapping between the application entitlement model and Identity Analytics's data model.
+This means that Identity Analytics's data model is a superset of all the entitlement models that can be found in third party applications.
+The Identity Analytics data model is composed of HR and entitlement data model. It defines a number of entities and the available links between these entities.
+HR and entitlement model must match the concepts and the links found in Identity Analytics's data model.
 
-Sometimes, information related to HR or entitlements can not find a place in the data model as it does not match the Brainwave attribute semantics.
+Sometimes, information related to HR or entitlements can not find a place in the data model as it does not match the Identity Analytics attribute semantics.
 Up until version **2017 R3**, the data model could only be extended in two ways:
 
 1. by using custom attributes to store the desired information in entities.

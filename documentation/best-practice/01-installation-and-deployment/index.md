@@ -5,7 +5,7 @@ description: "Best practice for installation and deployment"
 
 # Best practice for installation and deployment
 
-The following pages include Brainwave's **Best Practices** to follow when deploying and configuring a project.  
+The following pages include **Best Practices** to follow when deploying and configuring a project.  
 
 ## Technical configuration
 
@@ -25,7 +25,7 @@ There is no need to deliver a new project version to fix a variable value, as it
 
 __Operations__
 
-In some contexts, maintenance of some environments (i.e. Prod) are done by other teams than the iGRC project team.  
+In some contexts, maintenance of some environments (i.e. Prod) are done by other teams than the Identity Analytics project team.  
 It's often easier for them to update the `.properties` files without having to update the project itself and mess with the technical configuration file.  
 
 ### Cons

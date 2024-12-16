@@ -7,7 +7,7 @@ Description: Documentation related to audit logs configuration and usage
 
 ## Definition and Purpose of Audit Logs
 
-Brainwave GRC helps you gain a holistic view of the assets of your company and the people who are interacting with them.  
+Identity Analytics helps you gain a holistic view of the assets of your company and the people who are interacting with them.  
 This includes:  
 
 - People and organizations
@@ -18,7 +18,7 @@ This includes:
 - Usages
 - and now **Audit logs.**
 
-By automatically collecting and consolidating all application-based audit logs, Brainwave GRC helps you answer questions related to **Who has done what and when** , such as the following:  
+By automatically collecting and consolidating all application-based audit logs, Identity Analytics helps you answer questions related to **Who has done what and when** , such as the following:  
 
 - Who has read/deleted this sensible file during the last month?
 - What were the files accessed by John Doe 3 months ago?
@@ -32,7 +32,7 @@ Getting answers to these questions will help you address the following concerns:
 - Pinpoint proven risks on your data
 - and Mitigate potential risks on fraud and data theft.
 
-Using the powerful and flexible extraction and collect capabilities of Brainwave platform, Audit logs can collect virtually any type of log events from any source, ranging from file access logs, directory administration logs, ERP usage and administration log, and so on. Heterogeneous log events are managed in a unified manner, and without losing any information from the original event.
+Using the powerful and flexible extraction and collect capabilities of RadiantOne, audit logs can collect virtually any type of log events from any source, ranging from file access logs, directory administration logs, ERP usage and administration log, and so on. Heterogeneous log events are managed in a unified manner, and without losing any information from the original event.
 
 ## How to Use Audit Logs
 
@@ -51,6 +51,6 @@ Identity Ledger's Usage metrics allow aggregating audit log events and correlati
 - Which transactions/permissions are never used?
 - Which accounts are never used?
 
-Usage metrics are leveraged in Brainwave's User Behavior Analytics in order to help you "find the needle in the haystack" and identify abnormal behaviors through peer groups analysis.  
+Usage metrics are leveraged in Identity Analytics' user behavior analytics in order to help you "find the needle in the haystack" and identify abnormal behaviors through peer groups analysis.  
 
-This chapter explains how to configure, collect and work with Audit Logs in Brainwave's solutions.
+This chapter explains how to configure, collect and work with Audit Logs in RadiantOne solutions.

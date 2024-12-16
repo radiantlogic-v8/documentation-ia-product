@@ -22,7 +22,7 @@ However, these tags can become very useful to clearly identify a set or group of
 
 ## What values are already used?
 
-Some of the Brainwave facets deliver their own rules and controls. When these facets deliver views, pages or reports to display the results of the controls , it is common to use control tags in order to search, filter and classify.
+Some of the Identity Analytics facets deliver their own rules and controls. When these facets deliver views, pages or reports to display the results of the controls , it is common to use control tags in order to search, filter and classify.
 
 If the value of the tags for the delivered controls is modified, then the views and pages associated may stop working correctly.
 

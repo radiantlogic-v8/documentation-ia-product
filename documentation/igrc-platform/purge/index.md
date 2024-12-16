@@ -154,7 +154,7 @@ This command is detailed bellow:
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the Rad product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<keep value> is a positive value expressed in <keep unit>"
 "<keep unit> is either 'days' or 'timeslots' or 'states'"

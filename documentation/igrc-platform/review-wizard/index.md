@@ -36,7 +36,7 @@ Hopefully, many of these concerns are addressed by the Campaign wizard generator
 
 ## Objectives
 
-Brainwave expertise in UAR shows that all customers have different needs when setting up a review.
+Identity Analytics expertise in UAR shows that all customers have different needs when setting up a review.
 These difference may comes from:
 
 - The purpose of the review (compliance, risk mitigation...),

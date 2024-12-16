@@ -5,7 +5,7 @@ description: "Best Practice for workflows"
 
 # Best Practice for workflows
 
-The Goal is to provide coding/implementation Guidelines for iGRC.
+The Goal is to provide coding/implementation Guidelines for Identity Analytics.
 
 ## Identifiers
 

@@ -1,5 +1,5 @@
 -- 
--- Copyright Brainwave 2020 - Ledger Base - PostgreSQL 9.6 and > 
+-- Copyright Radiant Logic 2024 - Ledger Base - PostgreSQL 9.6 and > 
 -- Date creation : 05/2017
 -- Date updated : 05/2023
 --
@@ -7,7 +7,7 @@
 -- Execute this script inside psql session as following: 
 -- psql -h localhost -p 5432 -d igrc -U postgres -f <ABSOLUTE PATH TO FILE>/DBcheck_postgreSQL.sql > result.txt
 -- -h hostname  -p port_number   -d database_name  -U postgres username
--- Return result.txt file to Brainwave for analyse.
+-- Return result.txt file to Identity Analytics for analysis.
 -- !!!!!!!!!!!! WARNING !!!!!!!!!!! : REPLACE schema_name (Lines : 18 and 19)
 
 -- Set default schema for this session only

@@ -7,7 +7,7 @@ description: "Web portal customization"
 
 ## Introduction
 
-Customizing the Brainwave web portal means modifying different elements of the look and feel, typically to match your company's graphical chart.  
+Customizing the Identity Analytics web portal means modifying different elements of the look and feel, typically to match your company's graphical chart.  
 Customization can be done at different levels, ranging from simply changing the header logo and title to match your company logo and application, customizing the styles, fonts, colors and images of the portal framing and as far as changing the layout of the portal and even hiding some UI elements or adding your own.  
 
 This chapter explains how to carry out different types of customization for the common use cases.  

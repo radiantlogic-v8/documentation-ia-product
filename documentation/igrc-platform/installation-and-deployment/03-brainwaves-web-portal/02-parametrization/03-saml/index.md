@@ -16,7 +16,7 @@ What's interesting here is that the Identity Provider does not need to be instal
 Here is how it works:  
 
 - The **User Agent (UA)** is the end user web browser  
-- The **Service Provider (SP)** is the Brainwave tomcat web server  
+- The **Service Provider (SP)** is the Identity Analytics tomcat web server  
 - The **Identity Provider (IdP)** is the third party accountable for authentication and authorization  
 
 ![SAML access architecture](../images/SAML_access_architecture.png "SAML access architecture")
@@ -42,24 +42,24 @@ You can also delegate authentication and authorization to best of breed solution
 - Forgerock
 - ...
 
-Brainwave is providing a sample implementation of the `SAMLv2` protocol for `Tomcat 8/9`. You will find here all the information needed to configure `SAMLv2` support for authentication and authorization with a **third party Idp**.  
+Identity Analytics is providing a sample implementation of the `SAMLv2` protocol for `Tomcat 8/9`. You will find here all the information needed to configure `SAMLv2` support for authentication and authorization with a **third party Idp**.  
 
 This implementation is `SAMLv2` compliant and should be used with **any identity providers** `SAMLv2` compliant.  
 
 ## Configuration procedure
 
-### Step 1: Declare the Brainwave application in IdP
+### Step 1: Declare the Identity Analytics application in IdP
 
-First step is to declare your Brainwave Web application in order for the IdP to recognize it and perform AuthN/AuthZ process for User Agent request coming from the application.
+First step is to declare your Identity Analytics Web application in order for the IdP to recognize it and perform AuthN/AuthZ process for User Agent request coming from the application.
 
-Brainwave provides some samples regarding some IdP:
+Identity Analytics provides some samples regarding some IdP:
 
 - [Okta](./okta.md)
 - [InWebo](./inwebo.md)
 - [G-Suite](./gsuite.md)
 - [ADFS](./adfs.md)
 
-> [!warning] The information listed above is provided as an example only. This methodology is not supported by Brainwave GRC, but has been tested.
+> [!warning] The information listed above is provided as an example only. This methodology is not supported by Identity Analytics, but has been tested.
 
 At the end, no matter the IdP solution, a XML metadata file that represents this SP configuration should be generated and provided by the IdP to be deployed in SP side (see later in this article).
 
@@ -72,19 +72,19 @@ In the following procedure, we will use below variables:
 | `TOMCAT_INSTALL_FOLDER`  |                        Tomcat installation root folder                        |          /etc/tomcat9/          |
 |   `TOMCAT_CONF_FOLDER`   |                Folder that contains Tomcat configuration files                |        /etc/tomcat9/conf        |
 | `TOMCAT_LIB_FOLDER_HOME` |             Folder that contains all libraries used by the Tomcat             |     /usr/share/tomcat9/lib      |
-|    `SAML_BW_ARCHIVE`     | Archive that contains Brainwave JAVA library used to perform SAML AuthN/AuthZ |   bw-tomcat-9.0-saml-libs.zip   |
-|      `SAML_BW_LIB`       |            Brainwave JAVA library used to perform LDAP AuthN/AuthZ            | bw-tomcat-9.0-addons.jre8-X.jar |
+|    `SAML_BW_ARCHIVE`     | Archive that contains Identity Analytics JAVA library used to perform SAML AuthN/AuthZ |   bw-tomcat-9.0-saml-libs.zip   |
+|      `SAML_BW_LIB`       |            Identity Analytics JAVA library used to perform LDAP AuthN/AuthZ            | bw-tomcat-9.0-addons.jre8-X.jar |
 | `SAML_ROLE_MAPPING_FILE` |         File that contains mapping between AD groups and Portal roles         |     rolemapping.properties      |
 | `SAML_IDP_METADATA_FILE` |            XML IdP configuration metadata file provided by the IdP            |        idp-metadata.xml         |
 | `SAML_SP_METADATA_FILE`  |                      XML SP configuration metadata file                       |         sp-metadata.xml         |
 | `SAML_STATIC_ROLE_FILE`  |                        File that contains static roles                        |      staticrole.properties      |
 |      `WEBAPP_NAME`       |                        Name of the iGRC Tomcat webapp                         |             sandbox             |
-|       `WEBAPP_URI`       |                           Brainwave Web Portal URI                            |         /sandbox/portal         |
-|       `WEBAPP_URL`       |                           Brainwave Web Portal URL                            |     https://localhost:8080      |
+|       `WEBAPP_URI`       |                           Identity Analytics Web Portal URI                            |         /sandbox/portal         |
+|       `WEBAPP_URL`       |                           Identity Analytics Web Portal URL                            |     https://localhost:8080      |
 
 #### Prerequisites
 
-To ensure this installation procedure, you should first download some required `<SAML_BW_ARCHIVE>` and `<SAML_BW_LIB>` Brainwave libraries available [here](https://download.brainwavegrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:  
+To ensure this installation procedure, you should first download some required `<SAML_BW_ARCHIVE>` and `<SAML_BW_LIB>` Identity Analytics libraries available [here](https://download.Identity Analyticsgrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:  
 
 - Tomcat 8 (tested with **Tomcat 8.5.9**)
   - `bw-tomcat-8.5-saml-libs.zip`
@@ -104,7 +104,7 @@ It is also admitted that:
 
 > If you are under Linux, beware of files and folders rights.  
 
-First step is to deploy Brainwave SAML libraries, JDBC driver and Authenticators in Tomcat:  
+First step is to deploy Identity Analytics SAML libraries, JDBC driver and Authenticators in Tomcat:  
 
 Under the `<TOMCAT_LIB_FOLDER_HOME>` folder.  
 
@@ -134,14 +134,14 @@ DIGEST=org.apache.catalina.authenticator.DigestAuthenticator
 FORM=org.apache.catalina.authenticator.FormAuthenticator
 NONE=org.apache.catalina.authenticator.NonLoginAuthenticator
 SPNEGO=org.apache.catalina.authenticator.SpnegoAuthenticator
-SAML=com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator
+SAML=com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator
 ```
 
 Next step is to create and configure the `SAMLAuthenticator.properties` file. Under the `<TOMCAT_CONF_FOLDER>` folder, Create a `SAMLAuthenticator.properties` file with below content.
 
 ```properties
 # SAML Authenticator property file
-# copyright Brainwave
+# copyright Radiant Logic
 
 # idpMetadata: Identity Provider Metadata as an XML file located in the /conf subdirectory by default
 # spMetadata: Service Provider Metadata as an XML file located in the /conf subdirectory by default
@@ -162,7 +162,7 @@ Next step is to create and configure the `SAMLAuthenticator.properties` file. Un
 # forceURI: The URI where the user will be redirected once the authentication is done in any case, except when dealing with "SP initiated use cases"
 #
 # To add debugging infos, please add the following line at the end of the /conf/logging.properties file:
-# com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL
+# com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL
 
 idpMetadata=<SAML_IDP_METADATA_FILE>
 spMetadata=<SAML_SP_METADATA_FILE>
@@ -183,8 +183,8 @@ Above fields should be set accordingly to your project context. Here is a short 
 | :------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------: |
 |    `idpMetadata`     | A pointer to the `XML identity provider` metadata file. This file should be located in the `<TOMCAT_CONF_FOLDER>` directory and should be provided by your identity provider. |    idp-metadata.xml    |
 |     `spMetadata`     |                          A pointer to the `XML service provider` metadata file. This file should be located in the `<TOMCAT_CONF_FOLDER>` directory.                          |    sp-metadata.xml     |
-|     `defaultURI`     |                                    Contains a relative `URI` to the main portal page. In the **Brainwave** context it is a `/portal` URI.                                     |    /sandbox/portal     |
-|      `forceURI`      |                                    Contains a relative `URI` to the main portal page. In the **Brainwave** context it is a `/portal` URI.                                     |    /sandbox/portal     |
+|     `defaultURI`     |                                    Contains a relative `URI` to the main portal page. In the **Identity Analytics** context it is a `/portal` URI.                                     |    /sandbox/portal     |
+|      `forceURI`      |                                    Contains a relative `URI` to the main portal page. In the **Identity Analytics** context it is a `/portal` URI.                                     |    /sandbox/portal     |
 |     `checkRealm`     |                         If set to `true`, once authenticated through `SAML`, the user will be pushed to the configured `Realm` with a blank password.                         |         false          |
 |  `defaultRoleList`   |                                      cCntains a list of roles who are associated to users who are successfully authenticated by the IdP.                                      |          user          |
 |   `roleAttribute`    |                                     Contains the name of the `SAML` attribute which contains a list of role as provided back by the IdP.                                      |         groups         |
@@ -193,9 +193,9 @@ Above fields should be set accordingly to your project context. Here is a short 
 |    `genericUsers`    |                                                      Property that can substitute an individual with a generic account.                                                       |          user          |
 | `genericUserPattern` |                                                                    Property used to format the user login                                                                     |  {login} ({generic})   |
 
-For each property, you can find more details [here]({{ site.baseurl }}{% link docs/igrc-platform/installation-and-deployment/brainwaves-web-portal/portal-access/saml/saml-authenticators-properties.md %}).
+For each property, you can find more details [here]({{ site.baseurl }}{% link docs/igrc-platform/installation-and-deployment/Identity Analyticss-web-portal/portal-access/saml/saml-authenticators-properties.md %}).
 
-### Step 3: Brainwave Portal generation
+### Step 3: Identity Analytics Portal generation
 
 From your Studio, in the `Export` tab of your project **technical configuration**:
 
@@ -220,7 +220,7 @@ If you don't setup `SAML` authentication schema from technical configuration, yo
 
 > The `SAML` configuration is declared in the `<TOMCAT_CONF_FOLDER>/SAMLAuthenticator.properties` file configured earlier.  
 
-### Step 4: Deploy Brainwave Portal
+### Step 4: Deploy Identity Analytics Portal
 
 > If you are under Linux, beware of files and folders rights.
 
@@ -236,13 +236,13 @@ The Portal should be accessible from your browser using `<WEBAPP_URL>/<WEBAPP_UR
 To activate traces, add the following line at the end of the `/conf/logging.properties`. Do **not** use this in **production**. This is just for troubleshooting `SAML` request/response.  
 
 ```xml
-com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL  
+com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL  
 ```
 
 ## Downloads
 
-[SAMLAuthenticator.properties](https://download.brainwavegrc.com/index.php/s/zWGEG2MkKrjbktZ/download/SAMLAuthenticator.properties)  
-[idp-metadata.xml](https://download.brainwavegrc.com/index.php/s/8LFGDrSx8oMWrkw/download/idp-metadata.xml)  
-[rolemapping.properties](https://download.brainwavegrc.com/index.php/s/NSL5SpGRARX2LHB/download/rolemapping.properties)  
-[sp-metadata.xml](https://download.brainwavegrc.com/index.php/s/aygkqXTpA4MtAMG/download/sp-metadata.xml)  
-[staticroles.properties](https://download.brainwavegrc.com/index.php/s/9bkwpxgGbJoMpEw/download/staticroles.properties)  
+[SAMLAuthenticator.properties](https://download.Identity Analyticsgrc.com/index.php/s/zWGEG2MkKrjbktZ/download/SAMLAuthenticator.properties)  
+[idp-metadata.xml](https://download.Identity Analyticsgrc.com/index.php/s/8LFGDrSx8oMWrkw/download/idp-metadata.xml)  
+[rolemapping.properties](https://download.Identity Analyticsgrc.com/index.php/s/NSL5SpGRARX2LHB/download/rolemapping.properties)  
+[sp-metadata.xml](https://download.Identity Analyticsgrc.com/index.php/s/aygkqXTpA4MtAMG/download/sp-metadata.xml)  
+[staticroles.properties](https://download.Identity Analyticsgrc.com/index.php/s/9bkwpxgGbJoMpEw/download/staticroles.properties)  

@@ -15,11 +15,11 @@ However, it will be up to the SQL Server DBA to adapt parameters according to th
 
 ### Software environment
 
-The following database repository and Operating systems are supported by Brainwave GRC.
+The following database repository and Operating systems are supported by Identity Analytics.
 
 Only 64 bits versions are supported, Web and Express Editions are not supported.
 
-The certified environment matrix is available on the Brainwave GRC documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
+The certified environment matrix is available on the Identity Analytics documentation site [here](../../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments)
 
 ### Hardware requirements
 
@@ -36,7 +36,7 @@ The quantity of loaded data that have an impact on required storage space of the
 
 The target volume depends on the number of objects collected (identities, accounts, groups, permissions, applications,...), the frequency of loading these data, as well as the retention period of the different Time Slots.
 
-Brainwave recommends a volume of **10 Gb per Time Slot** (excluding the sizing of TEMPDB and Transaction logs files).
+Radiant Logic recommends a volume of **10 Gb per Time Slot** (excluding the sizing of TEMPDB and Transaction logs files).
 
 Assuming a retention period of 12 months and a data load every two weeks, then the required storage space would amount to 240 Gb at the end of a year.
 
@@ -46,7 +46,7 @@ However, be aware that the final storage used for a timeslot is not representati
 
 #### SQL Server configuration
 
-It is recommended to use a dedicated SQL Server engine for the Brainwave solution. During the data loading phase the database is greatly used and as such could impact the performance of the other hosted applications.  
+It is recommended to use a dedicated SQL Server engine for the Identity Analytics solution. During the data loading phase the database is greatly used and as such could impact the performance of the other hosted applications.  
 
 The following configuration is recommended:
 
@@ -82,7 +82,7 @@ The following good practices to apply to the TEMPDB should be kept in mind:
 
 In practice, multiply the highest used space of TEMPDB PRIMARY filegroup (all files included) by 5, then divide that number by the total number of cores on the server to obtain the size of each file.
 
-To get the highest value of TEMPDB, you need to monitor the system during at least 2 or 3 execution plan (Brainwave GRC) because this value can change.
+To get the highest value of TEMPDB, you need to monitor the system during at least 2 or 3 execution plan (Identity Analytics) because this value can change.
 
 For example, if the highest value of used TEMPDB space in a day is 2Gb on a 4 core server then you need about 10Gb of total space . If you have 4 cores then create 4 files of 2.5Gb each and 1 file of 10 Mb.
 
@@ -173,7 +173,7 @@ GO
 
 #### Recovery Model
 
-Brainwave recommends using the **Simple Recovery** model but perform a regular **FULL** backup of the database after each data load.
+Radiant Logic recommends using the **Simple Recovery** model but perform a regular **FULL** backup of the database after each data load.
 
 Nevertheless, following this recommendation is at the discretion of the SQL Server's DBA and as determined by the defined recovery policies.
 
@@ -187,7 +187,7 @@ GO
 
 #### Isolation level
 
-Brainwave automatically sets the option `READ_COMMITTED_SNAPSHOT` of the `READ_COMMITTED` isolation level to "ON" during the initialization of the iGRC database.
+Identity Analytics automatically sets the option `READ_COMMITTED_SNAPSHOT` of the `READ_COMMITTED` isolation level to "ON" during the initialization of the iGRC database.
 
 When `READ_COMMITTED_SNAPSHOT` is set to ON (the default on SQL Azure Database), the Database Engine uses row versioning to present each statement with a transactionally consistent snapshot of the data as it existed at the start of the statement. Locks are not used to protect the data from updates by other transactions.
 
@@ -277,13 +277,13 @@ GO
 
 ### Backup and indexes/statistics maintenance plan
 
-Brainwave recommends a regular FULL backup of the database after each loading. And for this reason, the recovery model can be set to **Simple**.
+Radiant Logic recommends a regular FULL backup of the database after each loading. And for this reason, the recovery model can be set to **Simple**.
 
 In addition, an index maintenance plan (drop and recreate indexes or a
 simple rebuild) must be scheduled regularly to maintain overall
 performance and avoid the indexes fragmentation.
 
-If selected in the execution plan tab of the technical configuration then the statistics and the indexes are updated during the Brainwave execution plan.
+If selected in the execution plan tab of the technical configuration then the statistics and the indexes are updated during the Identity Analytics execution plan.
 
 ### Recovery model
 
@@ -319,7 +319,7 @@ In addition a sample script file is provided containing all the recommendations 
 
 #### Hyper-V configuration
 
-A virtual machine hosting SQL Server engine and Database and a separate virtual machine hosting Brainwave solution.
+A virtual machine hosting SQL Server engine and Database and a separate virtual machine hosting Identity Analytics solution.
 
 **VM configuration - Database**
 
@@ -330,7 +330,7 @@ A virtual machine hosting SQL Server engine and Database and a separate virtual 
 
 Data and log files are distributed on different disk volumes.
 
-**VM configuration - Brainwave application**
+**VM configuration - Identity Analytics application**
 
 - Windows Server 2012 R2
 - 4 vCPUS

@@ -19,8 +19,8 @@ All errors are written in a log file to facilitate diagnostic. Log files are wri
 - Finally, log files can be written in the web server's application folder. If you installed a personalized version of Tomcat the logs are generally located:  
 `":\Program Files \Apache Software Foundation\Tomcat\logs"`.  
 
-If you are using the provided application, Brainwave Application server they are then located:  
-`"C:\Program Files\Brainwave ApplicationServer"`.  
+If you are using the provided application, Identity Analytics Application server they are then located:  
+`"C:\Program Files\Identity Analytics ApplicationServer"`.  
 
 ## Extracting the log files
 

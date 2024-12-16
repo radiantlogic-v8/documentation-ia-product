@@ -1,7 +1,7 @@
 ----------------------------------------------------------
 -- CheckDB_SQLServer V15
 -- 
--- Copyright Brainwave GRC
+-- Copyright Identity Analytics
 -- Modified : 27 may 2021
 --  add size of each table and indexes
 -- add unused indexes

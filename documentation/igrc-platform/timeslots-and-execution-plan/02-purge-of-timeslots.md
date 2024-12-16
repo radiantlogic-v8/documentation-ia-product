@@ -153,7 +153,7 @@ This mode will be based on timeslot retention criteria defined in project config
 ## Legacy methodology
 
 An option has been implemented to allow the user to purge data from the database in order to reduce the size of the stored data.  
-For this you should use the CMD script located in the home installation folder of Brainwave GRC.
+For this you should use the CMD script located in the home installation folder of Identity Analytics.
 Using this script you have to possibility to chose:  
 
 - A given number of timeslots: keep `1<x<N` timeslots in the database, `N` being the initial number of timeslots present in the database.
@@ -185,7 +185,7 @@ This command is detailed bellow:
 "- datasource.properties: file containing database connection configuration"
 "- mail.properties: file containing mail server connection configuration"  
 "- workflow.properties: file containing workflow database connection configuration"
-"- license.lic: file containing the Brainwave product license"
+"- license.lic: file containing the RadiantOne product license"
 "<config name> is the name of the configuration (defined in a project .configuration file)"
 "<keep value> is a positive value expressed in <keep unit>"
 "<keep unit> is either 'days' or 'timeslots' or 'states'"  

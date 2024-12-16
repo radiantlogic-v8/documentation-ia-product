@@ -7,13 +7,13 @@ Description: "Guides on how to install and configure Identity Analytics"
 
 ## Installation
 
-By choosing Brainwave Identity GRC, you are equipping yourself with a unique solution for streamlining IT controls and enforcing compliance rules.
+By choosing Identity Analytics, you are equipping yourself with a unique solution for streamlining IT controls and enforcing compliance rules.
 
-This document details the main installation stages and the initial parameter setting that will enable you to start using Brainwave Identity GRC.
+This document details the main installation stages and the initial parameter setting that will enable you to start using Identity Analytics.
 
-## Brainwave Analytics Client installation
+## Identity Analytics Client installation
 
-Please refer to the document "Brainwave Identity GRC Support Matrix" for a detailed description of the additional components supported by Brainwave.  
+Please refer to the document "Brainwave Identity GRC Support Matrix" for a detailed description of the additional components supported by Identity Analytics.  
 
 Installation of the software requires Administrator rights to the operating system.
 
@@ -66,17 +66,17 @@ installation assistant, or double click on igrcanalytics.exe.
 A license file is obligatory for authorization of the application's operation. Obtaining the license file is a two-stage process:
 
 - recovery of the "license key" in the application. This key is unique and linked to the instance (equipment and software);
-- obtaining the license file through Brainwave by sending the license key and the following information: applicant and type of installation (client station, test server, receipt, production etc).
+- obtaining the license file through Radiant Logic by sending the license key and the following information: applicant and type of installation (client station, test server, receipt, production etc).
 
 At the time of the initial launch of the application, the license configuration screen is displayed when a new project is being created or, alternatively, through the preferences menu:
 
 - Choose the "Windows \Preferences" menu;
-- Select the menu item "Brainwave", then "License":
+- Select the menu item "RadiantOne", then "License":
 
 ![License files configuration](./images/installation-license.png "License file configuration")
 
-- The "License key" line assigns the unique print of the system on which iGRC is installed. The Brainwave license is linked to this print and so can only be installed on the system in question;
-- Copy (right click "Select all" then right click "Copy") the license key and provide it to your Brainwave business representative in order to obtain the corresponding license file;
+- The "License key" line assigns the unique print of the system on which iGRC is installed. The RadiantOne license is linked to this print and so can only be installed on the system in question;
+- Copy (right click "Select all" then right click "Copy") the license key and provide it to your Radiant Logic  representative in order to obtain the corresponding license file;
 - The license file is a .lic file that you must copy on to the local system;
 - Click on the "Browse" button to locate and select the license file;
 - Check that the license details are correct and then click on "OK".
@@ -112,14 +112,14 @@ This will open a new wizard to configure a new project:
 
 ### Web portal installation Prerequisite
 
-Installation of the Brainwave Portal web application requires:
+Installation of the Identity Analytics Portal web application requires:
 
 - A Java application server complying with the software support matrix (namely Tomcat 9.x);
-- An installed, operational instance of Brainwave Identity Analytics Client.
+- An installed, operational instance of Identity Analytics Client.
 
 ### Preparation of the Web archive (WAR)
 
-The Brainwave Portal application is deployed from a WAR file type Web archive. This file is **generated** from the Brainwave Analytics Client on to a configured project, once the analyses and reports are configured.
+The Identity Analytics Portal application is deployed from a WAR file type Web archive. This file is **generated** from the Identity Analytics Client on to a configured project, once the analyses and reports are configured.
 
 For this, it is necessary to:
 

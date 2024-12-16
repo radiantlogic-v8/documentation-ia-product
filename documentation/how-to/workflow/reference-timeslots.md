@@ -26,7 +26,7 @@ Even without specific events like audits or reviews, there is a need to follow t
 
 As of version 2017 R3, a new concept has been added to a timeslot: the reference type.
 It works like a tag associated to the timeslot. Several timeslots can be changed to a reference timeslots.
-The reference type is any string (up to 32 characters). The type has no meaning for the Brainwave product. The meaning is customer specific. The Brainwave product consider that a timeslot is a reference timeslot if the type is not empty, whatever value it contains.  
+The reference type is any string (up to 32 characters). The type has no meaning for the Identity Analytics product. The meaning is customer specific. The Identity Analytics product consider that a timeslot is a reference timeslot if the type is not empty, whatever value it contains.  
 
 > [!warning] lease do **NOT** use the string `$$HEAD$$` as your reference timeslot string as this is a technical flag used in the product.
 
@@ -114,7 +114,7 @@ As a reminder this tag must be less that 32 characters long.
 
 ## Restrictions
 
-The Brainwave product does not automatically make use of this information for the moment.
+The Identity Analytics product does not automatically make use of this information for the moment.
 
 For example:
 

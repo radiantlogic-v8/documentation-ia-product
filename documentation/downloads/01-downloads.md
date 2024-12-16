@@ -38,7 +38,7 @@ Please navigate to the following link to download the latest version of the prod
 
 See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.
 
-> [!note] As a reminder iGRCanalytics is provided without any support on Linux.  
+> [!note] As a reminder Identity Analytics is provided without any support on Linux.  
 > Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through iGRCanalytics should be made under a Microsoft Windows environment.
 
 Looking for an older version? have a look at the [archived versions repository](03-archived-version)

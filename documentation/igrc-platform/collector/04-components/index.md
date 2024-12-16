@@ -19,13 +19,13 @@ Please refer to the following [sub-page](/target) for the documentation of all d
 
 ## Collecting Sod Matrix
 
-This document describes how SoD Matrix are collected in Brainwave iGRC. Usually, SoD matrix are maintained in organization in different Excel sheets in specific format where each SoD rules is relative to an incompatibility of a rights/permission vs another one.
+This document describes how SoD Matrix are collected in Identity Analytics. Usually, SoD matrix are maintained in organization in different Excel sheets in specific format where each SoD rules is relative to an incompatibility of a rights/permission vs another one.
 
 The traditional format for such matrix in external Excel sheets usually use pivot table:
 
 ![Pivot table](../images/SoD_Pivot_Table.png "Pivot table")  
 
-Brainwave iGRC data model concept integrates the two following SoD concepts:  
+Identity Analytics data model concept integrates the two following SoD concepts:  
 
 - SoD Matrix (with a identifier, a name, a description)  
 - SoD permission pair (attached to an existing SoD Matrix, and referencing a pair of two incompatible permissions).
@@ -38,7 +38,7 @@ In order to define SoD Matrix, an additional target is available in collector pa
 
 ![Collector palette](../images/SoD_Palet1.png "Collector palette")  
 
-The SOD matrix target creates a new matrix in Brainwave data model:
+The SOD matrix target creates a new matrix in Identity Analytics data model:
 
 ![SOD matrix target](../images/SoD_Collect1.png "SOD matrix target")  
 

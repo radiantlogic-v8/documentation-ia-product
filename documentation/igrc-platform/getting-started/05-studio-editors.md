@@ -154,7 +154,7 @@ The product automatically keeps the order and the width of the columns in tables
 
 ### Collector Editor
 
-To be able to comfortably use the collector editor, the first thing to do is to switch to the iGRC Analytics perspective. A _perspective_ is an organization of windows in the workflow. The iGRC Analytics perspective is structured around the editing window. The editing window alone is not sufficient to carry out a collector work session (editing and/or execution). You must also display other windows called _views_ in the center of the screen that complement the collector line editor. The most important view is the Properties view displayed below the editor because it allows you to change the settings of the component selected in the editor.
+To be able to comfortably use the collector editor, the first thing to do is to switch to the Identity Analytics perspective. A _perspective_ is an organization of windows in the workflow. The iGRC Analytics perspective is structured around the editing window. The editing window alone is not sufficient to carry out a collector work session (editing and/or execution). You must also display other windows called _views_ in the center of the screen that complement the collector line editor. The most important view is the Properties view displayed below the editor because it allows you to change the settings of the component selected in the editor.
 
 ![General presentation of the editor](./images/worddav6899440882f267094af75da95875b5b9.png "General presentation of the editor")
 
@@ -456,7 +456,7 @@ These final tabs that are in common with the other editors allow you to:
 - Find where the current files is used in the project
 - visualize the XML source format of the current file
 
-> The calculation of the dependencies and the usage of the current file requires to search the entire brainwave model and can be relatively time consuming.
+> The calculation of the dependencies and the usage of the current file requires to search the entire Identity Analytics model and can be relatively time consuming.
 
 ### Audit Rule Editor
 
@@ -734,13 +734,13 @@ The area at the top left contains two additional tabs, these tabs are:
 
 The graphical editor of the report layout consists of a series of tabs (Layout, Master Page, Script, XML Source, Preview). The tab that is useful initially is the Layout tab for graphical editing of reports.
 
-It is possible to preview the reports while clicking the 'View report' button on the Brainwave Identity GRC Analytics toolbar, choosing "In Web Browser".
+It is possible to preview the reports while clicking the 'View report' button on the Identity Analytics toolbar, choosing "In Web Browser".
 
 > If you're using Internet Explorer 11, please follow [those directions](how-to/misc/IE-11-preview-errors.md).
 
 ![Report preview](./images/worddav949884012063a57b13904053361256fd.png "Report preview")
 
-Reports can be run and generated in multiple formats. To do this, use the 'View report' button on the Brainwave Identity GRC Analytics toolbar. Supported formats are:
+Reports can be run and generated in multiple formats. To do this, use the 'View report' button on the Identity Analytics toolbar. Supported formats are:
 
 - HTML
 - PDF
@@ -758,7 +758,7 @@ It is also possible to export the parts of a report in CSV format.
 
 #### Viewing Interface
 
-When you use the 'View report' button on the Brainwave Identity GRC toolbar, or when you use the Brainwave Identity GRC web portal, you can access the web interface for viewing reports. This interface dynamically generates reports in HTML format as the user browses. The report settings may be dynamically edited; it is possible to export the information presented in various formats, and to print. It is also possible to dynamically change the report settings and regenerate it. Finally, the reports are formatted: A table of contents can be generated, and the display is paginated. This chapter describes the user interface of the report viewer.
+When you use the 'View report' button on the Identity Analytics toolbar, or when you use the  Identity Analytics web portal, you can access the web interface for viewing reports. This interface dynamically generates reports in HTML format as the user browses. The report settings may be dynamically edited; it is possible to export the information presented in various formats, and to print. It is also possible to dynamically change the report settings and regenerate it. Finally, the reports are formatted: A table of contents can be generated, and the display is paginated. This chapter describes the user interface of the report viewer.
 
 The report viewer consists of a central window which displays the report, as well as a toolbar allowing many actions: navigation, exporting, printing, and configuration. The reports are dynamically generated in HTML format. Hyperlinks are included in the report, allowing the user to navigate between reports in the same way as in a traditional application.
 
@@ -785,7 +785,7 @@ The upper part of the report viewer consists of the following toolbar:
 
 ![CSV export](./images/worddav80a0bd8f8af363c9349465a2fca285d2.png "CSV export")
 
-- Printing a report on a server printer: Allows you to print the report with the help of a printer configured on the server hosting the Brainwave Identity GRC web portal. This feature is particularly useful when the client navigation interfaces do not have a local printer configuration
+- Printing a report on a server printer: Allows you to print the report with the help of a printer configured on the server hosting the Identity Analytics web portal. This feature is particularly useful when the client navigation interfaces do not have a local printer configuration
 
 ![CSV export](./images/worddav307c182e56fca00ade5a75c8d9b66695.png "CSV export")
 
@@ -795,7 +795,7 @@ The upper part of the report viewer consists of the following toolbar:
 
 #### Create Dedicated Reports
 
-All reports available in Brainwave Identity GRC are located in the `/reports` subdirectory of your audit project. Reports are sorted according to whether they are related to navigation or to data analysis. Reports have the extension: `.rptdesign`.
+All reports available in Identity Analytics are located in the `/reports` subdirectory of your audit project. Reports are sorted according to whether they are related to navigation or to data analysis. Reports have the extension: `.rptdesign`.
 
 Dedicated reports may be created either by performing an operation to copy/paste an existing report in the file view of the project, or through the wizard to create new reports. Dedicated reports must be located in the `/custom` subdirectory of the `/reports` directory of your project.
 
@@ -803,7 +803,7 @@ Dedicated reports may be created either by performing an operation to copy/paste
 
 #### Introduction  
 
-The aim of the configuration file is to help separate between what belongs to the project configuration and what is specific to a local instance of Brainwave GRC (_e.g._ database configuration, absolute paths etc).
+The aim of the configuration file is to help separate between what belongs to the project configuration and what is specific to a local instance of Identity Analytics (_e.g._ database configuration, absolute paths etc).
 
 This also has the further advantage of preventing data loss when your local configuration or project file gets overwritten. This can occur if you share your project using a version management tool for instance.  
 
