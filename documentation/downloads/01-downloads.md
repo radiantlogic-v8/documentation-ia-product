@@ -9,30 +9,29 @@ description: Download all iGRCanalytics information
 
 ### Dependencies
 
-> [!warning] Descartes by default **requires** the use of IAP version **1.8**!  
+> [!warning] Descartes by default **requires** the use of IAP version **1.8 or higher**!  
+> For more information please check the [IAP/IGRC Compatibility Matrix](https://developer.radiantlogic.com/ia/iap-3.2/identity-analytics/iap-release/01-iap-release-overview/).  
 > If you have questions on the compatibility of your version of IAP please contact the support services.
 
 ### Database migration
 
-A database migration is required before installing version Descartes R4.
-
 > [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
-## Version Descartes R5 SP2
+## Version Descartes R5 SP3
 
-We are pleased to announce the release of the latest version of the product: **Descartes R5 SP2**
+We are pleased to announce the release of the latest version of the product: **Descartes R5 SP3**
 
-This Includes among others:
+This includes:
 
-- A fix on the calculation of indirect managers when copied from a previous timeslot
-- An update in the handling of classloaders on Business View executions
-- A fiw on the handling of the leave date of a leaver account updated when the identity does not have a departure date
+- A fix on metadata created on a past timeslot which are not written correctly in database
+- Considering custom AD repository types in AD accounts activation
+- The ability to pass current timeslot to workflow
 
 Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.  
 
 Please navigate to the following link to download the latest version of the product: Descartes:
 
-- [**Download Descartes R5 SP2**](https://radiantlogicinc246.sharefile.com/d-s0ef6f5793dcd4c92b756d4b16b8e6d3c)
+- [**Download Descartes R5 SP3**](https://radiantlogicinc246.sharefile.com/f/fo96a3cc-878c-452c-84c7-260f3ae94ab0)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
@@ -66,13 +65,13 @@ In order to verify the integrity of the downloaded file you can also download th
 To verify the file:
 
 ```sh
-iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
+iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
 You can download the checksum file:
 
 ```sh
-iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.sha1
+iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.sha1
 ```
 
 You can calculate the SHA1 of your downloaded file and it should match exactly with the hash in the ".sha1" file.
@@ -93,7 +92,7 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/
 In windows, you can use the command line tool certutil:
 
 ```sh
-Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1
+Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe SHA1
 ```
 
 #### Microsoft File Checksum Integrity Verifier
@@ -101,7 +100,7 @@ Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe SHA1
 You can also download the Microsoft File Checksum Integrity Verifier (https://www.microsoft.com/en-us/download/details.aspx?id=11533)
 
 ```sh
-fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
+fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
 ### Unix/Linux
@@ -109,14 +108,14 @@ fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
 Most unix-like operating systems include the tools shasum and/or sha1sum
 
 ```sh
-shasum iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
-sha1sum iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.exe
+shasum iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
+sha1sum iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
 Finally, if shasum (or sha1sum) is available, the verification can done directly using the .sha1 file:
 
 ```bash
-shasum -c iGRCAnalyticsSetup_win32_x64_Ader-R1_2019-12-10.sha1
+shasum -c iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.sha1
 ```
 
 ## Drivers

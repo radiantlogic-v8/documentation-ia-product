@@ -5,6 +5,17 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP3
+
+### New Features
+
+- **IGRC-4834:** Allow custom AD repository types in AD accounts activation
+- **BWIPUAR-2205:** pass current timeslot to workflow
+
+### Bug fixes
+
+- **IGRC-4831:** Metadata created on a past timeslot are not written correctly in database
+
 ## Version Descartes R5 SP2
 
 ### Bug fixes
