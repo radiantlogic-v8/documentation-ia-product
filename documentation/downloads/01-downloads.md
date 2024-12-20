@@ -10,7 +10,7 @@ description: Download all iGRCanalytics information
 ### Dependencies
 
 > [!warning] Descartes by default **requires** the use of IAP version **1.8 or higher**!  
-> For more information please check the [IAP/IGRC Compatibility Matrix](https://developer.radiantlogic.com/ia/iap-3.2/identity-analytics/iap-release/01-iap-release-overview/).  
+> For more information please check the https://developer.radiantlogic.com/ia/iap-3.2/identity-analytics/iap-release/01-iap-release-overview/.  
 > If you have questions on the compatibility of your version of IAP please contact the support services.
 
 ### Database migration
