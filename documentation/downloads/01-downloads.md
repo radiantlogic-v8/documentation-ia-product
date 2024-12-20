@@ -31,7 +31,7 @@ Please see the [release notes](./08-release-notes-descartes-r5.md) for the full 
 
 Please navigate to the following link to download the latest version of the product: Descartes:
 
-- [**Download Descartes R5 SP3**](https://radiantlogicinc246.sharefile.com/f/fo96a3cc-878c-452c-84c7-260f3ae94ab0)
+- [**Download Descartes R5 SP3**](https://radiantlogicinc246.sharefile.com/d-se8e375a002e64370b1915f55468c01e4)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
