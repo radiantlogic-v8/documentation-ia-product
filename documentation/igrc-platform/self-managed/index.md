@@ -6,11 +6,12 @@ This document serves as a guide for deploying Radiant Logic's Identity Analytics
 
 You can deploy self-managed Identity Analytics on Amazon EKS, Azure Kubernetes Service or Google Kubernetes Engine. The installation process exclusively utilizes Helm, meaning you will use `helm install` or `helm upgrade` commands to install and upgrade the deployment.
 
-The table below shows the mapping between the Identity Data Analytics application version and the self-managed Helm chart version:
+The table below shows the Helm chart versions to install for each Identity analytics release:
 
-| Identity Data Analytics application version | Helm chart versions (SHARED_CHART_VERSION and IDA_CHART_VERSION) |
-| -------------------------------------------- | ----------                                                                             
-| 3.1.0                                                                                    | 3.1.0                                |
+| Release | Chart `IDA_HELM` version | Chat `IDA_SHARED_HELM` version |
+| :------ | :----------------------: | :----------------------------: |
+| 3.2     |          3.2.0           |             3.1.1              |
+| 3.1     |          3.1.0           |             3.1.0              |
 
 Ensure that you specify your target version when running installation and update commands that are listed in this document.  
 
@@ -481,11 +482,10 @@ The steps listed here are meant to help you identify and troubleshoot issues rel
 1. **Check events for deployment issues**
 
    This command lists events in the specified namespace, helping to identify any issues related to pod deployment.
-     
+
      ```bash
      kubectl get events -n <namespace>
       ```
-   
 
 3. **Describe a specific pod**
 
@@ -548,7 +548,7 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 2. **Check for any remaining PVCs**:
 
     Depending on your PVC retention policy, persistent volumes may not be deleted. Verify by running:
-    
+
     ```bash
     kubectl get pvc \
       --namespace <SHARED_NAMESPACE> \
@@ -556,7 +556,7 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
     ```
 
     If any PVCs are present, delete them:
-    
+
     ```bash
     kubectl delete pvc --namespace <IDA_NAMESPACE> <PVC_NAME>
     ```
@@ -564,7 +564,7 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 3. **Delete namespace**:
 
     You may choose to delete the namespace used for Shared Services:
-    
+
     ```bash
     kubectl delete namespace <SHARED_NAMESPACE>
     ```
@@ -572,7 +572,7 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 4. **Remove CRDs**:
 
     Delete all CRDs installed by Shared Services:
-    
+
     ```bash
     helm show crds oci://docker.io/radiantone/ida-shared-helm \
       --version <SHARED_CHART_VERSION> | kubectl delete -f -
@@ -580,4 +580,4 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
 
 ## Known issues
 
-* Self-managed Identity Analytics application currently does not support backup and restore functionalities.
+- Self-managed Identity Analytics application currently does not support backup and restore functionalities.
