@@ -76,7 +76,7 @@ For customers under maintenance/subscription contract as well as official partne
   > [Self-managed installation Guide](/ia/descartes/igrc-platform/self-managed)  
   > Self-managed installation guide using Helm.
 
-  > [Local docker-compose installation Guide](/ia/version-1.5/#2)  
+  > [Local docker-compose installation Guide](/ia/version-1.6/#2)  
   > Local docker-compose installation guide, including configuration recommendations.
 
   > [SaaS installation Guide](/eoc/latest/#0)  
@@ -210,7 +210,7 @@ For customers under maintenance/subscription contract as well as official partne
   > [Updating the project](/ia/descartes/update/02-project-migration)  
   > This document provides information on how to update and import an existing project into an installation.
 
-  > [Update the local docker-compose solution](/ia/version-1.5/run-ops/upgrading)  
+  > [Update the local docker-compose solution](/ia/version-1.6/run-ops/upgrading)  
   > This document provides information on how to update your installation of the local docker-compose solution.
 
   > [Release Notes](/ia/descartes/downloads/01-downloads)  
