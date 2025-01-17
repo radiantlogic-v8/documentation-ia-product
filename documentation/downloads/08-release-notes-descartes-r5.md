@@ -5,6 +5,12 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP4
+
+### Security fix
+
+- **IGRC-4836:** Remove common-compress library located in native xlsx emitter (security fix)
+
 ## Version Descartes R5 SP3
 
 ### New Features

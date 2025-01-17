@@ -17,21 +17,20 @@ description: Download all iGRCanalytics information
 
 > [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
-## Version Descartes R5 SP3
+## Version Descartes R5 SP4
 
-We are pleased to announce the release of the latest version of the product: **Descartes R5 SP3**
+We are pleased to announce the release of the latest version of the product: **Descartes R5 SP4**
 
-This includes:
+This includes a security fix to remediate:
 
-- A fix on metadata created on a past timeslot which are not written correctly in database
-- Considering custom AD repository types in AD accounts activation
-- The ability to pass current timeslot to workflow
+- CVE-2024-25710 (High)
+- CVE-2024-26308 (Medium)
 
 Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.  
 
 Please navigate to the following link to download the latest version of the product: Descartes:
 
-- [**Download Descartes R5 SP3**](https://radiantlogicinc246.sharefile.com/d-se8e375a002e64370b1915f55468c01e4)
+- [**Download Descartes R5 SP4**](https://radiantlogicinc246.sharefile.com/d-s8b6c659e69124fe8b3d83dbb5358bcdf)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 
