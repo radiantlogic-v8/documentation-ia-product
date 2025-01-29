@@ -27,20 +27,11 @@ description: iGRCanalytics product lifecycle
 | Descartes R1 SP2     |  26/07/2023  |                    | :white_check_mark: |                    |   02/05/2026   |
 | Descartes R1 (SP0-1) |  02/05/2023  |                    |                    | :white_check_mark: |   02/05/2026   |
 
-### Curie
-
-| Version             | Release date |       Active       |      Passive       |      Limited       | End of support |
-| :------------------ | :----------: | :----------------: | :----------------: | :----------------: | :------------: |
-| Curie R3 SP4        |  09/06/2023  | :white_check_mark: |                    |                    |   13/09/2024   |
-| Curie R3 (0 to SP3) |      --      |                    |                    | :white_check_mark: |   13/09/2024   |
-| Curie R2 SP1        |  25/02/2022  |                    | :white_check_mark: |                    |   13/09/2024   |
-| Curie R2            |  15/02/2022  |                    |                    | :white_check_mark: |   13/09/2024   |
-| Curie R1            |  13/09/2021  |                    | :white_check_mark: |                    |   13/09/2024   |
-
 ### Unsupported versions
 
 | Version | End of support |
 | :------ | :------------: |
+| Curie   |   13/09/2024   |
 | Braille |   09/11/2023   |
 | Ader    |   12/12/2022   |
 | 2017    |   28/06/2021   |
