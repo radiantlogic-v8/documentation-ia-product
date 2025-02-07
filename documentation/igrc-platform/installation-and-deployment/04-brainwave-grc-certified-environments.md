@@ -26,6 +26,7 @@ The OS support matrix is the following:
 | Windows server | 2012 R2         |   **X**    |   **X**   |     **X**     |
 | Windows server | 2016            |   **X**    |   **X**   |     **X**     |
 | Windows server | 2019            |   **X**    |   **X**   |     **X**     |
+| Windows server | 2022            |   **X**    |   **X**   |     **X**     |
 | RHEL           | 9[^rhel9]       |            |   **X**   |     **X**     |
 | Debian         | LTS[^debianLTS] |            |   **X**   |     **X**     |
 
@@ -72,11 +73,11 @@ The database certified support matrix, per operating systems, is as follows:
 
 | **Database**         | **Version** | **RHEL 9** | **Debian** |
 | :------------------- | :---------- | :--------: | :--------: |
-| PostgreSQL           | 12          |   **X**    |   **X**    |
 | PostgreSQL           | 13          |   **X**    |   **X**    |
 | PostgreSQL           | 14          |   **X**    |   **X**    |
 | PostgreSQL           | 15          |   **X**    |   **X**    |
 | PostgreSQL           | 16          |   **X**    |   **X**    |
+| PostgreSQL           | 17          |   **X**    |   **X**    |
 | Oracle[^1]           | 19c         |   **X**    |            |
 
 > [!warning] Please note that oracle is only supported in the case of existing and deployed projects. In the case of a new project only Microsoft SQL server and PostgreSQL are supported.
