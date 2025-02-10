@@ -134,7 +134,7 @@ DIGEST=org.apache.catalina.authenticator.DigestAuthenticator
 FORM=org.apache.catalina.authenticator.FormAuthenticator
 NONE=org.apache.catalina.authenticator.NonLoginAuthenticator
 SPNEGO=org.apache.catalina.authenticator.SpnegoAuthenticator
-SAML=com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator
+SAML=com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator
 ```
 
 Next step is to create and configure the `SAMLAuthenticator.properties` file. Under the `<TOMCAT_CONF_FOLDER>` folder, Create a `SAMLAuthenticator.properties` file with below content.
@@ -162,7 +162,7 @@ Next step is to create and configure the `SAMLAuthenticator.properties` file. Un
 # forceURI: The URI where the user will be redirected once the authentication is done in any case, except when dealing with "SP initiated use cases"
 #
 # To add debugging infos, please add the following line at the end of the /conf/logging.properties file:
-# com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL
+# com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL
 
 idpMetadata=<SAML_IDP_METADATA_FILE>
 spMetadata=<SAML_SP_METADATA_FILE>
@@ -236,7 +236,7 @@ The Portal should be accessible from your browser using `<WEBAPP_URL>/<WEBAPP_UR
 To activate traces, add the following line at the end of the `/conf/logging.properties`. Do **not** use this in **production**. This is just for troubleshooting `SAML` request/response.  
 
 ```xml
-com.Identity Analytics.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL  
+com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL  
 ```
 
 ## Downloads
