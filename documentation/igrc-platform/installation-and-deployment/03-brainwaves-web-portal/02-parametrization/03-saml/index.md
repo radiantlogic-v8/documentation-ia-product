@@ -84,7 +84,7 @@ In the following procedure, we will use below variables:
 
 #### Prerequisites
 
-To ensure this installation procedure, you should first download some required `<SAML_BW_ARCHIVE>` and `<SAML_BW_LIB>` Identity Analytics libraries available [here](https://download.Identity Analyticsgrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:  
+To ensure this installation procedure, you should first download some required `<SAML_BW_ARCHIVE>` and `<SAML_BW_LIB>` Identity Analytics libraries available [here](https://download.brainwavegrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on the Tomcat version installed:  
 
 - Tomcat 8 (tested with **Tomcat 8.5.9**)
   - `bw-tomcat-8.5-saml-libs.zip`
@@ -241,8 +241,8 @@ com.brainwave.tomcat.authenticator.saml.SAMLAuthenticator.level = ALL
 
 ## Downloads
 
-[SAMLAuthenticator.properties](https://download.Identity Analyticsgrc.com/index.php/s/zWGEG2MkKrjbktZ/download/SAMLAuthenticator.properties)  
-[idp-metadata.xml](https://download.Identity Analyticsgrc.com/index.php/s/8LFGDrSx8oMWrkw/download/idp-metadata.xml)  
-[rolemapping.properties](https://download.Identity Analyticsgrc.com/index.php/s/NSL5SpGRARX2LHB/download/rolemapping.properties)  
-[sp-metadata.xml](https://download.Identity Analyticsgrc.com/index.php/s/aygkqXTpA4MtAMG/download/sp-metadata.xml)  
-[staticroles.properties](https://download.Identity Analyticsgrc.com/index.php/s/9bkwpxgGbJoMpEw/download/staticroles.properties)  
+[SAMLAuthenticator.properties](https://download.brainwavegrc.com/index.php/s/zWGEG2MkKrjbktZ/download/SAMLAuthenticator.properties)  
+[idp-metadata.xml](https://download.brainwavegrc.com/index.php/s/8LFGDrSx8oMWrkw/download/idp-metadata.xml)  
+[rolemapping.properties](https://download.brainwavegrc.com/index.php/s/NSL5SpGRARX2LHB/download/rolemapping.properties)  
+[sp-metadata.xml](https://download.brainwavegrc.com/index.php/s/aygkqXTpA4MtAMG/download/sp-metadata.xml)  
+[staticroles.properties](https://download.brainwavegrc.com/index.php/s/9bkwpxgGbJoMpEw/download/staticroles.properties)  
