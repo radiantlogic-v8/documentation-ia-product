@@ -193,7 +193,7 @@ Above fields should be set accordingly to your project context. Here is a short 
 |    `genericUsers`    |                                                      Property that can substitute an individual with a generic account.                                                       |          user          |
 | `genericUserPattern` |                                                                    Property used to format the user login                                                                     |  {login} ({generic})   |
 
-For each property, you can find more details [here]({{ site.baseurl }}{% link docs/igrc-platform/installation-and-deployment/Identity Analyticss-web-portal/portal-access/saml/saml-authenticators-properties.md %}).
+For each property, you can find more details For each property, you can find more details [here]({{ site.baseurl }}{% link docs/igrc-platform/installation-and-deployment/brainwaves-web-portal/portal-access/saml/saml-authenticators-properties.md %}).
 
 ### Step 3: Identity Analytics Portal generation
 
