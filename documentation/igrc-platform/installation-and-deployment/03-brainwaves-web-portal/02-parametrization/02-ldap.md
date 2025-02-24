@@ -255,7 +255,7 @@ Once realms configuration are done, the next step is to create the role mapping 
 
 > You can create as many mapping files as required by your realms.
 
-> Identity Analytics needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles]({{ site.baseurl }}{% link docs/ias/integration-guide/web-portal-roles.md %}) article.
+> Identity Analytics needs at least the **user** specific role to be mapped. Others default IAP portal roles are detailed in the [Web Portal Roles](https://developer.radiantlogic.com/ia/iap-3.2/identity-analytics/integration-guide/03-webportal-roles/) article.
 
 ## Debug
 

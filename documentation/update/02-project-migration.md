@@ -55,7 +55,7 @@ A second prompt will ask you if you want to automatically declare the database. 
 
 Under "Driver Properties" you will have to re-type your password in order to connect to the database. It is recommended to test the connection before clicking "OK".  
 
-Finally, when upgrading from a version 2014 and bellow, a window will detail the configurations created. Two in my case FirstSet and SecondSet. The default configuration in my case is SecondSet. You can find more information about the new configuration features [here]({{site.baseurl}}{% link docs/how-to/configuration/configuration.md %}).
+Finally, when upgrading from a version 2014 and bellow, a window will detail the configurations created. Two in my case FirstSet and SecondSet. The default configuration in my case is SecondSet.
 
 ![Finalised Configuration](./images/finalisedConfiguration.png "Finalised Configuration")
 
