@@ -5,6 +5,12 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP5
+
+### Bug fixes
+
+- **IGRC-4841:** Manually set managers (other than identity) are not reported from timeslot to timeslot
+
 ## Version Descartes R5 SP4
 
 ### Security fix
