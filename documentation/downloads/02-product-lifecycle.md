@@ -19,13 +19,13 @@ description: iGRCanalytics product lifecycle
 
 | Version              | Release date |       Active       |      Passive       |      Limited       | End of support |
 | :------------------- | :----------: | :----------------: | :----------------: | :----------------: | :------------: |
-| Descartes R5 SP5     |  24/02/2025  | :white_check_mark: |                    |                    |   02/05/2026   |
-| Descartes R5 (SP0-4) |  13/08/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
-| Descartes R4         |  01/07/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
-| Descartes R3         |  06/05/2024  |                    |                    | :white_check_mark: |   02/05/2026   |
-| Descartes R2 (SP0-2) |  26/09/2023  |                    |                    | :white_check_mark: |   02/05/2026   |
-| Descartes R1 SP2     |  26/07/2023  |                    | :white_check_mark: |                    |   02/05/2026   |
-| Descartes R1 (SP0-1) |  02/05/2023  |                    |                    | :white_check_mark: |   02/05/2026   |
+| Descartes R5 SP5     |  24/02/2025  | :white_check_mark: |                    |                    |   31/12/2027   |
+| Descartes R5 (SP0-4) |  13/08/2024  |                    |                    | :white_check_mark: |   31/12/2027   |
+| Descartes R4         |  01/07/2024  |                    |                    | :white_check_mark: |   31/12/2027   |
+| Descartes R3         |  06/05/2024  |                    |                    | :white_check_mark: |   31/12/2027   |
+| Descartes R2 (SP0-2) |  26/09/2023  |                    |                    | :white_check_mark: |   31/12/2027   |
+| Descartes R1 SP2     |  26/07/2023  |                    | :white_check_mark: |                    |   31/12/2027   |
+| Descartes R1 (SP0-1) |  02/05/2023  |                    |                    | :white_check_mark: |   31/12/2027   |
 
 ### Unsupported versions
 
