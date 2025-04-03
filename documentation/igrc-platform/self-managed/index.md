@@ -577,7 +577,3 @@ Do not uninstall Shared Services if the Identity Analytics instance is still dep
     helm show crds oci://docker.io/radiantone/ida-shared-helm \
       --version <SHARED_CHART_VERSION> | kubectl delete -f -
     ```
-
-## Known issues
-
-- Self-managed Identity Analytics application currently does not support backup and restore functionalities.
