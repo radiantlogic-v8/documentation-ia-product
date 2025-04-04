@@ -30,10 +30,10 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 
 ## Prerequisites
 
-- [Kubernetes cluster](https://kubernetes.io/docs/setup/) of version **1.27** or higher. Refer to the [Sizing a Kubernetes cluster](https://developer.radiantlogic.com/idm/v8.1/installation/https:/developer.radiantlogic.com/idm/v7.4/getting_started/kubernetes/#sizing-a-kubernetes-cluster) document for additional details.
+- [Kubernetes cluster](https://kubernetes.io/docs/setup/) of version **1.27** or higher. 
 - Install [Helm](https://helm.sh/) version **3.0** or higher.
 - Install [kubectl](https://kubernetes.io/docs/reference/kubectl/) version **1.27** or higher and configure it to access your Kubernetes cluster.
-- An Identity Data Management license key, which will be provided to you during onboarding.
+- An Identity Data Analytics license key, which will be provided to you during onboarding.
 - Ensure that you have received Container Registry Access and image pull credentials named (ida-registry-credentials.yaml) from Radiant Logic during onboarding.
 - Ensure that you have necessary storage provisioners and storage classes configured for the Kubernetes cluster. Some examples of supported storage classes are gp2/gp3, Azure disk, etc.
 - Estimate sufficient resources (CPU, memory, storage) for the deployment. Your Radiant Logic solutions engineer may guide you with this depending on your use case.
