@@ -238,3 +238,5 @@ ora2pg -t COPY -c .\config\ora2pg.conf
 Where -c Path to the configuration file to use.
 
 This generates 305 files. An `output.sql` which will be used to import all data and 304 files that corresponds to the data of the 304 tables included in the schema of Identity Analytics. The advantage of having data multiple files available is that they can be reloaded manually several times in the event of a problem, until the right fix is found.
+
+> [!warning] It is necessary to create an archive (`tar` `gzip` format) of all exported data files at root, no sub directory containing the files. This archive will be used when importing the database see [here](./import-database)

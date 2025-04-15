@@ -30,7 +30,7 @@ dataRecovery:
     requests:
       memory: 256Mi
       cpu: 500m
-``` 
+```
 
 ## Enable data recovery mode
 
@@ -49,7 +49,7 @@ dataRecovery:
 Then proceed to the IDA deployment with this custom values file.
 
 > Ensure that all pods are healthy before next steps.
-> 
+>
 > Remember that some pods such as portal or data ingestion service are not present in that mode.
 
 ## Find the data recovery pod name
@@ -77,8 +77,8 @@ kubectl cp --namespace=<ida_namespace> --container data-recovery --request-timeo
 ```
 
 > [!warning] Adapt the timeout, especially with low bandwidth and huge archive.
-
-> If the pod crashes for any reason, all data, logs, … are lost because the pod is designed has no persistency.
+>
+> In addition please note that if the pod crashes for any reason, all data, logs, … are lost because the pod is designed has no persistency.
 
 ## Connect to the pod
 
@@ -93,7 +93,7 @@ kubectl exec --namespace=<ida_namespace> --container data-recovery -it <pod_name
 There are 4 main steps to execute based on provided scripts.
 
 > Ensure you successfully completed the previous steps.
-
+>
 > Each script generates logs to console and generate files in `/work/logs`.
 
 When connected to the pods:
