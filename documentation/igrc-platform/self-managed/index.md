@@ -465,6 +465,23 @@ helm upgrade --install rlss \
   --values shared-minimal.values.yaml
 ```
 
+> [!warning] when upgrading the shared service is can be required to perform additional actions BEFORE performing the `helm upgrade --install` command above:  
+>
+> ```sh
+> kubectl scale deploy --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}}$"
+> kubectl delete deploy --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> 
+> kubectl scale sts --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> kubectl delete sts --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> ```
+>
+> where:
+>
+> - `${SHARED_NAMESPACE}`: is the name of the namespace where the shared service are installed
+> - `${SHARED_RELEASE_NAME}`: is the name of the helm release used for shared services. _e.g._ rlss in the helm command above
+>
+> These commands are required when migrating from 3.0.0 3.1.0 and 3.1.1
+
 ```bash
 helm upgrade --install rlia \
   oci://docker.io/radiantone/ida-helm \
