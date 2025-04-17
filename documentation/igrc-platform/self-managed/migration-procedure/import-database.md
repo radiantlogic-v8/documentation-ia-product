@@ -67,13 +67,24 @@ kubectl get pod --no-headers -o custom-columns=":metadata.name" \
 
 ## Transfer exported data files archive
 
-We advise to create an archive (`tar` `gzip` format) of all exported data files at root, no sub directory containing the files. If you have such archive, adapt the commands to get the expected result.
+It is necessary to create an archive named `export.tgz`, in `tar` `gzip` format, that contains all exported data files in a directory in the archive.
 
-Execute the command (`bash` example) to upload the archive. This command will copy the `/path/to/archive.tgz` archive to the pod name `<pod_name>`, container named data-recovery deployed in the namespace `<ida_namespace>`, with the same name in /work/upload.  
+The structure should be:
+
+```txt
+-> export.tgz
+----> folder
+--------> file 1
+--------> file 2
+...
+--------> file n
+```
+
+Execute the command (`bash` example) to upload the archive. This command will copy the `/path/to/export.tgz` archive to the pod name `<pod_name>`, container named data-recovery deployed in the namespace `<ida_namespace>`, with the same name in /work/upload.  
 
 ```sh
 kubectl cp --namespace=<ida_namespace> --container data-recovery --request-timeout=10m \
-  /path/to/archive.tgz <pod_name>:/work/upload
+  /path/to/export.tgz <pod_name>:/work/upload
 ```
 
 > [!warning] Adapt the timeout, especially with low bandwidth and huge archive.
