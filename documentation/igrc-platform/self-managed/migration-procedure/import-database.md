@@ -16,6 +16,8 @@ Data recovery mode deploys a special pod in IDA namespace and at the same time, 
 
 ## Checks
 
+- [ ] For PostgreSQL database the import is only possible from a target PostgreSQL version of 17.4 and below.
+- [ ] CNPG operator **must** be equal to version "0.23.2" when performing the data import so that the database images are on version 17.4 of PostgreSQL
 - [ ] You must have access to your target Kubernetes cluster as well as network connectivity to upload your exported data files to the data recovery pod
 - [ ] You own the exported data files package
 - [ ] Ensure you correctly tune the self-managed database to import data from legacy database such as resources requests / limits, PVCs size, Postgres settings consistent with resources, …

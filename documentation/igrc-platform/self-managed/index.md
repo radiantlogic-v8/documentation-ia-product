@@ -80,10 +80,17 @@ helm upgrade --install cnpg \
   cnpg/cloudnative-pg \
   --namespace cnpg-system \
   --create-namespace \
-  --version 0.21.5 \
+  --version <version> \
   --wait \
   --values cnpg-custom-values.yaml
 ```
+
+Please update the version of the operator to install according to the parameters in the table below
+
+| CNPG Chart version | Postgres Version | status      |
+| :----------------- | :--------------- | :---------- |
+| 0.23.2             | postgres 17.4    | recommended |
+| 0.21.5             | postgres 16.3    |             |
 
 5. **Verify Pod Health**:
 
@@ -468,7 +475,7 @@ helm upgrade --install rlss \
 > [!warning] when upgrading the shared service is can be required to perform additional actions BEFORE performing the `helm upgrade --install` command above:  
 >
 > ```sh
-> kubectl scale deploy --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}}$"
+> kubectl scale deploy --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
 > kubectl delete deploy --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
 > 
 > kubectl scale sts --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
