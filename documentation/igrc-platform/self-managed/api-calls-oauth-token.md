@@ -42,7 +42,7 @@ portal:
 
 By default, the assumed role is "technicaladmin". You can modify the roles if needed by updating the value of the `assumeRoles` field.
 
-Once the values of your helm updated update the deployment of the application using `helm upgrade --install ...`.  Refer to the [updating a deployment section](./index/#updating-a-deployment) to learn more. 
+Once the values of your helm updated update the deployment of the application using `helm upgrade --install ...`.  Refer to the [updating a deployment section](./index.md/#updating-a-deployment) to learn more. 
 
 ### Keycloak client secret
 
