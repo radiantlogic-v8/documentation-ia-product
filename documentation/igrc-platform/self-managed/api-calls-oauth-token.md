@@ -42,7 +42,7 @@ portal:
 
 By default, the assumed role is "technicaladmin". You can modify the roles if needed by updating the value of the `assumeRoles` field.
 
-Once the values of your helm updated update the deployment of the application using `helm upgrad --install ...`.  
+Once the values of your helm updated update the deployment of the application using `helm upgrade --install ...`.  Refer to the [updating a deployment section](./index/#updating-a-deployment) to learn more. 
 
 ### Keycloak client secret
 
@@ -50,7 +50,7 @@ Log in to the Keycloak Admin Console, navigate to the Clients section and locate
 
 Retrieve the Client ID and Client Secret within the credentials tab.  
 
-## Executing a API call
+## Executing an API call
 
 ### Getting the access token
 
@@ -92,7 +92,7 @@ Where:
 
 > Note that in this example, we are utilizing jq, a command-line tool for processing JSON data.  
 
-### executing an API Request
+### Making an API Request
 
 Once you have the access token, you can use it to make an authenticated GET request to Identity Analytics' "Retrieve view results" endpoint with the following format:
 
