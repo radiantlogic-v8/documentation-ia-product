@@ -1,0 +1,3338 @@
+@CHARSET "UTF-8";
+
+* {
+  color: #4a4a4a;
+  background-color: #FFFFFF;
+  background-image: none;
+  font: 13px roboto, sans-serif;
+  border: none;
+  padding: 0px;
+}
+
+*[BORDER] {
+  border: 1px solid #a4a4a4;
+}
+
+*:disabled {
+  color: #A0A0A0;
+}
+
+Widget-Badge {
+  background-color: #dd0000;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+Widget-ToolTip {
+  padding: 10px;
+  background-color: #201f1b;
+  background-image: none;
+  border: none;
+  border-radius: 1px;
+  color: #e0e0e0;
+  opacity: 0.9;
+  animation: fadeIn 150ms ease-in, fadeOut 150ms ease-in;
+  box-shadow: none;
+  text-align: center;
+}
+
+Widget-ToolTip-Pointer {
+  background-image: none;
+}
+Widget-ToolTip-Pointer:up {
+  background-image: url(resources/rap/arrows/tooltip-up.png);
+}
+Widget-ToolTip-Pointer:down {
+  background-image: url(resources/rap/arrows/tooltip-down.png);
+}
+Widget-ToolTip-Pointer:left {
+  background-image: url(resources/rap/arrows/tooltip-left.png);
+}
+Widget-ToolTip-Pointer:right {
+  background-image: url(resources/rap/arrows/tooltip-right.png);
+}
+
+Display {
+  rwt-shadow-color: #a7a6aa;
+  rwt-highlight-color: #ffffff;
+  rwt-darkshadow-color: #85878c;
+  rwt-lightshadow-color: #dcdfe4;
+  rwt-thinborder-color: #aca899;
+  rwt-selectionmarker-color: #fec83c;
+  rwt-infobackground-color: #ffffff;
+  rwt-error-image: url(resources/rap/dialog/error.png);
+  rwt-information-image: url(resources/rap/dialog/information.png);
+  rwt-question-image: url(resources/rap/dialog/question.png);
+  rwt-warning-image: url(resources/rap/dialog/warning.png);
+  rwt-working-image: url(resources/rap/dialog/information.png);
+  rwt-fontlist: 13px roboto, sans-serif;
+  background-image: url(resources/rap/display/browser_bg.png);
+}
+
+SystemMessage-DisplayOverlay {
+  background-color: rgba(128, 128, 128, 0.2);
+  background-image: url(resources/rap/display/loading.gif);
+}
+
+ErrorBox-Titlebar {
+  font: bold 14px roboto,sans-serif;
+  color: white;
+  background-color: #406796;
+}
+
+ErrorBox {
+  border: 1px solid #3B5998;
+  font: 14px roboto, sans-serif;
+  color: #4a4a4a;
+  background-color: white;
+}
+
+Composite {
+  padding: 0;
+  opacity: 1;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  border: none;
+  box-shadow: none;
+  animation: none;
+}
+Composite[BORDER] {
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+ScrollBar {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  width: 10px;
+  opacity: 0;
+}
+
+ScrollBar:active {
+  opacity: 0.8;
+}
+
+ScrollBar-Thumb {
+  background-color: #cccccc;
+  border: 1px solid #bdbdbd;
+  border-radius: 15px;
+  background-image: none;
+  min-height: 20px;
+}
+
+ScrollBar-UpButton, ScrollBar-DownButton {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: default;
+}
+
+/* ToolBar default theme */
+ToolBar {
+  color: #000000;
+  padding: 0;
+  spacing: 0;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  opacity: 1;
+}
+
+ToolBar[BORDER] {
+  border: 1px solid #a4a4a4;
+  border-radius: 2px;
+}
+
+ToolBar[VERTICAL] {
+  background-color: transparent;
+  background-image: none;
+}
+
+ToolBar[FLAT] {
+  border: none;
+  background-image: none;
+  spacing: 4px;
+}
+
+ToolBar[FLAT][BORDER] {
+  border: 1px solid #bdbdbd;
+  padding: 3px 3px 6px 3px;
+}
+
+ToolItem {
+  color: inherit;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-radius: 0px;
+  padding: 4px 8px 4px 8px;
+  spacing: 4px;
+  opacity: 1;
+  animation: none;
+  text-shadow: none;
+}
+ToolItem:hover {
+  background-color: #f0f0f0;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+}
+ToolItem:pressed, ToolItem:selected {
+  border: 1px solid #a4a4a4;
+  border-radius: 2px;
+  padding: 9px 8px 8px 9px;
+  background-image: gradient(linear, left top, left bottom, from(#e4e4e4), to(#f9f9f9));
+}
+
+ToolItem-DropDownIcon {
+  background-image: url(resources/rap/toolbar/down.png);
+  border: none;
+}
+ToolItem-DropDownIcon:hover {
+  border: 1px inset;
+}
+
+ToolItem-Separator {
+  width: 4px;
+}
+
+/* JFace specific theming */
+Shell.jface_contentProposalPopup, Shell.jface_infoPopupDialog {
+  border: 1px solid #bdbdbd;
+  padding: 0;
+  box-shadow: 0 0 4px #ababab;
+}
+
+/* CTabFolder default theme */
+CTabFolder {
+  border-color: #bdbdbd;
+  border-radius: 2px;
+}
+
+CTabItem {
+  color: #4a4a4a;
+  background-color: transparent;
+  background-image: none;
+  padding: 6px 15px;
+  spacing: 10px;
+  text-shadow: none;
+  text-decoration: none;
+}
+CTabItem:selected {
+  color: #4a4a4a;
+  background-color: #d6d6d6;
+}
+CTabItem:disabled {
+  /* Do not gray out disabled CTabItems, this is SWT behavior */
+  color: black;
+}
+
+CTabFolder-DropDownButton-Icon {
+  background-image: url(resources/rap/ctabfolder/ctabfolder-dropdown.png);
+}
+CTabFolder-DropDownButton-Icon:hover {
+  background-image: url(resources/rap/ctabfolder/ctabfolder-dropdown-hover.png);
+}
+CTabFolder-DropDownButton-Icon[RIGHT_TO_LEFT] {
+  background-image: url( resources/rap/ctabfolder/ctabfolder-dropdown-left.png );
+}
+CTabFolder-DropDownButton-Icon[RIGHT_TO_LEFT]:hover {
+  background-image: url( resources/rap/ctabfolder/ctabfolder-dropdown-left-hover.png );
+}
+
+/* Shell default theme */
+Shell {
+  border: none;
+  border-radius: 2px;
+  background-color: #ffffff;
+  background-image: none;
+  padding: 0;
+  opacity: 1;
+  box-shadow: none;
+  animation: none;
+}
+
+Shell[TITLE], Shell[BORDER] {
+  background-color: #ffffff;
+  border: 1px solid #6e6e6e;
+  border-radius: 2px;
+  box-shadow: 0 0 4px #ababab;
+}
+Shell[TITLE]:inactive, Shell[BORDER]:inactive {
+  border: 1px solid #bdbdbd;
+  box-shadow: none;
+}
+Shell:maximized, Shell:maximized:inactive {
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+Shell-DisplayOverlay {
+  animation: fadeIn 200ms linear, fadeOut 400ms ease-out;
+  background-image: none;
+  background-color: #808080;
+  opacity: 0.2;
+}
+
+Shell-Titlebar {
+  font: 14px  roboto,sans-serif;
+  background-color: #2D5E90;
+  color: #ffffff;
+  padding: 0 10px 0 10px;
+  margin: 0px;
+  height: 38px;
+  border: none;
+  border-radius: 0;
+  text-shadow: none;
+}
+Shell-Titlebar:inactive {
+  background-color: #2D5E90;
+  color: #ffffff;
+}
+
+/* Shell buttons */
+/* Minimize button */
+Shell-MinButton {
+  background-image: url(resources/rap/window/shell-min.png);
+  margin: 0 -2px 0 0;
+}
+Shell-MinButton:hover {
+  background-image: url(resources/rap/window/shell-min-hover.png);
+}
+Shell-MinButton:inactive {
+  background-image: url(resources/rap/window/shell-min.png);
+  margin: 0 -2px 0 0;
+}
+Shell-MinButton:inactive:hover {
+  background-image: url(resources/rap/window/shell-min-hover.png);
+}
+
+/* Maximize button */
+Shell-MaxButton {
+  background-image: url(resources/rap/window/shell-max.png);
+  margin: 0 -2px 0 0;
+}
+Shell-MaxButton:hover {
+  background-image: url(resources/rap/window/shell-max-hover.png);
+}
+Shell-MaxButton:inactive {
+  background-image: url(resources/rap/window/shell-max.png);
+  margin: 0 -2px 0 0;
+}
+Shell-MaxButton:inactive:hover {
+  background-image: url(resources/rap/window/shell-max-hover.png);
+}
+Shell-MaxButton:maximized {
+  background-image: url(resources/rap/window/shell-restore.png);
+}
+Shell-MaxButton:maximized:hover {
+  background-image: url(resources/rap/window/shell-restore-hover.png);
+}
+Shell-MaxButton:maximized:inactive {
+  background-image: url(resources/rap/window/shell-restore.png);
+}
+Shell-MaxButton:maximized:inactive:hover {
+  background-image: url(resources/rap/window/shell-restore-hover.png);
+}
+
+/* Close button */
+Shell-CloseButton {
+  background-image: url(resources/rap/window/shell-close.png);
+  margin: 0 -2px 0 0;
+}
+Shell-CloseButton:hover {
+  background-image: url(resources/rap/window/shell-close-hover.png);
+}
+Shell-CloseButton:inactive {
+  background-image: url(resources/rap/window/shell-close.png);
+  margin: 0 -2px 0 0;
+}
+Shell-CloseButton:inactive:hover {
+  background-image: url(resources/rap/window/shell-close-hover.png);
+}
+
+/* Text default theme */
+Text {
+  border: none;
+  border-radius: 0;
+  padding: 2px 5px 2px 5px;
+  color: #4a4a4a;
+  background-color: #f0f0f0;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  text-shadow: none;
+  box-shadow: none;
+}
+Text[MULTI] {
+  /*
+   * padding currently has no effect because of bug 253644
+   * [TODO] remove comment if bug fixed
+   */
+  padding: 2px 5px 2px 5px;
+}
+Text[BORDER], Text[MULTI][BORDER] {
+  border: 1px solid #aaaaaa;
+  border-radius: 0;
+  box-shadow: inset 0 0 3px #bdbdbd;
+}
+Text[BORDER]:disabled, Text[MULTI][BORDER]:disabled, Text[BORDER]:read-only, Text[MULTI][BORDER]:read-only {
+  box-shadow: none;
+}
+
+Text-Message {
+  color: #a7a6aa;
+  text-shadow: none;
+}
+
+Text-Search-Icon {
+  background-image: url(resources/rap/text/find.png);
+  spacing: 3px;
+}
+
+Text-Cancel-Icon {
+  background-image: url(resources/rap/text/clear.gif);
+  spacing: 3px;
+}
+
+/* Label default theme */
+Label {
+  color: #000000;
+  background-color: transparent;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  border: none;
+  border-radius: 0px;
+  text-decoration: none;
+  cursor: default;
+  opacity: 1;
+  text-shadow: none;
+}
+Label[BORDER] {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+Label-SeparatorLine {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #a4a4a4;
+  border-radius: 0px;
+  width: 2px;
+}
+Label-SeparatorLine[SHADOW_IN] {
+  border: 1px inset;
+}
+Label-SeparatorLine[SHADOW_OUT] {
+  border: 1px outset;
+}
+
+/* Spinner default theme */
+Spinner {
+  border: none;
+  border-radius: 0 2px 2px 0;
+  color: #4a4a4a;
+  background-color: #f0f0f0;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+Spinner[BORDER] {
+  border: 1px solid #aaaaaa;
+  border-radius: 0 2px 2px 0;
+  box-shadow: inset 0 0 3px #bdbdbd;
+}
+Spinner:disabled, Spinner[BORDER]:disabled {
+  box-shadow: none;
+}
+
+Spinner-Field {
+  padding: 3px 5px 3px 5px;
+}
+
+Spinner-UpButton {
+  background-color: #efefef;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#efefef));
+  width: 22px;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 2px 0px 0px;
+  cursor: default;
+}
+Spinner-UpButton:disabled {
+  background-image: none;
+  background-color: transparent;
+}
+
+Spinner-UpButton-Icon {
+  background-image: url(resources/rap/spinner/up.png);
+}
+Spinner-UpButton-Icon:hover {
+  background-image: url(resources/rap/spinner/up-hover.png);
+}
+
+Spinner-DownButton {
+  background-color: #efefef;
+  background-image: gradient(linear, left top, left bottom, from(#efefef), to(#e4e4e4));
+  width: 22px;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 0px 2px 0px;
+  cursor: default;
+}
+Spinner-DownButton:disabled {
+  background-image: none;
+  background-color: transparent;
+}
+
+Spinner-DownButton-Icon {
+  background-image: url(resources/rap/spinner/down.png);
+}
+Spinner-DownButton-Icon:hover {
+  background-image: url(resources/rap/spinner/down-hover.png);
+}
+
+/* Sash default theme */
+Sash {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+}
+Sash[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+Sash:hover {
+  background-color: #e5e5e5;
+}
+
+Sash-Handle {
+  background-image: none;
+}
+Sash-Handle:horizontal {
+  background-image: url(resources/rap/sash/sash-handle-horizontal.png);
+}
+Sash-Handle:vertical {
+  background-image: url(resources/rap/sash/sash-handle-vertical.png);
+}
+
+/* Group default theme */
+Group {
+  color: #4a4a4a;
+  background-color: transparent;
+  border: none;
+}
+
+Group-Frame {
+  margin: 10px 5px 5px 5px;
+  padding: 15px 8px 8px 8px;
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+}
+
+Group-Label {
+  padding: 2px 10px 2px 10px;
+  background-color: #f0f0f0;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  color: inherit;
+  margin: 5px 5px 5px 10px;
+  text-shadow: none;
+}
+
+/*
+Group-Frame {
+	margin: 20px 10px 10px 10px;
+	padding: 15px 8px 8px 8px;
+	border: 1px solid #bdbdbd;
+	border-radius: 2px;
+}
+
+Group-Label {
+	padding: 2px 10px 2px 10px;
+	background-color: #f0f0f0;
+	background-image: none;
+	background-repeat: repeat;
+	background-position: left top;
+	border: 1px solid #bdbdbd;
+	border-radius: 4px;
+	color: #4a4a4a;
+	margin: 10px 10px 10px 20px;
+	text-shadow: none;
+}
+*/
+/* TabFolder default theme */
+TabFolder {
+  border: none;
+}
+TabFolder[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+
+TabFolder-ContentContainer {
+  border: 1px solid #bdbdbd;
+}
+
+TabItem {
+  color: #4a4a4a;
+  background-color: #ffffff;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  background-repeat: repeat;
+  background-position: left top;
+  border-top-color: #5882b5;
+  border-bottom-color: #5882b5;
+  text-shadow: 0 1px 0 #ffffff;
+  padding: 6px;
+  margin: 6px 1px 1px 0px;
+  border: 1px solid #bdbdbd;
+  border-bottom: none;
+}
+TabItem:bottom {
+  margin: 1px 1px 6px 0px;
+  border: 1px solid #bdbdbd;
+  border-top: none;
+}
+TabItem:selected {
+  background-image: gradient(linear, left top, left bottom, from(#d5d5d5), to(#eaeaea));
+  margin: 3px -1px 0px -2px;
+  border: 1px solid #bdbdbd;
+  border-top: 3px solid #5882b5;
+  border-bottom: none;
+}
+TabItem:bottom:selected {
+  margin: 0px -1px 3px -2px;
+  border: 1px solid #bdbdbd;
+  border-top: none;
+  border-bottom: 3px solid #5882b5;
+}
+TabItem:selected:first {
+  margin: 3px -1px 0px 0px;
+}
+TabItem:bottom:selected:first {
+  margin: 0px -1px 3px 0px;
+}
+
+/* Table default theme */
+Table {
+  background-color: #ffffff;
+  background-image: none;
+  color: #4a4a4a;
+  border: none;
+}
+Table[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+
+TableColumn {
+  font: 13px  roboto-semi,sans-serif;
+  color: #333333;
+  background-color: #FFFFFF;
+  padding: 3px 8px;  /* TB LR*/
+  border-bottom: 1px solid #bdbdbd;
+  text-shadow: none;
+  text-overflow: ellipsis;
+}
+TableColumn:hover {
+  background-color: #909090;
+}
+
+TableItem, TableItem:linesvisible:even:rowtemplate {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  text-shadow: none;
+  background-image: none;
+  text-overflow: ellipsis;
+}
+TableItem:linesvisible:even {
+  background-color: #ffffff;
+  color: inherit;
+  border: none;
+}
+
+Table-RowOverlay {
+  background-color: transparent;
+  color: inherit;
+  background-image: none;
+}
+Table-RowOverlay:hover {
+  color: inherit;
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+Table-RowOverlay:selected {
+  color: inherit;
+  background-color: rgba(88, 130, 181, 0.25);
+  background-image: none;
+}
+Table-RowOverlay:selected:unfocused {
+  color: inherit;
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+
+TableColumn-SortIndicator {
+  background-image: none;
+}
+TableColumn-SortIndicator:up {
+  background-image: url(resources/rap/column/sort-indicator-up.png);
+}
+TableColumn-SortIndicator:down {
+  background-image: url(resources/rap/column/sort-indicator-down.png);
+}
+
+Table-Cell {
+  spacing: 0px;
+  padding: 3px 3px 8px 3px;
+}
+
+Table-GridLine, Table-GridLine:vertical:rowtemplate {
+  color: transparent;
+}
+Table-GridLine:horizontal,  {
+  color: #dedede;
+}
+
+Table-GridLine:header {
+  color: #BDBDBD;
+}
+
+Table-GridLine:vertical  {
+  color: #f5f5f5;
+}
+
+Table-Checkbox {
+  width: 21px;
+  margin: 0 0 0 4px;
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Table-Checkbox:hover {
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Table-Checkbox:checked {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+Table-Checkbox:checked:hover {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+
+/* Tree default theme */
+Tree {
+  background-color: #ffffff;
+  background-image: none;
+  color: #4a4a4a;
+  border: none;
+}
+Tree[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+
+TreeColumn {
+  color: inherit;
+  background-color: #f0f0f0;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  padding: 6px 8px 6px 8px;
+  border-bottom: 1px solid #bdbdbd;
+  text-shadow: none;
+  text-overflow: ellipsis;
+}
+TreeColumn:hover {
+  background-image: gradient(linear, left top, left bottom, from(#e4e4e4), to(#f9f9f9));
+}
+
+TreeItem, TreeItem:linesvisible:even:rowtemplate {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: none;
+  text-shadow: none;
+  background-image: none;
+}
+TreeItem:linesvisible:even {
+  background-color: #f0f0f0;
+  color: inherit;
+  border: none;
+}
+
+Tree-RowOverlay {
+  background-color: transparent;
+  color: inherit;
+  background-image: none;
+}
+Tree-RowOverlay:hover {
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+Tree-RowOverlay:selected {
+  color: inherit;
+  background-color: rgba(88, 130, 181, 0.25);
+  background-image: none;
+}
+Tree-RowOverlay:selected:unfocused {
+  color: inherit;
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+Tree-RowOverlay:linesvisible:even:hover {
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+Tree-RowOverlay:linesvisible:even:selected {
+  color: #ffffff;
+  background-color: rgba(88, 130, 181, 0.25);
+  background-image: none;
+}
+Tree-RowOverlay:linesvisible:even:selected:unfocused {
+  color: inherit;
+  background-color: rgba(181, 181, 181, 0.2);
+  background-image: none;
+}
+
+TreeColumn-SortIndicator {
+  background-image: none;
+}
+TreeColumn-SortIndicator:up {
+  background-image: url(resources/rap/column/sort-indicator-up.png);
+}
+TreeColumn-SortIndicator:down {
+  background-image: url(resources/rap/column/sort-indicator-down.png);
+}
+
+Tree-Cell {
+  spacing: 0px;
+  padding: 3px 3px 3px 3px;
+}
+
+Tree-GridLine, Tree-GridLine:vertical:rowtemplate {
+  color: transparent;
+}
+Tree-GridLine:horizontal {
+  color: transparent;
+}
+
+Tree-GridLine:vertical, Tree-GridLine:header, Tree-GridLine:horizontal:rowtemplate {
+  color: #d0d0d0;
+}
+
+Tree-Checkbox {
+  width: 21px;
+  margin: 0 0 0 4px;
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Tree-Checkbox:hover {
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Tree-Checkbox:checked {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+Tree-Checkbox:checked:hover {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+
+Tree-Indent {
+  width: 16px;
+  background-image: none;
+}
+Tree-Indent:collapsed {
+  background-image: url(resources/rap/tree/tree-collapsed.png);
+}
+Tree-Indent:collapsed:hover {
+  background-image: url(resources/rap/tree/tree-collapsed-hover.png);
+}
+Tree-Indent:expanded {
+  background-image: url(resources/rap/tree/tree-expanded.png);
+}
+Tree-Indent:expanded:hover {
+  background-image: url(resources/rap/tree/tree-expanded-hover.png);
+}
+Tree-Indent:line {
+  background-image: none;
+}
+Tree-Indent:first {
+  background-image: none;
+}
+Tree-Indent:first:collapsed {
+  background-image: url(resources/rap/tree/tree-collapsed.png);
+}
+Tree-Indent:first:collapsed:hover {
+  background-image: url(resources/rap/tree/tree-collapsed-hover.png);
+}
+Tree-Indent:first:expanded {
+  background-image: url(resources/rap/tree/tree-expanded.png);
+}
+Tree-Indent:first:expanded:hover {
+  background-image: url(resources/rap/tree/tree-expanded-hover.png);
+}
+Tree-Indent:last {
+  background-image: none;
+}
+Tree-Indent:last:collapsed {
+  background-image: url(resources/rap/tree/tree-collapsed.png);
+}
+Tree-Indent:last:collapsed:hover {
+  background-image: url(resources/rap/tree/tree-collapsed-hover.png);
+}
+Tree-Indent:last:expanded {
+  background-image: url(resources/rap/tree/tree-expanded.png);
+}
+Tree-Indent:last:expanded:hover {
+  background-image: url(resources/rap/tree/tree-expanded-hover.png);
+}
+Tree-Indent:first:last {
+  background-image: none;
+}
+Tree-Indent:first:last:collapsed {
+  background-image: url(resources/rap/tree/tree-collapsed.png);
+}
+Tree-Indent:first:last:collapsed:hover {
+  background-image: url(resources/rap/tree/tree-collapsed-hover.png);
+}
+Tree-Indent:first:last:expanded {
+  background-image: url(resources/rap/tree/tree-expanded.png);
+}
+Tree-Indent:first:last:expanded:hover {
+  background-image: url(resources/rap/tree/tree-expanded-hover.png);
+}
+
+/* ToolTip default theme */
+ToolTip {
+  cursor: default;
+  border: 1px solid #a0b3ca;
+  border-radius: 2px;
+  padding: 8px;
+  opacity: 1;
+  color: #4a4a4a;
+  background-image: gradient(linear, left top, right top, from(#f8f9ff), to(#f4f4f4));
+  background-color: #fcfcfc;
+  animation: fadeIn 200ms linear, fadeOut 600ms ease-out;
+  box-shadow: 0 0 4px #adadad;
+}
+
+ToolTip-Image[ICON_ERROR] {
+  background-image: url(resources/rap/tooltip/error.png);
+}
+ToolTip-Image[ICON_INFORMATION] {
+  background-image: url(resources/rap/tooltip/information.png);
+}
+ToolTip-Image[ICON_WARNING] {
+  background-image: url(resources/rap/tooltip/warning.png);
+}
+
+ToolTip-Text {
+  color: #4a4a4a;
+  text-shadow: none;
+}
+
+ToolTip-Message {
+  color: #4a4a4a;
+  text-shadow: none;
+}
+
+/* Combo default theme */
+Combo, Combo[BORDER] {
+  border: 1px solid #aaaaaa;
+  border-radius: 0;
+  box-shadow: inset 0 0 3px #bdbdbd;
+  padding: 2px 5px 2px 5px;
+  color: #4a4a4a;
+  background-color: #f0f0f0;
+  background-image: none;
+  text-shadow: none;
+}
+
+Combo:focused, Combo[BORDER]:focused {
+  border: 1px solid #4f7cb1;
+  box-shadow: 0 0 5px #4f7cb1;
+}
+
+Combo:disabled, Combo[BORDER]:disabled {
+  box-shadow: none;
+}
+
+Combo-Button {
+  cursor: default;
+  background-color: #efefef;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 2px 2px 0px;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  width: 22px;
+}
+
+Combo-Button[RIGHT_TO_LEFT] {
+  border: none;
+  border-right: 1px solid #bdbdbd;
+}
+
+Combo-Button:disabled {
+  background-image: none;
+  background-color: transparent;
+}
+
+Combo-Button-Icon {
+  background-image: url(resources/rap/combo/down.png);
+}
+Combo-Button-Icon:hover {
+  background-image: url(resources/rap/combo/down-hover.png);
+}
+
+Combo-List {
+  border: 1px solid #aaaaaa;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+Combo-List-Item {
+  color: inherit;
+  background-color: transparent;
+  background-image: none;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 6px 10px 6px 10px;
+}
+
+Combo-List-Item:hover, Combo-List-Item:even:hover  {
+  background-color: #f0f0f0;
+}
+
+Combo-List-Item:selected, Combo-List-Item:even:selected {
+  background-color: #c5dbef;
+}
+
+Combo-Field {
+  padding: 2px 5px 2px 5px;
+}
+
+Combo-FocusIndicator {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  opacity: 0;
+}
+
+/* DropDown default theme */
+DropDown {
+  border: 1px solid #4f7cb1;
+  border-radius: 0;
+  box-shadow: 0 0 5px #4f7cb1;
+}
+
+DropDown-Item {
+  color: inherit;
+  background-color: transparent;
+  background-image: none;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 6px 10px 6px 10px;
+}
+
+DropDown-Item:hover {
+  background-color: #f0f0f0;
+}
+
+DropDown-Item:selected {
+  background-color: #c5dbef;
+}
+
+/* CoolBar default theme */
+CoolBar {
+  background-image: none;
+}
+
+CoolItem-Handle {
+  border: 1px solid #bdbdbd;
+  width: 2px;
+}
+
+/* List default theme */
+List {
+  background-color: #ffffff;
+  background-image: none;
+  border: none;
+  color: #4a4a4a;
+  text-shadow: none;
+}
+List[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+
+List-Item {
+  padding: 2px 5px 2px 5px;
+  background-color: #ffffff;
+  color: inherit;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  text-shadow: none;
+}
+List-Item:hover {
+  background-color: #d0d0d0;
+}
+List-Item:selected {
+  color: #ffffff;
+  background-color: #6991c2;
+}
+List-Item:selected:unfocused {
+  color: #ffffff;
+  background-color: #b5b5b5;
+}
+List-Item:even {
+  background-color: #f0f0f0;
+  color: #4a4a4a;
+  border: none;
+}
+List-Item:even:hover {
+  color: #4a4a4a;
+  background-color: #d0d0d0;
+}
+List-Item:even:selected {
+  color: #ffffff;
+  background-color: #6991c2;
+}
+List-Item:even:selected:unfocused {
+  color: #ffffff;
+  background-color: #b5b5b5;
+}
+
+List-GridLine {
+  color: transparent;
+}
+
+/* Button default theme */
+Button {
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 15px;
+  spacing: 10px;
+  cursor: default;
+  animation: none;
+  color: #4a4a4a;
+  background-color: transparent;
+  opacity: 1;
+  text-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+Button[PUSH], Button[TOGGLE], Button[PUSH][BORDER], Button[TOGGLE][BORDER] {
+  font: 13px roboto-semi,sans-serif;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 15px;
+  background-color: #5A5A5A;  /*gris fonce*/ 
+  color: white; 
+  animation: none;
+  cursor: pointer;
+  
+}
+Button[ARROW], Button[ARROW][BORDER], Button[ARROW][FLAT] {
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+  padding: 10px;
+  background-color: gray;  
+  cursor: pointer;
+}
+Button[PUSH]:default, Button[TOGGLE]:default, Button[ARROW]:default {	
+  background-color: #416693;  /* blue*/
+}
+Button[PUSH]:disabled, Button[TOGGLE]:disabled, Button[ARROW]:disabled {
+  cursor: default;
+  color: #d2d2d2;
+  background-image: none;
+  background-color: #fafafa;
+  border: 1px solid #d2d2d2;
+}
+Button[PUSH]:hover, Button[TOGGLE]:hover, Button[ARROW]:hover {
+   background-color: gray;  
+}
+Button[PUSH]:pressed, Button[TOGGLE]:pressed, Button[ARROW]:pressed {
+   background-color: black;
+}
+Button[TOGGLE]:selected {
+   background-color: black;
+}
+Button[TOGGLE]:selected:hover {
+    background-color: gray;
+}
+Button[CHECK], Button[RADIO] {
+  padding: 3px 3px 3px 3px;
+  spacing: 7px;
+  background-image: none;
+  background-color: transparent;
+}
+Button[CHECK][BORDER], Button[RADIO][BORDER] {
+  cursor: default;
+  background-image: none;
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+}
+
+Button-CheckIcon {
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Button-CheckIcon:hover {
+  background-image: url(resources/theme/checkbox-unselected.png);
+}
+Button-CheckIcon:selected {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+Button-CheckIcon:selected:hover {
+  background-image: url(resources/theme/checkbox-selected.png);
+}
+
+Button-RadioIcon {
+  background-image: url(resources/theme/radiobutton-unselected.png);
+}
+Button-RadioIcon:hover {
+  background-image: url(resources/theme/radiobutton-unselected.png);
+}
+Button-RadioIcon:selected {
+  background-image: url(resources/theme/radiobutton-selected.png);
+}
+Button-RadioIcon:selected:hover {
+  background-image: url(resources/theme/radiobutton-selected.png);
+}
+
+Button-ArrowIcon[UP] {
+  background-image: url(resources/rap/button/arrow-up.png);
+}
+Button-ArrowIcon[DOWN] {
+  background-image: url(resources/rap/button/arrow-down.png);
+}
+Button-ArrowIcon[LEFT] {
+  background-image: url(resources/rap/button/arrow-left.png);
+}
+Button-ArrowIcon[RIGHT] {
+  background-image: url(resources/rap/button/arrow-right.png);
+}
+
+Button-FocusIndicator[ARROW], Button-FocusIndicator[PUSH], Button-FocusIndicator[TOGGLE], Button-FocusIndicator[CHECK], Button-FocusIndicator[RADIO] {
+  background-color: transparent;
+  border: none;
+}
+
+Button.image[PUSH] {
+  padding: 0px 0px;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  text-shadow: none;
+}
+
+/* Link default theme */
+Link {
+  color: #4a4a4a;
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  text-shadow: none;
+}
+
+Link[BORDER] {
+  border: 1px solid #bdbdbd;
+}
+
+Link-Hyperlink {
+  color: #416693;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+Link-Hyperlink:disabled {
+  color: #959595;
+}
+
+Link-Hyperlink:hover {
+  text-decoration: underline;
+}
+
+Link-Hyperlink:hover:disabled {
+  color: #959595;
+  text-decoration: none;
+}
+
+/* Scale default theme */
+Scale {
+  background-color: transparent;
+  background-image: none;
+  border-radius: 0px;
+}
+
+Scale-Thumb {
+  background-color: #e5e5e5;
+  background-image: none;
+  border: 1px solid #a4a4a4;
+  border-radius: 2px 2px 2px 2px;
+}
+Scale-Thumb:focused {
+  border: 1px solid #4f7cb1;
+}
+
+/* DateTime default theme */
+DateTime {
+  border: none;
+  border-radius: 0 2px 2px 0;
+  color: #464a4e;
+  background-color: #ffffff;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+DateTime[BORDER] {
+  border: 1px solid #bdbdbd;
+  border-radius: 0 2px 2px 0;
+}
+DateTime[BORDER]:focused {
+  border: 1px solid #4f7cb1;
+  box-shadow: 0 0 5px #4f7cb1;
+}
+
+DateTime-Field {
+  color: inherit;
+  background-color: transparent;
+  padding: 3px 5px 2px 5px;
+  text-shadow: none;
+}
+DateTime-Field:selected {
+  background-color: #5882b5;
+  color: #ffffff;
+}
+
+DateTime-Calendar-Day {
+  color: inherit;
+  background-color: transparent;
+  text-shadow: none;
+}
+DateTime-Calendar-Day:selected {
+  background-color: #5882b5;
+  color: #ffffff;
+}
+DateTime-Calendar-Day:selected:hover {
+  background-color: #5882b5;
+  color: #ffffff;
+}
+DateTime-Calendar-Day:selected:unfocused {
+  background-color: #c0c0c0;
+}
+DateTime-Calendar-Day:otherMonth {
+  background-color: transparent;
+  color: #808080;
+}
+DateTime-Calendar-Day:hover {
+  background-color: #b5b5b5;
+}
+DateTime-Calendar-Day:today {
+  border: 1px solid #ff0000;
+}
+
+DateTime-Calendar-Navbar {
+  border: none;
+  border-radius: 0;
+  background-color: #00569c;
+  background-image: gradient(linear, left top, left bottom, from(#416693), to(#5882b5));
+  color: white;
+  text-shadow: none;
+}
+
+DateTime-Calendar-PreviousMonthButton {
+  background-image: url(resources/rap/calendar/lastMonth.png);
+  cursor: default;
+}
+DateTime-Calendar-PreviousMonthButton:hover {
+  background-image: url(resources/rap/calendar/lastMonth-hover.png);
+}
+
+DateTime-Calendar-NextMonthButton {
+  background-image: url(resources/rap/calendar/nextMonth.png);
+  cursor: default;
+}
+DateTime-Calendar-NextMonthButton:hover {
+  background-image: url(resources/rap/calendar/nextMonth-hover.png);
+}
+
+DateTime-Calendar-PreviousYearButton {
+  background-image: url(resources/rap/calendar/lastYear.png);
+  cursor: default;
+}
+DateTime-Calendar-PreviousYearButton:hover {
+  background-image: url(resources/rap/calendar/lastYear-hover.png);
+}
+
+DateTime-Calendar-NextYearButton {
+  background-image: url(resources/rap/calendar/nextYear.png);
+  cursor: default;
+}
+DateTime-Calendar-NextYearButton:hover {
+  background-image: url(resources/rap/calendar/nextYear-hover.png);
+}
+
+DateTime-UpButton {
+  background-color: #f0f0f0;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#efefef));
+  width: 22px;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 2px 0px 0px;
+  cursor: default;
+}
+
+DateTime-UpButton-Icon {
+  background-image: url(resources/rap/datetime/up.png);
+}
+DateTime-UpButton-Icon:hover {
+  background-image: url(resources/rap/datetime/up-hover.png);
+}
+
+DateTime-DownButton {
+  background-color: #f0f0f0;
+  background-image: gradient(linear, left top, left bottom, from(#efefef), to(#e4e4e4));
+  width: 22px;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 0px 2px 0px;
+  cursor: default;
+}
+
+DateTime-DownButton-Icon {
+  background-image: url(resources/rap/datetime/down.png);
+}
+DateTime-DownButton-Icon:hover {
+  background-image: url(resources/rap/datetime/down-hover.png);
+}
+
+DateTime-DropDownButton {
+  cursor: default;
+  background-color: #f0f0f0;
+  border: none;
+  border-left: 1px solid #bdbdbd;
+  border-radius: 0px 2px 2px 0px;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  width: 22px;
+}
+
+DateTime-DropDownButton:disabled, DateTime-UpButton:disabled, DateTime-DownButton:disabled {
+  background-image: none;
+  background-color: transparent;
+}
+
+DateTime-DropDownButton-Icon {
+  background-image: url(resources/rap/spinner/down.png);
+}
+DateTime-DropDownButton-Icon:hover {
+  background-image: url(resources/rap/spinner/down-hover.png);
+}
+
+DateTime-DropDownCalendar {
+  border: 1px #a7a6aa;
+}
+
+/* CLabel default theme */
+CLabel {
+  color: #4a4a4a;
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left top;
+  border: none;
+  padding: 6px;
+  spacing: 5px;
+  cursor: default;
+  opacity: 1;
+  text-shadow: none;
+}
+
+CLabel[BORDER] {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+/* Menu default theme */
+Menu {
+  padding: 0;
+  color: #0059a5;
+  background-color: #f9f9f9;
+  background-image: gradient(linear, left top, left bottom, from(#f4f4f4), to(white));
+  border: 1px solid #a0b3ca;
+  border-radius: 2px;
+  box-shadow: 0 0 4px #ababab;
+  opacity: 1;
+  animation: none;
+}
+
+MenuItem {
+  color: #4a4a4a;
+  background-color: transparent;
+  background-image: none;
+  opacity: 1;
+  text-shadow: none;
+  padding: 4px 10px 4px 10px;
+}
+MenuItem[SEPARATOR] {
+  padding: 0px 10px;
+}
+MenuItem:hover {
+  color: #ffffff;
+  background-image: gradient(linear, left top, left bottom, from(#5882b5), to(#416693));
+}
+MenuItem:pressed {
+  color: #ffffff;
+  background-image: gradient(linear, left top, left bottom, from(#416693), to(#5882b5));
+}
+MenuItem:disabled {
+  color: #bdbdbd;
+  text-shadow: none;
+}
+MenuItem:onMenuBar {
+  padding: 4px 6px;
+}
+
+MenuItem-CheckIcon {
+  background-image: url(resources/rap/menu/checkbox.gif);
+}
+
+MenuItem-RadioIcon {
+  background-image: url(resources/rap/menu/radiobutton.gif);
+}
+
+MenuItem-CascadeIcon {
+  background-image: url(resources/rap/menu/arrow.gif);
+}
+
+.mainshell {
+  background-color: #FFFFFF;
+}
+
+Label.bad-login {
+  font: bold 13px  roboto,sans-serif;
+}
+
+Text-Message {
+  font: italic 11px  roboto,sans-serif;
+  color: #7F7F7F;
+  text-shadow: none;
+  box-shadow: none;
+  padding: 1px 4px;
+}
+
+/* use PUSH | FLAT for icon buttons */
+Button[PUSH][FLAT], Button[TOGGLE][FLAT] ,  Button[RADIO][FLAT] ,{
+ /* border: 1px solid red;*/
+  background-image: none;
+  background-color: transparent;
+  background-repeat: no-repeat; 
+  background-position: center center;
+  padding: 0px 0px;
+  border-radius: 2px;
+}
+
+Button[PUSH][FLAT]:hover,  Button[TOGGLE][FLAT]:hover {
+  border: 1px solid #808080;
+    border-radius: 2px;
+}
+
+Button.link-button[PUSH] {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  padding: 0px 0px;
+  border-radius: 0px;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+/* Page styles*/
+
+Composite.page-toolbar {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+}
+
+CLabel.page-toolbar-title {
+  font: 24px  roboto,sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  padding: 0;
+}
+
+Composite.page-toolbar-ruler-rest {
+  background-color: #C5C3C1;
+  background-image: none;
+}
+
+Button.page-toolbar-button[PUSH] {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+}
+Button.page-toolbar-button[PUSH]:hover {
+  background-color: transparent;
+  background-image: none;
+}
+
+Button.page-toolbar-button[TOGGLE] {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+}
+Button.page-toolbar-button[TOGGLE]:hover {
+  background-color: transparent;
+  background-image: none;
+}
+Button.page-toolbar-button[TOGGLE]:selected {
+  background-color: #FFFFFF;
+  background-image: none;
+}
+
+Label.page-toolbar-alert {
+  color: #FF0000;
+  background-color: transparent;
+}
+
+Composite.page-subbar {
+  background-color: #F0F0F0;
+  background-image: none;
+  border: 1px solid #C0C0C0;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0 0 4px #C0C0C0;
+}
+
+.page-area-wrapper-animate {
+  animation: flyInRight 200ms linear, flyOutLeft 200ms linear;
+}
+
+Button.previous-home-button[PUSH] {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  padding: 4px 5px;
+}
+Button.previous-home-button[PUSH]:hover {
+  background-color: #d5d5d5;
+  border-radius: 0px;
+}
+Button.previous-home-button[PUSH]:disabled {
+  border: none;
+  cursor: default;
+}
+
+Button.next-home-button[PUSH] {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  padding: 4px 5px;
+}
+Button.next-home-button[PUSH]:hover {
+  background-color: #d5d5d5;
+  border-radius: 0px;
+}
+Button.next-home-button[PUSH]:disabled {
+  border: none;
+  cursor: default;
+}
+
+Button.home-link[PUSH] {
+  color: navy;
+  border: none;
+  border-radius: 0px;
+  padding: 4px 10px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Button.home-link[PUSH]:hover {
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+
+/* Icon buttons , used Pages commands buttons and ParameterEdit UI */
+Button.actionButton[PUSH] {
+  border: none;
+  padding: 2px 3px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+Button.actionButton[PUSH]:hover {
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  background-image: none;
+}
+
+Button.link[PUSH] {
+  color: navy;
+  border: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Button.link[PUSH]:hover {
+  color: #7f9fbf;
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Button.link[PUSH]:disabled {
+  color: #c8c8c8;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+
+Button.link-compact[PUSH] {
+  color: navy;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Button.link-compact[PUSH]:hover {
+  color: #7f9fbf;
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Button.link-compact[PUSH]:disabled {
+  color: #c8c8c8;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+
+Hyperlink.link, Hyperlink-Label.link {
+  color: navy;
+  border: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Hyperlink.link:hover, Hyperlink-Label.link:hover {
+  color: #7f9fbf;
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Hyperlink.link:disabled, Hyperlink-Label.link:disabled {
+  color: #b4b4b4;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+
+Hyperlink.link-compact, Hyperlink-Label.link-compact {
+  color: navy;
+  border: none;
+  padding: 0px 0px 0px 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Hyperlink.link-compact:hover, Hyperlink-Label.link-compact:hover {
+  color: #7f9fbf;
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+Hyperlink.link-compact:disabled, Hyperlink-Label.link-compact:disabled {
+  color: #b4b4b4;
+  border: none;
+  cursor: default;
+  background-color: transparent;
+  background-image: none;
+  text-shadow: none;
+}
+
+Label.page-widget-label {
+  color: #194c7f;
+  background-color: transparent;
+  background-image: none;
+}
+
+Label.page-widget {
+  color: black;
+  background-color: transparent;
+  background-image: none;
+}
+
+CLabel.page-widget {
+  color: black;
+  background-color: transparent;
+  background-image: none;
+}
+
+Text.page-widget {
+  color: black;
+  background-color: white;
+  border: none;
+  box-shadow: none;
+}
+Text.page-widget[BORDER], Text.page-widget[MULTI][BORDER] {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+Text.page-widget-compact {
+  color: black;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0px 0px 0px 0px;
+}
+Text.page-widget-compact[MULTI] {
+  padding: 0px 0px 0px 0px;
+}
+Text.page-widget-compact[BORDER], Text.page-widget-compact[MULTI][BORDER] {
+  padding: 0px 0px 0px 0px;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+Combo.page-widget {
+  color: black;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+Spinner.page-widget {
+  color: black;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+Button.dialog {
+  background-image: none;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 15px;
+  spacing: 2px;
+  cursor: pointer;
+  animation: none;
+  color: #4a4a4a;
+  background-color: #ffffff;
+  opacity: 1;
+  text-shadow: none;
+}
+Button.dialog[PUSH] {
+  font: 13px roboto-semi,sans-serif;
+  color: white; 
+  border: none;
+  border-radius: 18px;
+  padding: 6px 15px;
+  background-color: #5A5A5A;
+  animation: none;
+  cursor: default;
+}
+Button.dialog[PUSH]:default {
+  background-color: #416693;
+}
+Button.dialog[PUSH]:disabled {
+  cursor: default;
+  background-color: #7A9CC5; /* bleu estompe*/
+}
+Button.dialog[PUSH]:hover {
+}
+Button.dialog[PUSH]:pressed {
+
+}
+
+FileUpload {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  background-repeat: repeat;
+  background-position: left top;
+  border: 1px solid #bdbdbd;
+  border-radius: 2px;
+  padding: 6px 15px;
+  spacing: 2px;
+  cursor: pointer;
+  animation: none;
+  color: #4a4a4a;
+  background-color: #ffffff;
+  opacity: 1;
+  text-shadow: 0 1px 0 #ffffff;
+}
+FileUpload:disabled {
+  cursor: default;
+  color: #d2d2d2;
+  background-image: none;
+  background-color: #fafafa;
+  border: 1px solid #d2d2d2;
+}
+FileUpload:hover {
+  background-image: gradient(linear, left top, left bottom, from(#eaeaea), to(#d5d5d5));
+}
+FileUpload:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#d5d5d5), to(#eaeaea));
+}
+
+FileUpload-FocusIndicator {
+  background-color: transparent;
+  border: none;
+}
+
+Button.uploadButton[PUSH] {
+  border: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+Button.uploadButton[PUSH]:hover {
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  background-image: none;
+}
+
+Button.uploadButton[TOGGLE] {
+  border: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+Button.uploadButton[TOGGLE]:hover {
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  background-image: none;
+}
+Button.uploadButton[TOGGLE]:selected {
+  border: 1px solid #909090;
+  border-radius: 2px;
+  background-color: #a0a0a0;
+  background-image: none;
+}
+
+ProgressBar {
+  background-color: #ffffff;
+  background-image: url(resources/rap/progressbar/progressbar-background.png);
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+  width: 16px;
+}
+
+ProgressBar-Indicator {
+  background-color: #00589f;
+  background-image: gradient(linear, left top, left bottom, from(#5882b5), to(#416693));
+  border: none;
+  opacity: 1;
+}
+ProgressBar-Indicator:paused {
+  background-image: gradient(linear, left top, left bottom, from(#818181), to(#b5b5b5));
+}
+ProgressBar-Indicator:error {
+  background-image: gradient(linear, left top, left bottom, from(#bb1d1d), to(#fc0000));
+}
+
+ProgressBar.decorator {
+  background-color: #dcdcdc;
+  background-image: none;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+ProgressBar-Indicator.decorator {
+  background-color: #00dc00;
+  background-image: none;
+  border: none;
+  opacity: 1;
+}
+ProgressBar-Indicator.decorator:paused {
+  background-color: #0000dc;
+}
+ProgressBar-Indicator.decorator:error {
+  background-color: #dc0000;
+}
+
+Button.dockButton[PUSH] {
+  border: none;
+  padding: 0px 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+Button.dockButton[PUSH]:hover {
+  border: none;
+  border-radius: 0px;
+  background-color: #f0f0f0;
+  background-image: none;
+}
+
+.chartCanvas {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Pages SetNavigator styles */
+Button.setnav-first[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px 0px 0px 3px;
+}
+
+Button.setnav-prev-first[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px 0px 0px 3px;
+}
+
+Button.setnav-prev[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+Button.setnav-next[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+Button.setnav-next-last[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 3px 3px 0px;
+}
+
+Button.setnav-last[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 3px 3px 0px;
+}
+
+Button.setnav[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+  cursor: pointer;
+}
+Button.setnav[PUSH]:hover {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+}
+
+Button.setnav-btn[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+Button.setnav-outbtn[PUSH] {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 3px;
+}
+
+CLabel.setnav {
+  padding: 4px 5px;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+  background-color: #FFFFFF;
+}
+
+Composite.notification-none {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 0.9;
+  background-color: #D9EDF7;
+}
+
+Composite.notification-information {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 0.9;
+  background-color: #DFF0D8;
+}
+
+Composite.notification-warning {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 0.9;
+  background-color: #FCF8E3;
+}
+
+Composite.notification-error {
+  border: 1px solid #bdbdbd;
+  border-radius: 0px 0px 4px 4px;
+  opacity: 0.9;
+  background-color: #F2DEDE;
+}
+
+Shell.notification {
+  animation: flyInTop 200ms linear, flyOutTop 200ms linear;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 2px 2px 1px #B0B0B0;
+  opacity: 0.8;
+}
+
+CLabel.notification {
+  background-color: transparent;
+  background-image: none;
+}
+
+Button.notification {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+}
+Button.notification:hover {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+}
+
+Shell.menu-shell {
+  background-color: #FFFFFF;
+  border: 1px solid #978A8A;
+}
+
+Shell.popup-shell {
+  background-color: #FFFFE1;
+  border: 1px solid #978A8A;
+}
+
+Shell.full-dialog-animate {
+  animation: flyInTop 200ms linear, flyOutTop 200ms linear;
+}
+
+Shell.transient-dialog {
+  background-color: #FFFFFF;
+  border: 1px solid #978A8A;
+}
+
+Shell-Titlebar.transient-dialog {
+  background-color: transparent;
+  border: none;
+  height: 16px;
+  margin: 3px 5px 0px 0px;
+}
+
+Shell-CloseButton.transient-dialog {
+  background-image: url(resources/close_transient.png);
+}
+
+Shell.transient-dialog-animate {
+  animation: flyInTop 200ms linear, flyOutTop 200ms linear;
+  background-color: #FFFFFF;
+  border: 1px solid #978A8A;
+}
+
+Shell-Titlebar.transient-dialog-animate {
+  background-color: transparent;
+  border: none;
+  height: 16px;
+  margin: 3px 5px 0px 0px;
+}
+
+Shell-CloseButton.transient-dialog-animate {
+  background-image: url(resources/close_transient.png);
+}
+
+
+Text.table-search-field {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: #FFFFFF;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 0px;
+  padding: 1px 4px;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+Button.table-search-field[PUSH] {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #cccccc;
+  border-radius: 0px;
+  padding: 0px 0px;
+}
+
+Button.preference-button[PUSH] {
+  color: #FFFFFF;
+  background-color: #b8262c;
+  background-image: none;
+  border-radius: 0px;
+  text-shadow: none;
+}
+
+Composite.messagebar-warning {
+  background-color: #FFFFFF;
+  border: 2px solid #f2ab36;
+  padding: 30px;
+}
+
+Composite.messagebar-error {
+  background-color: #FFFFFF;
+  border: 2px solid #ff3939;
+  padding: 30px;
+}
+
+Label.messagebar-message-warning {
+  color: #f2ab36;
+  font: bold 14px arial, sans-serif;
+}
+
+Label.messagebar-message-error {
+  color: #ff3939;
+  font: bold 14px arial, sans-serif;
+}
+
+.adv-search-label {
+  color: #4A4A4A; 
+}
+
+/* search field text used in various UI ( TS dialog, history menu)  */
+Text.search-field {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #988B8B;
+  border-radius: 0px;
+  padding: 1px 4px;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+Button.search-field[PUSH] {
+  background-color: #2D5E90;
+  background-image: none;
+  border: 1px solid #988B8B;
+  border-radius: 0px;
+  padding: 0px 0px;
+}
+
+/* timeslot calendar dialog box */
+Button.ts-calendar-prev-year[PUSH] {
+  font: 11px  roboto,sans-serif;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  text-shadow: none;
+  border-radius: 4px 0px 0px 4px;
+}
+Button.ts-calendar-prev-year[PUSH]:hover {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#eaeaea), to(#d5d5d5));
+}
+Button.ts-calendar-prev-year[PUSH]:pressed {
+  background-color: transparent;
+  background-image: none;
+}
+
+Button.ts-calendar-next-year[PUSH] {
+  font: 11px  roboto,sans-serif;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  text-shadow: none;
+  border-radius: 0px 4px 4px 0px;
+}
+Button.ts-calendar-next-year[PUSH]:hover {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#eaeaea), to(#d5d5d5));
+}
+Button.ts-calendar-next-year[PUSH]:pressed {
+  background-color: transparent;
+  background-image: none;
+}
+
+Button.ts-calendar-month[PUSH] {
+  font: 11px  roboto,sans-serif;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  text-shadow: none;
+  border-radius: 0px;
+}
+Button.ts-calendar-month[PUSH]:hover {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#eaeaea), to(#d5d5d5));
+}
+Button.ts-calendar-month[PUSH]:pressed {
+  background-color: transparent;
+  background-image: none;
+}
+
+Button.ts-calendar-month-label[PUSH] {
+  font: 11px  roboto,sans-serif;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  text-shadow: none;
+  cursor: default;
+  border-radius: 0px;
+  color: black; 
+}
+Button.ts-calendar-month-label[PUSH]:hover {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-month-label[PUSH]:pressed {
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Label.ts-calendar-weekday {
+  font: italic 11px  roboto,sans-serif;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  padding: 4px 5px;
+  border-radius: 0px;
+  text-shadow: none;
+}
+
+Button.ts-calendar-day[PUSH] {
+  font: 11px  roboto,sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-today[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-other[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-today-other[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-other[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-other[PUSH] {
+  font: 11px  roboto,sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-other[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-other[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-ts[PUSH] {
+  font: 11px  roboto,sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-ts[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-ts-today[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-other[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-ts-today-other[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-other[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-other[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px;
+}
+Button.ts-calendar-day-ts-other[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-other[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-today-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-other-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-today-other-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-other-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-other-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-other-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-other-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-ts-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-ts-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-ts-today-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-other-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-ts-today-other-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-other-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-other-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 4px 0px 0px 0px;
+}
+Button.ts-calendar-day-ts-other-tl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-other-tl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-today-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-other-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-today-other-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-other-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-other-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-other-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-other-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-ts-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-ts-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-ts-today-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-other-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-ts-today-other-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-other-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-other-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 4px 0px 0px;
+}
+Button.ts-calendar-day-ts-other-tr[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-other-tr[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-today-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-other-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-today-other-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-other-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-other-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-other-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-other-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-ts-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-ts-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-ts-today-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-other-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-ts-today-other-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-other-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-other-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 0px 4px;
+}
+Button.ts-calendar-day-ts-other-bl[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-other-bl[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-br[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-today-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-today-other-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-today-other-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-today-other-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-other-br[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-other-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+Button.ts-calendar-day-other-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#f9f9f9), to(#e4e4e4));
+}
+
+Button.ts-calendar-day-ts-br[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-ts-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #000000;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-ts-today-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-today-other-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-ts-today-other-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-today-other-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Button.ts-calendar-day-ts-other-br[PUSH] {
+  font: 11px roboto, sans-serif;
+  color: #7F7F7F;
+  background-color: transparent;
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+  border: 1px solid #99BBE8;
+  padding: 4px 5px;
+  cursor: default;
+  border-radius: 0px 0px 4px 0px;
+}
+Button.ts-calendar-day-ts-other-br[PUSH]:hover {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+Button.ts-calendar-day-ts-other-br[PUSH]:pressed {
+  background-image: gradient(linear, left top, left bottom, from(#cdeed1), to(#b2e5b9));
+}
+
+Label.ts-menu-mainsep[SEPARATOR] {
+  background-color: #978A8A;
+}
+
+Label-SeparatorLine.ts-menu-mainsep {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  width: 1px;
+}
+
+Label.ts-list-month {
+  font: italic bold 13px roboto, sans-serif;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  color: #7F7F7F;
+}
+
+CLabel.ts-list-link {
+  color: #000000;
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  padding: 0px;
+  cursor: pointer;
+}
+CLabel.ts-list-link:hover {
+  color: #000000;
+  border: none;
+  background-color: #C0C0C0;
+  background-image: none;
+}
+
+CLabel.ts-list-link-selected {
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  background-color: #6991c2;
+  background-image: none;
+  padding: 0px;
+}
+CLabel.ts-list-link-selected:hover {
+  color: #FFFFFF;
+  border: none;
+  background-color: #C0C0C0;
+  background-image: none;
+}
+
+/* delegation dialog box */
+
+Label.hist-header {
+  font: bold 16px roboto, sans-serif;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  color: #3678b4;
+}
+
+
+CLabel.hist-list-link {
+  color: #000000;
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  padding: 0px;
+  cursor: pointer;
+}
+CLabel.hist-list-link:hover {
+  color: #000000;
+  border: none;
+  background-color: #C0C0C0;
+  background-image: none;
+}
+
+
+
+/********************** 
+FRAMING STYLES
+ **********************/
+ 
+ /* styles for header and toolbar */
+
+/* header styles
+ The following styles must be set in the technical configuration (they are commented out in the css)
+
+    top header background color;
+    top header title text color ;
+    top header user name text color ;
+
+    toolbar background color ;
+    toolbar text color
+    selected category background color
+    menu item background color
+    menu item text color;
+    selected menu item text color ;
+
+    timeslot button text and background colors
+
+ */
+
+/* header title text*/
+Label.header-title {
+ /* color: #FFFFFF;*/
+  font: bold 18px  roboto,sans-serif;
+}
+
+/* header user name button */
+Button.header-user {
+  /* color: #FFFFFF;*/
+  font: bold 16px  roboto,sans-serif;
+  border: none;
+  background-image: url(resources/frame/arrow_down_6.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-color: transparent;
+  padding: 0px 14px 0px 4px;
+  border-radius: 4px;
+}
+
+.header-user-icon  {
+    background-image: url(resources/frame/user_32.png);
+}
+
+.header-user-deleg-off-icon  {
+ background-image: url(resources/frame/user_deleg_off_32.png);
+}
+
+.header-user-deleg-on-icon  {
+  background-image: url(resources/frame/user_deleg_on_32.png);
+}
+
+
+Label.header-errors {
+  color: #B9272C;
+}
+
+
+Button.header-error {
+  color: #d78387;
+  font: bold 13px  roboto,sans-serif;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  padding: 0px 0px;
+  border-radius: 0px;
+  text-shadow: none;
+}
+
+Button.header-user:hover, Button.header-logout:hover , Button.header-user:pressed, Button.header-logout:pressed{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* toolbar background */
+.toolbar {
+ /*   background-color: #7497C4; */
+    border: none;
+}
+
+/* vertical nav bar styles */
+
+VNavBar {
+   font: 18px  roboto,sans-serif;
+   color: white;
+  /*  background-color: #23282d; */
+}
+
+VNavBar-Category {
+   color:  white;
+ /*  background-color: #23282d;
+   selected-color:  #00b9eb;
+   selected-background-color:    #1C2024;*/
+}
+
+VNavBar-Item {
+   color:  #FFF0F0;
+ /*  background-color: #293036;
+   selected-color:  white;
+   selected-background-color:   #0073aa;*/
+}
+
+/* horizontal nav bar styles */
+/* nav bar  (HNavBar widget) */
+
+.nav-categories {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+}
+
+Button.nav-category[TOGGLE] {
+  font: 14px roboto,sans-serif;
+  /*  color: #FFFFFF;*/
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  padding: 5px 10px ;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+Button.nav-category[TOGGLE]:selected {
+  /*background-color: #626262;*/
+  border-radius: 5px 5px 0px 0px;
+}
+
+Button-FocusIndicator.nav-category {
+  border: none;
+}
+
+.nav-shortcuts {
+  /* background-color: #626262;*/
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0;
+}
+
+Button.nav-shortcut[TOGGLE] {
+  font: 14px roboto,sans-serif;
+  /* color: #FFFFFF;*/
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  padding: 6px 6px 6px 6px;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+Button.nav-shortcut[TOGGLE]:selected {
+  background-image: url(resources/frame/menu_select.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+Button-FocusIndicator.nav-shortcut {
+  border: none;
+}
+
+/* color of the separator between menu items */
+Label.nav-separator {
+  color: #A0A0A0;
+  opacity: 0.5;
+}
+
+/* time slot selection button */
+Button.timeslot[PUSH] {
+  /* color: #FFFFFF;*/
+  /* background-color: #404040;*/
+  background-image: url(resources/frame/timeslot_btn_16.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 8px 5px 28px;
+  text-shadow: none;
+}
+
+Button.timeslot[PUSH]:pressed {
+  background-color:  #606060;
+}
+
+
+/* header and toolbar icon buttons */
+
+Button.compact-header[TOGGLE][FLAT] {
+   background-image: url(resources/frame/header_up_12.png);
+}
+
+Button.compact-header[TOGGLE][FLAT]:selected {
+  background-image: url(resources/frame/header_down_12.png);
+}
+
+
+Button.permalink[PUSH][FLAT] {
+   background-image: url(resources/frame/permalink_16.png);
+}
+
+Button.nav-main-menu[PUSH][FLAT] {
+   background-image: url(resources/frame/burger_20.png);
+}
+
+Button.nav-loading[PUSH][FLAT] {
+  border: none;
+  background-image: url(resources/frame/loading_w_20.gif);
+}
+
+
+Button-RadioIcon.nav-menus     {
+     background-image: url(resources/frame/nav_menu_off_20.png);
+}
+
+Button-RadioIcon.nav-menus:hover , Button-RadioIcon.nav-menus:selected, Button-RadioIcon.nav-menus:selected:hover      {
+     background-image: url(resources/frame/nav_menu_on_20.png);
+}
+
+Button-RadioIcon.nav-favorites {
+   background-image: url(resources/frame/nav_fav_off_20.png);
+}
+
+Button-RadioIcon.nav-favorites:selected, Button-RadioIcon.nav-favorites:hover, Button-RadioIcon.nav-favorites:selected:hover {
+  background-image: url(resources/frame/nav_fav_on_20.png);
+}
+
+

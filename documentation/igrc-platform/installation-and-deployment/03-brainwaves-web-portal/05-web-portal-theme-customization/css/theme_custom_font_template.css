@@ -1,0 +1,286 @@
+
+* {
+  font: 13px roboto, sans-serif;
+}
+
+ErrorBox-Titlebar {
+  font: bold 14px roboto,sans-serif;
+}
+
+ErrorBox {
+  font: 14px roboto, sans-serif;
+}
+
+
+Shell-Titlebar {
+  font: 14px  roboto,sans-serif;
+}
+
+
+TableColumn {
+  font: bold 13px  roboto,sans-serif;
+}
+
+Button[PUSH], Button[TOGGLE], Button[PUSH][BORDER], Button[TOGGLE][BORDER] {
+  font: bold 13px roboto,sans-serif;
+}
+
+Label.bad-login {
+  font: bold 13px  roboto,sans-serif;
+}
+
+Text-Message {
+  font: italic 11px  roboto,sans-serif;
+
+}
+
+CLabel.page-toolbar-title {
+  font: 24px  roboto,sans-serif;
+}
+
+Button.dialog[PUSH] {
+  font: bold 13px roboto,sans-serif;
+}
+
+Text.table-search-field {
+  font: 11px roboto, sans-serif;
+}
+
+Label.messagebar-message-warning {
+  font: bold 14px roboto, sans-serif;
+}
+
+Label.messagebar-message-error {
+  font: bold 14px roboto, sans-serif;
+}
+
+/* search field text used in various UI ( TS dialog, history menu)  */
+Text.search-field {
+  font: 11px roboto, sans-serif;
+}
+
+/* timeslot calendar dialog box */
+Button.ts-calendar-prev-year[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-next-year[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-month[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-month-label[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Label.ts-calendar-weekday {
+  font: italic 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-today[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+}
+
+
+Button.ts-calendar-day-today-other[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-other[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-ts[PUSH] {
+  font: 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-ts-today[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-other[PUSH] {
+  font: bold 11px  roboto,sans-serif;
+}
+
+Button.ts-calendar-day-ts-other[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-other-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-other-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-other-tl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-other-tl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-other-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-other-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-other-tr[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-other-tr[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-other-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+
+Button.ts-calendar-day-other-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-other-bl[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-other-bl[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-br[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-today-other-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-other-br[PUSH] {
+  font: 11px roboto, sans-serif;
+
+}
+
+Button.ts-calendar-day-ts-br[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-today-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+
+Button.ts-calendar-day-ts-today-other-br[PUSH] {
+  font: bold 11px roboto, sans-serif;
+}
+
+Button.ts-calendar-day-ts-other-br[PUSH] {
+  font: 11px roboto, sans-serif;
+}
+
+
+Label.ts-list-month {
+  font: italic bold 13px roboto, sans-serif;
+}
+
+/* delegation dialog box */
+
+Label.hist-header {
+  font: bold 16px roboto, sans-serif;
+}
+
+/* header title text*/
+Label.header-title {
+  font: bold 18px  roboto,sans-serif;
+}
+
+/* header user name button */
+Button.header-user {
+  font: bold 16px  roboto,sans-serif;
+}
+
+
+Button.header-error {
+  font: bold 13px  roboto,sans-serif;
+}
+
+
+/* vertical nav bar styles */
+
+VNavBar {
+   font: 18px  roboto,sans-serif;
+}
+
+Button.nav-category[TOGGLE] {
+  font: 14px roboto,sans-serif;
+}
+
+Button.nav-shortcut[TOGGLE] {
+  font: 14px roboto,sans-serif;
+}

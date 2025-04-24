@@ -1,0 +1,760 @@
+Entity;Type;Criteria;Request;SmartSearch label EN;SmartSearch label FR
+Account;predicate;eqIdentifier;Account.identifier = '{identifierParam.value}';which identifier or CN/DN is equal to;dont l'identifiant ou CN/DN est égal à
+Account;predicate;neIdentifier;(Account.identifier != '{identifierParam.value}') or (Account.identifier IS NULL);which identifier or CN/DN is not equal to;dont l'identifiant ou CN/DN n'est pas égal à
+Account;predicate;inIdentifier;Account.identifier IN '{identifierParam.value}';which identifier or CN/DN is in;dont l'identifiant ou CN/DN est dans
+Account;predicate;likeIdentifier;Account.identifier LIKE '{identifierParam.value}';which identifier or CN/DN contains;dont l'identifiant ou CN/DN contient
+Account;predicate;startIdentifier;Account.identifier LIKE '{identifierParam.value}%';which identifier or CN/DN starts with;dont l'identifiant ou CN/DN démarre par
+Account;predicate;endIdentifier;Account.identifier LIKE '%{identifierParam.value}';which identifier or CN/DN ends with;dont l'identifiant ou CN/DN se termine par
+Account;predicate;inLogin;Account.login IN '{loginParam.value}';which login is in;dont le login est dans
+Account;predicate;inRepoLogin;(Account.login IN '{loginParam.value}') and (Account/Repository.code = '{repoParam.value}');which repository/login is in;dont le référentiel/login est dans
+Account;predicate;noManager;Account/Account.recordUid IS NULL;not having  a manager account;qui n'ont pas de compte responsable
+Account;predicate;hasManager;Account/Account.recordUid IS NOT NULL;having  a manager account;qui ont un compte responsable
+Account;predicate;noIdentityManager;Account/Manager.primaryKey.identity IS NULL;not having a manager;qui n'ont pas de responsable
+Account;predicate;hasIdentityManager;Account/Manager.primaryKey.identity IS NOT NULL;having a manager;qui ont un responsable
+Account;predicate;isNew;Account.importAction = 'C';new in this timeslot;nouveaux dans cette période
+Account;predicate;isNotNew;Account.importAction != 'C';not new in this timeslot;pas nouveaux dans cette période
+Account;predicate;isModified;Account.importAction = 'U';modified since previous timeslot;modifiés depuis la période précédente
+Account;predicate;isNotModified;Account.importAction != 'U';new or identical to previous timeslot;nouveaux ou identiques à la période précédente
+Account;predicate;isSame;Account.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Account;predicate;isNotSame;Account.importAction != 'N';new or modified since previous timeslot;nouveaux ou modifiés par rapport à la période précédente
+Account;predicate;willBeDeleted;Account.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Account;predicate;wontBeDeleted;(Account.deletedAction = '0') or (Account.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Account;predicate;ltCreationDate;Account.creationDate < '{creationDateParam.value}';which were created is less than;qui ont été créés est plus petit que
+Account;predicate;gtCreationDate;Account.creationDate > '{creationDateParam.value}';which were created is greater than;qui ont été créés est plus grand que
+Account;predicate;betweenCreationDate;Account.creationDate > '{firstCreationDateParam.value}' and Account.creationDate < '{secondCreationDateParam.value}';which were created;qui ont été créés
+Account;predicate;ltPasswordLastSetDate;Account.passwordLastSetDate < '{passwordLastSetDateParam.value}';which password last set date was is less than;dont la dernière modification du mot de passe était est plus petit que
+Account;predicate;gtPasswordLastSetDate;Account.passwordLastSetDate > '{passwordLastSetDateParam.value}';which password last set date was is greater than;dont la dernière modification du mot de passe était est plus grand que
+Account;predicate;betweenPasswordLastSetDate;Account.passwordLastSetDate > '{firstPasswordLastSetDateParam.value}' and Account.passwordLastSetDate < '{secondPasswordLastSetDateParam.value}';which password last set date was;dont la dernière modification du mot de passe était
+Account;predicate;ltExpireDate;Account.expireDate < '{expireDateParam.value}';which expire is less than;expirant est plus petit que
+Account;predicate;gtExpireDate;Account.expireDate > '{expireDateParam.value}';which expire is greater than;expirant est plus grand que
+Account;predicate;reconciliatedAccounts;Account/Reconciliation.identity.recordUid IS NOT NULL;reconciled with an identity;réconciliés
+Account;predicate;notReconciliatedAccounts;Account/Reconciliation.recordUid IS NULL;orphan;orphelins
+Account;predicate;leaverReconciliatedAccounts;((Account/Reconciliation.recordUid IS NOT NULL) and (Account/Reconciliation.identity.recordUid IS NULL)) and (Account/Reconciliation.noOwnerCode = 'leave');reconciled with an identity who has left the company ;réconciliés à une identité ayant quitté la société 
+Account;predicate;serviceReconciliatedAccounts;((Account/Reconciliation.recordUid IS NOT NULL) and (Account/Reconciliation.identity.recordUid IS NULL)) and (Account/Reconciliation.noOwnerCode = 'service');technical ;techniques 
+Account;predicate;manuallyReconciliatedAccounts;(Account/Reconciliation.recordUid IS NOT NULL) and (Account/Reconciliation.ruleName IS NULL);reconciled manually;réconciliés manuellement
+Account;predicate;eqReconciliationReliability;(Account/Reconciliation.identity.recordUid IS NOT NULL) and (Account/Reconciliation.reliability = '{parseInt(ruleReliabilityParam.value,10)}');which reconciliation rule reliability is equal to;dont la fiabilité de la règle de réconciliation est égal à
+Account;predicate;ltReconciliationReliability;(Account/Reconciliation.identity.recordUid IS NOT NULL) and (Account/Reconciliation.reliability < '{parseInt(ruleReliabilityParam.value,10)}');which reconciliation rule reliability is less than;dont la fiabilité de la règle de réconciliation est plus petit que
+Account;predicate;gtReconciliationReliability;(Account/Reconciliation.identity.recordUid IS NOT NULL) and (Account/Reconciliation.reliability > '{parseInt(ruleReliabilityParam.value,10)}');which reconciliation rule reliability is greater than;dont la fiabilité de la règle de réconciliation est plus grand que
+Account;predicate;noUsage;Account/Usage.recordUid IS NULL;not used;non utilisés effectivement
+Account;predicate;hasUsages;Account/Usage.recordUid IS NOT NULL;used;utilisés
+Account;predicate;usingCALicense;() and (Account.custom4 != 'Built-InAdmins')Account/Metadata.recordUid IS NOT NULL;using CyberArk license is in;utilisant une licence CyberArk est dans
+Account;predicate;ltUsageDate;(Account/Usage.recordUid IS NOT NULL) and (Account/Usage.lastDate < '{convertPeriodToDate(__TIMESLOT__, usageDatePeriodParam.value)}');which last use was is less than;dont la dernière utilisation était est plus petit que
+Account;predicate;gtUsageDate;(Account/Usage.recordUid IS NOT NULL) and (Account/Usage.lastDate > '{convertPeriodToDate(__TIMESLOT__, usageDatePeriodParam.value)}');which last use was is greater than;dont la dernière utilisation était est plus grand que
+Account;predicate;sharedAccounts;(Account/Usage.recordUid IS NOT NULL) and (Account/Reconciliation.identity.recordUid != 'Account/Usage.identity.recordUid');being used by someone else than the owner ;utilisés par quelqu'un d'autre que leur propriétaire 
+Account;predicate;sharedNotReconciliatedAccounts;(Account/Reconciliation.identity.recordUid IS NULL) and (Account/Usage.recordUid IS NOT NULL);orphans but used;orphelins mais utilisés
+Account;predicate;noRight;Account/AccountApp.recordUid IS NULL;not granting any right;ne donnant aucun droit
+Account;predicate;hasRights;Account/AccountApp.recordUid IS NOT NULL;granting at least one right;donnant au moins un droit
+Account;predicate;eqPermissionCode;Account/Permission.code = '{permissionCodeParam.value}';having hierarchical access to permissions which code is equal to;ayant accès hiérarchiquement aux permissions  dont le code est égal à
+Account;predicate;nePermissionCode;(Account/Permission.code != '{permissionCodeParam.value}') or (Account/Permission.code IS NULL);having hierarchical access to permissions which code is not equal to;ayant accès hiérarchiquement aux permissions  dont le code n'est pas égal à
+Account;predicate;eqDirectPermissionCode;Account/Permission.code = '{permissionCodeParam.value}';having direct access to permissions which code is equal to;ayant accès aux permissions dont le code est égal à
+Account;predicate;neDirectPermissionCode;(Account/Permission.code != '{permissionCodeParam.value}') or (Account/Permission.code IS NULL);having direct access to permissions which code is not equal to;ayant accès aux permissions dont le code n'est pas égal à
+Account;predicate;inPermissionCode;Account/Permission.code IN '{permissionCodeParam.value}';having hierarchical access to permissions which code is in;ayant accès hiérarchiquement aux permissions  dont le code est dans
+Account;predicate;inDirectPermissionCode;Account/Permission.code IN '{permissionCodeParam.value}';having direct access to permissions which code is in;ayant accès aux permissions dont le code est dans
+Account;predicate;likePermissionCode;Account/Permission.code LIKE '{permissionCodeParam.value}';having hierarchical access to permissions which code contains;ayant accès hiérarchiquement aux permissions  dont le code contient
+Account;predicate;likeDirectPermissionCode;Account/Permission.code LIKE '{permissionCodeParam.value}';having direct access to permissions which code contains;ayant accès aux permissions dont le code contient
+Account;predicate;eqPermissionDisplayname;Account/Permission.displayName = '{permissionDisplaynameParam.value}';having hierarchical access to permissions which name is equal to;ayant accès hiérarchiquement aux permissions  dont le nom est égal à
+Account;predicate;nePermissionDisplayname;(Account/Permission.displayName != '{permissionDisplaynameParam.value}') or (Account/Permission.displayName IS NULL);having hierarchical access to permissions which name is not equal to;ayant accès hiérarchiquement aux permissions  dont le nom n'est pas égal à
+Account;predicate;eqDirectPermissionDisplayname;Account/Permission.displayName = '{permissionDisplaynameParam.value}';having direct access to permissions which name is equal to;ayant accès directement aux permissions dont le nom est égal à
+Account;predicate;neDirectPermissionDisplayname;(Account/Permission.displayName != '{permissionDisplaynameParam.value}') or (Account/Permission.displayName IS NULL);having direct access to permissions which name is not equal to;ayant accès directement aux permissions dont le nom n'est pas égal à
+Account;predicate;inPermissionDisplayname;Account/Permission.displayName IN '{permissionDisplaynameParam.value}';having hierarchical access to permissions which name is in;ayant accès hiérarchiquement aux permissions  dont le nom est dans
+Account;predicate;inDirectPermissionDisplayname;Account/Permission.displayName IN '{permissionDisplaynameParam.value}';having direct access to permissions which name is in;ayant accès directement aux permissions dont le nom est dans
+Account;predicate;likePermissionDisplayname;Account/Permission.displayName LIKE '{permissionDisplaynameParam.value}';having hierarchical access to permissions which name contains;ayant accès hiérarchiquement aux permissions  dont le nom contient
+Account;predicate;likeDirectPermissionDisplayname;Account/Permission.displayName LIKE '{permissionDisplaynameParam.value}';having direct access to permissions which name contains;ayant accès directement aux permissions dont le nom contient
+Account;predicate;eqPermissionChanged;Account.permissionChanged = '1';which permission list has changed since the last timeslot;dont la liste des permissions accessibles a évolué depuis la période précédente
+Account;predicate;nePermissionChanged;Account.permissionChanged = '0';which permission list is identical to the last timeslot;dont la liste des permissions accessibles est identique à la période précédente
+Account;predicate;eqFSRightChanged;Account.fsRightChanged = '1';which folder rights have changed since last timeslot;dont les droits bureautiques ont changé depuis la période précédente
+Account;predicate;neFSRightChanged;Account.fsRightChanged = '0';which fileshare right list is identical in the last timeslot;dont la liste des droits bureautiques est identique à la période précédente
+Account;predicate;eqApplicationCode;Account/Application.code = '{applicationCodeParam.value}';having access to applications which code is equal to;ayant accès aux applications dont le code est égal à
+Account;predicate;neApplicationCode;(Account/Application.code != '{applicationCodeParam.value}') or (Account/Application.code IS NULL);having access to applications which code is not equal to;ayant accès aux applications dont le code n'est pas égal à
+Account;predicate;inApplicationCode;Account/Application.code IN '{applicationCodeParam.value}';having access to applications which code is in;ayant accès aux applications dont le code est dans
+Account;predicate;likeApplicationCode;Account/Application.code LIKE '{applicationCodeParam.value}';having access to applications which code contains;ayant accès aux applications dont le code contient
+Account;predicate;eqApplicationDisplayname;Account/Application.displayName = '{applicationDisplaynameParam.value}';having access to applications which name is equal to;ayant accès aux applications dont le nom est égal à
+Account;predicate;inApplicationDisplayname;Account/Application.displayName IN '{applicationDisplaynameParam.value}';having access to applications which name is in;ayant accès aux applications dont le nom est dans
+Account;predicate;likeApplicationDisplayname;Account/Application.displayName LIKE '{applicationDisplaynameParam.value}';having access to applications which name contains;ayant accès aux applications dont le nom contient
+Account;predicate;eqService;(((Account/Reconciliation.recordUid IS NOT NULL) and (Account/Reconciliation.identity.recordUid IS NULL)) and (Account/Reconciliation.noOwnerCode = 'service')) or (Account.service = '1');service is equal to;de service est égal à
+Account;predicate;neService;((((Account/Reconciliation.noOwnerCode != 'service') or (Account/Reconciliation.noOwnerCode IS NULL)) and (Account/Reconciliation.recordUid IS NOT NULL)) or (Account.service != '1')) or (Account.service IS NULL);not service is not equal to;pas de service n'est pas égal à
+Account;predicate;eqDisabled;Account.disabled = '1';disabled;désactivés
+Account;predicate;neDisabled;(Account.disabled = '0') or (Account.disabled IS NULL);active;actifs
+Account;predicate;eqLocked;Account.locked = '1';locked;bloqués
+Account;predicate;neLocked;(Account.locked = '0') or (Account.locked IS NULL);not locked;non bloqués
+Account;predicate;eqPasswordNotRequired;Account.passwordNotRequired = '1';which password is not required;ne nécessitant pas un mot de passe pour s'authentifier
+Account;predicate;nePasswordNotRequired;(Account.passwordNotRequired = '0') or (Account.passwordNotRequired IS NULL);which password is required;nécessitant un mot de passe pour s'authentifier
+Account;predicate;eqPasswordCantChange;Account.passwordCantChange = '1';which password can't be changed;dont le mot de passe ne peut pas changer
+Account;predicate;nePasswordCantChange;(Account.passwordCantChange = '0') or (Account.passwordCantChange IS NULL);which password can change;dont le mot de passe peut changer
+Account;predicate;eqPrivilegedAccount;Account.privilegedAccount = '1';with privileges;avec privilèges
+Account;predicate;nePrivilegedAccount;(Account.privilegedAccount = '0') or (Account.privilegedAccount IS NULL);standard;standards
+Account;predicate;eqDontExpirePassword;Account.dontExpirePassword = '1';which password never expires;dont le mot de passe n'expire jamais
+Account;predicate;neDontExpirePassword;(Account.dontExpirePassword = '0') or (Account.dontExpirePassword IS NULL);which password can expire;dont le mot de passe peut expirer
+Account;predicate;eqPasswordExpired;Account.passwordExpired = '1';which password has expired;dont le mot de passe a expiré
+Account;predicate;nePasswordExpired;(Account.passwordExpired = '0') or (Account.passwordExpired IS NULL);which password hasn't expired yet;dont le mot de passe n'a pas expiré
+Account;predicate;eqSmartCardRequired;Account.smartCardRequired = '1';requiring smart card for login;nécessitant une carte à puce pour s'authentifier
+Account;predicate;neSmartCardRequired;(Account.smartCardRequired = '0') or (Account.smartCardRequired IS NULL);not requiring smart card for login;ne nécessitant pas une carte à puce pour s'authentifier
+Account;predicate;eqBadPasswordCount;Account.badPasswordCount = '{parseInt(badPasswordCountParam.value,10)}';which bad password count is equal to;dont le nombre de mots de passe erronés est égal à
+Account;predicate;ltBadPasswordCount;Account.badPasswordCount < '{parseInt(badPasswordCountParam.value,10)}';which bad password count is less than;dont le nombre de mots de passe erronés est plus petit que
+Account;predicate;gtBadPasswordCount;Account.badPasswordCount > '{parseInt(badPasswordCountParam.value,10)}';which bad password count is greater than;dont le nombre de mots de passe erronés est plus grand que
+Account;predicate;hasBeenReviewed;Account/AccountReview.dates.timeslot IS NOT NULL;which have been reviewed;qui ont fait l'objet d'une revue
+Account;predicate;hasNotBeenReviewed;Account/AccountReview.dates.timeslot IS NULL;which have never been reviewed;qui n'ont jamais fait l'objet d'une revue
+Account;predicate;eqRepository;(Account/Repository.code = '{repositoryParam.value}') or (Account/Repository.displayName = '{repositoryParam.value}');which repository is equal to;dont le référentiel est égal à
+Account;predicate;neRepository;((Account/Repository.code != '{repositoryParam.value}') and (Account/Repository.displayName != '{repositoryParam.value}')) or (Account/Repository.recordUid IS NULL);which repository is not equal to;dont le référentiel n'est pas égal à
+Account;predicate;inRepository;(Account/Repository.code IN '{repositoryParam.value}') or (Account/Repository.displayName IN '{repositoryParam.value}');which repository is in;dont le référentiel est dans
+Account;predicate;likeRepository;(Account/Repository.code LIKE '{repositoryParam.value}') or (Account/Repository.displayName LIKE '{repositoryParam.value}');which repository contains;dont le référentiel contient
+Account;predicate;startRepository;(Account/Repository.code LIKE '{repositoryParam.value}%') or (Account/Repository.displayName LIKE '{repositoryParam.value}%');which repository starts with;dont le référentiel démarre par
+Account;predicate;endRepository;(Account/Repository.code LIKE '%{repositoryParam.value}') or (Account/Repository.displayName LIKE '%{repositoryParam.value}');which repository ends with;dont le référentiel se termine par
+Account;predicate;noGroup;Account/AccountGroup.recordUid IS NULL;not belonging to any group;n'appartenant à aucun groupe
+Account;predicate;isInGroups;Account/AccountGroup.recordUid IS NOT NULL;belonging to at least one group;appartenant à au moins un groupe
+Account;predicate;eqGroup;(Account/Group.code = '{groupParam.value}') or (Account/Group.displayName = '{groupParam.value}');direct members of groups which name is equal to;membres directs de groupes dont le nom est égal à
+Account;predicate;eqGroupRecursive;(((Account/Group.code = '{groupParam.value}') or (Account/Group.displayName = '{groupParam.value}')) or (Account/Group.code = '{groupParam.value}')) or (Account/Group.displayName = '{groupParam.value}');members of groups which name is equal to;membres de groupes dont le nom est égal à
+Account;predicate;inGroup;(Account/Group.code IN '{groupParam.value}') or (Account/Group.displayName IN '{groupParam.value}');direct members of groups which name is in;membres directs de groupes dont le nom est dans
+Account;predicate;inGroupRecursive;(((Account/Group.code IN '{groupParam.value}') or (Account/Group.displayName IN '{groupParam.value}')) or (Account/Group.code IN '{groupParam.value}')) or (Account/Group.displayName IN '{groupParam.value}');members of groups which name is in;membres de groupes dont le nom est dans
+Account;predicate;likeGroup;(Account/Group.code LIKE '{groupParam.value}') or (Account/Group.displayName LIKE '{groupParam.value}');direct members of groups which name contains;membres directs de groupes dont le nom contient
+Account;predicate;likeGroupRecursive;(((Account/Group.code LIKE '{groupParam.value}') or (Account/Group.displayName LIKE '{groupParam.value}')) or (Account/Group.code LIKE '{groupParam.value}')) or (Account/Group.displayName LIKE '{groupParam.value}');members of groups which name contains;membres de groupes dont le nom contient
+Account;predicate;eqGroupChanged;Account.groupChanged = '1';which group list has changed since the last timeslot;dont la liste de groupes associés  a changé depuis la période précédente
+Account;predicate;neGroupChanged;Account.groupChanged = '0';which group list is identical to last timeslot;dont la liste des groupes est identique à la période précédente
+Account;predicate;eqUid;Account.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Account;predicate;inUid;Account.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Account;relationship;identityreconciliation;Account/Reconciliation/Identity.recordUid IS NOT NULL;belonging to identities;appartenant à des identités
+Account;relationship;identityusage;Account/Usage/Identity.recordUid IS NOT NULL;used by identities;utilisés par des identités
+Account;relationship;usage;Account/Usage.recordUid IS NOT NULL;with uses;ayant des usages
+Account;relationship;fspermissionrightread;Account/FSRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having read access to shared folders;ayant accès en lecture à des dossiers partagés
+Account;relationship;fspermissionrightwrite;Account/FSRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having write access to shared folders;ayant accès en écriture à des dossiers partagés
+Account;relationship;permissionright;Account/AggregatedRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having access to permissions;ayant accès à des permissions
+Account;relationship;directpermissionright;Account/AggregatedRight/Permission/Permission.recordUid IS NOT NULL;having direct access to permissions;ayant un accès direct à des permissions
+Account;relationship;fsdirectpermissionright;Account/FSRight/Permission/Permission.recordUid IS NOT NULL;having access to shared folders;ayant accès à des dossiers partagés
+Account;relationship;permissionusage;Account/Usage/Permission.recordUid IS NOT NULL;using permissions;utilisant des permissions
+Account;relationship;applicationright;Account/AccountApp/Application.recordUid IS NOT NULL;having access to applications;ayant accès à des applications
+Account;relationship;applicationusage;Account/Usage/Application.recordUid IS NOT NULL;using applications;utilisant  des applications
+Account;relationship;group;Account/AccountGroup/Group.recordUid IS NOT NULL;direct members of groups which name;membres directs de groupes dont le nom
+Account;relationship;upgroup;Account/UpAccountGroup/Group.recordUid IS NOT NULL;members of groups;membres de groupes
+Account;relationship;manager;Account/Account.recordUid IS NOT NULL;managed by accounts;gérés par des comptes
+Account;relationship;managers;Account/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérés par des identités
+Account;relationship;repository;Account/Repository.recordUid IS NOT NULL;which repository;dont le référentiel
+Account;relationship;controldiscrepancy;Account/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Account;relationship;vaultright;Account/AccountApp/CAVault.recordUid IS NOT NULL;administering vaults;administrant des vaults
+Account;relationship;saferight;Account/AccountApp/CASafe.recordUid IS NOT NULL;accessing safes;pouvant accéder à des safes
+Account;relationship;safeuserright;Account/Metadata/MetadataValue/CASafe.recordUid IS NOT NULL;using credentials in safes;pouvant utiliser les secrets de safes
+Account;relationship;safeadminright;Account/Metadata/MetadataValue/CASafe.recordUid IS NOT NULL;administering safes;administrant des safes
+Identity;predicate;eqHrCode;Identity.hrCode = '{hrCodeParam.value}';whose HR code is equal to;dont le matricule est égal à
+Identity;predicate;neHrCode;(Identity.hrCode != '{hrCodeParam.value}') or (Identity.hrCode IS NULL);whose HR code is not equal to;dont le matricule n'est pas égal à
+Identity;predicate;inHrCode;Identity.hrCode IN '{hrCodeParam.value}';whose HR code is in;dont le matricule est dans
+Identity;predicate;likeHrCode;Identity.hrCode LIKE '{hrCodeParam.value}';whose HR code contains;dont le matricule contient
+Identity;predicate;startHrCode;Identity.hrCode LIKE '{hrCodeParam.value}%';whose HR code starts with;dont le matricule démarre par
+Identity;predicate;endHrCode;Identity.hrCode LIKE '%{hrCodeParam.value}';whose HR code ends with;dont le matricule se termine par
+Identity;predicate;noHrCode;(Identity.hrCode IS NULL) or (Identity.hrCode = '');HR code is empty ;dont le matricule n'est pas renseigné 
+Identity;predicate;hasHrCode;(Identity.hrCode IS NOT NULL) and (Identity.hrCode != '');HR code is not empty ;dont le matricule est renseigné 
+Identity;predicate;eqNickName;Identity.nickName = '{nickNameParam.value}';whose nickname is equal to;dont l'alias est égal à
+Identity;predicate;neNickName;(Identity.nickName != '{nickNameParam.value}') or (Identity.nickName IS NULL);whose nickname is not equal to;dont l'alias n'est pas égal à
+Identity;predicate;inNickName;Identity.nickName IN '{nickNameParam.value}';whose nickname is in;dont l'alias est dans
+Identity;predicate;likeNickName;Identity.nickName LIKE '{nickNameParam.value}';whose nickname contains;dont l'alias contient
+Identity;predicate;startNickName;Identity.nickName LIKE '{nickNameParam.value}%';whose nickname starts with;dont l'alias démarre par
+Identity;predicate;endNickName;Identity.nickName LIKE '%{nickNameParam.value}';whose nickname ends with;dont l'alias se termine par
+Identity;predicate;eqGivenName;Identity.givenName = '{givenNameParam.value}';whose given name is equal to;dont le prénom est égal à
+Identity;predicate;neGivenName;(Identity.givenName != '{givenNameParam.value}') or (Identity.givenName IS NULL);whose given name is not equal to;dont le prénom n'est pas égal à
+Identity;predicate;inGivenName;Identity.givenName IN '{givenNameParam.value}';whose given name is in;dont le prénom est dans
+Identity;predicate;likeGivenName;(Identity.givenName LIKE '{givenNameParam.value}') or (Identity.flatGivenName LIKE '{convertNameToFlat(givenNameParam.value)}');whose given name contains;dont le prénom contient
+Identity;predicate;startGivenName;(Identity.givenName LIKE '{givenNameParam.value}%') or (Identity.flatGivenName LIKE '{convertNameToFlat(givenNameParam.value)}%');whose given name starts with;dont le prénom démarre par
+Identity;predicate;endGivenName;(Identity.givenName LIKE '%{givenNameParam.value}') or (Identity.flatGivenName LIKE '%{convertNameToFlat(givenNameParam.value)}');whose given name ends with;dont le prénom se termine par
+Identity;predicate;eqMiddleName;Identity.middleName = '{middleNameParam.value}';whose middle name is equal to;dont le second prénom est égal à
+Identity;predicate;neMiddleName;(Identity.middleName != '{middleNameParam.value}') or (Identity.middleName IS NULL);whose middle name is not equal to;dont le second prénom n'est pas égal à
+Identity;predicate;inMiddleName;Identity.middleName IN '{middleNameParam.value}';whose middle name is in;dont le second prénom est dans
+Identity;predicate;likeMiddleName;Identity.middleName LIKE '{middleNameParam.value}';whose middle name contains;dont le second prénom contient
+Identity;predicate;startMiddleName;Identity.middleName LIKE '{middleNameParam.value}%';whose middle name starts with;dont le second prénom démarre par
+Identity;predicate;endMiddleName;Identity.middleName LIKE '%{middleNameParam.value}';whose middle name ends with;dont le second prénom se termine par
+Identity;predicate;eqSurname;Identity.surname = '{surnameParam.value}';whose surname is equal to;dont le nom de famille est égal à
+Identity;predicate;neSurname;(Identity.surname != '{surnameParam.value}') or (Identity.surname IS NULL);whose surname is not equal to;dont le nom de famille n'est pas égal à
+Identity;predicate;inSurname;Identity.surname IN '{surnameParam.value}';whose surname is in;dont le nom de famille est dans
+Identity;predicate;likeSurname;(Identity.surname LIKE '{surnameParam.value}') or (Identity.flatSurname LIKE '{convertNameToFlat(surnameParam.value)}');whose surname contains;dont le nom de famille contient
+Identity;predicate;startSurname;(Identity.surname LIKE '{surnameParam.value}%') or (Identity.flatSurname LIKE '{convertNameToFlat(surnameParam.value)}%');whose surname starts with;dont le nom de famille démarre par
+Identity;predicate;endSurname;(Identity.surname LIKE '%{surnameParam.value}') or (Identity.flatSurname LIKE '%{convertNameToFlat(surnameParam.value)}');whose surname ends with;dont le nom de famille se termine par
+Identity;predicate;eqFullName;Identity.fullName = '{fullNameParam.value}';whose full name is equal to;dont le nom complet est égal à
+Identity;predicate;neFullName;(Identity.fullName != '{fullNameParam.value}') or (Identity.fullName IS NULL);whose full name is not equal to;dont le nom complet n'est pas égal à
+Identity;predicate;inFullName;Identity.fullName IN '{fullNameParam.value}';whose full name is in;dont le nom complet est dans
+Identity;predicate;likeFullName;(Identity.fullName LIKE '{fullNameParam.value}') or (Identity.flatFullName LIKE '{convertNameToFlat(fullNameParam.value)}');whose full name contains;dont le nom complet contient
+Identity;predicate;startFullName;(Identity.fullName LIKE '{fullNameParam.value}%') or (Identity.flatFullName LIKE '{convertNameToFlat(fullNameParam.value)}%');whose full name starts with;dont le nom complet démarre par
+Identity;predicate;endFullName;(Identity.fullName LIKE '%{fullNameParam.value}') or (Identity.flatFullName LIKE '%{convertNameToFlat(fullNameParam.value)}');whose full name ends with;dont le nom complet se termine par
+Identity;predicate;eqFlatFullName;Identity.flatFullName = '{flatFullNameParam.value}';whose normalized full name is equal to;dont le nom complet normalisé est égal à
+Identity;predicate;eqMail;Identity.mail = '{mailParam.value}';whose email is equal to;dont le mail est égal à
+Identity;predicate;neMail;(Identity.mail != '{mailParam.value}') or (Identity.mail IS NULL);whose email is not equal to;dont le mail n'est pas égal à
+Identity;predicate;inMail;Identity.mail IN '{mailParam.value}';whose email is in;dont le mail est dans
+Identity;predicate;likeMail;Identity.mail LIKE '{mailParam.value}';whose email contains;dont le mail contient
+Identity;predicate;startMail;Identity.mail LIKE '{mailParam.value}%';whose email starts with;dont le mail démarre par
+Identity;predicate;endMail;Identity.mail LIKE '%{mailParam.value}';whose email ends with;dont le mail se termine par
+Identity;predicate;eqTitle;(Identity/Title.code = '{titleParam.value}') or (Identity/Title.displayName = '{titleParam.value}');whose title is equal to;dont la civilité est égal à
+Identity;predicate;neTitle;((Identity/Title.code != '{titleParam.value}') and (Identity/Title.displayName != '{titleParam.value}')) or (Identity/Title.recordUid IS NULL);whose title is not equal to;dont la civilité n'est pas égal à
+Identity;predicate;inTitle;(Identity/Title.code IN '{titleParam.value}') or (Identity/Title.displayName IN '{titleParam.value}');whose title is in;dont la civilité est dans
+Identity;predicate;likeTitle;(Identity/Title.code LIKE '{titleParam.value}') or (Identity/Title.displayName LIKE '{titleParam.value}');whose title contains;dont la civilité contient
+Identity;predicate;startTitle;(Identity/Title.code LIKE '{titleParam.value}%') or (Identity/Title.displayName LIKE '{titleParam.value}%');whose title starts with;dont la civilité démarre par
+Identity;predicate;endTitle;(Identity/Title.code LIKE '%{titleParam.value}') or (Identity/Title.displayName LIKE '%{titleParam.value}');whose title ends with;dont la civilité se termine par
+Identity;predicate;eqEmployeeType;(Identity/EmployeeType.code = '{employeeTypeParam.value}') or (Identity/EmployeeType.displayName = '{employeeTypeParam.value}');whose employee type is equal to;dont le type d'employé est égal à
+Identity;predicate;neEmployeeType;((Identity/EmployeeType.code != '{employeeTypeParam.value}') and (Identity/EmployeeType.displayName != '{employeeTypeParam.value}')) or (Identity/EmployeeType.recordUid IS NULL);whose employee type is not equal to;dont le type d'employé n'est pas égal à
+Identity;predicate;likeEmployeeType;(Identity/EmployeeType.code LIKE '{employeeTypeParam.value}') or (Identity/EmployeeType.displayName LIKE '{employeeTypeParam.value}');whose employee type contains;dont le type d'employé contient
+Identity;predicate;startEmployeeType;(Identity/EmployeeType.code LIKE '{employeeTypeParam.value}%') or (Identity/EmployeeType.displayName LIKE '{employeeTypeParam.value}%');whose employee type starts with;dont le type d'employé démarre par
+Identity;predicate;endEmployeeType;(Identity/EmployeeType.code LIKE '%{employeeTypeParam.value}') or (Identity/EmployeeType.displayName LIKE '%{employeeTypeParam.value}');whose employee type ends with;dont le type d'employé se termine par
+Identity;predicate;eqJobTitle;(Identity/JobTitle.code = '{jobTitleParam.value}') or (Identity/JobTitle.displayName = '{jobTitleParam.value}');whose job title is equal to;dont le métier est égal à
+Identity;predicate;neJobTitle;((Identity/JobTitle.code != '{jobTitleParam.value}') and (Identity/JobTitle.displayName != '{jobTitleParam.value}')) or (Identity/Allocation.recordUid IS NULL);whose job title is not equal to;dont le métier n'est pas égal à
+Identity;predicate;inJobTitle;(Identity/JobTitle.code IN '{jobTitleParam.value}') or (Identity/JobTitle.displayName IN '{jobTitleParam.value}');whose job title is in;dont le métier est dans
+Identity;predicate;likeJobTitle;(Identity/JobTitle.code LIKE '{jobTitleParam.value}') or (Identity/JobTitle.displayName LIKE '{jobTitleParam.value}');whose job title contains;dont le métier contient
+Identity;predicate;startJobTitle;(Identity/JobTitle.code LIKE '{jobTitleParam.value}%') or (Identity/JobTitle.displayName LIKE '{jobTitleParam.value}%');whose job title starts with;dont le métier démarre par
+Identity;predicate;endJobTitle;(Identity/JobTitle.code LIKE '%{jobTitleParam.value}') or (Identity/JobTitle.displayName LIKE '%{jobTitleParam.value}');whose job title ends with;dont le métier se termine par
+Identity;predicate;isNew;Identity.importAction = 'C';new in this timeslot;nouvelles dans cette période
+Identity;predicate;isModified;Identity.importAction = 'U';modified since previous timeslot;modifiées depuis la période précédente
+Identity;predicate;isSame;Identity.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Identity;predicate;willBeDeleted;Identity.deletedAction = '1';who do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Identity;predicate;wontBeDeleted;(Identity.deletedAction = '0') or (Identity.deletedAction IS NULL);who still exist in the next timeslot;existant dans la période d'analyse suivante
+Identity;predicate;eqEmployed;((Identity.departureDate IS NULL) or (Identity.departureDate = '')) or (Identity.departureDate > '{convertPeriodToDate(__TIMESLOT__, 0)}');still working for the company as of today is equal to;toujours présentes dans la société aujourd'hui est égal à
+Identity;predicate;neEmployed;() or (Identity.departureDate < '{convertPeriodToDate(__TIMESLOT__, 0)}');who are not working for the company anymore as of today is not equal to;qui ne sont plus présentes dans la société aujourd'hui n'est pas égal à
+Identity;predicate;ltArrivalDate;Identity.arrivalDate < '{arrivalDateParam.value}';that have been created is less than;qui sont arrivées est plus petit que
+Identity;predicate;gtArrivalDate;Identity.arrivalDate > '{arrivalDateParam.value}';that have been created is greater than;qui sont arrivées est plus grand que
+Identity;predicate;betweenArrivalDate;Identity.arrivalDate > '{firstArrivalDateParam.value}' and Identity.arrivalDate < '{secondArrivalDateParam.value}';that have been created;qui sont arrivées
+Identity;predicate;ltDepartureDate;Identity.departureDate < '{departureDateParam.value}';that have been removed is less than;qui sont parties est plus petit que
+Identity;predicate;gtDepartureDate;Identity.departureDate > '{departureDateParam.value}';that have been removed is greater than;qui sont parties est plus grand que
+Identity;predicate;eqInternal;Identity.internal = '1';employees;internes
+Identity;predicate;neInternal;Identity.internal = '0';contractors;externes
+Identity;predicate;eqActive;(Identity.active = '1') or (Identity.active IS NULL);active;actives
+Identity;predicate;eqCurrentUser;Identity.uid = '{__USERUID__}';the current user is equal to;l'utilisateur courant est égal à
+Identity;predicate;usingCALicense;Identity/Metadata.recordUid IS NOT NULL;using CyberArk license;utilisant une licence CyberArk
+Identity;predicate;neActive;Identity.active = '0';inactive;inactives
+Identity;predicate;eqAllocationChanged;Identity.allocationChanged = '1';whose allocation has changed since last timeslot;qui ont changé d'affectation depuis la période précédente
+Identity;predicate;neAllocationChanged;Identity.allocationChanged = '0';whose allocation has not changed since last timeslot;qui n'ont pas pas changé d'affectation depuis la période précédente
+Identity;predicate;eqOrganisationChanged;Identity.organisationChanged = '1';who have moved to another organization since last timeslot;qui ont changé d'organisation depuis la période précédente
+Identity;predicate;neOrganisationChanged;Identity.organisationChanged = '0';who have not moved to another organization since last timeslot;qui n'ont pas changé d'organisation depuis la période précédente
+Identity;predicate;eqAccountChanged;Identity.accountChanged = '1';whose accounts have changed since last timeslot;dont la liste de comptes a changé par rapport à la période précédente
+Identity;predicate;neAccountChanged;Identity.accountChanged = '0';whose accounts  are identical in the last timeslot;dont la liste de comptes est identique à la période précédente
+Identity;predicate;eqPermissionChanged;Identity.permissionChanged = '1';whose permission list has changed since the last timeslot;dont la liste des permissions accessibles a évolué depuis la période précédente
+Identity;predicate;nePermissionChanged;Identity.permissionChanged = '0';whose permission list has not changed since the last timeslot;dont la liste des permissions accessibles n'a pas changé depuis la période précédente
+Identity;predicate;eqFSRightChanged;Identity.fsRightChanged = '1';whose folder rights have changed since last timeslot;dont les droits bureautiques ont changé depuis la période précédente
+Identity;predicate;neFSRightChanged;Identity.fsRightChanged = '0';whose fileshare right list is identical to the last timeslot;dont la liste des droits bureautiques est identique à la période précédente
+Identity;predicate;eqUid;Identity.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Identity;predicate;inUid;Identity.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Identity;predicate;noOrganisation;Identity/Allocation.recordUid IS NULL;who do not belong to any organization;n'appartenant à aucune organisation
+Identity;predicate;hasOrganisation;Identity/Allocation.recordUid IS NOT NULL;who belong to an organization;appartenant à au moins une organisation
+Identity;predicate;eqManager;Identity/Manager.primaryKey.organisation.recordUid IS NOT NULL;who are direct managers of organisations;qui sont responsables directs d'organisations
+Identity;predicate;neManager;Identity/Manager.primaryKey.organisation.recordUid IS NULL;who are direct managers of organisations;qui sont responsables directs d'organisations
+Identity;predicate;eqIdentityManager;Identity/DirectIdentityManager.primaryKey.managedIdentity.recordUid IS NOT NULL;having direct (N+1) managers;N ayant comme responsables N+1 des identités
+Identity;predicate;neIdentityManager;Identity/DirectIdentityManager.primaryKey.managedIdentity.recordUid IS NULL;having direct (N+1) managers;N ayant comme responsables N+1 des identités
+Identity;predicate;eqPermissionManager;Identity/Manager.primaryKey.permission.recordUid IS NOT NULL;who are permission managers;responsables d'au moins une permission
+Identity;predicate;nePermissionManager;Identity/Manager.primaryKey.permission.recordUid IS NULL;who are not permission managers;responsables d'aucune permission
+Identity;predicate;eqApplicationManager;Identity/Manager.primaryKey.application.recordUid IS NOT NULL;who are application managers;responsables d'au moins une application
+Identity;predicate;neApplicationManager;Identity/Manager.primaryKey.application.recordUid IS NULL;who are not application managers;responsables d'aucune application
+Identity;predicate;eqRepositoryManager;Identity/Manager.primaryKey.repository.recordUid IS NOT NULL;who are repository managers;responsables d'au moins un référentiel
+Identity;predicate;neRepositoryManager;Identity/Manager.primaryKey.repository.recordUid IS NULL;who are not repository managers;responsables d'aucun référentiel
+Identity;predicate;eqAccountManager;Identity/Manager.primaryKey.account.recordUid IS NOT NULL;who are account managers;responsables d'au moins un compte
+Identity;predicate;neAccountManager;Identity/Manager.primaryKey.account.recordUid IS NULL;who are not account managers;responsables d'aucun compte
+Identity;predicate;eqGroupManager;Identity/Manager.primaryKey.group.recordUid IS NOT NULL;who are group managers;responsables d'au moins un groupe
+Identity;predicate;neGroupManager;Identity/Manager.primaryKey.group.recordUid IS NULL;who are not group managers;responsables d'aucun groupe
+Identity;predicate;eqAssetManager;Identity/Manager.primaryKey.asset.recordUid IS NOT NULL;who are asset managers;responsables d'au moins un actif
+Identity;predicate;neAssetManager;Identity/Manager.primaryKey.asset.recordUid IS NULL;who are not asset managers;responsables d'aucun actif
+Identity;relationship;organisation;Identity/Allocation/Organisation.recordUid IS NOT NULL;direct members of organisations;membres directs d'organisations
+Identity;relationship;uporganisation;Identity/UpAllocation/Organisation.recordUid IS NOT NULL;members of organisations;membres d'organisations
+Identity;relationship;repository;Identity/Repository.recordUid IS NOT NULL;in repositories;dans des référentiels
+Identity;relationship;management;Identity/Manager.recordUid IS NOT NULL;performing management functions;exerçant des fonctions de management
+Identity;relationship;management2;Identity/Manager.recordUid IS NOT NULL;performing management functions;exerçant des fonctions de management d'identité
+Identity;relationship;genericmanager;Identity/DirectGenericManager/Identity.recordUid IS NOT NULL;having direct (N+1) managers (obsolete);ayant comme responsables N+1 des identités (obsolète)
+Identity;relationship;upgenericmanager;Identity/GenericManager/Identity.recordUid IS NOT NULL;having N+x managers (obsolete);ayant comme responsables N+x des identités (obsolète)
+Identity;relationship;genericteam;Identity/DirectGenericTeam/Identity.recordUid IS NOT NULL;who are direct (N+1) manager of identities (obsolete);qui sont responsables directs (N+1) d'identités (obsolète)
+Identity;relationship;downgenericteam;Identity/GenericTeam/Identity.recordUid IS NOT NULL;who are N+x managers of identities (obsolete);qui sont responsables (N+x) d'identités (obsolète)
+Identity;relationship;manager;Identity/Manager/Organisation.recordUid IS NOT NULL;who are direct managers of organisations;qui sont responsables directs d'organisations
+Identity;relationship;downmanager;Identity/DownManager/Organisation.recordUid IS NOT NULL;who are managers of organisations;qui sont responsables d'organisations
+Identity;relationship;accountreconciliation;Identity/Reconciliation/Account.recordUid IS NOT NULL;owning accounts;possédant des comptes 
+Identity;relationship;accountusage;Identity/Usage/Account.recordUid IS NOT NULL;actually using accounts;utilisant effectivement des comptes
+Identity;relationship;fspermissionrightread;Identity/Reconciliation/Account/FSRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having read access to shared folders;ayant accès en lecture à des dossiers partagés
+Identity;relationship;fspermissionrightwrite;Identity/Reconciliation/Account/FSRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having write access to shared folders;ayant accès en écriture à des dossiers partagés
+Identity;relationship;permissionright;Identity/Reconciliation/Account/AggregatedRight/Permission/PermLink/Permission/Permission.recordUid IS NOT NULL;having access to permissions;ayant accès à des permissions
+Identity;relationship;directpermissionright;Identity/Reconciliation/Account/AggregatedRight/Permission/Permission.recordUid IS NOT NULL;having direct access to permissions;ayant un accès direct à des permissions
+Identity;relationship;fsdirectpermissionright;Identity/Reconciliation/Account/FSRight/Permission/Permission.recordUid IS NOT NULL;having access to shared folders;ayant accès à des dossiers partagés
+Identity;relationship;permissionusage;Identity/Usage/Permission.recordUid IS NOT NULL;using permissions;utilisant des permissions
+Identity;relationship;permissiontheoretical;Identity/TheoricalRight/Permission/PermLink/Permission.recordUid IS NOT NULL;having theorectical access to permissions;ayant des droits théoriques sur des permissions
+Identity;relationship;directpermissiontheoretical;Identity/TheoricalRight/Permission.recordUid IS NOT NULL;having theoretical direct  rights to applications;ayant un accès direct théorique à des permissions
+Identity;relationship;applicationright;Identity/Reconciliation/Account/AccountApp/Application.recordUid IS NOT NULL;having access to applications;ayant accès à des applications
+Identity;relationship;applicationusage;Identity/Usage/Application.recordUid IS NOT NULL;using applications;utilisant des applications
+Identity;relationship;applicationtheoretical;Identity/TheoricalRight/Permission/Application.recordUid IS NOT NULL;having theoretical rights to applications;ayant des droits théoriques sur des applications
+Identity;relationship;managedrepository;Identity/Manager/Repository.recordUid IS NOT NULL;managing repositories;gérant des réferentiels
+Identity;relationship;managedaccount;Identity/Manager/Account.recordUid IS NOT NULL;managing accounts;gérant des comptes
+Identity;relationship;managedgroup;Identity/Manager/Group.recordUid IS NOT NULL;managing groups;gérant des groupes
+Identity;relationship;managedpermission;Identity/Manager/Permission.recordUid IS NOT NULL;managing permissions;gérant des permissions
+Identity;relationship;managedapplication;Identity/Manager/Application.recordUid IS NOT NULL;managing applications;gérant des applications
+Identity;relationship;managedasset;Identity/Manager/Asset.recordUid IS NOT NULL;managing assets;gérant des actifs
+Identity;relationship;usage;Identity/Usage.recordUid IS NOT NULL;with uses;ayant des usages
+Identity;relationship;overentitledpermissions;Identity/OverEntitlement/Permission.recordUid IS NOT NULL;being over entitled on permissions;étant en sur-allocations sur des permissions
+Identity;relationship;underentitledpermissions;Identity/UnderEntitlement/Permission.recordUid IS NOT NULL;being under entitled on permissions;étant en sous-allocations sur des permissions
+Identity;relationship;controldiscrepancy;Identity/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Identity;relationship;identitymanager;Identity/DirectIdentityManager/Identity.recordUid IS NOT NULL;having direct (N+1) managers;N ayant comme responsables N+1 des identités
+Identity;relationship;upidentitymanager;Identity/Manager/Identity.recordUid IS NOT NULL;having N+x managers;N ayant comme responsables N+x des identités
+Identity;relationship;teamidentitymanager;Identity/DirectIdentityManager/Identity.recordUid IS NOT NULL;who are direct (N+1) manager of identities;N qui sont responsables directs (N+1) d'identités
+Identity;relationship;downteamidentitymanager;Identity/Manager/Identity.recordUid IS NOT NULL;who are N+x managers of identities;N qui sont responsables (N+x) d'identités
+Identity;relationship;vaultright;Identity/Reconciliation/Account/AccountApp/CAVault.recordUid IS NOT NULL;in vaults;dans les vaults
+Identity;relationship;saferight;Identity/Reconciliation/Account/AccountApp/CASafe.recordUid IS NOT NULL;accessing safes;pouvant accéder à des safes
+Identity;relationship;safeuserright;Identity/Reconciliation/Account/Metadata/MetadataValue/CASafe.recordUid IS NOT NULL;using credentials in safes;pouvant utiliser les secrets de safes
+Identity;relationship;safeadminright;Identity/Reconciliation/Account/Metadata/MetadataValue/CASafe.recordUid IS NOT NULL;administering safes;administrant des safes
+Organisation;predicate;eqCode;Organisation.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Organisation;predicate;neCode;(Organisation.code != '{codeParam.value}') or (Organisation.code IS NULL);which code is not equal to;dont le code n'est pas égal à
+Organisation;predicate;inCode;Organisation.code IN '{codeParam.value}';which code is in;dont le code est dans
+Organisation;predicate;likeCode;Organisation.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Organisation;predicate;startCode;Organisation.code LIKE '{codeParam.value}%';which code starts with;dont le code démarre par
+Organisation;predicate;endCode;Organisation.code LIKE '%{codeParam.value}';which code ends with;dont le code se termine par
+Organisation;predicate;eqShortName;Organisation.shortName = '{shortNameParam.value}';which short name is equal to;dont le nom court est égal à
+Organisation;predicate;neShortName;(Organisation.shortName != '{shortNameParam.value}') or (Organisation.shortName IS NULL);which short name is not equal to;dont le nom court n'est pas égal à
+Organisation;predicate;inShortName;Organisation.shortName IN '{shortNameParam.value}';which short name is in;dont le nom court est dans
+Organisation;predicate;likeShortName;Organisation.shortName LIKE '{shortNameParam.value}';which short name contains;dont le nom court contient
+Organisation;predicate;startShortName;Organisation.shortName LIKE '{shortNameParam.value}%';which short name starts with;dont le nom court démarre par
+Organisation;predicate;endShortName;Organisation.shortName LIKE '%{shortNameParam.value}';which short name ends with;dont le nom court se termine par
+Organisation;predicate;eqDisplayName;Organisation.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Organisation;predicate;neDisplayName;(Organisation.displayName != '{displayNameParam.value}') or (Organisation.displayName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Organisation;predicate;inDisplayName;Organisation.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Organisation;predicate;likeDisplayName;Organisation.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Organisation;predicate;startDisplayName;Organisation.displayName LIKE '{displayNameParam.value}%';which name starts with;dont le nom démarre par
+Organisation;predicate;endDisplayName;Organisation.displayName LIKE '%{displayNameParam.value}';which name ends with;dont le nom se termine par
+Organisation;predicate;isNew;Organisation.importAction = 'C';new in this timeslot;nouvelles dans cette période
+Organisation;predicate;isModified;Organisation.importAction = 'U';modified since previous timeslot;modifiées depuis la période précédente
+Organisation;predicate;isSame;Organisation.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Organisation;predicate;willBeDeleted;Organisation.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Organisation;predicate;wontBeDeleted;(Organisation.deletedAction = '0') or (Organisation.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Organisation;predicate;eqUid;Organisation.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Organisation;predicate;inUid;Organisation.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Organisation;relationship;parentorganisation;Organisation/DirectRelationship/Organisation.recordUid IS NOT NULL;having direct parent organisations;ayant des organisations parentes directes
+Organisation;relationship;childorganisation;Organisation/DirectRelationship/Organisation.recordUid IS NOT NULL;containing direct child organisations;contenant directement des sous-organisations
+Organisation;relationship;uporganisation;Organisation/Relationship/Organisation.recordUid IS NOT NULL;having parent organisations;ayant des organisations parentes
+Organisation;relationship;downorganisation;Organisation/Relationship/Organisation.recordUid IS NOT NULL;containing child organisations;contenant des sous-organisations
+Organisation;relationship;identity;Organisation/Allocation/Identity.recordUid IS NOT NULL;having direct members;ayant des identités membres directs
+Organisation;relationship;upidentity;Organisation/UpAllocation/Identity.recordUid IS NOT NULL;having members;ayant des identités membres
+Organisation;relationship;allocation;Organisation/Allocation.recordUid IS NOT NULL;where jobs are practiced;où sont exercés des métiers
+Organisation;relationship;manager;Organisation/Manager/Identity.recordUid IS NOT NULL;having managers;ayant comme responsables des identités
+Organisation;relationship;downmanager;Organisation/DownManager/Identity.recordUid IS NOT NULL;having managers (including in parent organisations);ayant comme responsables (y.c dans les organisations parentes) des identités
+Organisation;relationship;management;Organisation/Manager.recordUid IS NOT NULL;where are performed management functions;où sont exercées des fonctions de management
+Organisation;relationship;work;Organisation/Work/Asset.recordUid IS NOT NULL;contributing to assets;contribuant à des actifs
+Organisation;relationship;controldiscrepancy;Organisation/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Allocation;predicate;eqJobTitle;(Allocation/JobTitle.code = '{jobTitleParam.value}') or (Allocation/JobTitle.displayName = '{jobTitleParam.value}');which name is equal to;dont le nom est égal à
+Allocation;predicate;neJobTitle;((Allocation/JobTitle.code != '{jobTitleParam.value}') and (Allocation/JobTitle.displayName != '{jobTitleParam.value}')) or (Allocation/JobTitle.recordUid IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Allocation;predicate;inJobTitle;(Allocation/JobTitle.code IN '{jobTitleParam.value}') or (Allocation/JobTitle.displayName IN '{jobTitleParam.value}');which name is in;dont le nom est dans
+Allocation;predicate;likeJobTitle;(Allocation/JobTitle.code LIKE '{jobTitleParam.value}') or (Allocation/JobTitle.displayName LIKE '{jobTitleParam.value}');which name contains;dont le nom contient
+Allocation;predicate;startJobTitle;(Allocation/JobTitle.code LIKE '{jobTitleParam.value}%') or (Allocation/JobTitle.displayName LIKE '{jobTitleParam.value}%');which name starts with;dont le nom démarre par
+Allocation;predicate;endJobTitle;(Allocation/JobTitle.code LIKE '%{jobTitleParam.value}') or (Allocation/JobTitle.displayName LIKE '%{jobTitleParam.value}');which name ends with;dont le nom se termine par
+Allocation;relationship;identity;Allocation/Identity.recordUid IS NOT NULL;by identities;par des identités
+Asset;predicate;eqCode;Asset.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Asset;predicate;inCode;Asset.code IN '{codeParam.value}';which code is in;dont le code est dans
+Asset;predicate;likeCode;Asset.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Asset;predicate;eqDisplayName;Asset.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Asset;predicate;inDisplayName;Asset.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Asset;predicate;likeDisplayName;Asset.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Asset;predicate;eqCategory;(Asset/Category.code = '{categoryParam.value}') or (Asset/Category.displayName = '{categoryParam.value}');which category is equal to;dont la catégorie est égal à
+Asset;predicate;inCategory;(Asset/Category.code IN '{categoryParam.value}') or (Asset/Category.displayName IN '{categoryParam.value}');which category is in;dont la catégorie est dans
+Asset;predicate;likeCategory;(Asset/Category.code LIKE '{categoryParam.value}') or (Asset/Category.displayName LIKE '{categoryParam.value}');which category contains;dont la catégorie contient
+Asset;predicate;isNew;Asset.importAction = 'C';new in this timeslot;nouveaux dans cette période
+Asset;predicate;isModified;Asset.importAction = 'U';modified since previous timeslot;modifiés depuis la période précédente
+Asset;predicate;isSame;Asset.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Asset;predicate;willBeDeleted;Asset.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Asset;predicate;wontBeDeleted;(Asset.deletedAction = '0') or (Asset.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Asset;predicate;eqUid;Asset.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Asset;predicate;inUid;Asset.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Asset;relationship;manager;Asset/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérés par des identités
+Asset;relationship;work;Asset/Work/Organisation.recordUid IS NOT NULL;organisations are contributing to;auxquels contribuent des organisations
+Asset;relationship;support;Asset/Support/Permission/PermLink/Permission.recordUid IS NOT NULL;supported by permissions;supportés par des permissions
+Asset;relationship;directsupport;Asset/Support/Permission.recordUid IS NOT NULL;directly supported by permissions;supportés directement par des permissions
+Asset;relationship;controldiscrepancy;Asset/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Application;predicate;eqCode;Application.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Application;predicate;neCode;(Application.code != '{codeParam.value}') or (Application.code IS NULL);which code is not equal to;dont le code n'est pas égal à
+Application;predicate;inCode;Application.code IN '{codeParam.value}';which code is in;dont le code est dans
+Application;predicate;likeCode;Application.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Application;predicate;startCode;Application.code LIKE '{codeParam.value}%';which code starts with;dont le code démarre par
+Application;predicate;endCode;Application.code LIKE '%{codeParam.value}';which code ends with;dont le code se termine par
+Application;predicate;eqDisplayName;Application.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Application;predicate;neDisplayName;(Application.displayName != '{displayNameParam.value}') or (Application.displayName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Application;predicate;inDisplayName;Application.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Application;predicate;likeDisplayName;Application.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Application;predicate;startDisplayName;Application.displayName LIKE '{displayNameParam.value}%';which name starts with;dont le nom démarre par
+Application;predicate;endDisplayName;Application.displayName LIKE '%{displayNameParam.value}';which name ends with;dont le nom se termine par
+Application;predicate;eqApplicationType;Application.applicationType = '{applicationTypeParam.value}';which type is equal to;dont le type est égal à
+Application;predicate;neApplicationType;(Application.applicationType != '{applicationTypeParam.value}') or (Application.applicationType IS NULL);which type is not equal to;dont le type n'est pas égal à
+Application;predicate;inApplicationType;Application.applicationType IN '{applicationTypeParam.value}';which type is in;dont le type est dans
+Application;predicate;likeApplicationType;Application.applicationType LIKE '{applicationTypeParam.value}';which type contains;dont le type contient
+Application;predicate;startApplicationType;Application.applicationType LIKE '{applicationTypeParam.value}%';which type starts with;dont le type démarre par
+Application;predicate;endApplicationType;Application.applicationType LIKE '%{applicationTypeParam.value}';which type ends with;dont le type se termine par
+Application;predicate;eqApplicationFamily;Application.applicationFamily = '{applicationFamilyParam.value}';which family name is equal to;dont la famille est égal à
+Application;predicate;neApplicationFamily;(Application.applicationFamily != '{applicationFamilyParam.value}') or (Application.applicationFamily IS NULL);which family name is not equal to;dont la famille n'est pas égal à
+Application;predicate;inApplicationFamily;Application.applicationFamily IN '{applicationFamilyParam.value}';which family name is in;dont la famille est dans
+Application;predicate;likeApplicationFamily;Application.applicationFamily LIKE '{applicationFamilyParam.value}';which family name contains;dont la famille contient
+Application;predicate;startApplicationFamily;Application.applicationFamily LIKE '{applicationFamilyParam.value}%';which family name starts with;dont la famille démarre par
+Application;predicate;endApplicationFamily;Application.applicationFamily LIKE '%{applicationFamilyParam.value}';which family name ends with;dont la famille se termine par
+Application;predicate;eqRepository;(Application/Repository.code = '{repositoryParam.value}') or (Application/Repository.displayName = '{repositoryParam.value}');which repository is equal to;dont le référentiel est égal à
+Application;predicate;neRepository;((Application/Repository.code != '{repositoryParam.value}') and (Application/Repository.displayName != '{repositoryParam.value}')) or (Application/Repository.recordUid IS NULL);which repository is not equal to;dont le référentiel n'est pas égal à
+Application;predicate;inRepository;(Application/Repository.code IN '{repositoryParam.value}') or (Application/Repository.displayName IN '{repositoryParam.value}');which repository is in;dont le référentiel est dans
+Application;predicate;likeRepository;(Application/Repository.code LIKE '{repositoryParam.value}') or (Application/Repository.displayName LIKE '{repositoryParam.value}');which repository contains;dont le référentiel contient
+Application;predicate;startRepository;(Application/Repository.code LIKE '{repositoryParam.value}%') or (Application/Repository.displayName LIKE '{repositoryParam.value}%');which repository starts with;dont le référentiel démarre par
+Application;predicate;endRepository;(Application/Repository.code LIKE '%{repositoryParam.value}') or (Application/Repository.displayName LIKE '%{repositoryParam.value}');which repository ends with;dont le référentiel se termine par
+Application;predicate;eqRepositoryType;Application/Repository.repositoryType = '{repositoryParam.value}';which repository type is equal to;dont le type du référentiel est égal à
+Application;predicate;neRepositoryType;(Application/Repository.repositoryType != '{repositoryParam.value}') or (Application/Repository.recordUid IS NULL);which repository type is not equal to;dont le type du référentiel n'est pas égal à
+Application;predicate;inRepositoryType;Application/Repository.repositoryType IN '{repositoryParam.value}';which repository type is in;dont le type du référentiel est dans
+Application;predicate;likeRepositoryType;Application/Repository.repositoryType LIKE '{repositoryParam.value}';which repository type contains;dont le type du référentiel contient
+Application;predicate;startRepositoryType;Application/Repository.repositoryType LIKE '{repositoryParam.value}%';which repository type starts with;dont le type du référentiel démarre par
+Application;predicate;endRepositoryType;Application/Repository.repositoryType LIKE '%{repositoryParam.value}';which repository type ends with;dont le type du référentiel se termine par
+Application;predicate;isNew;Application.importAction = 'C';new in this timeslot;nouvelles dans cette période
+Application;predicate;isModified;Application.importAction = 'U';modified since previous timeslot;modifiées depuis la période précédente
+Application;predicate;isSame;Application.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Application;predicate;willBeDeleted;Application.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Application;predicate;wontBeDeleted;(Application.deletedAction = '0') or (Application.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Application;predicate;eqUid;Application.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Application;predicate;inUid;Application.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Application;predicate;eqCategory;Application/ApplicationInfo.category = '{categoryParam.value}';which category is equal to;dont la catégorie est égal à
+Application;predicate;neCategory;(Application/ApplicationInfo.category != '{categoryParam.value}') or (Application/ApplicationInfo.category IS NULL);which category is not equal to;dont la catégorie n'est pas égal à
+Application;predicate;inCategory;Application/ApplicationInfo.category IN '{categoryParam.value}';which category is in;dont la catégorie est dans
+Application;predicate;likeCategory;Application/ApplicationInfo.category LIKE '{categoryParam.value}';which category contains;dont la catégorie contient
+Application;predicate;startCategory;Application/ApplicationInfo.category LIKE '{categoryParam.value}%';which category starts with;dont la catégorie démarre par
+Application;predicate;endCategory;Application/ApplicationInfo.category LIKE '%{categoryParam.value}';which category ends with;dont la catégorie se termine par
+Application;predicate;eqDescription;Application/ApplicationInfo.description = '{descriptionParam.value}';which description is equal to;dont la description est égal à
+Application;predicate;neDescription;(Application/ApplicationInfo.description != '{descriptionParam.value}') or (Application/ApplicationInfo.description IS NULL);which description is not equal to;dont la description n'est pas égal à
+Application;predicate;inDescription;Application/ApplicationInfo.description IN '{descriptionParam.value}';which description is in;dont la description est dans
+Application;predicate;likeDescription;Application/ApplicationInfo.description LIKE '{descriptionParam.value}';which description contains;dont la description contient
+Application;predicate;startDescription;Application/ApplicationInfo.description LIKE '{descriptionParam.value}%';which description starts with;dont la description démarre par
+Application;predicate;endDescription;Application/ApplicationInfo.description LIKE '%{descriptionParam.value}';which description ends with;dont la description se termine par
+Application;predicate;eqSensitivityLevel;Application/ApplicationInfo.sensitivityLevel = '{sensitivityLevelParam.value}';which sensitivity level is equal to;dont le niveau de sensibilité est égal à
+Application;predicate;neSensitivityLevel;(Application/ApplicationInfo.sensitivityLevel != '{sensitivityLevelParam.value}') or (Application/ApplicationInfo.sensitivityLevel IS NULL);which sensitivity level is not equal to;dont le niveau de sensibilité n'est pas égal à
+Application;predicate;inSensitivityLevel;Application/ApplicationInfo.sensitivityLevel IN '{sensitivityLevelParam.value}';which sensitivity level is in;dont le niveau de sensibilité est dans
+Application;predicate;likeSensitivityLevel;Application/ApplicationInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}';which sensitivity level contains;dont le niveau de sensibilité contient
+Application;predicate;startSensitivityLevel;Application/ApplicationInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}%';which sensitivity level starts with;dont le niveau de sensibilité démarre par
+Application;predicate;endSensitivityLevel;Application/ApplicationInfo.sensitivityLevel LIKE '%{sensitivityLevelParam.value}';which sensitivity level ends with;dont le niveau de sensibilité se termine par
+Application;predicate;eqSensitivityReason;Application/ApplicationInfo.sensitivityReason = '{sensitivityReasonParam.value}';which sensitivity detail is equal to;dont le détail de la sensibilité est égal à
+Application;predicate;neSensitivityReason;(Application/ApplicationInfo.sensitivityReason != '{sensitivityReasonParam.value}') or (Application/ApplicationInfo.sensitivityReason IS NULL);which sensitivity detail is not equal to;dont le détail de la sensibilité n'est pas égal à
+Application;predicate;inSensitivityReason;Application/ApplicationInfo.sensitivityReason IN '{sensitivityReasonParam.value}';which sensitivity detail is in;dont le détail de la sensibilité est dans
+Application;predicate;likeSensitivityReason;Application/ApplicationInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}';which sensitivity detail contains;dont le détail de la sensibilité contient
+Application;predicate;startSensitivityReason;Application/ApplicationInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}%';which sensitivity detail starts with;dont le détail de la sensibilité démarre par
+Application;predicate;endSensitivityReason;Application/ApplicationInfo.sensitivityReason LIKE '%{sensitivityReasonParam.value}';which sensitivity detail ends with;dont le détail de la sensibilité se termine par
+Application;relationship;manager;Application/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérées par des identités
+Application;relationship;identityusage;Application/Usage/Identity.recordUid IS NOT NULL;used by identities;utilisées par des identités
+Application;relationship;accountusage;Application/Usage/Account.recordUid IS NOT NULL;used by accounts;utilisées par des comptes
+Application;relationship;account;Application/AccountApp/Account.recordUid IS NOT NULL;accessible to accounts;accessibles à des comptes
+Application;relationship;identity;Application/AccountApp/Account/Reconciliation/Identity.recordUid IS NOT NULL;accessible to identities;accessibles à des identités
+Application;relationship;permission;Application/Permission.recordUid IS NOT NULL;containing permissions;contenant des permissions
+Application;relationship;usage;Application/Usage.recordUid IS NOT NULL;with uses;ayant des usages
+Application;relationship;controldiscrepancy;Application/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Permission;predicate;eqCode;Permission.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Permission;predicate;neCode;(Permission.code != '{codeParam.value}') or (Permission.code IS NULL);which code is not equal to;dont le code n'est pas égal à
+Permission;predicate;inCode;Permission.code IN '{codeParam.value}';which code is in;dont le code est dans
+Permission;predicate;likeCode;Permission.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Permission;predicate;startCode;Permission.code LIKE '{codeParam.value}%';which code starts with;dont le code démarre par
+Permission;predicate;endCode;Permission.code LIKE '%{codeParam.value}';which code ends with;dont le code se termine par
+Permission;predicate;eqDisplayName;Permission.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Permission;predicate;neDisplayName;(Permission.displayName != '{displayNameParam.value}') or (Permission.displayName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Permission;predicate;inDisplayName;Permission.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Permission;predicate;likeDisplayName;Permission.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Permission;predicate;startDisplayName;Permission.displayName LIKE '{displayNameParam.value}%';which name starts with;dont le nom démarre par
+Permission;predicate;endDisplayName;Permission.displayName LIKE '%{displayNameParam.value}';which name ends with;dont le nom se termine par
+Permission;predicate;eqAppName;(Permission.displayName = '{nameParam.value}') and (Permission/Application.code = '{appParam.value}');which application/name is equal to;dont l'application/nom est égal à
+Permission;predicate;inAppName;(Permission.displayName IN '{nameParam.value}') and (Permission/Application.code = '{appParam.value}');which application/name is in;dont l'application/nom est dans
+Permission;predicate;eqAppCode;(Permission.code = '{codeParam.value}') and (Permission/Application.code = '{appParam.value}');which application and code is equal to;dont l'application et le code est égal à
+Permission;predicate;inAppCode;(Permission.code IN '{codeParam.value}') and (Permission/Application.code = '{appParam.value}');which application and code is in;dont l'application et le code est dans
+Permission;predicate;eqPermissionType;Permission.permissionType = '{permissionTypeParam.value}';which type is equal to;dont le type est égal à
+Permission;predicate;nePermissionType;(Permission.permissionType != '{permissionTypeParam.value}') or (Permission.permissionType IS NULL);which type is not equal to;dont le type n'est pas égal à
+Permission;predicate;inPermissionType;Permission.permissionType IN '{permissionTypeParam.value}';which type is in;dont le type est dans
+Permission;predicate;likePermissionType;Permission.permissionType LIKE '{permissionTypeParam.value}';which type contains;dont le type contient
+Permission;predicate;startPermissionType;Permission.permissionType LIKE '{permissionTypeParam.value}%';which type starts with;dont le type démarre par
+Permission;predicate;endPermissionType;Permission.permissionType LIKE '%{permissionTypeParam.value}';which type ends with;dont le type se termine par
+Permission;predicate;eqRoot;Permission/DirectHierarchy.recordUid IS NULL;with no parent (root) ;racines (sans parent)
+Permission;predicate;neRoot;Permission/DirectHierarchy.recordUid IS NOT NULL;that are not root;non racine
+Permission;predicate;eqManaged;Permission/PermissionInfo.managed = '1';managed;gérées
+Permission;predicate;neManaged;(Permission/PermissionInfo.managed = '0') or (Permission/PermissionInfo.managed IS NULL);not managed;non gérées
+Permission;predicate;isNew;Permission.importAction = 'C';new in this timeslot;nouvelles dans cette période
+Permission;predicate;isModified;Permission.importAction = 'U';modified since previous timeslot;modifiées depuis la période précédente
+Permission;predicate;isSame;Permission.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Permission;predicate;willBeDeleted;Permission.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Permission;predicate;wontBeDeleted;(Permission.deletedAction = '0') or (Permission.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Permission;predicate;eqUid;Permission.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Permission;predicate;inUid;Permission.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Permission;predicate;eqDescription;Permission/PermissionInfo.description = '{descriptionParam.value}';which description is equal to;dont la description est égal à
+Permission;predicate;neDescription;(Permission/PermissionInfo.description != '{descriptionParam.value}') or (Permission/PermissionInfo.description IS NULL);which description is not equal to;dont la description n'est pas égal à
+Permission;predicate;inDescription;Permission/PermissionInfo.description IN '{descriptionParam.value}';which description is in;dont la description est dans
+Permission;predicate;likeDescription;Permission/PermissionInfo.description LIKE '{descriptionParam.value}';which description contains;dont la description contient
+Permission;predicate;startDescription;Permission/PermissionInfo.description LIKE '{descriptionParam.value}%';which description starts with;dont la description démarre par
+Permission;predicate;endDescription;Permission/PermissionInfo.description LIKE '%{descriptionParam.value}';which description ends with;dont la description se termine par
+Permission;predicate;eqSensitivityLevel;Permission/PermissionInfo.sensitivityLevel = '{sensitivityLevelParam.value}';which sensitivity level is equal to;dont le niveau de sensibilité est égal à
+Permission;predicate;neSensitivityLevel;(Permission/PermissionInfo.sensitivityLevel != '{sensitivityLevelParam.value}') or (Permission/PermissionInfo.sensitivityLevel IS NULL);which sensitivity level is not equal to;dont le niveau de sensibilité n'est pas égal à
+Permission;predicate;inSensitivityLevel;Permission/PermissionInfo.sensitivityLevel IN '{sensitivityLevelParam.value}';which sensitivity level is in;dont le niveau de sensibilité est dans
+Permission;predicate;likeSensitivityLevel;Permission/PermissionInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}';which sensitivity level contains;dont le niveau de sensibilité contient
+Permission;predicate;startSensitivityLevel;Permission/PermissionInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}%';which sensitivity level starts with;dont le niveau de sensibilité démarre par
+Permission;predicate;endSensitivityLevel;Permission/PermissionInfo.sensitivityLevel LIKE '%{sensitivityLevelParam.value}';which sensitivity level ends with;dont le niveau de sensibilité se termine par
+Permission;predicate;eqSensitivityReason;Permission/PermissionInfo.sensitivityReason = '{sensitivityReasonParam.value}';which sensitivity detail is equal to;dont le détail de la sensibilité est égal à
+Permission;predicate;neSensitivityReason;(Permission/PermissionInfo.sensitivityReason != '{sensitivityReasonParam.value}') or (Permission/PermissionInfo.sensitivityReason IS NULL);which sensitivity detail is not equal to;dont le détail de la sensibilité n'est pas égal à
+Permission;predicate;inSensitivityReason;Permission/PermissionInfo.sensitivityReason IN '{sensitivityReasonParam.value}';which sensitivity detail is in;dont le détail de la sensibilité est dans
+Permission;predicate;likeSensitivityReason;Permission/PermissionInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}';which sensitivity detail contains;dont le détail de la sensibilité contient
+Permission;predicate;startSensitivityReason;Permission/PermissionInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}%';which sensitivity detail starts with;dont le détail de la sensibilité démarre par
+Permission;predicate;endSensitivityReason;Permission/PermissionInfo.sensitivityReason LIKE '%{sensitivityReasonParam.value}';which sensitivity detail ends with;dont le détail de la sensibilité se termine par
+Permission;relationship;uppermission;Permission/DirectHierarchy/Permission.recordUid IS NOT NULL;having direct parent folders;ayant des dossiers parents directs
+Permission;relationship;downpermission;Permission/DirectHierarchy/Permission.recordUid IS NOT NULL;having direct sub-folders;ayant des sous-dossiers  directs
+Permission;relationship;uprecursivepermission;Permission/Hierarchy/Permission.recordUid IS NOT NULL;having parent folders;ayant des dossiers parents
+Permission;relationship;downrecursivepermission;Permission/Hierarchy/Permission.recordUid IS NOT NULL;having sub folders;ayant des sous-dossiers
+Permission;relationship;uppermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having direct parent permissions;ayant des permissions parentes directes
+Permission;relationship;downpermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having direct child permissions;ayant des permissions filles directes
+Permission;relationship;upindirectpermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having parent permissions;ayant des permissions parentes
+Permission;relationship;downindirectpermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having child permissions;ayant des permissions filles
+Permission;relationship;uprecursivepermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having parent permissions (+ self);ayant des permissions parentes (y.c. soi-même)
+Permission;relationship;downrecursivepermissionlink;Permission/PermLink/Permission.recordUid IS NOT NULL;having child permissions  (+ self);ayant des permissions filles  (y.c. soi-même)
+Permission;relationship;application;Permission/Application.recordUid IS NOT NULL;in applications;dans des applications
+Permission;relationship;accountright;Permission/Permission/PermLink/Permission/AggregatedRight/Account.recordUid IS NOT NULL;accessible by accounts;accessibles par des comptes
+Permission;relationship;directaccountright;Permission/Permission/AggregatedRight/Account.recordUid IS NOT NULL;accessible directly by accounts;accessibles directement par des comptes
+Permission;relationship;fsdirectaccountright;Permission/Permission/FSRight/Account.recordUid IS NOT NULL;accessible as folders by accounts ;accessibles en tant que dossiers par des comptes 
+Permission;relationship;accountusage;Permission/Usage/Account.recordUid IS NOT NULL;used by accounts;utilisées par des comptes
+Permission;relationship;identityusage;Permission/Usage/Identity.recordUid IS NOT NULL;used by identities;utilisées par des identités
+Permission;relationship;right;Permission/Permission/PermLink/Permission/AggregatedRight.recordUid IS NOT NULL;having rights;ayant des droits
+Permission;relationship;usage;Permission/Usage.recordUid IS NOT NULL;with uses;ayant des usages
+Permission;relationship;asset;Permission/Support/Asset.recordUid IS NOT NULL;supporting assets;supportant des actifs
+Permission;relationship;managers;Permission/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérées par des identités
+Permission;relationship;overentitledidentity;Permission/OverEntitlement/Identity.recordUid IS NOT NULL;being over-entitled for identities;étant en sur-allocation pour des identités
+Permission;relationship;underentitledidentity;Permission/UnderEntitlement/Identity.recordUid IS NOT NULL;being under-entitled for identities;étant en sous-allocation pour des identités
+Permission;relationship;controldiscrepancy;Permission/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Permission;relationship;rootcausediscrepancy;Permission/ControlRootCause/ControlDiscrepancy.recordUid IS NOT NULL;which are root causes of discrepancies;qui sont à l'origine des écarts
+Right;predicate;eqPerimeterCode;Right/Perimeter.code = '{perimeterCodeParam.value}';which perimeter code is is equal to;dont le code du périmètre est est égal à
+Right;predicate;inPerimeterCode;Right/Perimeter.code IN '{perimeterCodeParam.value}';which perimeter code is is in;dont le code du périmètre est est dans
+Right;predicate;likePerimeterCode;Right/Perimeter.code LIKE '{perimeterCodeParam.value}';which perimeter code is contains;dont le code du périmètre est contient
+Right;predicate;eqPerimeterDisplayname;Right/Perimeter.displayName = '{perimeterDisplaynameParam.value}';which perimeter is is equal to;dont le périmètre est est égal à
+Right;predicate;inPerimeterDisplayname;Right/Perimeter.displayName IN '{perimeterDisplaynameParam.value}';which perimeter is is in;dont le périmètre est est dans
+Right;predicate;likePerimeterDisplayname;Right/Perimeter.displayName LIKE '{perimeterDisplaynameParam.value}';which perimeter is contains;dont le périmètre est contient
+Right;relationship;account;Right/Account.recordUid IS NOT NULL;for accounts;pour des comptes
+Right;relationship;identity;Right/Account/Reconciliation/Identity.recordUid IS NOT NULL;for identities;pour des identités
+Right;relationship;permission;Right/Permission/Permission.recordUid IS NOT NULL;on permissions;sur des permissions
+Right;relationship;application;Right/Permission/Application.recordUid IS NOT NULL;on applications;sur des applications
+Usage;predicate;eqDisplayName;Usage.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Usage;predicate;inDisplayName;Usage.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Usage;predicate;likeDisplayName;Usage.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Usage;predicate;eqAggregate;Usage.aggregate = '{aggregateParam.value}';which type is equal to;dont le type est égal à
+Usage;predicate;inAggregate;Usage.aggregate IN '{aggregateParam.value}';which type is in;dont le type est dans
+Usage;predicate;likeAggregate;Usage.aggregate LIKE '{aggregateParam.value}';which type contains;dont le type contient
+Usage;predicate;eqCounter;Usage.counter = '{parseInt(counterParam.value, 10)}';which occurrence count is equal to;dont le nombre d'occurrences est égal à
+Usage;predicate;ltCounter;Usage.counter < '{parseInt(counterParam.value, 10)}';which occurrence count is less than;dont le nombre d'occurrences est plus petit que
+Usage;predicate;gtCounter;Usage.counter > '{parseInt(counterParam.value, 10)}';which occurrence count is greater than;dont le nombre d'occurrences est plus grand que
+Usage;predicate;ltFirstDate;Usage.firstDate < '{firstDateParam.value}';which start is less than;qui commencent est plus petit que
+Usage;predicate;gtFirstDate;Usage.firstDate > '{firstDateParam.value}';which start is greater than;qui commencent est plus grand que
+Usage;predicate;betweenFirstDate;Usage.firstDate > '{firstFirstDateParam.value}' and Usage.firstDate < '{secondFirstDateParam.value}';which start;qui commencent
+Usage;predicate;ltLastDate;Usage.lastDate < '{lastDateParam.value}';which end is less than;qui finissent est plus petit que
+Usage;predicate;gtLastDate;Usage.lastDate > '{lastDateParam.value}';which end is greater than;qui finissent est plus grand que
+Usage;predicate;betweenLastDate;Usage.lastDate > '{firstLastDateParam.value}' and Usage.lastDate < '{secondLastDateParam.value}';which end;qui finissent
+Usage;relationship;account;Usage/Account.recordUid IS NOT NULL;by accounts;par des comptes
+Usage;relationship;identity;Usage/Identity.recordUid IS NOT NULL;by identities;par des identités
+Usage;relationship;permission;Usage/Permission.recordUid IS NOT NULL;of permissions;de permissions
+Usage;relationship;application;Usage/Application.recordUid IS NOT NULL;of applications;d'applications
+Group;predicate;eqCode;Group.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Group;predicate;neCode;(Group.code != '{codeParam.value}') or (Group.code IS NULL);which code is not equal to;dont le code n'est pas égal à
+Group;predicate;inCode;Group.code IN '{codeParam.value}';which code is in;dont le code est dans
+Group;predicate;likeCode;Group.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Group;predicate;startCode;Group.code LIKE '{codeParam.value}%';which code starts with;dont le code démarre par
+Group;predicate;endCode;Group.code LIKE '%{codeParam.value}';which code ends with;dont le code se termine par
+Group;predicate;eqDisplayName;Group.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Group;predicate;neDisplayName;(Group.displayName != '{displayNameParam.value}') or (Group.displayName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Group;predicate;inDisplayName;Group.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Group;predicate;likeDisplayName;Group.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Group;predicate;startDisplayName;Group.displayName LIKE '{displayNameParam.value}%';which name starts with;dont le nom démarre par
+Group;predicate;endDisplayName;Group.displayName LIKE '%{displayNameParam.value}';which name ends with;dont le nom se termine par
+Group;predicate;eqRepoName;(Group.displayName = '{nameParam.value}') and (Group/Repository.code = '{repoParam.value}');which repository/name is equal to;dont le référentiel/nom est égal à
+Group;predicate;inRepoName;(Group.displayName IN '{nameParam.value}') and (Group/Repository.code = '{repoParam.value}');which repository/name is in;dont le référentiel/nom est dans
+Group;predicate;eqComment;Group.comment = '{commentParam.value}';which comment is equal to;dont le commentaire est égal à
+Group;predicate;neComment;(Group.comment = '{commentParam.value}') or (Group.comment IS NULL);which comment is not equal to;dont le commentaire n'est pas égal à
+Group;predicate;inComment;Group.comment IN '{commentParam.value}';which comment is in;dont le commentaire est dans
+Group;predicate;likeComment;Group.comment LIKE '{commentParam.value}';which comment contains;dont le commentaire contient
+Group;predicate;startComment;Group.comment LIKE '{commentParam.value}%';which comment starts with;dont le commentaire démarre par
+Group;predicate;endComment;Group.comment LIKE '%{commentParam.value}';which comment ends with;dont le commentaire se termine par
+Group;predicate;eqGroupType;Group.groupType = '{groupTypeParam.value}';which type is equal to;dont le type est égal à
+Group;predicate;neGroupType;(Group.groupType != '{groupTypeParam.value}') or (Group.groupType IS NULL);which type is not equal to;dont le type n'est pas égal à
+Group;predicate;inGroupType;Group.groupType IN '{groupTypeParam.value}';which type is in;dont le type est dans
+Group;predicate;likeGroupType;Group.groupType LIKE '{groupTypeParam.value}';which type contains;dont le type contient
+Group;predicate;startGroupType;Group.groupType LIKE '{groupTypeParam.value}%';which type starts with;dont le type démarre par
+Group;predicate;endGroupType;Group.groupType LIKE '%{groupTypeParam.value}';which type ends with;dont le type se termine par
+Group;predicate;eqDynamic;Group.dynamic = '1';dynamic;dynamiques
+Group;predicate;neDynamic;Group.dynamic = '0';static;statiques
+Group;predicate;eqRepository;(Group/Repository.code = '{repositoryParam.value}') or (Group/Repository.displayName = '{repositoryParam.value}');which repository name is equal to;dans les référentiels dont le nom est égal à
+Group;predicate;neRepository;((Group/Repository.code != '{repositoryParam.value}') and (Group/Repository.displayName != '{repositoryParam.value}')) or (Group/Repository.recordUid IS NULL);which repository name is not equal to;dans les référentiels dont le nom n'est pas égal à
+Group;predicate;inRepository;(Group/Repository.code IN '{repositoryParam.value}') or (Group/Repository.displayName IN '{repositoryParam.value}');which repository name is in;dans les référentiels dont le nom est dans
+Group;predicate;likeRepository;(Group/Repository.code LIKE '{repositoryParam.value}') or (Group/Repository.displayName LIKE '{repositoryParam.value}');which repository name contains;dans les référentiels dont le nom contient
+Group;predicate;startRepository;(Group/Repository.code LIKE '{repositoryParam.value}%') or (Group/Repository.displayName LIKE '{repositoryParam.value}%');which repository name starts with;dans les référentiels dont le nom démarre par
+Group;predicate;endRepository;(Group/Repository.code LIKE '%{repositoryParam.value}') or (Group/Repository.displayName LIKE '%{repositoryParam.value}');which repository name ends with;dans les référentiels dont le nom se termine par
+Group;predicate;isNew;Group.importAction = 'C';new in this timeslot;nouveaux dans cette période
+Group;predicate;isNotNew;Group.importAction != 'C';not new in this timeslot;pas nouveaux dans cette période
+Group;predicate;isModified;Group.importAction = 'U';modified since previous timeslot;modifiés depuis la période précédente
+Group;predicate;isNotModified;Group.importAction != 'U';new or identical to previous timeslot;nouveaux ou identiques à la période précédente
+Group;predicate;isSame;Group.importAction = 'N';identical to the previous timeslot;identiques à la période précédente
+Group;predicate;isNotSame;Group.importAction != 'N';new or modified since previous timeslot;nouveaux ou modifiés par rapport à la période précédente
+Group;predicate;willBeDeleted;Group.deletedAction = '1';that do not exist in the next timeslot;n'existant plus dans la période d'analyse suivante
+Group;predicate;wontBeDeleted;(Group.deletedAction = '0') or (Group.deletedAction IS NULL);that still exist in the next timeslot;existant dans la période d'analyse suivante
+Group;predicate;ltCreationDate;Group.creationDate < '{creationDateParam.value}';which was created is less than;qui ont été créés est plus petit que
+Group;predicate;gtCreationDate;Group.creationDate > '{creationDateParam.value}';which was created is greater than;qui ont été créés est plus grand que
+Group;predicate;betweenCreationDate;Group.creationDate > '{firstCreationDateParam.value}' and Group.creationDate < '{secondCreationDateParam.value}';which was created;qui ont été créés
+Group;predicate;ltModificationDate;Group.modificationDate < '{modificationDateParam.value}';which was modified is less than;qui ont été modifiés est plus petit que
+Group;predicate;gtModificationDate;Group.modificationDate > '{modificationDateParam.value}';which was modified is greater than;qui ont été modifiés est plus grand que
+Group;predicate;betweenModificationDate;Group.modificationDate > '{firstModificationDateParam.value}' and Group.modificationDate < '{secondModificationDateParam.value}';which was modified;qui ont été modifiés
+Group;predicate;eqUid;Group.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Group;predicate;inUid;Group.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Group;relationship;account;Group/AccountGroup/Account.recordUid IS NOT NULL;containing accounts directly;contenant directement des comptes
+Group;relationship;upaccount;Group/UpAccountGroup/Account.recordUid IS NOT NULL;containing accounts;contenant des comptes
+Group;relationship;parentgroup;Group/DirectGroupLink/Group.recordUid IS NOT NULL;having direct parent groups;ayant des groupes parents directs
+Group;relationship;childgroup;Group/DirectGroupLink/Group.recordUid IS NOT NULL;containing groups directly;contenant directement des groupes
+Group;relationship;upgroup;Group/GroupLink/Group.recordUid IS NOT NULL;having parent groups;ayant des groupes parents
+Group;relationship;downgroup;Group/GroupLink/Group.recordUid IS NOT NULL;containing groups;contenant des groupes
+Group;relationship;permission;Group/RightGroup/Permission/Permission.recordUid IS NOT NULL;having access to permission hiearchy;donnant accès à la hiérarchie de permissions
+Group;relationship;directpermission;Group/RightGroup/Permission.recordUid IS NOT NULL;having access to permissions;donnant accès aux permissions
+Group;relationship;downpermission;Group/DownRightGroup/Permission/Permission.recordUid IS NOT NULL;or ancestors having access to permission hierarchy;ou ascendants donnant accès à la hiérarchie permissions
+Group;relationship;directdownpermission;Group/DownRightGroup/Permission.recordUid IS NOT NULL;or ancestors having access to permissions;ou ascendants donnant accès aux permissions
+Group;relationship;vaultright;Group/GroupApp/CAVault.recordUid IS NOT NULL;administering vaults;administrant des vaults
+Group;relationship;saferight;Group/GroupApp/CASafe.recordUid IS NOT NULL;accessing safes;pouvant accéder à des safes
+Group;relationship;safeuserright;Group/GroupApp/CASafe.recordUid IS NOT NULL;using credentials in safes;pouvant utiliser les secrets de safes
+Group;relationship;safeadminright;Group/GroupApp/CASafe.recordUid IS NOT NULL;administering safes;administrant des safes
+Group;relationship;manager;Group/Account.recordUid IS NOT NULL;managed by accounts;gérés par des comptes
+Group;relationship;managers;Group/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérés par des identités
+Group;relationship;repository;Group/Repository.recordUid IS NOT NULL;which repository name;dans les référentiels dont le nom
+Group;relationship;controldiscrepancy;Group/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Repository;predicate;eqCode;Repository.code = '{codeParam.value}';which code is equal to;dont le code est égal à
+Repository;predicate;neCode;(Repository.code != '{codeParam.value}') or (Repository.code IS NULL);which code is not equal to;dont le code n'est pas égal à
+Repository;predicate;inCode;Repository.code IN '{codeParam.value}';which code is in;dont le code est dans
+Repository;predicate;likeCode;Repository.code LIKE '{codeParam.value}';which code contains;dont le code contient
+Repository;predicate;startCode;Repository.code LIKE '{codeParam.value}%';which code starts with;dont le code démarre par
+Repository;predicate;endCode;Repository.code LIKE '%{codeParam.value}';which code ends with;dont le code se termine par
+Repository;predicate;eqDisplayName;Repository.displayName = '{displayNameParam.value}';which name is equal to;dont le nom est égal à
+Repository;predicate;neDisplayName;(Repository.displayName != '{displayNameParam.value}') or (Repository.displayName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+Repository;predicate;inDisplayName;Repository.displayName IN '{displayNameParam.value}';which name is in;dont le nom est dans
+Repository;predicate;likeDisplayName;Repository.displayName LIKE '{displayNameParam.value}';which name contains;dont le nom contient
+Repository;predicate;startDisplayName;Repository.displayName LIKE '{displayNameParam.value}%';which name starts with;dont le nom démarre par
+Repository;predicate;endDisplayName;Repository.displayName LIKE '%{displayNameParam.value}';which name ends with;dont le nom se termine par
+Repository;predicate;eqRepositoryType;Repository.repositoryType = '{repositoryTypeParam.value}';which type is equal to;dont le type est égal à
+Repository;predicate;inRepositoryType;Repository.repositoryType IN '{repositoryTypeParam.value}';which type is in;dont le type est dans
+Repository;predicate;likeRepositoryType;Repository.repositoryType LIKE '{repositoryTypeParam.value}';which type contains;dont le type contient
+Repository;predicate;startRepositoryType;Repository.repositoryType LIKE '{repositoryTypeParam.value}%';which type starts with;dont le type démarre par
+Repository;predicate;eqUid;Repository.uid = '{uidParam.value}';which internal identifier is equal to;dont l'identifiant interne est égal à
+Repository;predicate;inUid;Repository.uid IN '{uidParam.value}';which internal identifier is in;dont l'identifiant interne est dans
+Repository;predicate;eqRepositoryFamily;Repository.repositoryFamily = '{repositoryFamilyParam.value}';which family is equal to;dont la famille est égal à
+Repository;predicate;inRepositoryFamily;Repository.repositoryFamily IN '{repositoryFamilyParam.value}';which family is in;dont la famille est dans
+Repository;predicate;likeRepositoryFamily;Repository.repositoryFamily LIKE '{repositoryFamilyParam.value}';which family contains;dont la famille contient
+Repository;predicate;startRepositoryFamily;Repository.repositoryFamily LIKE '{repositoryFamilyParam.value}%';which family starts with;dont la famille démarre par
+Repository;predicate;endRepositoryType;Repository.repositoryFamily LIKE '%{repositoryFamilyParam.value}';which type ends with;dont le type se termine par
+Repository;relationship;account;Repository/Account.recordUid IS NOT NULL;containing accounts;contenant des comptes
+Repository;relationship;group;Repository/Group.recordUid IS NOT NULL;containing groups;contenant des groupes
+Repository;relationship;application;Repository/Application.recordUid IS NOT NULL;containing applications;contenant des applications
+Repository;relationship;identity;Repository/Identity.recordUid IS NOT NULL;containing identities;contenant des identités
+Repository;relationship;managers;Repository/Manager/Identity.recordUid IS NOT NULL;managed by identities;gérés par des identités
+Repository;relationship;controldiscrepancy;Repository/ControlDiscrepancy.recordUid IS NOT NULL;being in discrepancy;qui sont en écart
+Manager;predicate;eqIndirect;Manager.indirect = '1';which are indirect (N+x);indirects (N+x)
+Manager;predicate;neIndirect;Manager.indirect = '0';which are direct (N+1);directs (N+1)
+Manager;predicate;eqDelegation;(Manager.delegation = '1') or (Manager.delegation IS NULL);which are delegations;qui sont des délégations
+Manager;predicate;neDelegation;Manager.delegation = '0';which are not delegations;qui ne sont pas des délégations
+Manager;predicate;eqComment;Manager.comment = '{commentParam.value}';which description is equal to;dont la description est égal à
+Manager;predicate;inComment;Manager.comment IN '{commentParam.value}';which description is in;dont la description est dans
+Manager;predicate;likeComment;Manager.comment LIKE '{commentParam.value}';which description contains;dont la description contient
+Manager;predicate;eqDelegationReason;Manager.delegationReason = '{delegationReasonParam.value}';which delegation reason is equal to;dont la raison de délégation est égal à
+Manager;predicate;inDelegationReason;Manager.delegationReason IN '{delegationReasonParam.value}';which delegation reason is in;dont la raison de délégation est dans
+Manager;predicate;likeDelegationReason;Manager.delegationReason LIKE '{delegationReasonParam.value}';which delegation reason contains;dont la raison de délégation contient
+ControlLogV2;predicate;eqControlCode;ControlLogV2.controlCode = '{controlCodeParam.value}';which code is equal to;dont le code est égal à
+ControlLogV2;predicate;neControlCode;(ControlLogV2.controlCode != '{controlCodeParam.value}') or (ControlLogV2.controlCode IS NULL);which code is not equal to;dont le code n'est pas égal à
+ControlLogV2;predicate;inControlCode;ControlLogV2.controlCode IN '{controlCodeParam.value}';which code is in;dont le code est dans
+ControlLogV2;predicate;likeControlCode;ControlLogV2.controlCode LIKE '{controlCodeParam.value}';which code contains;dont le code contient
+ControlLogV2;predicate;startControlCode;ControlLogV2.controlCode LIKE '{controlCodeParam.value}%';which code starts with;dont le code démarre par
+ControlLogV2;predicate;endControlCode;ControlLogV2.controlCode LIKE '%{controlCodeParam.value}';which code ends with;dont le code se termine par
+ControlLogV2;predicate;eqControlName;ControlLogV2.controlName = '{controlNameParam.value}';which name is equal to;dont le nom est égal à
+ControlLogV2;predicate;neControlName;(ControlLogV2.controlName != '{controlNameParam.value}') or (ControlLogV2.controlName IS NULL);which name is not equal to;dont le nom n'est pas égal à
+ControlLogV2;predicate;inControlName;ControlLogV2.controlName IN '{controlNameParam.value}';which name is in;dont le nom est dans
+ControlLogV2;predicate;likeControlName;ControlLogV2.controlName LIKE '{controlNameParam.value}';which name contains;dont le nom contient
+ControlLogV2;predicate;startControlName;ControlLogV2.controlName LIKE '{controlNameParam.value}%';which name starts with;dont le nom démarre par
+ControlLogV2;predicate;endControlName;ControlLogV2.controlName LIKE '%{controlNameParam.value}';which name ends with;dont le nom se termine par
+ControlLogV2;predicate;eqControlDisplayName;ControlLogV2.controlDisplayName = '{controlDisplayNameParam.value}';which display name is equal to;dont le nom d'affichage est égal à
+ControlLogV2;predicate;neControlDisplayName;(ControlLogV2.controlDisplayName != '{controlDisplayNameParam.value}') or (ControlLogV2.controlDisplayName IS NULL);which display name is not equal to;dont le nom d'affichage n'est pas égal à
+ControlLogV2;predicate;inControlDisplayName;ControlLogV2.controlDisplayName IN '{controlDisplayNameParam.value}';which display name is in;dont le nom d'affichage est dans
+ControlLogV2;predicate;likeControlDisplayName;ControlLogV2.controlDisplayName LIKE '{controlDisplayNameParam.value}';which display name contains;dont le nom d'affichage contient
+ControlLogV2;predicate;startControlDisplayName;ControlLogV2.controlDisplayName LIKE '{controlDisplayNameParam.value}%';which display name starts with;dont le nom d'affichage démarre par
+ControlLogV2;predicate;endControlDisplayName;ControlLogV2.controlDisplayName LIKE '%{controlDisplayNameParam.value}';which display name ends with;dont le nom d'affichage se termine par
+ControlLogV2;predicate;eqControlDescription;ControlLogV2.controlDescription = '{controlDescriptionParam.value}';which description is equal to;dont la description est égal à
+ControlLogV2;predicate;neControlDescription;(ControlLogV2.controlDescription != '{controlDescriptionParam.value}') or (ControlLogV2.controlDescription IS NULL);which description is not equal to;dont la description n'est pas égal à
+ControlLogV2;predicate;inControlDescription;ControlLogV2.controlDescription IN '{controlDescriptionParam.value}';which description is in;dont la description est dans
+ControlLogV2;predicate;likeControlDescription;ControlLogV2.controlDescription LIKE '{controlDescriptionParam.value}';which description contains;dont la description contient
+ControlLogV2;predicate;startControlDescription;ControlLogV2.controlDescription LIKE '{controlDescriptionParam.value}%';which description starts with;dont la description démarre par
+ControlLogV2;predicate;endControlDescription;ControlLogV2.controlDescription LIKE '%{controlDescriptionParam.value}';which description ends with;dont la description se termine par
+ControlLogV2;predicate;eqControlNotes;ControlLogV2.controlNotes = '{controlNotesParam.value}';which notes is equal to;dont l'annotation est égal à
+ControlLogV2;predicate;neControlNotes;(ControlLogV2.controlNotes != '{controlNotesParam.value}') or (ControlLogV2.controlNotes IS NULL);which notes is not equal to;dont l'annotation n'est pas égal à
+ControlLogV2;predicate;inControlNotes;ControlLogV2.controlNotes IN '{controlNotesParam.value}';which notes is in;dont l'annotation est dans
+ControlLogV2;predicate;likeControlNotes;ControlLogV2.controlNotes LIKE '{controlNotesParam.value}';which notes contains;dont l'annotation contient
+ControlLogV2;predicate;startControlNotes;ControlLogV2.controlNotes LIKE '{controlNotesParam.value}%';which notes starts with;dont l'annotation démarre par
+ControlLogV2;predicate;endControlNotes;ControlLogV2.controlNotes LIKE '%{controlNotesParam.value}';which notes ends with;dont l'annotation se termine par
+ControlLogV2;predicate;eqRiskLevel;ControlLogV2.riskLevel = '{parseInt(riskLevelParam.value, 10)}';which risk level is equal to;dont le niveau de risque est égal à
+ControlLogV2;predicate;neRiskLevel;(ControlLogV2.riskLevel != '{parseInt(riskLevelParam.value, 10)}') or (ControlLogV2.riskLevel IS NULL);which risk level is not equal to;dont le niveau de risque n'est pas égal à
+ControlLogV2;predicate;inRiskLevel;ControlLogV2.riskLevel IN '{parseInt(riskLevelParam.value, 10)}';which risk level is in;dont le niveau de risque est dans
+ControlLogV2;predicate;ltRiskLevel;ControlLogV2.riskLevel < '{parseInt(riskLevelParam.value, 10)}';which risk level is less than;dont le niveau de risque est plus petit que
+ControlLogV2;predicate;gtRiskLevel;ControlLogV2.riskLevel > '{parseInt(riskLevelParam.value, 10)}';which risk level is greater than;dont le niveau de risque est plus grand que
+ControlLogV2;predicate;inRiskInfo;ControlLogV2.riskInfo IN '{riskInfoParam.value}';which risk info is in;dont l'information sur le risque est dans
+ControlLogV2;predicate;eqSuggestedMitigation;ControlLogV2.suggestedMitigation = '{suggestedMitigationParam.value}';which suggested mitigation is equal to;dont la résolution préconisée est égal à
+ControlLogV2;predicate;neSuggestedMitigation;(ControlLogV2.suggestedMitigation != '{suggestedMitigationParam.value}') or (ControlLogV2.suggestedMitigation IS NULL);which suggested mitigation is not equal to;dont la résolution préconisée n'est pas égal à
+ControlLogV2;predicate;inSuggestedMitigation;ControlLogV2.suggestedMitigation IN '{suggestedMitigationParam.value}';which suggested mitigation is in;dont la résolution préconisée est dans
+ControlLogV2;predicate;likeSuggestedMitigation;ControlLogV2.suggestedMitigation LIKE '{suggestedMitigationParam.value}';which suggested mitigation contains;dont la résolution préconisée contient
+ControlLogV2;predicate;startSuggestedMitigation;ControlLogV2.suggestedMitigation LIKE '{suggestedMitigationParam.value}%';which suggested mitigation starts with;dont la résolution préconisée démarre par
+ControlLogV2;predicate;endSuggestedMitigation;ControlLogV2.suggestedMitigation LIKE '%{suggestedMitigationParam.value}';which suggested mitigation ends with;dont la résolution préconisée se termine par
+ControlLogV2;predicate;eqTagScope;ControlLogV2.tagScope = '{tagScopeParam.value}';which scope tag is equal to;dont le tag périmètre est égal à
+ControlLogV2;predicate;neTagScope;(ControlLogV2.tagScope != '{tagScopeParam.value}') or (ControlLogV2.tagScope IS NULL);which scope tag is not equal to;dont le tag périmètre n'est pas égal à
+ControlLogV2;predicate;inTagScope;ControlLogV2.tagScope IN '{tagScopeParam.value}';which scope tag is in;dont le tag périmètre est dans
+ControlLogV2;predicate;likeTagScope;ControlLogV2.tagScope LIKE '{tagScopeParam.value}';which scope tag contains;dont le tag périmètre contient
+ControlLogV2;predicate;startTagScope;ControlLogV2.tagScope LIKE '{tagScopeParam.value}%';which scope tag starts with;dont le tag périmètre démarre par
+ControlLogV2;predicate;endTagScope;ControlLogV2.tagScope LIKE '%{tagScopeParam.value}';which scope tag ends with;dont le tag périmètre se termine par
+ControlLogV2;predicate;eqTagFamily;ControlLogV2.tagFamily = '{tagFamilyParam.value}';which family tag is equal to;dont le tag famille est égal à
+ControlLogV2;predicate;neTagFamily;(ControlLogV2.tagFamily != '{tagFamilyParam.value}') or (ControlLogV2.tagFamily IS NULL);which family tag is not equal to;dont le tag famille n'est pas égal à
+ControlLogV2;predicate;inTagFamily;ControlLogV2.tagFamily IN '{tagFamilyParam.value}';which family tag is in;dont le tag famille est dans
+ControlLogV2;predicate;likeTagFamily;ControlLogV2.tagFamily LIKE '{tagFamilyParam.value}';which family tag contains;dont le tag famille contient
+ControlLogV2;predicate;startTagFamily;ControlLogV2.tagFamily LIKE '{tagFamilyParam.value}%';which family tag starts with;dont le tag famille démarre par
+ControlLogV2;predicate;endTagFamily;ControlLogV2.tagFamily LIKE '%{tagFamilyParam.value}';which family tag ends with;dont le tag famille se termine par
+ControlLogV2;predicate;eqTagApplication;ControlLogV2.tagApplication = '{tagApplicationParam.value}';which application tag is equal to;dont le tag application est égal à
+ControlLogV2;predicate;neTagApplication;(ControlLogV2.tagApplication != '{tagApplicationParam.value}') or (ControlLogV2.tagApplication IS NULL);which application tag is not equal to;dont le tag application n'est pas égal à
+ControlLogV2;predicate;inTagApplication;ControlLogV2.tagApplication IN '{tagApplicationParam.value}';which application tag is in;dont le tag application est dans
+ControlLogV2;predicate;likeTagApplication;ControlLogV2.tagApplication LIKE '{tagApplicationParam.value}';which application tag contains;dont le tag application contient
+ControlLogV2;predicate;startTagApplication;ControlLogV2.tagApplication LIKE '{tagApplicationParam.value}%';which application tag starts with;dont le tag application démarre par
+ControlLogV2;predicate;endTagApplication;ControlLogV2.tagApplication LIKE '%{tagApplicationParam.value}';which application tag ends with;dont le tag application se termine par
+ControlLogV2;predicate;eqTagPermission;ControlLogV2.tagPermission = '{tagPermissionParam.value}';which permission tag is equal to;dont le tag permission est égal à
+ControlLogV2;predicate;neTagPermission;(ControlLogV2.tagPermission != '{tagPermissionParam.value}') or (ControlLogV2.tagPermission IS NULL);which permission tag is not equal to;dont le tag permission n'est pas égal à
+ControlLogV2;predicate;inTagPermission;ControlLogV2.tagPermission IN '{tagPermissionParam.value}';which permission tag is in;dont le tag permission est dans
+ControlLogV2;predicate;likeTagPermission;ControlLogV2.tagPermission LIKE '{tagPermissionParam.value}';which permission tag contains;dont le tag permission contient
+ControlLogV2;predicate;startTagPermission;ControlLogV2.tagPermission LIKE '{tagPermissionParam.value}%';which permission tag starts with;dont le tag permission démarre par
+ControlLogV2;predicate;endTagPermission;ControlLogV2.tagPermission LIKE '%{tagPermissionParam.value}';which permission tag ends with;dont le tag permission se termine par
+ControlDiscrepancy;relationship;controllog;ControlDiscrepancy/ControlLog.recordUid IS NOT NULL;of controls;des contrôles
+ControlDiscrepancy;relationship;account;ControlDiscrepancy/Account.recordUid IS NOT NULL;for accounts;pour les comptes
+ControlDiscrepancy;relationship;group;ControlDiscrepancy/Group.recordUid IS NOT NULL;for groups;pour les groupes
+ControlDiscrepancy;relationship;application;ControlDiscrepancy/Application.recordUid IS NOT NULL;for applications;pour les applications
+ControlDiscrepancy;relationship;asset;ControlDiscrepancy/Asset.recordUid IS NOT NULL;for assets;pour les actifs
+ControlDiscrepancy;relationship;identity;ControlDiscrepancy/Identity.recordUid IS NOT NULL;for identities;pour les identités
+ControlDiscrepancy;relationship;organisation;ControlDiscrepancy/Organisation.recordUid IS NOT NULL;for organisations;pour les organisations
+ControlDiscrepancy;relationship;permission;ControlDiscrepancy/Permission.recordUid IS NOT NULL;for permissions;pour les permissions
+ApplicationInfo;predicate;eqCategory;ApplicationInfo.category = '{categoryParam.value}';which category is equal to;dont la catégorie est égal à
+ApplicationInfo;predicate;neCategory;(ApplicationInfo.category != '{categoryParam.value}') or (ApplicationInfo.category IS NULL);which category is not equal to;dont la catégorie n'est pas égal à
+ApplicationInfo;predicate;inCategory;ApplicationInfo.category IN '{categoryParam.value}';which category is in;dont la catégorie est dans
+ApplicationInfo;predicate;likeCategory;ApplicationInfo.category LIKE '{categoryParam.value}';which category contains;dont la catégorie contient
+ApplicationInfo;predicate;startCategory;ApplicationInfo.category LIKE '{categoryParam.value}%';which category starts with;dont la catégorie démarre par
+ApplicationInfo;predicate;endCategory;ApplicationInfo.category LIKE '%{categoryParam.value}';which category ends with;dont la catégorie se termine par
+ApplicationInfo;predicate;eqDescription;ApplicationInfo.description = '{descriptionParam.value}';which description is equal to;dont la description est égal à
+ApplicationInfo;predicate;neDescription;(ApplicationInfo.description != '{descriptionParam.value}') or (ApplicationInfo.description IS NULL);which description is not equal to;dont la description n'est pas égal à
+ApplicationInfo;predicate;inDescription;ApplicationInfo.description IN '{descriptionParam.value}';which description is in;dont la description est dans
+ApplicationInfo;predicate;likeDescription;ApplicationInfo.description LIKE '{descriptionParam.value}';which description contains;dont la description contient
+ApplicationInfo;predicate;startDescription;ApplicationInfo.description LIKE '{descriptionParam.value}%';which description starts with;dont la description démarre par
+ApplicationInfo;predicate;endDescription;ApplicationInfo.description LIKE '%{descriptionParam.value}';which description ends with;dont la description se termine par
+ApplicationInfo;predicate;eqSensitivityLevel;ApplicationInfo.sensitivityLevel = '{sensitivityLevelParam.value}';which sensitivity level is equal to;dont le niveau de sensibilité est égal à
+ApplicationInfo;predicate;neSensitivityLevel;(ApplicationInfo.sensitivityLevel != '{sensitivityLevelParam.value}') or (ApplicationInfo.sensitivityLevel IS NULL);which sensitivity level is not equal to;dont le niveau de sensibilité n'est pas égal à
+ApplicationInfo;predicate;inSensitivityLevel;ApplicationInfo.sensitivityLevel IN '{sensitivityLevelParam.value}';which sensitivity level is in;dont le niveau de sensibilité est dans
+ApplicationInfo;predicate;likeSensitivityLevel;ApplicationInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}';which sensitivity level contains;dont le niveau de sensibilité contient
+ApplicationInfo;predicate;startSensitivityLevel;ApplicationInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}%';which sensitivity level starts with;dont le niveau de sensibilité démarre par
+ApplicationInfo;predicate;endSensitivityLevel;ApplicationInfo.sensitivityLevel LIKE '%{sensitivityLevelParam.value}';which sensitivity level ends with;dont le niveau de sensibilité se termine par
+ApplicationInfo;predicate;eqSensitivityReason;ApplicationInfo.sensitivityReason = '{sensitivityReasonParam.value}';which sensitivity detail is equal to;dont le détail de la sensibilité est égal à
+ApplicationInfo;predicate;neSensitivityReason;(ApplicationInfo.sensitivityReason != '{sensitivityReasonParam.value}') or (ApplicationInfo.sensitivityReason IS NULL);which sensitivity detail is not equal to;dont le détail de la sensibilité n'est pas égal à
+ApplicationInfo;predicate;inSensitivityReason;ApplicationInfo.sensitivityReason IN '{sensitivityReasonParam.value}';which sensitivity detail is in;dont le détail de la sensibilité est dans
+ApplicationInfo;predicate;likeSensitivityReason;ApplicationInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}';which sensitivity detail contains;dont le détail de la sensibilité contient
+ApplicationInfo;predicate;startSensitivityReason;ApplicationInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}%';which sensitivity detail starts with;dont le détail de la sensibilité démarre par
+ApplicationInfo;predicate;endSensitivityReason;ApplicationInfo.sensitivityReason LIKE '%{sensitivityReasonParam.value}';which sensitivity detail ends with;dont le détail de la sensibilité se termine par
+PermissionInfo;predicate;eqManaged;PermissionInfo.managed = '{managedParam.value}';which managed state is equal to;dont le statut de gestion est égal à
+PermissionInfo;predicate;neManaged;(PermissionInfo.managed != '{managedParam.value}') or (PermissionInfo.managed IS NULL);which managed state is not equal to;dont le statut de gestion n'est pas égal à
+PermissionInfo;predicate;inManaged;PermissionInfo.managed IN '{managedParam.value}';which managed state is in;dont le statut de gestion est dans
+PermissionInfo;predicate;likeManaged;PermissionInfo.managed LIKE '{managedParam.value}';which managed state contains;dont le statut de gestion contient
+PermissionInfo;predicate;startManaged;PermissionInfo.managed LIKE '{managedParam.value}%';which managed state starts with;dont le statut de gestion démarre par
+PermissionInfo;predicate;endManaged;PermissionInfo.managed LIKE '%{managedParam.value}';which managed state ends with;dont le statut de gestion se termine par
+PermissionInfo;predicate;eqDescription;PermissionInfo.description = '{descriptionParam.value}';which description is equal to;dont la description est égal à
+PermissionInfo;predicate;neDescription;(PermissionInfo.description != '{descriptionParam.value}') or (PermissionInfo.description IS NULL);which description is not equal to;dont la description n'est pas égal à
+PermissionInfo;predicate;inDescription;PermissionInfo.description IN '{descriptionParam.value}';which description is in;dont la description est dans
+PermissionInfo;predicate;likeDescription;PermissionInfo.description LIKE '{descriptionParam.value}';which description contains;dont la description contient
+PermissionInfo;predicate;startDescription;PermissionInfo.description LIKE '{descriptionParam.value}%';which description starts with;dont la description démarre par
+PermissionInfo;predicate;endDescription;PermissionInfo.description LIKE '%{descriptionParam.value}';which description ends with;dont la description se termine par
+PermissionInfo;predicate;eqSensitivityLevel;PermissionInfo.sensitivityLevel = '{sensitivityLevelParam.value}';which sensitivity level is equal to;dont le niveau de sensibilité est égal à
+PermissionInfo;predicate;neSensitivityLevel;(PermissionInfo.sensitivityLevel != '{sensitivityLevelParam.value}') or (PermissionInfo.sensitivityLevel IS NULL);which sensitivity level is not equal to;dont le niveau de sensibilité n'est pas égal à
+PermissionInfo;predicate;inSensitivityLevel;PermissionInfo.sensitivityLevel IN '{sensitivityLevelParam.value}';which sensitivity level is in;dont le niveau de sensibilité est dans
+PermissionInfo;predicate;likeSensitivityLevel;PermissionInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}';which sensitivity level contains;dont le niveau de sensibilité contient
+PermissionInfo;predicate;startSensitivityLevel;PermissionInfo.sensitivityLevel LIKE '{sensitivityLevelParam.value}%';which sensitivity level starts with;dont le niveau de sensibilité démarre par
+PermissionInfo;predicate;endSensitivityLevel;PermissionInfo.sensitivityLevel LIKE '%{sensitivityLevelParam.value}';which sensitivity level ends with;dont le niveau de sensibilité se termine par
+PermissionInfo;predicate;eqSensitivityReason;PermissionInfo.sensitivityReason = '{sensitivityReasonParam.value}';which sensitivity detail is equal to;dont le détail de la sensibilité est égal à
+PermissionInfo;predicate;neSensitivityReason;(PermissionInfo.sensitivityReason != '{sensitivityReasonParam.value}') or (PermissionInfo.sensitivityReason IS NULL);which sensitivity detail is not equal to;dont le détail de la sensibilité n'est pas égal à
+PermissionInfo;predicate;inSensitivityReason;PermissionInfo.sensitivityReason IN '{sensitivityReasonParam.value}';which sensitivity detail is in;dont le détail de la sensibilité est dans
+PermissionInfo;predicate;likeSensitivityReason;PermissionInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}';which sensitivity detail contains;dont le détail de la sensibilité contient
+PermissionInfo;predicate;startSensitivityReason;PermissionInfo.sensitivityReason LIKE '{sensitivityReasonParam.value}%';which sensitivity detail starts with;dont le détail de la sensibilité démarre par
+PermissionInfo;predicate;endSensitivityReason;PermissionInfo.sensitivityReason LIKE '%{sensitivityReasonParam.value}';which sensitivity detail ends with;dont le détail de la sensibilité se termine par
