@@ -17,17 +17,24 @@ description: Download all iGRCanalytics information
 
 > [note!] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
-## Version Descartes R5 SP5
+## Version Descartes R5 SP6
 
-We are pleased to announce the release of the latest version of the product: **Descartes R5 SP5**
+We are pleased to announce the release of the latest version of the product: **Descartes R5 SP6**
 
-This includes a fix to the report of managers set manually in the portal.  
+This includes among others:
+
+- Improvements in React code base to leverage the "attached to timeslot" feature in IAP reviews. This requires the installation or upgrade to version 3.3 of IAP.  
+
+- Bug fixes, including:
+  - On table checkbox performances
+  - Report of manually set managers
+  - Crosstab display
 
 Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.  
 
-Please navigate to the following link to download the latest version of the product: Descartes:
+Please navigate to the following link to download the latest version of the product:
 
-- [**Download Descartes R5 SP5**](https://radiantlogicinc246.sharefile.com/d-sd12e8a7044644fb583615ecf0c92ebe3)
+- [**Download Descartes R5 SP6**](https://radiantlogicinc246.sharefile.com/d-s81602689e3424bf182a0104a3b0dd7a3)
 
 > [note!] You will need to create an account to access the files (see [here](https://radiantlogicinc246.sharefile.com/i/i1bc2de34c6e42bba)). There is not an FTP site to access these files. If your organization does not allow access to Sharefile, please reach out to the Radiant Logic support team and provide an organizationally approved location where we can upload the relevant files.
 

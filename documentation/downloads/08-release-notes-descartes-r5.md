@@ -5,6 +5,21 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP6
+
+### Bug fixes
+
+- **IGRC-4839:** Fix datetime widget bug in Pages DateTime, parameters and picker
+- **IGRC-4840:** Mashup parameters does not crash anymore
+- **IGRC-4842:** Manually set managers are not reported from timeslot to timeslot IF there is not manager policy in the project
+- **BWIPUAR-2205:** pass current timeslot to workflow in react
+- **BWIPUAR-2231:** fix dashboard edit button disappears when cancelling project dashboard edition
+- **BWIPUAR-2232:** fix crosstab css conflicting with `primeflex.css`
+- **BWIPUAR-2256:** sticky timeslot: add sticktimeslot property to Page tag
+- **BWIPUAR-2269:** Avoid the purge of a timeslot if used by a attached to timeslot review
+- **BWIPUAR-2301:** clicking on checkbox is slow in large dataset tables
+- **COL-1669:** BusinessViews' timeslot param incorrectly causes the view to run on the latest timeslot
+
 ## Version Descartes R5 SP5
 
 ### Bug fixes
