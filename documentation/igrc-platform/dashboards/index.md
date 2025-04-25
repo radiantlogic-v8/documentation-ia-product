@@ -15,6 +15,11 @@ This documentation is intended for the following personas:
 - _Technical consultants_ that have access to the iGRC platform to perform technical tasks such as installing components, creating or modifying views and rules, managing roles...
 - _Platform Administrators_: administrators of the iGRC platform or users with the **igrc_administrator** role.
 
+#### Roles
+
+- Developer: Users with developer role are responsible for the technical implementation of the mashup dashboards, and can store these mashup dashboards into the git project as files. This role cannot be used when IDA is deployed in a SaaS EOC environment.
+- Designer: The designer role can implement mashup dashboards and store them in the database, but cannot save them as files in the project. Also he cannot edit and modify dashboards that are already saved in the project. By default, the `technicaladmin` and `functionaladmin` roles includes the same features as the designer role but not the developer role.
+
 ### Identity Analytics Context
 
 As of 2017, a new functionality has been implemented that allows functional users to design their own dashboards directly from the web portal and share them with selected users.

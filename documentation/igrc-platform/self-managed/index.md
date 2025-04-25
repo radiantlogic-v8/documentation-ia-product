@@ -9,9 +9,10 @@ You can deploy self-managed Identity Analytics on Amazon EKS, Azure Kubernetes S
 The table below shows the Helm chart versions to install for each Identity analytics release:
 
 | Release | `IDA_HELM` chart version | `IDA_SHARED_HELM` chart version |
-| :------ | :----------------------: | :----------------------------: |
-| 3.2     |          3.2.0           |             3.1.1              |
-| 3.1     |          3.1.0           |             3.1.0              |
+| :------ | :----------------------: | :-----------------------------: |
+| 3.3     |          3.3.0           |              3.1.2              |
+| 3.2     |          3.2.0           |              3.1.1              |
+| 3.1     |          3.1.0           |              3.1.0              |
 
 Ensure that you specify your target version when running installation and update commands that are listed in this document.  
 
@@ -30,7 +31,7 @@ The following diagram illustrates a typical deployment, showcasing the Shared Se
 
 ## Prerequisites
 
-- [Kubernetes cluster](https://kubernetes.io/docs/setup/) of version **1.27** or higher. 
+- [Kubernetes cluster](https://kubernetes.io/docs/setup/) of version **1.27** or higher.
 - Install [Helm](https://helm.sh/) version **3.0** or higher.
 - Install [kubectl](https://kubernetes.io/docs/reference/kubectl/) version **1.27** or higher and configure it to access your Kubernetes cluster.
 - An Identity Data Analytics license key, which will be provided to you during onboarding.
@@ -79,10 +80,17 @@ helm upgrade --install cnpg \
   cnpg/cloudnative-pg \
   --namespace cnpg-system \
   --create-namespace \
-  --version 0.21.5 \
+  --version <version> \
   --wait \
   --values cnpg-custom-values.yaml
 ```
+
+Please update the version of the operator to install according to the parameters in the table below
+
+| CNPG Chart version | Postgres Version | status      |
+| :----------------- | :--------------- | :---------- |
+| 0.23.2             | postgres 17.4    | recommended |
+| 0.21.5             | postgres 16.3    |             |
 
 5. **Verify Pod Health**:
 
@@ -463,6 +471,23 @@ helm upgrade --install rlss \
   --version <SHARED_CHART_VERSION> \
   --values shared-minimal.values.yaml
 ```
+
+> [!warning] when upgrading the shared service is can be required to perform additional actions BEFORE performing the `helm upgrade --install` command above:  
+>
+> ```sh
+> kubectl scale deploy --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> kubectl delete deploy --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> 
+> kubectl scale sts --replicas 0 --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> kubectl delete sts --namespace ${SHARED_NAMESPACE} --selector "app.kubernetes.io/instance=${SHARED_RELEASE_NAME}"
+> ```
+>
+> where:
+>
+> - `${SHARED_NAMESPACE}`: is the name of the namespace where the shared service are installed
+> - `${SHARED_RELEASE_NAME}`: is the name of the helm release used for shared services. _e.g._ rlss in the helm command above
+>
+> These commands are required when migrating from 3.0.0 3.1.0 and 3.1.1
 
 ```bash
 helm upgrade --install rlia \
