@@ -17,11 +17,11 @@ description: Download all iGRCanalytics information
 
 > [!note] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
-## Version Descartes R5 SP8
+## Version Descartes R6
 
-We are pleased to announce the release of the latest version of the product: **Descartes R5 SP8**
+We are pleased to announce the release of the latest version of the product: **Descartes R6**
 
-Please see the [release notes](./08-release-notes-descartes-r5.md) for the full list of changes.
+Please see the [release notes](./08-release-notes-descartes-r6.md) for the full list of changes.
 
 Please navigate to the following link to download the latest version of the product:
 
