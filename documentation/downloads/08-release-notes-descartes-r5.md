@@ -9,8 +9,8 @@ description: Descartes R5 Release Notes
 
 ### Bug fixes
 
-- **COL-1722** The incoming request contains too many parameters error during purge
-- **BWIPUAR-2765** Performance issue on IAS review pages due to missing timeslot filter in aggregated rights
+- **COL-1722** Fixed an issue where purge requests failed with a “too many parameters” error.
+- **BWIPUAR-2765** Fixed a performance issue on IAS review pages by improving the missing timeslot filter to aggregated rights.
 
 ## Version Descartes R5 SP8
 
