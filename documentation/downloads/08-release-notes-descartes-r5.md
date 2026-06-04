@@ -5,6 +5,13 @@ description: Descartes R5 Release Notes
 
 # Release Notes Descartes R5
 
+## Version Descartes R5 SP9
+
+### Bug fixes
+
+- **COL-1722** Fixed an issue where purge requests failed with a “too many parameters” error.
+- **BWIPUAR-2765** Fixed a performance issue on IAS review pages by improving the missing timeslot filter to aggregated rights.
+
 ## Version Descartes R5 SP8
 
 ### Bug fixes
