@@ -16,7 +16,7 @@
 
 #### Status
 
-**Not Applicable - We Are Not Concerned**
+**Not Applicable**
 
 Although this vulnerability is marked as High severity by JFrog, it does not apply to Identity Analytics. Identity Analytics does not use the Spring Security features concerned by this vulnerability.
 
@@ -48,7 +48,7 @@ This vulnerability is not a concern for the following reasons:
 
 #### Status
 
-**Not Applicable - We Are Not Concerned**
+**Not Applicable**
 
 Identity Analytics does not expose any Spring MVC controllers to serve static resources and runs on Apache Tomcat with default security features enabled, which Spring has explicitly confirmed is not vulnerable under this CVE.
 
@@ -76,7 +76,7 @@ The exploit preconditions (Spring MVC static resource handling on a noncompliant
 
 #### Status
 
-**Not Applicable - We Are Not Concerned**
+**Not Applicable**
 
 CVE-2026-0603 describes a second-order SQL injection in Hibernate when the InlineIdsOrClauseBuilder path is used to inline unsanitized ID values into SQL OR predicates for bulk UPDATE/DELETE operations.
 
@@ -106,7 +106,7 @@ The specific code path (InlineIdsOrClauseBuilder for bulk ID clauses) is not use
 
 #### Status
 
-**Not Applicable - We Are Not Concerned**
+**Not Applicable**
 
 Rhino is an open-source implementation of JavaScript written entirely in Java. It is typically embedded into Java applications to provide scripting to end users. Affected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling via the `toFixed` function. An attacker can cause excessive CPU consumption and disrupt service availability by passing specially crafted floating-point numbers.
 
