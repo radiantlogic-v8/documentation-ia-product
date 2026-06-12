@@ -18,11 +18,11 @@ The end-user can then select an organization from a list of known organization t
 A dashboard can have two kinds of parameters
 
 - **User editable parameters** : These are the regular parameters. the value of these parameters can be changed by the end-user. These parameters can affect dashboard component data and titles.
-- **Hidden parameters** : The value of these parameters must be set at design time only. The parameter value can also be part of the dashboard title. Hidden parameters are mostly useful with **Dashboard Templates**. (see section below).  
+- **Hidden parameters** : The value of these parameters must be set at design time only. The parameter value can also be part of the dashboard title. Hidden parameters are mostly useful with **Dashboard Templates**. (see section below).
 
 ### User Editable Parameters
 
-**User editable parameters**   are the common type of dashboard parameters.
+**User editable parameters** are the common type of dashboard parameters.
 They are defined by the designer and their values can be changed by the end-user through the dashboard parameter panel.
 The value of each parameter can be used to modify dashboard components data and/or title.
 
@@ -46,7 +46,7 @@ Hidden parameters have the same behavior as regular parameters, with the followi
 
 ### Create a Dashboard Parameter
 
-Dashboard parameters are managed via the **Parameters** tab of the dashboard's configuration wizard.  
+Dashboard parameters are managed via the **Parameters** tab of the dashboard's configuration wizard.
 
 ![Managing dashboard parameters](./images/params_02.png "Managing dashboard parameters")
 
@@ -59,15 +59,15 @@ The designer can do the following:
 
 To create a new parameter
 
-- Click **Create New**... to display the parameter creation dialog box  
+- Click **Create New**... to display the parameter creation dialog box
 
 ![Creating a parameter](./images/dashparam0.png "Creating a parameter")
 
-- Type in **Name**  a unique name for the parameter. This name is used to identify the parameter in component titles.  
-Use a meaningful but short name , such as **org**. Don't use anonymous names such as param1. Parameters names should not contain space.  
+- Type in **Name** a unique name for the parameter. This name is used to identify the parameter in component titles.  
+  Use a meaningful but short name , such as **org**. Don't use anonymous names such as param1. Parameters names should not contain space.
 - Type in **Label** a label for the parameter. This label will be displayed a title for the parameter in the dashboard's parameter panel.
 - Optionally type in **Help text** a text describing the purpose of the parameter. this text will show as a tooltip for the parameter in the dashboard's parameter panel.
-- Check **Editable by end-user**  for regular user editable parameters and uncheck for hidden parameter
+- Check **Editable by end-user** for regular user editable parameters and uncheck for hidden parameter
 - Select a user interface type for editing the parameter:
   - **Text box** : the parameter value will be typed in a text box
     - Optionally type in **Default Value** a default value for the parameter.
@@ -79,26 +79,26 @@ Use a meaningful but short name , such as **org**. Don't use anonymous names suc
 For **Dynamic values** menus:
 
 - Select the **Source View** that will provide items for the parameter menu.  
-The view must have " **Allow selection of the view in the portal**" option to be listed as a source view.  
+  The view must have " **Allow selection of the view in the portal**" option to be listed as a source view.
 - If the view has parameters, click **Params...** to edit the parameters of the view.
 
 - Select in **Value column** a column from the selected view that will provide the value of the parameter.
-This value will usually be used to modify data in the dashboard, It could be for exemple an organization permanent UID or code.
-- Select in **Label column**  a column from the selected view that will provide the label of the parameter value to be displayed in the parameter panel.
-The parameter label can also be included component titles.
+  This value will usually be used to modify data in the dashboard, It could be for exemple an organization permanent UID or code.
+- Select in **Label column** a column from the selected view that will provide the label of the parameter value to be displayed in the parameter panel.
+  The parameter label can also be included component titles.
 - Check the **Allow empty value** option to allow a null value to be selected for this parameter.
-    You can type an optional label for this empty value, for example "_All Organisations_". The actual meaning and behavior for this null value is up to you.
-    If this option is not checked, the first value in the list is automatically selected in the displayed mashup dashboard parameter panel.
-- Optionally , select a **Default value** for the parameter, to be used when the dashboard is displayed for the first time.  
+  You can type an optional label for this empty value, for example "_All Organisations_". The actual meaning and behavior for this null value is up to you.
+  If this option is not checked, the first value in the list is automatically selected in the displayed mashup dashboard parameter panel.
+- Optionally , select a **Default value** for the parameter, to be used when the dashboard is displayed for the first time.
 
 ![Dynamic values](./images/dash_param1.png "Dynamic values")
 
 > It's recommanded to use dedicated views to provide values for parameter menus, with only the columns that are used for values and labels.
-This is to ensure optimal performance when displaying the dashboard parameter panel with large datasets (_e.g._ listing accounts).  
-Don't use general purpose views with dozens of columns.
+> This is to ensure optimal performance when displaying the dashboard parameter panel with large datasets (_e.g._ listing accounts).  
+> Don't use general purpose views with dozens of columns.
 >
 > Whenever possible, you should use permanent, timeslot-independant, and environment independant key attributes as value columns for parameters, to ensure maximum portability of the dashboard across timeslots and environments.
-This is especially important for hidden parameters and for parameter default values, because the value is stored with the dashboard and must be valid across timeslots and across environements (UAT, Production).
+> This is especially important for hidden parameters and for parameter default values, because the value is stored with the dashboard and must be valid across timeslots and across environements (UAT, Production).
 
 For **static values** menus:
 
@@ -106,7 +106,7 @@ For **static values** menus:
   - The label will be displayed in the UI dashboard parameter panel and in component titles.
   - The value will be passed as parameters to dashboard data.
 - You can **Create** , **Edit** , **Delete** or **Delete All** menu items
-- Optionally , select a **Default value**  for the parameter, to be used when the dashboard is displayed for the first time.
+- Optionally , select a **Default value** for the parameter, to be used when the dashboard is displayed for the first time.
 
 ![Static values](./images/params_04.png "Static values")
 
@@ -122,10 +122,10 @@ To modify a dashboard component data based on the value of a parameter, do the f
   - define the search criteria
   - when select a value for a given criterion, check the **Dashboard parameter** option, the value menu will now display the list of dashboard parameters
     - select the dashboard parameter to use
-    ![ Using parameters in dashboard search ](./images/dashboard_search_param.png  "Using parameters in dashboard search")
+      ![ Using parameters in dashboard search ](./images/dashboard_search_param.png "Using parameters in dashboard search")
 
 - In advanced rule mode:
-  - Make sure that search **rule**  has at least a parameter
+  - Make sure that search **rule** has at least a parameter
   - Click the **Parameters** button to configure the rule parameters
   - For the rule parameter that should use the dashboard parameter, select **Dashboard Parameter** as the source
   - Select the dashboard parameter to use from the parameter list ( the parameter's label and name are displayed is the list)
@@ -137,22 +137,22 @@ You can also use dashboard parameters in a table or chart component to filter se
 To include a dashboard parameter's label in a dashboard's component title, do the following:
 
 - Open the component's **Configuration** wizard
-- Select the **Basic** tab  of the component's configuration
+- Select the **Basic** tab of the component's configuration
 - Click In the **Title** text box, and move the insertion bar where the parameter label should be placed inside the title
 - Select a parameter from the **Insert Variable** list (both user-editable and hidden parameters are listed) ; the parameter will be inserted as **{param.xxxx}** token.
-- You could also directly type the parameter token in the title box  
+- You could also directly type the parameter token in the title box
 
 ![Dashboard Parameter 2](./images/params_06.png "Dashboard Parameter 2")
 
 To include a hidden parameter label in a dashboard's title, do the following:
 
 - Open the dashboard's **Configuration** wizard
-- Select the **General**  tab  
-- Click In the **Title**  text box, and move the insertion bar where the hidden parameter label should be placed inside the title
-- Select a parameter from the **Insert Variable**  list (only hidden parameters are listed) ; the parameter will be inserted in the title as **{param.xxxx}** token.
+- Select the **General** tab
+- Click In the **Title** text box, and move the insertion bar where the hidden parameter label should be placed inside the title
+- Select a parameter from the **Insert Variable** list (only hidden parameters are listed) ; the parameter will be inserted in the title as **{param.xxxx}** token.
 - The actual value of the hidden parameter can be set in the **Instance** tab (see. § Dashboard Template section)
 - Click **Finish** to validate your configuration
-- Notice how the dashboard title (and the corresponding menu entry) have changed.  
+- Notice how the dashboard title (and the corresponding menu entry) have changed.
 
 ![Dashboard Parameter 3](./images/params_07.png "Dashboard Parameter 3")
 
@@ -170,9 +170,9 @@ To define cascading parameters, do the following:
 - Define the child parameter, for example `perm (Permission)`
   - select **Dynamic values** for the source
   - select the **Source View** which must accept a parameter that points to the parent parameter selection value (_e.g._ application permanent identifier).
-  If the view does not exist, create it and refresh the list of views using the refresh icon.
+    If the view does not exist, create it and refresh the list of views using the refresh icon.
   - click the **Params** button, select the parameter of the view and set its source to **Dashboard param.**
-  - select the parent parameter (in this case,  `Application {param.app}` ) from the value list.
+  - select the parent parameter (in this case, `Application {param.app}` ) from the value list.
 
 ![Cascading parameter  ](./images/cascading_param_cfg.png "Cascading parameter")
 
@@ -182,7 +182,7 @@ This is how the dashboard parameter panel will look like:
 
 ## Dashboard Templates
 
-The main purpose of **Dashboard Templates**  is to streamline the creation of similar dashboard that only differ from their scopes.
+The main purpose of **Dashboard Templates** is to streamline the creation of similar dashboard that only differ from their scopes.
 
 Consider the above example, where there are many account respositories, one per area, each being managed by a different team. The managers all need a similar dashboard with analytics for the accounts in the repository they manage. The scope of the dashboard in the repository.
 In this case, a designer would create a **dashboard template** that display access analytics for a given repository, as a hidden parameter.
@@ -192,7 +192,7 @@ For convenience, the dashboard title could automatically include the repository 
 To create a dashboard template or to turn a dashboard into a template, do the following :
 
 - Open the dashboard's configuration wizard
-- In the **General** tab, check the **Template** option  
+- In the **General** tab, check the **Template** option
 - In the **Parameters** tab, create one or more hidden parameters, with the option "**Editable by end-users**" unchecked, which will serve as the dashboard's scope parameters.
 - In the **General** tab again, you can optionally include the parameter's labels in the dashboard title (see section **Hidden Parameters** above)
 
@@ -220,7 +220,7 @@ After creation, the new instance dashboards are independant of their template, a
 - **Component Rule with parameters** : Dashboard component (table, chart, gauge) Search Rule that may have parameters,
 - **Component View with parameters** : Dashboard component (table, chart) View that may have parameters,
 - **Dashboard Parameter Menu View with parameters** : Dashboard parameter possible values coming from a View that may have parameters,
-- **Component Link Target with parameters**  : Dashboard component (chart, table or gauge) link to another page or dashboard that may have parameters,
+- **Component Link Target with parameters** : Dashboard component (chart, table or gauge) link to another page or dashboard that may have parameters,
 
 In all these cases, you can define for each involved secondary parameter where its actual value will come from (secondary parameter **Source**), and what the actual value will be (secondary parameter **Value**).
 
@@ -234,13 +234,13 @@ There are four secondary parameter source types:
 Some source types only make sense for some secondary parameters kinds, _e.g._ Clicked Item for Table and Chart Link target parameters.
 The following table shows which source types applies to which secondary parameter kinds:
 
-| **Fixed Value** |  **Dashboard Parameter** |  **User Attribute** |  **Clicked Item Attribute** |
-|-----------------|--------------------------|---------------------|-----------------------------|
-|  **Component Rule w/ params** |  X |  X | X |  |
-|  **Component View w/ params** |  X |  X | X |  |
-|  **Dashboard Parameter Menu <br> View w/ params** |  X |  | X |  |
-|  **Gauge Link Target w/ params** |  X | X | X |  |
-|  **Table and Chart Link Target <br> w/ params** |  X | X | X | X |
+| **Fixed Value**                                  | **Dashboard Parameter** | **User Attribute** | **Clicked Item Attribute** |
+| ------------------------------------------------ | ----------------------- | ------------------ | -------------------------- | --- |
+| **Component Rule w/ params**                     | X                       | X                  | X                          |     |
+| **Component View w/ params**                     | X                       | X                  | X                          |     |
+| **Dashboard Parameter Menu <br> View w/ params** | X                       |                    | X                          |     |
+| **Gauge Link Target w/ params**                  | X                       | X                  | X                          |     |
+| **Table and Chart Link Target <br> w/ params**   | X                       | X                  | X                          | X   |
 
 ### Fixed Value Source
 
@@ -266,7 +266,7 @@ Dashboard parameters values can also be passed to other dashboard or pages throu
 To use a dashboard's parameter as a source type, do the following:
 
 - Select **Dashboard Parameter** as the **Source** in the **Parameters** configuration panel, if the choice is available
-- Select one the dashboard's parameters to use as the source. Each dashboard parameter in the list is displayed both with its label, and the syntax **{param.<param_name>}**  
+- Select one the dashboard's parameters to use as the source. Each dashboard parameter in the list is displayed both with its label, and the syntax **{param.<param_name>}**
 
 ![Dashboard Parameter Source](./images/params2_02.png "Dashboard Parameter Source")
 
@@ -278,14 +278,14 @@ This source type can be used with all secondary parameter types.
 
 To use an attribute of the current user as a source type, do the following:
 
-- Select **User**  as the **Source** in the **Parameters** configuration panel
+- Select **User** as the **Source** in the **Parameters** configuration panel
 - Select one the user's attributes from the list.
 
 ![User Attributes Source ](./images/params2_03.png "User Attributes Source ")
 
-- The proposed attributes are the columns of the **user.principal.view**  View which is configured in the project's **Configuration** > **Web Portal** > **Other Properties** section.  
-The main purpose of this view is to validate the login used to connect to Identity Analytics portal. It's also used to provide additional user-related attributes.  
-You can design a view of your own to validate the login and provide custom values to use in secondary parameters (restart the server to make them effective).
+- The proposed attributes are the columns of the **user.principal.view** View which is configured in the project's **Configuration** > **Web Portal** > **Other Properties** section.  
+  The main purpose of this view is to validate the login used to connect to Identity Analytics portal. It's also used to provide additional user-related attributes.  
+  You can design a view of your own to validate the login and provide custom values to use in secondary parameters (restart the server to make them effective).
 
 ![Other Properties](./images/params2_04.png "Other Properties ")
 
@@ -294,17 +294,17 @@ You can design a view of your own to validate the login and provide custom value
 During dashboard design, the actual values for user attributes used in secondary parameters will be those of the designer's account (which is the currently connected user at design time).  
 Fortunately, you can simulate another user account while in design mode to test your dashboard. To do so:
 
-- Select **Dashboad User Simulation...** from the dashboard's menu, to open the **Dashboard user simulation** dialog box  
+- Select **Dashboad User Simulation...** from the dashboard's menu, to open the **Dashboard user simulation** dialog box
 
 ![Simulating another user](./images/params2_05.png "Simulating another user")
 
 - Check **Simulate dashboard login** and type a valid login to simulate another user
 - or uncheck **Simulate dashboard login** to use back the designer's account
-- Click **OK** to validate the simulated account against the configured **user.principal.view**  
+- Click **OK** to validate the simulated account against the configured **user.principal.view**
 - When changing to another account, the dashboard parameter lists and content are updated to reflect the new user attributes.  
-If not, hit F5 to refresh the dashboard and take into account the new user characteristics.
+  If not, hit F5 to refresh the dashboard and take into account the new user characteristics.
 - The simulation will be effective during the designer's user session or until manually cleared. It will affect all dashboards that have secondary user paramters.  
-The dashboard title indicates whether a user simulation is active.  
+  The dashboard title indicates whether a user simulation is active.
 
 ![Manager dashboard](./images/params2_06.png "Manager dashboard")
 
@@ -318,7 +318,7 @@ This source type is only available to configure dashboard chart / table widget l
 To use an attribute of the clicked item as a source for secondary parameters, do the following:
 
 - Select **Clicked Item** as the **Source** in the **Links** configuration page **Parameter** area, for the target page or target dashboard.
-- Select one of the clicked item attributes from the **Value** list (which are the columns of the widget's View) to pass to the secondary parameter.  
+- Select one of the clicked item attributes from the **Value** list (which are the columns of the widget's View) to pass to the secondary parameter.
 
 ![Attributes Source](./images/params2_07.png "Attributes Source")
 
@@ -328,11 +328,11 @@ To use an attribute of the clicked item as a source for secondary parameters, do
 
 Links are available on all dashboard widgets:
 
-| **Widget** | **Linked item** | **Link presentation** |
-|------------|-----------------|-----------------------|
-|  Table |  any row of the table | Text of one of the row's columns is displayed as an html link ( blue underlined text). <br> ![Link table](./images/link_table.png "Link table")|
-|  Chart |  bar/section/wedge of the chart | The cursor will turn to a hand when moved over the bar item when links are enabled  <br> ![Link chart](./images/link_chart.png "Link chart")|  
-| Gauge | The gauge as a whole |   The cursor will turn to a hand when moved over the gauge when links are enabled  <br> ![Link gauge](./images/link_gauge.png "Link gauge")|  
+| **Widget** | **Linked item**                | **Link presentation**                                                                                                                           |
+| ---------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Table      | any row of the table           | Text of one of the row's columns is displayed as an html link ( blue underlined text). <br> ![Link table](./images/link_table.png "Link table") |
+| Chart      | bar/section/wedge of the chart | The cursor will turn to a hand when moved over the bar item when links are enabled <br> ![Link chart](./images/link_chart.png "Link chart")     |
+| Gauge      | The gauge as a whole           | The cursor will turn to a hand when moved over the gauge when links are enabled <br> ![Link gauge](./images/link_gauge.png "Link gauge")        |
 
 Links targets can be of four kinds:
 
@@ -349,14 +349,14 @@ Contextual information and information on the clicked item can be passed to the 
 To define a link on a widget do the following:
 
 - Check **Enable links** in the configuration wizard **Links** tab to enable the links for this widget.
-- Select from the **Link to**  menu the target link type, from four possibilities:
+- Select from the **Link to** menu the target link type, from four possibilities:
   - **Detail page** : this is the standard detail page for any given Ledger entity (such as identity, account, applicatio, group, etc...)
   - **Another page** : a custom page in the web portal, usually with parameters
   - **Another dashboard:** another dashboard, usually with parameters, that is accessible to the user.
   - **Search detail dialog box** a dialog box that displays a list of items involved in search-based gauge figure computations.
   - **External URL :** a page in another web site. Parameters are passed in the url search.
 - For **table** widgets, select from **Display link in column** , the table's column where the link should be displayed.
-Usually it will be the left-most column, but it could be any column of the table. Only one column can be displayed as a link.  
+  Usually it will be the left-most column, but it could be any column of the table. Only one column can be displayed as a link.
 
 - Select from the **Link to** menu the type of the link target , among the four possible types: Detail Page, Another page, Another Dashboard and External URL.
 - Additional link configuration will vary depending on the selected target type (see below).
@@ -365,22 +365,22 @@ Usually it will be the left-most column, but it could be any column of the table
 #### Detail Page Link
 
 - Choose from the **Selected item UID attribute** menu, the view column's value to use as the permanent identifier for the detail page.
-If the list is empty, you will need to add a permanent identifier to the widget's view.  
-The entity type to display (_e.g._ identity, account, group) will be automatically determined from the selected column.
+  If the list is empty, you will need to add a permanent identifier to the widget's view.  
+  The entity type to display (_e.g._ identity, account, group) will be automatically determined from the selected column.
 
 ![Detail page link](./images/link_detail.png "Detail page link")
 
 #### Another Page Link
 
-- Select from **Target page**  menu, the target page of the link.  
-Each item displays the pages's label and that page's tags within brackets, You can use both to filter the page you are targetting.
-Note that all pages with a **<u>tag</u>** are listed in the menu, so you have to make sure that the selected page will actually be accessible to the end user.  
+- Select from **Target page** menu, the target page of the link.  
+  Each item displays the pages's label and that page's tags within brackets, You can use both to filter the page you are targetting.
+  Note that all pages with a **<u>tag</u>** are listed in the menu, so you have to make sure that the selected page will actually be accessible to the end user.
 - If the page have parameters, you can define the value to use for each of its parameters:
   - **None** : to leave the page parameter empty. This is useful for non mandatory parameters, if the default value suits your need.
   - **Value:** to use a static predefined value for the parameter. Type the value to use in the text field.
   - **Clicked Item** : to use an attribute from the clicked row or chart part.  
-You can select any column from the view, even it is not displayed in the widget.
-Note that this choice is not available for **gauge** links, as there is no clickable sub item.
+    You can select any column from the view, even it is not displayed in the widget.
+    Note that this choice is not available for **gauge** links, as there is no clickable sub item.
   - **Dashboard parameter** : to use a global parameter from the dashboard as a contextual value for the page parameter. Select the dashboard parameter from the list.
   - **User** : to use an attribute related to the currently connected user. Select the attribute from the list.
 
@@ -389,29 +389,29 @@ Note that this choice is not available for **gauge** links, as there is no click
 #### Another Dashboard Link
 
 - Select from **Target dashboard** menu, the target dashboard of the link. Type to filter by the label of the dashboard.
-Note that all dashboards are listed in the menu, so you have to make sure that the selected dashboard will actually be accessible to the end user.
+  Note that all dashboards are listed in the menu, so you have to make sure that the selected dashboard will actually be accessible to the end user.
 - If the dashboard have parameters (either editable or hidden), you can define the value to use for each of its parameters:
   - **None** : to leave the dashboard parameter empty. This is useful for non mandatory parameters, if the default value suits your need.
-  - **Value:**  to use a static predefined value for the parameter. Type the value to use in the text field.
+  - **Value:** to use a static predefined value for the parameter. Type the value to use in the text field.
   - **Clicked Item** : to use an attribute from the clicked row or chart part.  
-You can select any column from the view, even it is not displayed in the widget.  
-Note that this choice is not available for **gauge** links, as there is no clickable sub item.
+    You can select any column from the view, even it is not displayed in the widget.  
+    Note that this choice is not available for **gauge** links, as there is no clickable sub item.
   - **Dashboard parameter** : to use a global parameter from the dashboard as a contextual value for the target dashboard parameter.
-Select the dashboard parameter from the list.
+    Select the dashboard parameter from the list.
   - **User** : to use an attribute related to the currently connected user. Select the attribute from the list.
-  ![Another Dashboard link](./images/link_dashboard_cfg.png "Another Dashboard link")
+    ![Another Dashboard link](./images/link_dashboard_cfg.png "Another Dashboard link")
 
 #### Search Detail Dialog Box
 
 New in **Curie R1**
 
-This link is only available for **gauge** widgets and only when the value aggregation function is set to `Count`. It will display the list of items involved in the search count as a table in a dialog box.  
+This link is only available for **gauge** widgets and only when the value aggregation function is set to `Count`. It will display the list of items involved in the search count as a table in a dialog box.
 
 You can further specify the columns to be displayed in the table, depending on the counted entity type (account, etc...)
 
 ![Search detail dialog box config](./images/link_dialog_cfg.png "Search detail dialog box config")
 
-When clicking the gauge figure, a dialog box appears that lists the items in the count as a table with the selected columns. In this simple case, a list of 328 orphan accounts.  
+When clicking the gauge figure, a dialog box appears that lists the items in the count as a table with the selected columns. In this simple case, a list of 328 orphan accounts.
 
 ![Search detail dialog box](./images/link_dialog.png "Search detail dialog box")
 
@@ -425,7 +425,7 @@ From this dialog box, you can:
 #### External Link
 
 - Type in **Link URL** a valid url for the link. The URL must start with http:// or https// . It can contain dynamic placeholders.
-- Select from **Insert variable**  menu a variable in the URL text. All valid variables are listed, and grouped in two categories: **Clicked Item attributes** and **Mashup parameters**. The actual variable values will be url-encoded in the url text (_e.g._ space => %20)  
+- Select from **Insert variable** menu a variable in the URL text. All valid variables are listed, and grouped in two categories: **Clicked Item attributes** and **Mashup parameters**. The actual variable values will be url-encoded in the url text (_e.g._ space => %20)
 
 ![External link](./images/link_url_cfg.png "External link")
 
@@ -436,7 +436,7 @@ Example of actual url :
 ## Configure Dashboard Rsources
 
 Dashboards **resources** are **layouts** , **chart styles** and **indicator styles**.
-Dashboard resources are defined in `.dashres`  files that are stored in the project in the `webportal/resources` directory.
+Dashboard resources are defined in `.dashres` files that are stored in the project in the `webportal/resources` directory.
 
 Two dashboard resources are provided by default:
 
@@ -449,23 +449,23 @@ This is the XML structure of the `.dashres` file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE DashboardResourceBundle PUBLIC "-//Brainwave//DTD DashboardResourceBundle 1.0//EN" "urn:brainwave:igrc:dtds/dashres.dtd"> 
+<!DOCTYPE DashboardResourceBundle PUBLIC "-//Brainwave//DTD DashboardResourceBundle 1.0//EN" "urn:brainwave:igrc:dtds/dashres.dtd">
 <DashboardResourceBundle name="default" displayname="Dashboards default resources">
     <layoutTemplates defaultId="1-1">
         <LayoutTemplate id="1-1" label="1 cols 100%" nbGridCols="1" nbCols="1" spans="1" />
         <LayoutTemplate id="2-1" label="2 cols 50/50%" nbGridCols="2" nbCols="2" spans="1 1" />
     </layoutTemplates>
-    
+
     <indicatorStyles defaultId="default">
         <IndicatorStyle id="default" label="Default blue" valueColor="#1F76C7" warningColor="#ED9748" criticalColor="#FF6C6C" roundedTip="true" thickness="3" />
-        <IndicatorStyle id="blueGrad" label="Blue gradient" valueColor="#008EA8 #006577" warningColor="#FFC268" criticalColor="#FF4C50" roundedTip="false" thickness="0" /> 
-    </indicatorStyles> 
-    
+        <IndicatorStyle id="blueGrad" label="Blue gradient" valueColor="#008EA8 #006577" warningColor="#FFC268" criticalColor="#FF4C50" roundedTip="false" thickness="0" />
+    </indicatorStyles>
+
     <chartStyles defaultId="default">
         <ChartStyle id="default" label="Blue" serieColors=" #1F76C7" />
-        <ChartStyle id="blueScale" label="Blue scale" serieColors="#175A97 #1F76C7 #2182DA #61A7E7 #AAD0F2" />       
-    </chartStyles>   
-    
+        <ChartStyle id="blueScale" label="Blue scale" serieColors="#175A97 #1F76C7 #2182DA #61A7E7 #AAD0F2" />
+    </chartStyles>
+
 </DashboardResourceBundle>
 ```
 
@@ -476,13 +476,13 @@ Each widget in the dashboard can span over a given number of columns and rows.
 
 A dashboard layout template defines the following characteristics of the layout:
 
-| attribute  | meaning |
-|------------|---------|
-| **id**  | unique identifier for the layout |
-| **label**  | the label to be displayed in the configuration wizard |
-| **nbGridCols**  | the number of columns in the underlying grid |
-| **nbCols**  | the number of visible columns, this is an information only field. you can use the same value as nbGridCols |
-| **spans**  | the default layouting sequence of successive widgets, separated by white spaces. width and height are indicated as WxH, and 1 is a shortcut for 1x1.  Additional widgets will get the layout of the last item in the sequence |
+| attribute      | meaning                                                                                                                                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**         | unique identifier for the layout                                                                                                                                                                                             |
+| **label**      | the label to be displayed in the configuration wizard                                                                                                                                                                        |
+| **nbGridCols** | the number of columns in the underlying grid                                                                                                                                                                                 |
+| **nbCols**     | the number of visible columns, this is an information only field. you can use the same value as nbGridCols                                                                                                                   |
+| **spans**      | the default layouting sequence of successive widgets, separated by white spaces. width and height are indicated as WxH, and 1 is a shortcut for 1x1. Additional widgets will get the layout of the last item in the sequence |
 
 For example, suppose you would like to define a layout template with 3 widgets on the top and a large widget at the bottom, same as below
 
@@ -490,7 +490,7 @@ For example, suppose you would like to define a layout template with 3 widgets o
 
 In this case, you need a 3-columns grid template, with three widgets of 1x1 width and height on the first row plus one large widget
 that spans 3 grid columns x 2 grid rows, on the next row.  
-This sequence will be encoded as :  `1 1 1 3x2`
+This sequence will be encoded as : `1 1 1 3x2`
 
 The final template definition will be:
 
@@ -508,20 +508,20 @@ An indicator style allows to define the look and feel of dashboard indicator wid
 
 The attributes of an indicator style are the following:
 
-| attribute  | meaning |
-|---|---|
-| **id**  | unique identifier for the style |
-| **label**  | the label to be displayed in the configuration wizard |
-| **valueColor** | the color of the indicator ring , this color can either a plain color in `#RRGGBB` notation, or a gradient color with two colors separated by a space. `#RRGGBB` `#RRGGBB`  |
-| **warningColor**  | not yet supported. |
-| **criticalColor**  | not yet supported |
-| **roundedTip**  | not yet supported |
-| **thickness**  | not yet supported |
+| attribute         | meaning                                                                                                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**            | unique identifier for the style                                                                                                                                            |
+| **label**         | the label to be displayed in the configuration wizard                                                                                                                      |
+| **valueColor**    | the color of the indicator ring , this color can either a plain color in `#RRGGBB` notation, or a gradient color with two colors separated by a space. `#RRGGBB` `#RRGGBB` |
+| **warningColor**  | not yet supported.                                                                                                                                                         |
+| **criticalColor** | not yet supported                                                                                                                                                          |
+| **roundedTip**    | not yet supported                                                                                                                                                          |
+| **thickness**     | not yet supported                                                                                                                                                          |
 
-The following example defines an style with a green to blue gradient ring color, from #00AA4D to #6A00F3.  
+The following example defines an style with a green to blue gradient ring color, from #00AA4D to #6A00F3.
 
 ```xml
- <IndicatorStyle id="greenBlue" label="Green blue gradient" valueColor="#00AA4D #6A00F3"  /> 
+ <IndicatorStyle id="greenBlue" label="Green blue gradient" valueColor="#00AA4D #6A00F3"  />
 ```
 
 The indicator could look as follows:
@@ -532,15 +532,15 @@ The indicator could look as follows:
 
 ### Chart Styles
 
- An chart style allows to define the look and feel of dashboard chart styles, mainly series line and bars colors.
+An chart style allows to define the look and feel of dashboard chart styles, mainly series line and bars colors.
 
 The attributes of a chart style style are the following:
 
-| attribute  | meaning |
-|---|---|
-| **id**  | unique identifier for the style |
-| **label**  | the label to be displayed in the configuration wizard |
-| **serieColors** | space separated list of serie colors in `#RRGGBB` format.  If there are more series than colors, the chart will cycle through defined colors |
+| attribute       | meaning                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**          | unique identifier for the style                                                                                                             |
+| **label**       | the label to be displayed in the configuration wizard                                                                                       |
+| **serieColors** | space separated list of serie colors in `#RRGGBB` format. If there are more series than colors, the chart will cycle through defined colors |
 
 The following example defines an chart style with 5 serie colors
 
@@ -550,9 +550,9 @@ The following example defines an chart style with 5 serie colors
 
 The resulting configuration preview and chart will look as follows:
 
-![Chart Style](./images/res_chartstyle_preview.png "Chart style")  
+![Chart Style](./images/res_chartstyle_preview.png "Chart style")
 
-![Chart Style](./images/res_chartstyle.png "Chart style")  
+![Chart Style](./images/res_chartstyle.png "Chart style")
 
 ## Project-based Dashboards
 
@@ -560,21 +560,21 @@ There are two kinds of dashboards for different usages: **user dashboards** and 
 
 **User dashboards** are the regular dashboards created, modified and managed by **dashboard designers** through the web interface.
 These dashboards can then be shared for use to target group of end-users.
-  
+
 User dashboards are intended to be specific to a given customer and modified by customers to fit its specific needs.  
 For this reason, they are stored in the database on each customer's environment.  
 User dashboards must be manually transfered between the different customer environments (_e.g._ dev, test, production) or backed-up using the export/import feature.
 
-**Project dashboards**, on the other hand, are not specific to a customer, they address a common need and are delivered inside a facet or an app, just like pages, views and rules.  
+**Project dashboards**, on the other hand, are not specific to a customer, they address a common need and are delivered inside a facet or an app, just like pages, views and rules.
 
-Project dashboards are stored as `.dashboard` files inside the project in the specific `webportal/dashboards/` folder or a facet sub-folder.  
+Project dashboards are stored as `.dashboard` files inside the project in the specific `webportal/dashboards/` folder or a facet sub-folder.
 
 Contrary to user dashboards, project dashboards will be shared between customers that use the same app or facet and across different environments - dev , test, production - of the same customer as long as the web portal references the same project.  
-Dashboard project included in the project will automatically appear in the web portal to authorized users, without having to manually import them.  
+Dashboard project included in the project will automatically appear in the web portal to authorized users, without having to manually import them.
 
 ### Create a Project Dashboard
 
-Project dashboards are created and edited by dashboard **developers**, _i.e._ users with the **developer** role.  
+Project dashboards are created and edited by dashboard **developers**, _i.e._ users with the **developer** role.
 
 To create a project dashboard, a developer must do the following:
 
@@ -583,7 +583,7 @@ To create a project dashboard, a developer must do the following:
 - Check the **Save to project** option (1). This option is only available if you have the new "developer" role (see below).
 - A default file named is proposed, based on the dashboard title. You can change the file name (2).
 - The file is stored by default in the `webportal/dashboards` folder.
-You can specify a different subfolder, for example to include the dashboard in a specific facet, by clicking the folder icon (3).  
+  You can specify a different subfolder, for example to include the dashboard in a specific facet, by clicking the folder icon (3).
 - View & edit the dashboard in the portal as for user dashboards.
 - Don't share the dashboard yet if it's intended to be distributed to different customers, through a facet or an app, because the target audience is not known at development time.
 
@@ -607,7 +607,7 @@ Each time the project dashboard is modified, it will be automatically updated on
 Dashboard designers that don't also have the developer role cannot modify project dashboards.  
 This is because project dashboards can be modified in the project and will be automatically updated when the project is redeployed.  
 This would cause conflicts if the projects dashboards were otherwise modified by designers on the target platform.  
-If a designer would like to modify a project dashboard, he can duplicate the dashboard as a user dashboard, by un-checking the **Save to project** option in the duplicate wizard.  
+If a designer would like to modify a project dashboard, he can duplicate the dashboard as a user dashboard, by un-checking the **Save to project** option in the duplicate wizard.
 
 Similarly, a developer can transform an existing user dashboard into a project dashboard, by duplicating the user dashboard and check the **Save to project** option in the duplicate wizard.
 
@@ -625,7 +625,7 @@ first time:
 - the project is deployed to a production environment web portal
 - a technical administrator shares the project dashboard to the actual target audience
 - end-users can access the project dashboard
-each upgrade:
+  each upgrade:
 - a developer modifies the project dashboard on the dev environment web portal
 - the project is deployed to a test environment web portal
 - project dashboard is tested
@@ -636,9 +636,89 @@ each upgrade:
 
 The table below lists the detailed authorizations for each persona:
 
-|Persona|Permissions|
-|-------|-----------|
-|**Designer**|Can create ( and own), modify and delete user dashboards<br><br>Can duplicate user dashboard as another user dashboard<br><br>Can share user dashboards<br><br>Cannot create a new project dashboard nor modify an existing one|
-|**Developer**|All designer permissions plus...<br><br>Can view, create, modify and delete all project dashboards (no ownership)<br><br>Can duplicate user or project dashboard to either user or project dashboard<br><br>Can optionally set default sharing parameters for any project dashboard (which can be overriden)|
-|**Technical administrator**|Can list and view all project and user dashboards<br><br>Can import / export all user dashboards<br><br>Can modify sharing parameters for user and project dashboards<br><br>Can delete any dashboard<br><br>Cannot duplicate dashboards
-|**End user**|Can view all project and standard dashboards shared with him<br><br>Cannot create, modify or delete dashboards|
+| Persona                     | Permissions                                                                                                                                                                                                                                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Designer**                | Can create ( and own), modify and delete user dashboards<br><br>Can duplicate user dashboard as another user dashboard<br><br>Can share user dashboards<br><br>Cannot create a new project dashboard nor modify an existing one                                                                              |
+| **Developer**               | All designer permissions plus...<br><br>Can view, create, modify and delete all project dashboards (no ownership)<br><br>Can duplicate user or project dashboard to either user or project dashboard<br><br>Can optionally set default sharing parameters for any project dashboard (which can be overriden) |
+| **Technical administrator** | Can list and view all project and user dashboards<br><br>Can import / export all user dashboards<br><br>Can modify sharing parameters for user and project dashboards<br><br>Can delete any dashboard<br><br>Cannot duplicate dashboards                                                                     |
+| **End user**                | Can view all project and standard dashboards shared with him<br><br>Cannot create, modify or delete dashboards                                                                                                                                                                                               |
+
+## Using Pre-Computed KPIs
+
+Most KPIs in the Dashboards use rules to compute the number to display as the KPI value.  
+I provides an easy way to build KPIs, but it can result in slow dashboards if they contain a lot of KPIs to compute.
+
+To improve the performance, it's possible to pre-compute the KPIs during the execution plan, and store the results in a metadata.  
+In the dashboards, you can switch to the advanced mode to call a view instead of a rule.  
+This allows to directly retrieve the number to display instead of computing it, and should significantly improve the performance.
+
+### Example
+
+Below is an **example** of what has been done for the `Active Directory Controls` dashboard, using this method (update available with `IDA 3.7` or later releases).
+
+#### Metadata definition
+
+The goal is to have a metadata linked to the `Repository` concept that will store the number of defects for each control.  
+There is one for the number of account defects, one for the number of control defects.  
+They are very similar, let's use the one on the accounts as an example.
+
+![Metadata Definition](images/bwa_repo_accounts_kpis_md_definition.jpg)
+
+The `bwa_repo_accounts_kpis` metadata definition is:
+
+- `Display metadata attributes in the following concept in the view editor` option checked
+- Single concept set to `Repository`
+- `Display also in smartsearch interface, in mashup chart configuration, and in the rule editor` option checked
+- It uses three fields:
+  - `controlCode`: the code of the associated control
+  - `controlName`: the name of the associated control
+  - `nb`: the number of account defects for the current control & repository
+
+#### Metadata computation
+
+The metadata is computed during the execution plan, after the controls (because we want to store the number of defects):
+
+![Metadata computation](images/bwa_repo_accounts_kpis_md_computation.jpg)
+
+We need two other values in addition to the control & number of defects:
+
+- The `Repository attribute (uid)`, to link the metadata value to each repo
+- The `Sub key attribute`, to allow the metadata to have more than one value by repo: on for each control
+
+> Note that using a metadata computed during the execution plan means that:  
+> The KPIs won't be refreshed if the data changes on an existing timeslot (for example if an account is manually reconciled).  
+> The KPIs are only updated when creating a new timeslot.
+
+The view used to compute the metadata looks like this (`bwa_repo_accounts_kpis` if you want to check it):  
+![Metadata computation view](images/bwa_repo_accounts_kpis_computation_view.jpg)
+
+#### View used by the Dashboard
+
+Then we need a view that will be used by the Dashboard, for example for the accounts KPIs (`bwa_repo_accounts_kpis_results`):
+![Results view for the Dashboard](images/bwa_repo_accounts_kpis_results_view.jpg)
+
+A few things of note:
+
+- View parameters
+  - The only required parameter is the `controlCode`
+  - The dashboard will automatically filter on the repo, but it's good to have if for testing
+- You **must** have an `inner join` in the view even if it returns no attributes
+  - This is because of a limitation in the engine
+- You **must** check the `Allow the selection of the view in the portal` option in the `Execution` tab
+  - ![View publication in the portal](images/bwa_repo_accounts_kpis_view_publication.jpg)
+- Enable both those options:
+  - `Toggle repository perimeter visibility`
+  - `Toggle web portal seach anchon`
+  - ![View toggles](images/bwa_repo_accounts_kpis_view_toggles.jpg)
+
+#### Dashboard update
+
+Update an existing KPI to use the results view defined earlier.  
+Go to the `Value` tab of the KPI, select `Sum` as the aggragation function and click on `Advanced`:  
+![Sum aggregation & Advanced mode](images/bwa_repo_accounts_kpis_sum.jpg)
+
+This will allow you to pick the view with the saved KPIs metadata and to pass the correct parameter values:  
+![alt text](images/bwa_repo_accounts_kpis_view.jpg)
+
+That's it.
+Save the dashboard and remember to launch a new execution plan!
