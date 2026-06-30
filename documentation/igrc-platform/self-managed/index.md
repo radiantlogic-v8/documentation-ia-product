@@ -10,7 +10,7 @@ The table below shows the Helm chart versions to install for each Identity analy
 
 | Release | IDA_HELM chart version | IDA_SHARED_HELM chart version |
 | :------ | :--------------------: | :---------------------------: |
-| 3.6     |         3.6.1          |             3.4.1             |
+| 3.6     |         3.6.2          |             3.4.2             |
 | 3.5     |         3.5.3          |             3.3.2             |
 | 3.4     |         3.4.3          |             3.2.2             |
 | 3.3     |         3.3.2          |             3.2.0             |
@@ -93,8 +93,6 @@ Please update the version of the operator to install according to the parameters
 | CNPG Chart version | Postgres Version | status      |
 | :----------------- | :--------------- | :---------- |
 | 0.28.2             | postgres 18.3    | recommended |
-| 0.23.2             | postgres 17.4    |             |
-| 0.21.5             | postgres 16.3    |             |
 
 5. **Verify Pod Health**:
 
