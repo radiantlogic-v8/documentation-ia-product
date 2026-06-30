@@ -10,7 +10,11 @@ Release date: 2026 June 30
 
 Only includes [vulnerability fixes](./08-vulnerability-fixes.md).
 
-> Associated `Shared Services` version is: 3.4.2.
+> Recommended versions:
+>
+> - `Shared Services`: 3.4.2
+> - `CNPG`: 1.29
+> - `PostgreSQL`: 18.3
 
 ## Version 3.6.1
 
