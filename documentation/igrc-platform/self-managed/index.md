@@ -93,8 +93,6 @@ Please update the version of the operator to install according to the parameters
 | CNPG Chart version | Postgres Version | status      |
 | :----------------- | :--------------- | :---------- |
 | 0.28.2             | postgres 18.3    | recommended |
-| 0.23.2             | postgres 17.4    |             |
-| 0.21.5             | postgres 16.3    |             |
 
 5. **Verify Pod Health**:
 
