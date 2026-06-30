@@ -4,6 +4,14 @@ Please find below the release notes for Identity Analytics in self-managed. For 
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the full list patch versions with fixed vulnerabilities in the images.
 
+## Version 3.6.2
+
+Release date: 2026 June 30
+
+Only includes [vulnerability fixes](./08-vulnerability-fixes.md).
+
+> Associated `Shared Services` version is: 3.4.2.
+
 ## Version 3.6.1
 
 Release date: 2026 June 9
