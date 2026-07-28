@@ -4,6 +4,24 @@ Please find below the release notes for Identity Analytics in self-managed. For 
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the full list patch versions with fixed vulnerabilities in the images.
 
+## Version 3.7.0
+
+Release date: 2026 July 29
+
+> Recommended versions:
+>
+> - `Shared Services`: 3.5.0
+> - `CNPG`: 1.29
+> - `PostgreSQL`: 18.3
+
+### New Features
+
+- **BWIPUAR-2532** — Allow use of an external PostgreSQL database
+
+### Bug Fixes
+
+- **BWIPUAR-2531** — [Self-Managed] data-recovery pod issues after 3.3.1
+
 ## Version 3.6.2
 
 Release date: 2026 June 30
