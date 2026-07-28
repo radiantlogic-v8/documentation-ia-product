@@ -20,7 +20,7 @@ Release date: 2026 July 29
 
 ### Bug Fixes
 
-- **BWIPUAR-2531** — [Self-Managed] data-recovery pod issues after 3.3.1
+- **BWIPUAR-2531** — Data-recovery pod issues after 3.3.1
 
 ## Version 3.6.2
 
