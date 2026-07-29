@@ -18,6 +18,8 @@ Release date: 2026 July 29
 
 - **BWIPUAR-2532** — Allow use of an external PostgreSQL database
 
+> Only the `autoinit` option is supported!
+
 ### Bug Fixes
 
 - **BWIPUAR-2531** — Data-recovery pod issues after 3.3.1
