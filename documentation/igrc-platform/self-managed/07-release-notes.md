@@ -8,6 +8,8 @@ See [vulnerability fixes](./08-vulnerability-fixes.md) for the full list patch v
 
 Release date: 2026 July 29
 
+> See [Migration 3.7.0](./06-upgrade/migration-3.7.0.md)
+
 > Recommended versions:
 >
 > - `Shared Services`: 3.5.0
@@ -23,6 +25,10 @@ Release date: 2026 July 29
 ### Bug Fixes
 
 - **BWIPUAR-2531** — Data-recovery pod issues after 3.3.1
+
+### Vulnerability fixes
+
+See [vulnerability fixes](./08-vulnerability-fixes.md).
 
 ## Version 3.6.2
 
