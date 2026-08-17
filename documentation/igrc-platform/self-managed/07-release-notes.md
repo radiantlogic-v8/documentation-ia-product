@@ -4,6 +4,24 @@ Please find below the release notes for Identity Analytics in self-managed. For 
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the full list patch versions with fixed vulnerabilities in the images.
 
+## Version 3.7.1
+
+Release date: 2026 August 17
+
+Notable changes (in addition to vulnerability fixes):
+- Depreciation of flat JVM Heap Keys - Replaced by `jvm.memory.*`
+- JVM Heap Options Set Outside `jvm.memory` Are Now Ignored
+- Batch-Server Liveness Probe Defaults Relaxed
+- `batch.archiveLogs.maxAge` Default Corrected to Go Duration
+
+> See [Migration 3.7.1](./06-upgrade/migration-3.7.1.md) for details
+
+> Recommended versions:
+>
+> - `Shared Services`: 3.5.1
+> - `CNPG`: 1.29
+> - `PostgreSQL`: 18.3
+
 ## Version 3.7.0
 
 Release date: 2026 July 29
