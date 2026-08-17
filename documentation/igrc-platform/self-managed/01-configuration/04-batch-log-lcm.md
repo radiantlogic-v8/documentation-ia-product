@@ -70,9 +70,11 @@ batch:
 | Value                        | Type     | Default | Description                                                                                                                               |
 | ---------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `batch.archiveLogs.maxCount` | integer  | `10`    | Maps to `LOG_ARCHIVE_MAX_COUNT`. Set to `0` to disable count-based purging.                                                               |
-| `batch.archiveLogs.maxAge`   | duration | `7d`    | Maps to `LOG_ARCHIVE_MAX_AGE`. Set to `0s` to disable age-based purging. Must be a valid Go `time.Duration` string (e.g. `168h`, `720h`). |
+| `batch.archiveLogs.maxAge`   | duration | `120h`    | Maps to `LOG_ARCHIVE_MAX_AGE`. Set to `0s` to disable age-based purging. Must be a valid Go `time.Duration` string (e.g. `168h`, `720h`). |
 
 These values are injected as environment variables into the `data-ingestion` statefulset (see Environment Variables above for details on each variable).
+
+> **Warning**: the documentation previously used `5d` as an example for the `batch.archiveLogs.maxAge` value, which is incorrect. Use `120h` instead!
 
 ### Examples
 
