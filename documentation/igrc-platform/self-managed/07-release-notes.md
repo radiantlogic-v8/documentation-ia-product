@@ -8,13 +8,15 @@ See [vulnerability fixes](./08-vulnerability-fixes.md) for the complete list of 
 
 Release date: 2026-09-08
 
-This release includes vulnerability fixes only - no functional changes
+This release contains vulnerability fixes only; it introduces no additional feature changes.
 
 > Recommended versions:
 >
 > - `Shared Services`: 3.5.2
 > - `CNPG`: 1.29
 > - `PostgreSQL`: 18.3
+
+See [vulnerability fixes](./08-vulnerability-fixes.md) for additional details.
 
 ## Version 3.7.1
 
