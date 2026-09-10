@@ -13,7 +13,7 @@ This document details the main installation stages and the initial parameter set
 
 ## Identity Analytics Client installation
 
-Please refer to the document [Certified Operating Environment for Identity Analytics](./04-brainwave-grc-certified-environments.md) for a detailed description of the additional components supported by Identity Analytics.  
+Please refer to the document [Certified Operating Environment for Identity Analytics](./installation-and-deployment/04-brainwave-grc-certified-environments.md) for a detailed description of the additional components supported by Identity Analytics.  
 
 Installation of the software requires Administrator rights to the operating system.
 
