@@ -51,6 +51,7 @@ There are three ways to build custom SoD controls.
 
 1) **Deprecated:** SoD control between two single permissions. This type of control returns the identities or accounts in discrepancy because they have access to both permissions at the same time. The use of the SoD matrix is recommended instead, as these controls are not displayed OOTB in the latest version of the IAP portal.  
    ![Segregation of duties](./images/sod-control-permissionxpermission.png "SoD permission x permission")
+
 2) **Deprecated:** SoD control between two sets of permissions. This type of control returns the identities or accounts in discrepancy because they have access to at least one permission in the first set and one in the second set at the same time. The use of the SoD matrix along with business activities is recommended instead, as these controls are not displayed OOTB in the latest version of the IAP portal.  
    ![Segregation of duties](./images/sod-control-permission_list.png "SoD sets of permissions")
 
