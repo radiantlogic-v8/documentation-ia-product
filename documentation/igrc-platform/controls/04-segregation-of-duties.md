@@ -51,7 +51,6 @@ There are three ways to build custom SoD controls.
 
 1) **Deprecated:** SoD control between two single permissions. This type of control returns the identities or accounts in discrepancy because they have access to both permissions at the same time. The use of the SoD matrix is recommended instead, as these controls are not displayed OOTB in the latest version of the IAP portal.  
    ![Segregation of duties](./images/sod-control-permissionxpermission.png "SoD permission x permission")
-
 2) **Deprecated:** SoD control between two sets of permissions. This type of control returns the identities or accounts in discrepancy because they have access to at least one permission in the first set and one in the second set at the same time. The use of the SoD matrix along with business activities is recommended instead, as these controls are not displayed OOTB in the latest version of the IAP portal.  
    ![Segregation of duties](./images/sod-control-permission_list.png "SoD sets of permissions")
 
@@ -165,3 +164,139 @@ The matrix can also be exported to an XLSX file that can be placed in a defined 
 ### Delete a matrix
 
 To delete a matrix, click "Delete matrix." A matrix must then be selected from the dialog that appears among the existing matrices in the environment, and the deletion must be confirmed.
+
+## SoD Dashboards
+
+### Concept
+
+Once SoD controls have been defined, the product provides a set of dedicated dashboards to monitor, investigate, and remediate the resulting SoD defects. These dashboards are all available under the **Controls** menu.
+
+> [!Warning] Before an SoD matrix can populate these dashboards, it must be included in an execution plan. When creating or editing a matrix, make sure the **Load the matrix in the future execution plan** option is checked, then relaunch an execution plan. Forgetting this step means the matrix will remain an empty shell and no defects will be computed.
+
+### SoD Global Dashboard
+
+The **SoD - Global Dashboard** page gives a high-level overview of the SoD situation for all matrices. It displays the current number of SoD matrices, SoD controls, SoD problems, and SoD exceptions, along with their evolution.
+
+![SoD Global Dashboard - Identities tab](./images/sod_global1.png "SoD Global Dashboard - Identities tab")
+
+The dashboard is split into two tabs:
+
+- **Identities**: shows the identities with problems and the number of identity-related problems, each broken down by risk level, along with a history of these problems over time.
+- **Roles**: shows the roles with core model problems and the number of core-model-related problems, following the same logic as the Identities tab.
+
+![SoD Global Dashboard - Roles tab](./images/sod_global2.png "SoD Global Dashboard - Roles tab")
+
+You can restrict the figures on this page to only reflect one selected matrix by using the **Matrix** dropdown at the top of the page.
+
+### SoD Matrix
+
+The **SoD - Matrix** page displays the toxic pairs defined in a matrix as a cross table, crossing every permission of the matrix against every other permission. Each cell shows the risk level of the corresponding pair, when one has been defined.
+
+![SoD Matrix cross table](./images/sod_matrix1.png "SoD Matrix cross table")
+
+The view can be filtered by **Matrix** and by **Minimum Risk Level** using the dropdowns at the top of the page.
+
+Clicking on a permission label opens its detail panel, which includes information such as the number of accounts and identities holding it, its classification, and its managers.
+
+![SoD Matrix permission detail](./images/sod_matrix2.png "SoD Matrix permission detail")
+
+A specific pair can also be selected directly on the cross table. Once selected, the **Selected control details** button becomes available.
+
+![SoD Matrix selected control](./images/sod_matrix3.png "SoD Matrix selected control")
+
+Clicking this button opens the **Control Details** panel, which pulls up the information defined for that pair in the original matrix: its code, risk level, control type, description, notes, risk info, and suggested mitigation.
+
+![SoD Matrix control details](./images/sod_matrix4.png "SoD Matrix control details")
+
+### SoD Defects - User level
+
+The **SoD defects - User level** page shows, for each toxic permission pair, the number of identities currently in discrepancy. Like the SoD Matrix page, it can be filtered by **Matrix** and **Minimum Risk Level**. It also offers a **Defect filtering** option to restrict the view to defects coming from a direct (individual) permission assignment, a role-based assignment, or both.
+
+![SoD defects - User level cross table](./images/sod_user1.png "SoD defects - User level cross table")
+
+It is always possible to open a specific controls' details page by selecting it in the matrix and clicking on the **Selected control details** in the top right.
+
+![SoD defects - User level control details](./images/sod_user6.png "SoD defects -  User level control details")
+
+The **Display as a list** button switches the cross table into a Pareto analysis of the most common toxic pairs, together with a detailed list of every defective identity. This list view adds a **Control filtering** field to narrow the results down to a specific control.
+
+![SoD defects - User level list view](./images/sod_user2.png "SoD defects - User level list view")
+
+Selecting a control on the cross table (or a bar on the Pareto chart) and clicking **Display as a list** filters the list to the identities in discrepancy for that control only.
+
+![SoD defects - User level filtered on control](./images/sod_user3.png "SoD defects - User level filtered on control")
+
+It is also possible to open this SoD Defects Analysis page by clicking the **Selected defect details** in the main matrix view.
+
+![SoD defects - User level defect details](./images/sod_user7.png "SoD defects - User level defect details")
+
+From this list, one or more identities can be checked to take action:
+
+- **Remediation**: opens a dialog listing the accounts that hold the toxic permission pair, and lets you create a remediation request against them.
+
+![SoD defects - User level remediation](./images/sod_user4.png "SoD defects - User level remediation")
+
+- **Set Exception**: opens a dialog to record an exception for the selected identity/identities against the selected control, with a reason, an optional expiration date, and a comment.
+
+![SoD defects - User level exception](./images/sod_user5.png "SoD defects - User level exception")
+
+- **Root Cause Analysis**: launches an analysis to help understand how the identity ended up with the toxic combination. This button is generally used for role level defects.
+
+### SoD Defects - Role level
+
+The **SoD defects - Role level** page (also labelled **Core Model SoD Defects Analysis**) is presented the same way as the User level page described above, with a cross table view, a **Display as a list** view, and the same **Matrix** and **Minimum Risk Level** filters. However, it does not look for identities holding too many permissions: it looks for **core model defects**, i.e. SoD defects baked into the definition of the roles themselves, represented by **permissions** entities in Identity Analytics.
+
+![Core Model SoD Defects Analysis cross table](./images/sod_role1.png "Core Model SoD Defects Analysis cross table")
+
+Like the User level page, the cross table can be switched to a Pareto analysis by clicking **Display as a list**. This lists every role whose own definition triggers a control, along with the risk level, the application, the control, the two conflicting activities, and the number of accounts that hold the defective role.
+
+![Core Model SoD Defects Analysis list view](./images/sod_role2.png "Core Model SoD Defects Analysis list view")
+
+#### Why a role can be defective
+
+A role can embed a defect when it is built out of other permissions that are themselves flagged as a toxic pair. For example, the role **Valideur2** is a composite permission. Opening its detail panel shows on the **Permission** tab that it has 2 sub-permissions.
+
+![Valideur2 permission detail](./images/sod_role3.png "Valideur2 permission detail")
+
+The **Content** tab of that same detail panel lists those sub-permissions: **Valideur2** contains **Valideur3** and **Valideur1**.
+
+![Valideur2 content tab showing sub-permissions](./images/sod_role4.png "Valideur2 content tab showing sub-permissions")
+
+Since the SoD matrix defines **Valideur1** and **Valideur3** as an incompatible pair, **Valideur2** ends up granting both sides of a toxic pair by design.
+
+This is the kind of issue the Role level page surfaces, even when no single identity is affected.
+
+#### Root Cause Analysis
+
+Selecting a defect on the list (or a bar on the Pareto chart) and clicking **Root Cause Analysis** opens a dedicated panel with three tabs.
+
+The **Root Cause List** tab shows the SoD Control Details for the defect (code, risk level, risk information) together with the two permission lists that are in conflict.
+
+![SoD problem root cause analysis - Root Cause List](./images/sod_role5.png "SoD problem root cause analysis - Root Cause List")
+
+The **Role Content** tab displays the full content of the role, splitting its sub-permissions into the two conflicting lists (colour-coded as **First List** and **Second List**) so you can see exactly which part of the role's definition causes each side of the conflict.
+
+![SoD problem root cause analysis - Role Content](./images/sod_role6.png "SoD problem root cause analysis - Role Content")
+
+The **Affected Identities** tab lists every identity that is impacted by this core-model defect, i.e. every identity that holds the defective role and therefore inherits the toxic combination.
+
+![SoD problem root cause analysis - Affected Identities](./images/sod_role7.png "SoD problem root cause analysis - Affected Identities")
+
+As with the User level page, the **Selected control details** and **Selected defect details** buttons let you open the detail page for a control or a defect selected on the main view.
+
+![SoD problem root cause analysis - Control Details](./images/sod_role8.png "SoD problem root cause analysis - Control Details")
+![SoD problem root cause analysis - Defect Details](./images/sod_role9.png "SoD problem root cause analysis - Defect Details")
+
+### SoD Exceptions - User level
+
+The **SoD exceptions - User level** page lists every exception that has been recorded, with its risk level, control, exception reason, comment, expiration date, and the name of the issuer. The list can be filtered by **Minimum Risk Level**, by control, or by identity.
+
+![SoD Exceptions - User level list](./images/sod_exception1.png "SoD Exceptions - User level list")
+
+Selecting an exception on the list displays its details in the panel on the right, either from the **Control details** tab (control code, name, entity, risk level, control type, description, notes, risk info) or the **Identity details** tab (HR code, name, email, status, arrival/leave dates, manager, and allocation).
+
+![SoD Exceptions - User level identity details](./images/sod_exception2.png "SoD Exceptions - User level identity details")
+
+An existing exception can be modified or removed using the **Update Exception** and **Delete Exception** buttons. Updating an exception allows the reason, expiration date, and comment to be edited.
+
+![SoD Exceptions - User level update exception](./images/sod_exception3.png "SoD Exceptions - User level update exception")
