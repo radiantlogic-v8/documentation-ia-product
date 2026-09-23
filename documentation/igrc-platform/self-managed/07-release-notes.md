@@ -4,6 +4,22 @@ This page covers release notes for self-managed Identity Analytics. For more inf
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the complete list of patch versions that include vulnerability fixes in the images.
 
+## Version 3.7.3
+
+Release date: 2026-09-23
+
+In addition to vulnerability fixes, this release includes the following change:
+
+- Fixed email notifications not being sent when STARTTLS is enabled.
+
+> Recommended versions:
+>
+> - `Shared Services`: 3.5.3
+> - `CNPG`: 1.29
+> - `PostgreSQL`: 18.3
+
+See [vulnerability fixes](./08-vulnerability-fixes.md) for additional details.
+
 ## Version 3.7.2
 
 Release date: 2026-09-08
