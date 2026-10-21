@@ -76,7 +76,7 @@ Identity Analytics's data model can be modelled as following :
 
 ![Identity Analytics's data model](./images/data_model_overview.jpg "Identity Analytics data model")
 
-Please refer to the included subpages for a more detailed overview.  
+Please refer to the included subpages for a more detailed overview.
 
 ### Identities: the Physical Users who have Access to the Information System
 
@@ -309,7 +309,7 @@ The assets may be classed by category. The assets are linked to the organization
 With regard to the applications themselves, these make reference to a repository. It is in this same repository that the accounts permitting access to the said application will usually be found.  
 The permissions are associated with the applications. The permissions may follow a hierarchy (tree model), as is the case, for example, for shared directories or SharePoint trees.
 
-> The notion of hierarchy is suited to the modelling of directories. On the other hand, it is not suited to the modelling of profiles/transactions since, in this second case, we then have to make an acyclic oriented **_graph_**  model. The modelling of roles/transactions is carried out with the aid of the notion of "groups" of accounts. The groups enable accounts and permissions to be united in accordance with a graph model (a graph can, in effect, have several "relations").  
+> The notion of hierarchy is suited to the modelling of directories. On the other hand, it is not suited to the modelling of profiles/transactions since, in this second case, we then have to make an acyclic oriented **_graph_** model. The modelling of roles/transactions is carried out with the aid of the notion of "groups" of accounts. The groups enable accounts and permissions to be united in accordance with a graph model (a graph can, in effect, have several "relations").
 >
 > - Do not forget that in the data model it is all about application, whether this is IT applications, shared directories, SharePoint servers, physical access etc. An attribute of the application concept enables differentiation between the applications by family in order to adapt the analyses and reports as a function of these same families. This attribute is named "applicationtype". It takes, for example, the following values: "Profile" for the IT applications, "Filesystem" for the file systems, 'Physicalaccess" for the physical access systems etc. You can create completely new types of application, as this attribute is free text.
 
@@ -324,7 +324,7 @@ Standard available attributes:
 In the collect, assets are a combination of three different targets:
 
 - [Asset target](igrc-platform/collector/components/targets/asset-target/asset-target.md)
-- [Support target](igrc-platform/collector/components/targets/support-target/support-target.md)  
+- [Support target](igrc-platform/collector/components/targets/support-target/support-target.md)
 - [Actor target](igrc-platform/collector/components/targets/actor-target/actor-target.md)
 
 Here is a preview :
@@ -395,7 +395,7 @@ Standard available attributes:
 
 - Display name
 - Aggregation key
-- Start date of aggregation slot (Identity GRC determines the MIN value of the date that generated the usage)  
+- Start date of aggregation slot (Identity GRC determines the MIN value of the date that generated the usage)
 - End date of aggregation slot (Identity GRC determines the MAX value of the date that generated the usage)
 - Meter usage
 
@@ -403,18 +403,18 @@ Standard available attributes:
 
 At the time the data is configured, it is advisable to follow a certain order in the feeding of concepts in order to facilitate the approach between the different sets of information. This is summarized in the following diagram:
 
-![Order of supply](./images/order-of-supply.jpg "Order of supply")
+![Order of supply](./images/order-of-supply.png "Order of supply")
 
 Note that for a given concept, it is not necessary that the data be loaded in a particular order. For example, when you load the organizations, you can make references in advance about the relationships that have been connected. Firstly, load a departmental section and then make a reference to the related department, even though the department in question may not have yet been loaded into the Ledger.
 
-|**Concept**|**Description**|**Graphical representation**|
-|-|-|-|
-|Organization|Loading organisations, as well as relationships between the organisational nodes.|![Organization](./images/worddav3d7e3c19c964c165d4a40c6a24a49dac.png "Organization") |
-|Identities|Loading identities, loading occupations, attachment of identities to the organisations, loading organisation managers.|![Identities](./images/2.png "Identities")|
-|Accounts|This stage is repetitive and is done each time a new application is added into the Ledger.Loading repositories, loading accounts, loading groups, attachment of accounts and groups to groups.|![Accounts](./images/3.png "Accounts")|
-|Applications and permissions|This stage is repetitive and is done each time a new application is added into the Ledger.Loading applications, loading permissions, creation of rights (linking permissions to the accounts/groups).|![Applications and permissions](./images/4.png "Applications and permissions")|
-|Usage|Loading access log.|![Usage](./images/5.png "Usage")|
-|Assets|Loading assets|![Assets](./images/6.png "Assets")|
+| **Concept**                  | **Description**                                                                                                                                                                                       | **Graphical representation**                                                         |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Organization                 | Loading organisations, as well as relationships between the organisational nodes.                                                                                                                     | ![Organization](./images/worddav3d7e3c19c964c165d4a40c6a24a49dac.png "Organization") |
+| Identities                   | Loading identities, loading occupations, attachment of identities to the organisations, loading organisation managers.                                                                                | ![Identities](./images/2.png "Identities")                                           |
+| Accounts                     | This stage is repetitive and is done each time a new application is added into the Ledger.Loading repositories, loading accounts, loading groups, attachment of accounts and groups to groups.        | ![Accounts](./images/3.png "Accounts")                                               |
+| Applications and permissions | This stage is repetitive and is done each time a new application is added into the Ledger.Loading applications, loading permissions, creation of rights (linking permissions to the accounts/groups). | ![Applications and permissions](./images/4.png "Applications and permissions")       |
+| Usage                        | Loading access log.                                                                                                                                                                                   | ![Usage](./images/5.png "Usage")                                                     |
+| Assets                       | Loading assets                                                                                                                                                                                        | ![Assets](./images/6.png "Assets")                                                   |
 
 ## Extension of the Data Model
 
@@ -441,11 +441,11 @@ The advantages of this time management model are multiple:
 
 - Identity Analytics preserves the photographs taken in their entirety, which means that it is possible to "go back in time" and analyze any photograph. This is especially powerful in the case of forensic analysis, used in conjunction with log analysis tools (SIEM) since Identity Analytics can even supply the full context of the situations (who was working in such and such a department, what was their access to applications, who was able to write in such and such directory three months ago etc.)
 - Identity Analytics reconstructs the movements on the basis of simple abstractions from the systems. The systems do not need to supply the list of modifications occurring from one period to another, a simple global export of data suffices. This functionality is vital to the extent that the majority of systems and applications are not able to extract the actions added to their data over a period of time. In the case of Identity Analytics, for example, a simple weekly HR extraction from the list of employees enables reconstruction of the arrivals, departures, alterations, organizational changes etc.
-Each "photograph" is processed autonomously in the Ledger. It is complete, giving the whole of the information of the organization, identity, account, access etc. This means that at the time of a new loading of data it is necessary to supply the whole of the information.
+  Each "photograph" is processed autonomously in the Ledger. It is complete, giving the whole of the information of the organization, identity, account, access etc. This means that at the time of a new loading of data it is necessary to supply the whole of the information.
 
-In practice, the data loaded is "tagged" with the date/time of the data source (file) in the Ledger. Good practice is therefore to work in "best effort" mode at the time of a new loading of data: loading all the information using older files if the recent data has not been made available. Note, however, that this can lead to inconsistencies in the analyses (unidentified departures etc.).  
+In practice, the data loaded is "tagged" with the date/time of the data source (file) in the Ledger. Good practice is therefore to work in "best effort" mode at the time of a new loading of data: loading all the information using older files if the recent data has not been made available. Note, however, that this can lead to inconsistencies in the analyses (unidentified departures etc.).
 
-At the time of a new loading of data, Identity Analytics  automatically processes a certain number of operations:
+At the time of a new loading of data, Identity Analytics automatically processes a certain number of operations:
 
 - It reconciles the newly loaded concepts with those already previously loaded into the Ledger in order to link them
 - It reports the account reconciliation information
@@ -463,18 +463,18 @@ The whole of the previous information corresponds to dedicated attributes in the
 
 Each data model item has two identifiers:
 
-- **recorduid**  : Corresponds to a unique global identifier in the Ledger (non temporal identifier). As this identifier is attached to each Ledger item, it enables unique referencing of an item in a photograph. This means that if several photographs are present and an item is loaded each time (for example, a John Doe identity), each John Doe Identity item will have a different recorduid value.  This attribute is an attribute technique that in addition enables relations to be forged between the different Ledger concepts in the same photograph. Good practice: It is recommended that this attribute be used in reports when it is a matter of referencing an item on a given photograph.
-- **uid** : Corresponds to a unique identifier per entity in the Ledger (non time related identifier).  This identifier is attached to each different identity in the Ledger, including all the photographs in which this identity is present. If we take the example of the John Doe Identity, a UID value is assigned to the John Doe item at the time it first appears in the Ledger. This value is then kept identical on the John Doe Identity over the whole of the subsequent loadings of data. This attribute is a technical attribute that enables threads to be woven between the photographs in order to, for example, reconstruct all the events that might have occurred in the Ledger items. Good practice: It is recommended that this attribute be used at the time that reports call upon several photographs (historic, trend graphs etc).
+- **recorduid** : Corresponds to a unique global identifier in the Ledger (non temporal identifier). As this identifier is attached to each Ledger item, it enables unique referencing of an item in a photograph. This means that if several photographs are present and an item is loaded each time (for example, a John Doe identity), each John Doe Identity item will have a different recorduid value. This attribute is an attribute technique that in addition enables relations to be forged between the different Ledger concepts in the same photograph. Good practice: It is recommended that this attribute be used in reports when it is a matter of referencing an item on a given photograph.
+- **uid** : Corresponds to a unique identifier per entity in the Ledger (non time related identifier). This identifier is attached to each different identity in the Ledger, including all the photographs in which this identity is present. If we take the example of the John Doe Identity, a UID value is assigned to the John Doe item at the time it first appears in the Ledger. This value is then kept identical on the John Doe Identity over the whole of the subsequent loadings of data. This attribute is a technical attribute that enables threads to be woven between the photographs in order to, for example, reconstruct all the events that might have occurred in the Ledger items. Good practice: It is recommended that this attribute be used at the time that reports call upon several photographs (historic, trend graphs etc).
 
 #### New Items, Updated Items, Identical Items, Deleted Items
 
 Each item in the Ledger comprises attributes enabling rapid identification if changes have occurred on this same item.
 
-- **importaction** : Enables identification if an item is new (it is the first time that this item appears;  it is then created _ex nihilo_, a new UID is created), if attributes comprising the item have evolved since the last loading of data or if the item is identical to the last loading of data. This attribute may also take the following values: C (Created: newly created item), U (Updated: item the attributes of which have been modified since the last loading of data), N (None: item the attributes of which are unchanged since the last loading of data). Good practice: use this attribute to perform filtering in reports (for example: who the newly arrived persons are since 1<sup>st</sup> January 2012).
+- **importaction** : Enables identification if an item is new (it is the first time that this item appears; it is then created _ex nihilo_, a new UID is created), if attributes comprising the item have evolved since the last loading of data or if the item is identical to the last loading of data. This attribute may also take the following values: C (Created: newly created item), U (Updated: item the attributes of which have been modified since the last loading of data), N (None: item the attributes of which are unchanged since the last loading of data). Good practice: use this attribute to perform filtering in reports (for example: who the newly arrived persons are since 1<sup>st</sup> January 2012).
 
 The detection of changes only applies to the attributes of the item and not to the cardinalities, for example, an access account that has an additional permission could well stay in "N" status if, in addition, none of the attributes comprising the account (date of last login etc) has changed since the last loading of data.
 
-- **deletedaction:**  This attribute is a Boolean attribute. It indicates if this item has disappeared in the next photograph. This is the case, for example, with Identities that leave the enterprise and thus disappear from the HR file. Good practice: Use this attribute in reports for highlighting the changes: persons who have left the enterprise, deleted accounts etc.
+- **deletedaction:** This attribute is a Boolean attribute. It indicates if this item has disappeared in the next photograph. This is the case, for example, with Identities that leave the enterprise and thus disappear from the HR file. Good practice: Use this attribute in reports for highlighting the changes: persons who have left the enterprise, deleted accounts etc.
 
 This attribute only has a value on a given photograph when a more recent photograph has been loaded and validated. Similarly, making reports on this attribute presents data from the photograph following. It is best therefore to be vigilant over the presentation associated with these reports.
 
@@ -497,4 +497,4 @@ Similarly to Identity items, Account items have a certain number of attributes e
 
 Identity Analytics performs an implicit filtering on the rights inherited in the hierarchies of rights (directories etc). This enables, for example, the avoidance of this attribute passing as true if the Ledger contains trees of files, that an Identity has a right of access on a directory and that a file has been added to this directory since the last loading.
 
-- **groupchanged** : is a Boolean attribute. It enables identification if the account has had a change that has intervened at the level of its attachments to groups since the last loading of data. Identity Analytics only takes account of direct attachments to groups; the modification of a group (addition to a group within a group) will therefore not have an effect on passing this attribute as "true".  
+- **groupchanged** : is a Boolean attribute. It enables identification if the account has had a change that has intervened at the level of its attachments to groups since the last loading of data. Identity Analytics only takes account of direct attachments to groups; the modification of a group (addition to a group within a group) will therefore not have an effect on passing this attribute as "true".
