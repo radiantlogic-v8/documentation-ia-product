@@ -9,66 +9,68 @@ Description: Documentation related to Identity Analytics Data Model
 
 ### Characterizing Identities
 
-In practice, carrying out controls usually corresponds to identifying inconsistencies between a person's role and his or her access to the Information Systems. As an example, only people whose occupation is "payroll manager" in HR are authorised to access the payroll files in the HR system.
+Access controls help identify inconsistencies between a person's role and their access to information systems. For example, only employees responsible for payroll should have access to payroll files in the HR system.
 
-In order to accomplish this, Identity Analytics' data model integrates the following concepts:
+To support these controls, the Identity Analytics data model includes:
 
-- Organisations
+ Organizations
 - Occupations
-- Managerial links
-- User Statuses (dates, types of contract, areas of competence etc.)
+- Managerial relationships
+- User status (such as employment dates, contract types, and areas of responsibility)
 
-Furthermore, it is possible to attach the organisations to the "assets". Assets usually enable the establishment of patterns within the control model of the different processes of the enterprise.
+Organizations can also be linked to assets to represent their involvement in business processes.
+Identity Analytics data model model supports a range of organizational structures, including hierarchical organizations, multiple hierarchies, matrix organizations, department-level management, direct reporting managerial relationships and more.
 
-As we shall see later, Identity Analytics data model enables the modelling of the most simple to the most complex organisations (hierarchical organisations, multi-hierarchical organisations, matrix organisations, managerial links by department, interpersonal managerial links etc.).
-
-### Finely Grained Standardization of the Representation of Access to the Information Systems
+### Standardizing fine-grained access information
 
 A control-oriented data model is very different from an authorization management data model, such as may be found for example in an identity management solution (IAM).
 
-The first aim of an identity management system is to improve the operational efficiency of management actions of the authorization managers. In order to do this, the identity management systems usually encourage gathering the permissions into groups of permissions, occasionally interlinked, and to give them a semantic (we often talk of technical roles and occupational roles). From the perspective of identity management, the link chain is thus the following:
+The main purpose of an identity management system is to help authorization managers handle their tasks more efficiently. To do this, these systems usually bundle permissions into groups, which are sometimes linked to each other and given business meaning (often called technical roles and occupational roles). From an identity management point of view, the chain works like this:
 
-A user has Occupational Roles and these roles give him or her access to Technical Roles, which in turn give access to permissions on the systems. For technical reasons, the notion of "fine" permission is usually absent from the identity management systems, which satisfy themselves by managing automatically the allocation of user accounts to user groups in the target systems. It remains the responsibility of the application's technical administrator to assign fine permissions to user groups.  
-Although this data model may be efficient within operational authorization management logic, it rapidly shows its limits, however, with regard to controlling access and meeting compliance requirements.
+A user holds Occupational Roles. Those roles grant Technical Roles, and the Technical Roles grant permissions on the target systems. For technical reasons, identity management systems usually don’t handle fine-grained permissions. They only assign user accounts to user groups in the target systems automatically. Assigning fine-grained permissions to those groups is still the job of each application’s technical administrator.
 
-In practice, it is the auditors who are directly interested in the fine transactions, as it is a matter of identifying whether the "operational" rights are authorized in an inappropriate way in the systems (for example, does a person have the right to modify clients' IBAN numbers and issue payments to these same clients? Does the responsibility of junior clientele include undertaking 1m$ plus contracts? Etc.).
+This model works well for day-to-day authorization management. It falls short when it comes to access control and compliance.
 
-In order to do this, it is necessary to examine the fine rights stored in the systems to answer the question "Who has the right to..."  
-Only then does the need arise to take an interest in groups and roles in order to answer the question: "Why does this person have the right to..."  
-This applies over all the enterprise's systems (the key processes of the enterprise often depending in practice on several applications in order to be completed successfully).  
-The link chain for a control model is thus the following: A user has several access accounts. These accounts enable fine transactions on the systems and this is because the user has roles and profiles within the authorization model.
+Auditors care most about the fine-grained transactions. Their job is to find out whether business rights have been granted inappropriately in the systems. For example, can one person both change a client’s IBAN and send payments to that same client? Can a junior account manager sign contracts worth more than $1 million?
 
-The Identity Analytics data model takes up this paradigm:
+To find out, auditors first have to look at the fine-grained rights stored in the systems and answer the question “Who is allowed to…?” Only after that do groups and roles become relevant, because they answer the next question: “Why is this person allowed to…?” This analysis has to cover every system in the enterprise, since a key business process usually depends on several applications working together.
 
-1. It prioritizes the loading of fine permissions of all types of IT systems (applications, file servers, physical access, ECM systems etc.).
-2. It homogenizes the fine permissions of different systems by putting them on the same level, so that it is then possible to carry out controls mixing fine transactions, access to shared repositories, physical access etc. For this, permissions are "revealed" in order to recreate account links \> fine permissions (by abstracting from roles, profiles, interlinked groups etc.).
-3. It enables the paradigm to be changed easily, thus enabling as it goes along, refinement of the controls (and the increasing maturity of the client) and the loading of increasingly finer permissions into the model (for example, we begin with a simple yes/no access, then by loading the profiles, then finally the fine transactions).
+So for a control model, the chain runs in this manner: A user has several accounts. Those accounts allow fine-grained transactions on the systems, and the user has those rights because of the roles and profiles assigned in the authorization model.
 
-In order to do this, Identity Analytics data model integrates the following concepts:
+The Identity Analytics data model is built on this approach. It does three things:
 
-- Access accounts
-- Applications
-- Permissions
-- Rights
-- Perimeters
+It loads fine-grained permissions first, from every kind of IT system: applications, file servers, physical access systems, ECM systems and so on.
+It puts the fine-grained permissions from these different systems on the same level. This makes it possible to run controls that combine business transactions, access to shared folders, physical access and more. To get there, permissions are “unpacked” to rebuild the direct link from account to fine-grained permission, setting aside the roles, profiles and nested groups in between.
+It lets the approach change easily over time. Controls can be refined as the client’s maturity grows, and more and more detailed permissions can be loaded into the model. For example, you might start with simple yes/no access, then load profiles, and finally load the individual transactions.
 
-It should be noted that, in the Identity Analytics data model, everything is modelled in the form of an "application", whether it be IT applications, file servers or even physical access security systems. The notion of permission is in itself declarative. These are the permissions declared in the "applications" (profiles, roles, transactions, shared directories, SharePoint nodes, physical access typology etc.). Finally, as for the concept of "right", this plays the role of link between the access account and the permission. It can carry the information linked to the instantiation of the permission (for example, access to the directory type permission in a single reading, access to the transaction type payment permission with a limit of 10,000€ and on the Perimeter (transaction authorized with regard to Europe clients only etc.)).  
-Finally, it is possible to attach permissions to assets, in order to identify which permissions participate in which of the assets of the enterprise. One speaks therefore of support assets in the meaning of standard ISO 27005.
+To support this, the Identity Analytics data model is built on the following concepts:
 
-### Integration of Fine Time Management
+* Accounts
+* Applications
+* Permissions
+* Rights
+* Perimeters
 
-Controlling authorization and guaranteeing the compliance of access is a repetitive, recurring task, which is usually aimed at identifying:
+In Identity Analytics, an application represents any system or resource that provides access, including software applications, file servers, and physical access systems. A permission represents an access capability declared in an application, such as a profile, role, transaction, shared directory, SharePoint node, or physical access category.
 
-1. Inconsistencies between the functions of individuals and their permissions on the systems (principle of lesser priority)
-2. Accumulation of forbidden permissions (principle of task separation)
+A right links an account to a permission and describes how the account can use that permission. For example, a right can specify:
 
-Once the situation has been taken in hand, it is laborious to maintain this state. In practice, the volume of data to be processed is such that it is difficult to make demands systematically on the managers with the whole of the information.  
-Nevertheless, it is interesting to note (particularly on the first point) that an event may be at the origin of new anomalies: the movement/departure of a member of staff of the enterprise, or even the assignment of new permissions.  
-It is vital in a control system to be able at least to identify the changes that have taken place since the last audit period, in order to be able to highlight this information.
+- Read-only access to a directory
+- Payment authorization up to €10,000
+- Access limited to customers in Europe
 
-Management identity systems integrate this historic notion through tracks left by the different management workflows of the life cycle of the users. Unfortunately, these workflows are inadequate when it comes to controlling authorizations, since they do not give a picture of the fine permissions actually assigned in the systems and they supply a partial and event driven picture, such that it is not possible to map the enterprise at a particular moment. This information is nevertheless vital when it comes to making analyses a posteriori.
+Permissions can also be linked to assets to identify the technical resources that support business processes.
 
-The Identity Analytics data model fully integrates the notion of time. The model is constructed according to the "discreet time linear" principles. In other words, the product acts as a camera and takes snapshots at regular time intervals of the whole of the information (for example, every week). On the one hand, Identity Analytics identifies all the modifications occurring between each "snapshot" and, on the other, enables analysis of the mapping of any snapshot (no information is deleted from the model).
+### Tracking changes over time
+
+Access control and compliance require recurring analysis of:
+
+1. Inconsistencies between users' responsibilities and their permissions.
+2. Prohibited combinations of permissions.
+
+Reviewing all access information during every audit can be impractical. Focusing on changes helps identify new risks, such as those introduced by an employee transfer, departure, or new permission assignment. IAM workflow histories do not necessarily provide a complete record of the permissions actually assigned in target systems. They may also be insufficient to reconstruct the organization's access at a particular point in time.
+
+Identity Analytics uses a discrete-time model. It captures complete snapshots of the collected information at regular intervals, such as weekly. The product compares snapshots to identify changes and retains historical snapshots for point-in-time analysis.
 
 ## Data Model Overview
 
