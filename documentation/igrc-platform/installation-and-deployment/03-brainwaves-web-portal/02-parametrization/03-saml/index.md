@@ -39,8 +39,13 @@ Most major vendors, including those listed below, now support the SAMLv2 protoco
 - Forgerock
 - ...
 
-Identity Analytics provides a SAMLv2 implementation for Tomcat. Use the **4.x** line on Tomcat 9.0 or the **5.x** line on Tomcat 11.0. Both are the recommended lines. The **3.x** line remains available for existing Tomcat 9.0 installations and is not recommended for a new installation. This guide includes the information required to configure SAMLv2 authentication and authorization with a third-party IdP.
+Identity Analytics provides a **SAMLv2** implementation for Tomcat. For new installations, use the recommended version line for your Tomcat version:
 
+- 4.x for Tomcat 9.0
+- 5.x for Tomcat 11.0
+
+The 3.x line remains available for existing Tomcat 9.0 installations but is not recommended for new installations.
+This guide explains how to configure SAMLv2 authentication and authorization with a third-party identity provider (IdP).
 This implementation is `SAMLv2` compliant and should be used with **any SAMLv2 compliant identity providers** .
 
 ## Configuration procedure
