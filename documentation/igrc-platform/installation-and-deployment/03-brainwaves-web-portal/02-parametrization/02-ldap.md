@@ -19,22 +19,37 @@ This guide explains how to use an **LDAP Directory** for user authentication and
 
 Tomcat uses a **Realm** to process authentication with the LDAP Directory via LDAP requests. The standard Tomcat feature for this is called **JNDIRealm**.
 
-- [Tomcat 8.5 JNDIRealm Documentation](https://tomcat.apache.org/tomcat-8.5-doc/realm-howto.html#JNDIRealm)  
 - [Tomcat 9.0 JNDIRealm Documentation](https://tomcat.apache.org/tomcat-9.0-doc/realm-howto.html#JNDIRealm)
+- [Tomcat 11.0 JNDIRealm Documentation](https://tomcat.apache.org/tomcat-11.0-doc/realm-howto.html#JNDIRealm)
 
-This architecture works with:
-- Tomcat 8 & 9
-- Windows & Linux
+This architecture works on Windows and Linux with:
+
+- Tomcat 9.0, lines **4.x** (recommended) and **3.x** (not recommended)
+- Tomcat 11.0, line **5.x** (recommended)
 
 
 ## Prerequisites
 
+These libraries are not available for direct download. Contact Professional Services or Support to obtain the files for your Tomcat and Java versions.
 
-Download the required Identity Analytics `<LDAP_BW_LIB>` library available [here](https://download.brainwavegrc.com/index.php/s/n3qGRqKgtADw4Hn) depending on your Tomcat version:
+`RoleMappingRealm` (`com.brainwave.tomcat.realm.RoleMappingRealm`) is the Identity Analytics library used with `JNDIRealm`.
 
-- **Tomcat 8.5 + Java 8**: `bw-tomcat-8.5-addons.jre8-X.jar`
-- **Tomcat 9 + Java 8**: `bw-tomcat-9.0.XX-addons.java1.8-YYY.jar`
-- **Tomcat 9 + Java 17**: `bw-tomcat-9.0.XX-addons.java17-YYY.jar`
+**4.x (recommended)** — Tomcat 9.0. These modules run on Java 8, and on Java 17.
+
+- `tomcat-addons-realm-role-mapping-4.x.x.jar`
+- `tomcat-addons-realm-base-4.x.x.jar`
+- `tomcat-addons-common-4.x.x.jar`
+
+**5.x (recommended)** — Tomcat 11.0 (Jakarta). Java 21 or later. Same JARs, with the `5.x.x` version:
+
+- `tomcat-addons-realm-role-mapping-5.x.x.jar`
+- `tomcat-addons-realm-base-5.x.x.jar`
+- `tomcat-addons-common-5.x.x.jar`
+
+**3.x (not recommended)** — Tomcat 9.0. One JAR contains every add-on:
+
+- Java 8: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar`
+- Java 17 or later: `bw-tomcat-9.0-addons.java17-3.x.x.jar`
 
 **Assumptions:**
 - Tomcat is installed and available
@@ -51,7 +66,7 @@ The following variables will be used for configuration:
 | `TOMCAT_INSTALL_FOLDER`  |                                       Tomcat installation root folder                                       |          /etc/tomcat9/          |
 |   `TOMCAT_CONF_FOLDER`   |                               Folder that contains Tomcat configuration files                               |        /etc/tomcat9/conf        |
 | `TOMCAT_LIB_FOLDER_HOME` |                            Folder that contains all the libraries used by the Tomcat                            |     /usr/share/tomcat9/lib      |
-|      `LDAP_BW_LIB`       | Identity Analytics JAVA library used to perform LDAP AuthN/AuthZ. See prerequisites section to learn how to retrieve it. | bw-tomcat-9.0-addons.jre8-X.jar |
+|      `LDAP_BW_LIB`       | Identity Analytics JARs for `RoleMappingRealm`. See the prerequisites for the file names. | tomcat-addons-realm-role-mapping-4.x.x.jar, tomcat-addons-realm-base-4.x.x.jar, tomcat-addons-common-4.x.x.jar |
 | `LDAP_ROLE_MAPPING_FILE` |                        File that contains mapping between AD groups and Portal roles                        |     rolemapping.properties      |
 
 ### 1. Retrieve LDAP information 
@@ -260,7 +275,7 @@ org.apache.catalina.realm.level = ALL
 org.apache.catalina.realm.userParentHandlers=true
 org.apache.catalina.authenticator.level=ALL
 org.apache.catalina.authenticator.userParentHandlers=true
-com.brainwave.tools.RoleMappingRealm.level = ALL
+com.brainwave.tomcat.realm.RoleMappingRealm.level = ALL
 ```
 
 ## Examples
