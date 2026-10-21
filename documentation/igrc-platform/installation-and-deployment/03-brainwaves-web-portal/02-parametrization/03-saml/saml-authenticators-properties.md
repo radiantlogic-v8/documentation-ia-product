@@ -5,88 +5,27 @@ description: "SAML Authenticators properties"
 
 # SAML Authenticators properties
 
-To help you to configure the `SAMLAuthenticators.properties` file, here is detailed description of each property present in this file.
+This page describes each property of `SAMLAuthenticator.properties`. The installation procedure, the library names, and a copy of each configuration file are on the [SAML Access](./index.md) page.
 
 ## idpMetadata
 
-A sample is attached and provided below. Content should not be modified.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.okta.com/exk9ccpjwkXZhm7Jd0h7">
- <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
- <md:KeyDescriptor use="signing">
- <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
- <ds:X509Data>
- <ds:X509Certificate>MIIDpDCCAoygAwIBAgIGAVVABKuSMA0GCSqGSIb3DQEBBQUAMIGSMQswCQYDVQQGEwJVUzETMBEG
- A1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEU
- MBIGA1UECwwLU1NPUHJvdmlkZXIxEzARBgNVBAMMCmRldi03Mzk2MTkxHDAaBgkqhkiG9w0BCQEW
- DWluZm9Ab2t0YS5jb20wHhcNMTYwNjExMTUxMDM1WhcNMjYwNjExMTUxMTM1WjCBkjELMAkGA1UE
- BhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDTALBgNV
- BAoMBE9rdGExFDASBgNVBAsMC1NTT1Byb3ZpZGVyMRMwEQYDVQQDDApkZXYtNzM5NjE5MRwwGgYJ
- KoZIhvcNAQkBFg1pbmZvQG9rdGEuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
- o/TXjaFt6AxIyX0hibz07V9YfboduRBd6tBODE+L5kus7ccm4K+nMncdXZGtTly2niufRGhHFr0B
- FLgWr/KbtGY0oADhM76Bsfi0lIed5Emf4VsiEVg81tHLfr19grATGxvDOdJ4Ui0Ufx2bRk5xJWYJ
- QfENisOd+LsYgao+jE4wiFIQHRrE32+metUa26KVYxQaYKoECV70vIW+GBlRQYkKSWQNvDUliQca
- SXetbuMcmqlmoJxj+0iLVuFdPiy61YUej8WxO/uo9JjNEj3IubH08+hGR9+2C9IxSP4xtKKz58eP
- vi569sCcutrZtydAqUtVF2PTYOUPdjBc+xxogwIDAQABMA0GCSqGSIb3DQEBBQUAA4IBAQAjyQfT
- h7+0as59nS+qLorghrKhg9iM0KHh1ug8UmESagm8bMPBhTZ7RJwlm/fWi1ppsPIYgIo/Je3iGWcG
- yCjC4BjrZnJJRv6/YSOE1WRrgpVHpIi0B69uRKEgRT8py/B15XrmrzJXea+SJlCWjBvOYOkJX8fO
- eC4XKV4PRAYuRiIFR5mzeNhkImKG1zWwcLqk6G7elabAqcMRYa0JEJRYwQQ2q/UdB5oYkJR6taeQ
- IgrVdY2ExoOOmVOfffQIYLn7JPLVb/OOYzwSPUB7BU2UF+FtFsYCzav/SjyevrH359YXScmTyLv3
- VPPZ/70zoPsAW2iDpX4cyk8kzkBdpESE
- </ds:X509Certificate>
- </ds:X509Data>
- </ds:KeyInfo>
- </md:KeyDescriptor>
- <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
- <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
- <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dev-739619.oktapreview.com/app/brainwavedev739619_test_2/exk9ccpjwkXZhm7Jd0h7/sso/saml"/>
- <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dev-739619.oktapreview.com/app/brainwavedev739619_test_2/exk9ccpjwkXZhm7Jd0h7/sso/saml"/>
- </md:IDPSSODescriptor>
-</md:EntityDescriptor>
-```
+Pointer to the Identity Provider metadata file, in the Tomcat `conf` directory. Use the file provided by the Identity Provider. An sample is in [Configuration file samples](./index.md#configuration-file-samples).
 
 ## spMetadata
 
-A sample is both attached and provided below. You **must** edit the file content to update the `URLs` with your server infos.
+Pointer to the Service Provider metadata file, in the Tomcat `conf` directory. The default name is `sp-metadata.xml`. The complete file is in [Configuration file samples](./index.md#configuration-file-samples).
 
-> Note that `entityID` (sometimes called **Relying Party**) is the name of **your** application (`Service Provider`) that must be registered against your **IdP** (often via registration form).  
+`entityID` (sometimes called **Relying Party**) is the name of **your** application that must be registered with the Identity Provider.
 
-The default name is `sp-metadata.xml`:  
+The descriptor in that sample sets assertion signatures as required:
 
 ```xml
-<?xml version="1.0"?>
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-                     validUntil="2099-01-19T13:33:05Z"
-                     cacheDuration="PT3153600000S"
-                     entityID="brainwavesaml">
-    <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-        <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
-                                Location="http://localhost:9090/DEMO/logout" />
-        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
-        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-                                     Location="http://localhost:9090/DEMO/acs"
-                                     index="1" />
-    </md:SPSSODescriptor>
-    <md:Organization>
-       <md:OrganizationName xml:lang="en-US">Brainwave</md:OrganizationName>
-       <md:OrganizationDisplayName xml:lang="en-US">Brainwave GRC</md:OrganizationDisplayName>
-       <md:OrganizationURL xml:lang="en-US">http://www.brainwavegrc.com</md:OrganizationURL>
-    </md:Organization>
-    <md:ContactPerson contactType="technical">
-        <md:GivenName>john</md:GivenName>
-        <md:EmailAddress>contact@acme.com</md:EmailAddress>
-    </md:ContactPerson>
-    <md:ContactPerson contactType="support">
-        <md:GivenName>jane</md:GivenName>
-        <md:EmailAddress>contact@acme.com</md:EmailAddress>
-    </md:ContactPerson>
-</md:EntityDescriptor>
+<md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 ```
 
-> Remeber to **update** the `location` fields in the example above to match the configured protocol (http or https), the port and the Web Application name that you are using.  
-> For instance `http://localhost:9090/DEMO/acs` becomes `https://localhost:8443/MyWebApp/acs`  
+Update the `Location` values to match the protocol, port, and web application name. For instance `http://localhost:9090/sandbox/acs` becomes `https://localhost:8443/MyWebApp/acs`. Keep the `/acs` and `/logout` suffixes.
+
+On 4.x and 5.x, a response is accepted when the response is signed or when every assertion is signed. When `WantAssertionsSigned` is `true`, assertions must still be signed even if the response is signed. SHA-1 is rejected on those lines.
 
 ## defaultURI
 
@@ -145,7 +84,7 @@ The attribute is **empty** by default.
 The role mapping attribute is **mandatory** if `roleAttribute` is set, it must point to a **property** file. The property file is used to dynamically **map the role** names provided by the **identity provider** to local roles names.  
 This could be useful to map **identity provider** roles to your **Identity Analytics** application roles (such as `igrc-administrator` for instance).  
 
-The file has to be located in the Tomcat `/conf/` subdirectory. A sample is attached.  
+The file has to be located in the Tomcat `/conf/` subdirectory. A sample is in [Configuration file samples](./index.md#configuration-file-samples).  
 
 This file is reloaded automatically every 10 minutes.  
 
@@ -154,7 +93,7 @@ This file is reloaded automatically every 10 minutes.
 The static role attribute is **mandatory**, it must point to a **property** file. The property file is used to declare the users roles.  
 The content is in the form `login=roles` where roles is in the form `role1,role2,role3`.  
 
-The file has to be located in the `/conf/` subdirectory. A sample is attached.  
+The file has to be located in the `/conf/` subdirectory. A sample is in [Configuration file samples](./index.md#configuration-file-samples).  
 
 This file is reloaded automatically every 10 minutes.  
 
@@ -182,12 +121,30 @@ We assume here that `John Doe` can connect to **Identity Analytics** and is asso
 When a generic user is found, this optional parameter can be used to format the user login. `{login}` and `{generic}` can be used and will be dynamically replaced by their corresponding value.  
 For instance: if you configure this parameter with `{login} ({generic})`.  
 When `jdoe@acme.com` is connecting with the generic user `user` role,  the user returned by the Principal will be:  
-`jdoe@acme.com (user)`  
+`jdoe@acme.com (user)`
 
-## Downloads
+## userAttributeIdentifier
 
-[SAMLAuthenticator.properties](https://download.brainwavegrc.com/index.php/s/zWGEG2MkKrjbktZ/download/SAMLAuthenticator.properties)  
-[idp-metadata.xml](https://download.brainwavegrc.com/index.php/s/8LFGDrSx8oMWrkw/download/idp-metadata.xml)  
-[rolemapping.properties](https://download.brainwavegrc.com/index.php/s/NSL5SpGRARX2LHB/download/rolemapping.properties)  
-[sp-metadata.xml](https://download.brainwavegrc.com/index.php/s/aygkqXTpA4MtAMG/download/sp-metadata.xml)  
-[staticroles.properties](https://download.brainwavegrc.com/index.php/s/9bkwpxgGbJoMpEw/download/staticroles.properties)
+Optional. Name of a SAML attribute used as the user login instead of the NameID. If the attribute is missing or empty, the NameID is used.
+
+Available since **2.1**, and still available in 3.x, 4.x and 5.x.
+
+> **Note:** Fixed in **3.3.11**, **4.0.1** and **5.0.1**. In 3.3.7 through 3.3.10, 4.0.0 and 5.0.0 the property is read only when authentication-request signature is enabled.
+
+## privateKeystore, privateKeystorePass, privateKeyAlias, privateKeyPass, privateKeystoreFormat
+
+Available since **3.3.7**, and in **4.x** and **5.x**. They identify the keystore used to sign authentication requests. They are required when `AuthnRequestsSigned` is true in the SP metadata, or when `WantAuthnRequestsSigned` is true in the IdP metadata.
+
+The keystore password and the private key password must be identical. `privateKeystoreFormat` is `PKCS12` for a `.p12` file.
+
+## sigAlgo
+
+Available since **3.3.8**. Short name of the algorithm used to sign authentication requests, for example `rsa-sha256`. Do not set a signature URI.
+
+Supported values on 3.x: `rsa-sha1`, `rsa-sha224`, `rsa-sha256`, `rsa-sha384`, `rsa-sha512`, `dsa-sha1`, `dsa-sha256`, `ecdsa-sha1`, `ecdsa-sha224`, `ecdsa-sha256`, `ecdsa-sha384`, `ecdsa-sha512`.
+
+On 3.3.8 through 3.3.10, the default when the property is unset is `rsa-sha1`. On **4.x** and **5.x**, the default is `rsa-sha256`. SHA-1 (`rsa-sha1`, `dsa-sha1`, `ecdsa-sha1`) is rejected on those lines, both for the authentication request and for the response and the assertions.
+
+## One file per web application
+
+`SAMLAuthenticator.properties` applies to every web application. Since **3.3.10**, and on **4.x** and **5.x**, create `SAMLAuthenticator-<context-name>.properties` to give one web application its own configuration, including its own `sp-metadata.xml`. When that file is absent, `SAMLAuthenticator.properties` is used.
