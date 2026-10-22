@@ -431,14 +431,14 @@ When configuring the data, it is recommended to follow a specific sequence for l
 
 ![Recommended data loading order](./images/order-of-supply.png "Recommended data loading order")
 
-| Category | Data to load | Graphical representation |
-| --- | --- | --- |
-| Organizations | Organizations and relationships between organizational units | ![Organizations](./images/worddav3d7e3c19c964c165d4a40c6a24a49dac.png "Organizations") |
-| Identities | Identities, occupations, organizational assignments, and organization managers | ![Identities](./images/2.png "Identities") |
-| Accounts | Repositories, accounts, groups, account memberships, and nested group memberships | ![Accounts](./images/3.png "Accounts") |
-| Applications and permissions | Applications, permissions, and rights linking permissions to accounts or groups | ![Applications and permissions](./images/4.png "Applications and permissions") |
-| Usage | Access log data | ![Usage](./images/5.png "Usage") |
-| Assets | Assets and their relationships | ![Assets](./images/6.png "Assets") |
+| **Concept**                  | **Description**                                                                   | **Graphical representation**                                                         |
+| ---------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Organization                 | Organizations and relationships between organizational units                      | ![Organization](./images/worddav3d7e3c19c964c165d4a40c6a24a49dac.png "Organization") |
+| Identities                   | Identities, occupations, organizational assignments, and organization managers    | ![Identities](./images/2.png "Identities")                                           |
+| Accounts                     | Repositories, accounts, groups, account memberships, and nested group memberships | ![Accounts](./images/3.png "Accounts")                                               |
+| Applications and permissions | Applications, permissions, and rights linking permissions to accounts or groups   | ![Applications and permissions](./images/4.png "Applications and permissions")       |
+| Usage                        | Access log data                                                                   | ![Usage](./images/5.png "Usage")                                                     |
+| Assets                       | Assets and their relationships                                                    | ![Assets](./images/6.png "Assets")                                                   |
 
 Repeat the account-loading and application-loading stages when adding applications to the Ledger.
 
