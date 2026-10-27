@@ -31,33 +31,56 @@ All these roles are defined in the client `apisix` client of the `Brainwave` rea
 
 ## Keycloak Administration Console
 
-You first need to get the initial password of user `setup`.  
-There are 2 cases:
+The Keycloak administration console of the Identity Analytics realm is available at `https://{{HOSTNAME}}{{PATH_PREFIX}}/auth/`, where `{{HOSTNAME}}` is the value of `global.externalDns` and `{{PATH_PREFIX}}` the value of `global.pathPrefix`. This URL is also displayed as **User Admin** in the notes printed at the end of the Helm installation (`helm get notes -n <namespace> <release>`).
 
-1. Not mail setup has been done during install and before first start
-2. Email configuration has been setup and email has been assigned to `setup` user
+You log in with the technical administrator account, `setup` by default (`global.technicalAdmin.username`). How you get its initial password depends on what was set in the values file at installation time.
 
-In the first case, the default password of `setup` user is `Brainwave@2023`. After successful login, you are invited to change it.
+### Password policy
 
-> The new password must match the initial Password Policy:
+The password policy of the realm (length, character classes, history, expiration) is defined in the values of the Helm chart, by the `keycloakSettings.password*` values (for example `keycloakSettings.passwordMinLength`). Its default values can change from one version to another, so they are not listed here: check them in the `values.yaml` file of the chart version you deploy, or with:
 
-- History: 10
-- Force change password after: 90 days
-- Minimum length: 8
-- Minimum upper case: 1
-- Minimum lower case: 1
-- Minimum digit: 1
-- Minimum special: 1
-- Username and email as password: forbidden
+```bash
+helm show values <chart> --version <version> | grep -i "password"
+```
 
-In the second use case, the password is randomly generated during first startup.
-To retrieve the password of `setup` user please follow steps.
+Every password you set for the `setup` account, in the values or in Keycloak, must comply with this policy.
 
-- Go to https://{{HOSTNAME}}/config and login with `setup` account
-- Click on *Forgot password* on login screen
-- Enter the email of `setup` user
-- Keycloak sends you an email with reset password link (that expires in 1 hour)
-- With that link, you will be invited to set a new password compliant with the default password policy (see above)
+### Case 1: password set in the values
+
+When `global.technicalAdmin.password` is set, it is used as the initial password of the `setup` account.
+
+- It must comply with the password policy, otherwise the environment setup job fails.
+- It is also stored in the Kubernetes Secret `keycloak-app-realm-admin-credentials` (see Case 3).
+- This initial password is temporary: you are asked to set a new password at first login.
+
+### Case 2: no password but an email set in the values
+
+When `global.technicalAdmin.password` is empty and `global.technicalAdmin.email` is set, a random password compliant with the password policy is generated during the installation, and the `setup` account gets this email address.
+
+You can retrieve the generated password from the Secret `keycloak-app-realm-admin-credentials`, as described in Case 3.
+
+If SMTP is configured in the values (`smtp.enabled: true` and its `smtp.*` settings), you can also set the password yourself without accessing the cluster:
+
+1. Go to `https://{{HOSTNAME}}{{PATH_PREFIX}}/auth/` and click **Forgot password?** on the login screen.
+2. Enter the username `setup` or its email address.
+3. Keycloak sends an email with a link to reset the password. By default the link expires after 1 hour (`keycloakSettings.actionTokenGeneratedByUserLifespan`).
+4. Follow the link and set a new password compliant with the password policy.
+
+### Case 3: no password and no email set in the values
+
+When `global.technicalAdmin.password` and `global.technicalAdmin.email` are empty, a random password compliant with the password policy is generated during the installation. It is stored in the Kubernetes Secret `keycloak-app-realm-admin-credentials`, in the namespace where Identity Analytics is installed.
+
+1. Retrieve the initial password:
+
+   ```bash
+   kubectl get secret -n <namespace> keycloak-app-realm-admin-credentials \
+     -o jsonpath="{.data.technical_admin_initial_password}" | base64 -d
+   ```
+
+2. Log in to the administration console with the `setup` account and this password.
+3. This initial password is temporary: you are asked to set a new password at first login.
+
+> [!warning] As no email is assigned to the `setup` account, the *Forgot password* link cannot be used for this account. To allow it later, add an email address to the account in the administration console and configure SMTP (see Case 2).
 
 ## Self-service user administration
 
