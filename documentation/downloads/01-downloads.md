@@ -25,7 +25,7 @@ Please see the [release notes](./08-release-notes-descartes-r6.md) for the full 
 
 Please navigate to the following link to download the latest version of the product:
 
-- The installer files are available on the [Radiant Logic support site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4&_gl=1*q7lxkc*_gcl_au*MTMzMzk5Nzk2Ny4xNzQ4OTAxODM3*_ga*Nzc4OTMwMzM4LjE3MjU0ODgwMjM.*_ga_YZH5L9V98P*czE3NTU3MDIyOTgkbzgwMCRnMSR0MTc1NTcwMzk0MiRqNjAkbDAkaDE0OTg0ODg0MDM.#keycode=Niad1bODfyRmdW8PlGO-5In0mdRKsa0u6551qXXI1rA). Once logged in, you can access it by navigating to Home > Customer Downloads > Installers > IDA.
+- The installer files are available on the [Radiant Logic support site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). Once logged in, you can access it by navigating to Home > Customer Downloads > Installers > IDA.
 
 Contact [support@radiantlogic.com](mailto:support@radiantlogic.com) for access information.
 
