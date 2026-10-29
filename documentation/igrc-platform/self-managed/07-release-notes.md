@@ -4,6 +4,22 @@ This page covers release notes for self-managed Identity Analytics. For more inf
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the complete list of patch versions that include vulnerability fixes in the images.
 
+## Version 3.7.5
+
+Release date: 2026-10-29
+
+This release contains vulnerability fixes only; it introduces no additional feature changes.
+
+> Recommended versions:
+>
+> - `Shared Services`: 3.5.5
+> - `CNPG`: 1.29
+> - `PostgreSQL`: 18.3
+
+See [vulnerability fixes](./08-vulnerability-fixes.md) for additional details.
+
+Software Bill of Materials (CycloneDX 1.5 JSON, all IDA 3.7.5 and Shared Services 3.5.5 container images): [IDA-3.7.5-SBOM.zip](./assets/sbom/IDA-3.7.5-SBOM.zip)
+
 ## Version 3.7.4
 
 Release date: 2026-10-12
