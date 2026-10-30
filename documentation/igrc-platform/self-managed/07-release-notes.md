@@ -10,7 +10,7 @@ Release date: 2026-10-29
 
 This release contains vulnerability fixes only; it introduces no additional feature changes.
 
-> See [Migration 3.7.5](./06-upgrade/migration-3.7.5.md) for details
+> See [Migration 3.7.5](./06-upgrade/migration-3.7.5.md) for details.
 
 > Recommended versions:
 >
