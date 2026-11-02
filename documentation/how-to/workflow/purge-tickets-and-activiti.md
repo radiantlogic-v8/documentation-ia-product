@@ -27,6 +27,12 @@ period (in month) in the technical configuration. Every ticket created beyond th
 
 > **Note**: It is important to understand that the period is used to define what you keep and not what you delete !
 
+> [!warning] Since IDA 3.8, the tickets purge also deletes the tickets of the Identity Analytics review campaigns (campaign instances) that match the criteria above.
+>
+> Once purged, these campaign instances are no longer available from the portal: their history, their details page and their compliance report can't be reached anymore (the campaign configurations are kept and can still be launched).
+>
+> **Download the compliance reports of the campaigns you need to keep before launching the purge.**
+
 ## Launch Purge
 
 See [Advanced Purge](../../igrc-platform/timeslots-and-execution-plan/02-purge-of-timeslots.md)
