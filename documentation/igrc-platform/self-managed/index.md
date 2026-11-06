@@ -188,12 +188,12 @@ global:
   externalProtocol: "https"
   externalDns: "<IDA_ENDPOINT>"
   pathPrefix: "<IDA_URI>"
-  ingress:
-    enabled: true
-    className: "<INGRESS_CLASS_NAME>"
   technicalAdmin:
     email: "<IDA_ADM_EMAIL>"
     password: "<IDA_ADM_INITIAL_PASSWORD>"
+ingress:
+  enabled: true
+  className: "<INGRESS_CLASS_NAME>"
 git:
   default:
     repository: "<GIT_DEFAULT_REPO>"
