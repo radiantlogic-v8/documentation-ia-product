@@ -25,7 +25,7 @@ These setups are **not validated**:
 
 ## Architecture
 
-Istio sits **in front of** the Shared Services API gateway (APISIX), it doesn't replace it:
+Istio handles incoming traffic before forwarding it to the Shared Services API gateway, APISIX. It does not replace APISIX.
 
 - APISIX stays the API gateway of Identity Analytics and the OIDC client towards Keycloak. Every service registers its routes there.
 - Istio replaces only the entry point of external traffic, that is the Kubernetes `Ingress` of the charts, or the load balancer rule that pointed to APISIX.
@@ -67,7 +67,7 @@ All the other Identity Analytics ports are HTTP and stay in the mesh with no exc
 
 To check the exclusions a pod actually got (ports after `-d` for inbound and after `-o` for outbound):
 
-```bash
+```
 kubectl get pod <POD> -n <NAMESPACE> -o jsonpath='{.spec.initContainers[?(@.name=="istio-init")].args}'
 ```
 
@@ -79,7 +79,7 @@ To change the list on a running mesh:
 
 ## Install Istio
 
-```bash
+```
 helm repo add istio https://istio-release.storage.googleapis.com/charts
 helm repo update
 
@@ -117,7 +117,7 @@ Choose one of these setups:
 
 For option B, install the gateway with these values. The setting is read when the gateway pod starts:
 
-```yaml
+```
 # gateway-values.yaml
 podAnnotations:
   proxy.istio.io/config: '{"gatewayTopology":{"numTrustedProxies":1}}'   # number of proxies in front of the gateway
@@ -129,7 +129,7 @@ Without this annotation, the gateway replaces the load balancer's `X-Forwarded-P
 
 One host (`global.externalDns`) sends everything to APISIX. Example for option A (for option B, remove the port 443 server and the `httpsRedirect`):
 
-```yaml
+```
 apiVersion: networking.istio.io/v1
 kind: Gateway
 metadata:
@@ -168,7 +168,7 @@ spec:
 
 Start with `PERMISSIVE`, one `PeerAuthentication` per meshed namespace:
 
-```yaml
+```
 apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
@@ -183,7 +183,7 @@ spec:
 
 ## Verify the deployment
 
-```bash
+```
 # Every pod has an istio-proxy sidecar (native sidecars are listed under initContainers)
 kubectl get pods -n <IDA_NAMESPACE>
 
