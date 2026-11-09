@@ -2,6 +2,27 @@
 
 The vulnerabilities listed on this page are reported exclusively against images built on ChainGuard base images. These are **probable false positives, currently under investigation**, and are tracked separately from the [non applicable vulnerabilities](09-non-applicable-vulns.md) list until they have been confirmed one way or the other.
 
+## Version 3.8.0
+
+| ISSUE SEVERITY | PROBLEM TITLE | CVE | IMAGE(S) |
+| :------------- | :------------ | :-: | :------- |
+| CRITICAL | A buffer overflow in the Brotli decoder (`c/dec/decode.c`, versions 1.0.3 to 1.2.0) lets a remote attacker corrupt adjacent decoder memory with crafted compressed input. | CVE-2026-111497 | radiantone/ida-apisix-fips:3.6.0 |
+| CRITICAL | `ca-certificates`: vulnerability in the Java SE JSSE component (certificate trust), reported against the system certificate bundle. | CVE-2026-91403 | radiantone/ida-apisix-fips:3.6.0 |
+| CRITICAL | `wasmtime`: unvalidated async callback result types let an attacker overwrite return addresses and crash the host or potentially execute code. | CVE-2026-115384 | radiantone/ida-apisix-fips:3.6.0 |
+| CRITICAL | `wasmtime`: insufficient control flow management of the `br_table` instruction in the Cranelift backend on aarch64 with a large number of targets. | CVE-2026-115893 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | A flaw was found in libxslt where the attribute type, atype, flags are modified in a way that corrupts internal memory management. When XSLT functions, such as the key() process, result in tree fragments, this corruption... | CVE-2025-7425 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | `ca-certificates-bundle`: outdated system root certificates may still be trusted where the system trust store is not updated. | CVE-2026-111943 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | Issue summary: QUIC process may keep memory for QUIC packet buffer for much longer period than necessary. | CVE-2026-54873 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | Issue summary: A TLS server that calls `SSL_set_SSL_CTX()` part way through a handshake may access memory beyond the end of an internal array. | CVE-2026-72897 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | `glibc` 2.44: reported on every image built on the current Wolfi / Chainguard base, no fixed version published yet. | CVE-2026-84243 | radiantone/ida-apisix-fips:3.6.0; radiantone/ida-etcd-fips:3.6.0 |
+| HIGH | `go.etcd.io/etcd/client/pkg/v3`: TLS handshakes on listeners created by `NewTLSListener` do not enforce a handshake deadline. | CVE-2026-73500 | radiantone/ida-etcd-fips:3.6.0 |
+| HIGH | `golang.org/x/net/html`: quadratic memory allocation and copying when parsing input with many short text runs separated by ignored end tags. | CVE-2026-78661 | radiantone/ida-etcd-fips:3.6.0 |
+| HIGH | Perl `Pod::Text` (before 6.1.1): CPU and memory exhaustion when formatting a POD document with deeply nested `=over` blocks. | CVE-2026-82560 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | Issue summary: The DTLS retransmission logic does not correctly handle a handshake message write that is suspended part-way through. | CVE-2026-84782 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | OpenSSL: the first concurrent use of the same X.509 certificate by several threads may free its cached extension data while another thread still uses it, letting a remote peer crash a multi-threaded TLS client or server. | CVE-2026-84783 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | Issue summary: A malicious remote peer may flood the local QUIC stack with NEW_CONNECTION_ID frames. | CVE-2026-84784 | radiantone/ida-apisix-fips:3.6.0 |
+| HIGH | `wasmtime-wasi`: security advisory GHSA-m9f7-9w4p-gv38. | CVE-2026-118688 | radiantone/ida-apisix-fips:3.6.0 |
+
 ## Version 3.7.5
 
 | ISSUE SEVERITY | PROBLEM TITLE                                                                                                                                                                                                                    |      CVE       | IMAGE(S)                                                              |

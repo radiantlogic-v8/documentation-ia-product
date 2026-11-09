@@ -10,6 +10,7 @@ The table below shows the Helm chart versions to install for each Identity analy
 
 | Release | IDA_HELM chart version | IDA_SHARED_HELM chart version |
 | :------ | :--------------------: | :---------------------------: |
+| 3.8     |         3.8.0          |             3.6.0             |
 | 3.7     |         3.7.5          |             3.5.5             |
 | 3.6     |         3.6.2          |             3.4.2             |
 | 3.5     |         3.5.3          |             3.3.2             |
