@@ -188,13 +188,13 @@ Create a file named `env01.values.yaml` with the following properties:
 global:
   externalProtocol: "https"
   externalDns: "<IDA_ENDPOINT>"
-  pathPrefix: "<IDA_URI>"
-  ingress:
-    enabled: true
-    className: "<INGRESS_CLASS_NAME>"
+  pathPrefix: "<IDA_URI>" # Required, with its leading slash (e.g. /ida): with an empty prefix, the portal isn't reachable
   technicalAdmin:
     email: "<IDA_ADM_EMAIL>"
     password: "<IDA_ADM_INITIAL_PASSWORD>"
+ingress:
+  enabled: true
+  className: "<INGRESS_CLASS_NAME>"
 git:
   default:
     repository: "<GIT_DEFAULT_REPO>"
