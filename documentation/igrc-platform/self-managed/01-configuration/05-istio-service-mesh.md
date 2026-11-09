@@ -7,20 +7,12 @@ description: How to run Self-Managed Identity Analytics in an Istio service mesh
 
 Self-Managed Identity Analytics runs in an [Istio](https://istio.io) service mesh **without any application change**. This page lists the Istio settings it needs.
 
-It was validated with:
+The steps outlined in this document was validated with:
 
 - Identity Analytics 3.8 (`ida-helm` 3.8.0 and `ida-shared-helm` 3.6.0);
 - Istio 1.30.2 on Kubernetes 1.35;
 - mTLS in `PERMISSIVE` mode.
 
-These setups are **not validated**:
-
-- mTLS in `STRICT` mode;
-- Keycloak with more than one replica;
-- AIDA / LiteLLM;
-- an external database (`database.type: external`);
-- TLS terminated at a real load balancer (option B below was validated with simulated load balancer headers);
-- service meshes other than Istio (see [Other service meshes](#other-service-meshes)).
 
 ## Architecture
 
@@ -48,9 +40,9 @@ browser ─► [optional load balancer] ─► istio-ingressgateway ─► Gatew
 
 ## Ports that must bypass the sidecar
 
-The sidecar intercepts all traffic and detects protocols automatically. This breaks database, cluster membership and server-first protocols (where the server speaks first, such as SMTP).
+The sidecar intercepts traffic and automatically detects protocols. This can disrupt database connections, cluster communication, and server-first protocols, such as SMTP, in which the server initiates communication.
 
-These ports must be excluded for the whole mesh, both inbound and outbound. The pods stay in the mesh, only these ports skip the sidecar.
+Configure the following port exclusions mesh-wide, using the directions listed in the table. Pods remain in the mesh, but traffic on the excluded ports bypasses the sidecar.
 
 | Port(s) | Direction | Component | Symptom if not excluded |
 |---|---|---|---|
@@ -60,9 +52,9 @@ These ports must be excluded for the whole mesh, both inbound and outbound. The 
 | SMTP port (`smtp.port`, `25` by default, and `keycloakSettings.smtp.port` if set) | outbound | Email (Identity Analytics and Keycloak) | Emails aren't sent |
 | External database port (only with `database.type: external`) | outbound | External database | Same as `5432`. Not tested. |
 
-All the other Identity Analytics ports are HTTP and stay in the mesh with no exclusion: portal, workflow, configuration, controller, batch, extractor, Git server, operations manager, metrics, and AIDA / LiteLLM.
+All other Identity Analytics ports use HTTP and require no exclusions. These include the ports for the portal, workflow, configuration, controller, batch, extractor, Git server, operations manager, metrics, and AIDA / LiteLLM. 
 
-> [!note] Connections from Identity Analytics to your own systems (collector sources such as LDAP directories or databases, a Git repository over SSH) weren't tested in the mesh. If one of them fails, exclude its port in outbound the same way.
+> [!note] Connections from Identity Analytics to your own systems (collector sources such as LDAP directories or databases, a Git repository over SSH) may also require port exclusions. If a connection fails with sidecar interception enabled, try excluding its destination port from outbound interception.
 
 To check the exclusions a pod actually got (ports after `-d` for inbound and after `-o` for outbound):
 
@@ -109,10 +101,10 @@ This isn't specific to Istio: it applies to any component that terminates TLS be
 
 Choose one of these setups:
 
-| Option | How |
+| Option | Configuration |
 |---|---|
-| **A. TLS terminated at the Istio gateway** (recommended) | HTTPS server on port 443 of the Gateway, with `credentialName` pointing to a TLS secret in the `istio-ingress` namespace (e.g. created by cert-manager), and `httpsRedirect` on port 80. A load balancer in front, if any, passes TLS through or re-encrypts to the gateway. |
-| **B. TLS terminated at a load balancer** | The Gateway listens on HTTP port 80 only, **without** `httpsRedirect` (it would loop). The load balancer must send `X-Forwarded-Proto: https`, and the gateway must trust it (below). |
+| A. Terminate TLS at the Istio gateway (**recommended**) | Configure an HTTPS server on Gateway port 443, with `credentialName` referencing a TLS secret in the `istio-ingress` namespace, such as one created by cert-manager. Enable `httpsRedirect` on port 80. If a load balancer sits in front of the gateway, configure it to pass TLS through or re-encrypt traffic to the gateway. |
+| B. Terminate TLS at a load balancer | Configure the Gateway to listen only on HTTP port 80. Do not enable `httpsRedirect`, as this would cause a redirect loop. The load balancer must set `X-Forwarded-Proto: https`, and the gateway must trust this header, as described below. |
 
 For option B, install the gateway with these values. The setting is read when the gateway pod starts:
 
@@ -178,7 +170,8 @@ spec:
     mode: PERMISSIVE
 ```
 
-`STRICT` isn't validated. Before switching to it, every client outside the mesh that calls a meshed pod must either be in the mesh, or be allowed by a `portLevelMtls` exception: typically a monitoring tool scraping the metrics ports, or an operator running in another namespace. The ports excluded above bypass mTLS, so `STRICT` doesn't affect them.
+Before switching to `STRICT` mode, every client outside the mesh that calls a meshed pod must either be in the mesh, or be allowed by a `portLevelMtls` exception. Examples include monitoring tools that scrape metrics ports and operators running in other namespaces.
+ The ports excluded above bypass mTLS, so `STRICT` doesn't affect them.
 
 ## Verify the deployment
 
@@ -193,13 +186,13 @@ kubectl exec -n <IDA_NAMESPACE> <POD> -c istio-proxy -- pilot-agent request GET 
 curl -s -o /dev/null -D- "https://{{HOSTNAME}}{{PATH_PREFIX}}/portal" | grep -i '^location:'
 ```
 
-The redirect URI must be `https://{{HOSTNAME}}{{PATH_PREFIX}}/callback`. Then log in to the portal from a browser.
+The redirect URI must be `https://{{HOSTNAME}}{{PATH_PREFIX}}/callback`. Verify that you can log in to the portal from a browser.
 
 On a fresh install, a few restarts are expected while the services start: Keycloak waiting for its database, the batch server warming up, and the APISIX dashboard waiting for etcd (only when `apisixUI.enabled` is `true`, it's `false` by default). They resolve on their own.
 
 ## Other service meshes
 
-Only Istio was tested. Some of the requirements above apply to any mesh or proxy, though:
+This document covers only Istio, but some requirements also apply to other meshes and proxies:
 
 - **The port exclusions** apply to any sidecar-based mesh, under another setting name (for example Linkerd `config.linkerd.io/skip-inbound-ports` and `config.linkerd.io/skip-outbound-ports`).
 - **The Jobs** need a sidecar that exits when the Job ends, in any sidecar-based mesh. Enable it for the whole mesh, as the Identity Analytics chart doesn't allow annotations on its Job pods (for example Linkerd native sidecars, Helm value `proxy.nativeSidecar: true`). Sidecar-less meshes don't have this issue.
