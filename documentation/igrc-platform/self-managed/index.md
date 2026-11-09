@@ -187,7 +187,7 @@ Create a file named `env01.values.yaml` with the following properties:
 global:
   externalProtocol: "https"
   externalDns: "<IDA_ENDPOINT>"
-  pathPrefix: "<IDA_URI>"
+  pathPrefix: "<IDA_URI>" # Required, with its leading slash (e.g. /ida): with an empty prefix, the portal isn't reachable
   technicalAdmin:
     email: "<IDA_ADM_EMAIL>"
     password: "<IDA_ADM_INITIAL_PASSWORD>"

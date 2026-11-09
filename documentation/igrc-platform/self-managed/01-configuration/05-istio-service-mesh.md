@@ -20,7 +20,6 @@ These setups are **not validated**:
 - AIDA / LiteLLM;
 - an external database (`database.type: external`);
 - TLS terminated at a real load balancer (option B below was validated with simulated load balancer headers);
-- an empty `global.pathPrefix`;
 - service meshes other than Istio (see [Other service meshes](#other-service-meshes)).
 
 ## Architecture
@@ -43,7 +42,7 @@ browser ─► [optional load balancer] ─► istio-ingressgateway ─► Gatew
    - The charts' provisioning Jobs need it: a classic `istio-proxy` sidecar never exits, so the Job never completes and `helm --wait` times out.
    - Set it on istiod, for the whole mesh: the Identity Analytics chart doesn't allow annotations on its Job pods.
 2. **Label the namespaces before installing the charts**, the Shared Services namespace and each Identity Analytics namespace: `istio-injection=enabled`. Injection only applies to pods created after the label is set, pods that already exist need a restart.
-3. **Set `global.pathPrefix`** in the Identity Analytics values, for example `/ida`, as in [Self-Managed Identity Analytics Deployment](../index.md). The mesh was only validated with a path prefix.
+3. **Set `global.pathPrefix`** in the Identity Analytics values, for example `/ida`, as in [Self-Managed Identity Analytics Deployment](../index.md). It's required: with an empty prefix, the portal isn't reachable (HTTP 403, `Access denied`).
 4. **Set the port exclusions on istiod before creating the application pods** (see [Ports that must bypass the sidecar](#ports-that-must-bypass-the-sidecar)).
 5. **Disable the ingress** that Istio replaces: `ingress.enabled: false` in the values of both charts (default value), or remove the load balancer rule that pointed to APISIX.
 
