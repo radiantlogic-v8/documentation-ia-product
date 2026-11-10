@@ -2,6 +2,9 @@
 
 ## Upgrade Procedure
 
+> [!warning]
+> Before upgrading from 3.7.x, read the [FIPS migration guide](./fips-migration.md): it covers the password resets, the values to clean up and the backup to take.
+
 - Upgrade Shared Services to 3.6.0
 - Upgrade Identity Analytics to 3.8.0
 
