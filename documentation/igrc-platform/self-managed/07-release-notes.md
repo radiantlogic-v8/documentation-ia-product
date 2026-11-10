@@ -1,4 +1,4 @@
-# Released notes
+# Release notes
 
 This page covers release notes for self-managed Identity Analytics. For more information on the features and changes, refer to the Identity Analytics user guides.
 
@@ -6,7 +6,7 @@ See [vulnerability fixes](./08-vulnerability-fixes.md) for the complete list of 
 
 ## Version 3.8.0
 
-Release date: 2026-11-09
+Release date: 2026-11-10
 
 Identity Analytics 3.8 runs on a new platform (Eclipse, Java 21 and Tomcat 11) and uses FIPS 140-3 compliant images by default. See the [Identity Analytics 3.8 release notes](https://developer.radiantlogic.com/ia/iap-3.8/identity-analytics/iap-release/04-iap-3.X-release-notes/) for the product changes.
 
