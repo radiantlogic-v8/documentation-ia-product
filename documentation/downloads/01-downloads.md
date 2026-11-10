@@ -42,6 +42,14 @@ Please use the following link for the full list of the certified environments:
 
 Please see [**here**](02-product-lifecycle) for more information on the product versions lifecycle, including the end of support dates.
 
+## Add-ons (facets)
+
+The Marketplace website (marketplace.radiantlogic.com) is offline for now. The add-ons (facets), including the IAP add-on (`bw_ias`) and the data extractors, are published on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4&directoryId=286e17e8-1c13-4d04-bea3-a37c4846939a#keycode=Niad1bODfyRmdW8PlGO-5In0mdRKsa0u6551qXXI1rA), in the same workspace as the product installers.
+
+If you don't have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
+
+> [!note] Links to the Marketplace in the rest of this documentation point to the old website. Use the file sharing site instead.
+
 ## License key
 
 Please log into your RadiantLogic support account and use "the request a license" form to request a license:
