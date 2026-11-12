@@ -48,8 +48,6 @@ The Marketplace website (marketplace.radiantlogic.com) is offline for now. The a
 
 If you don't have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
 
-> [!note] Links to the Marketplace in the rest of this documentation point to the old website. Use the file sharing site instead.
-
 ## License key
 
 Please log into your RadiantLogic support account and use "the request a license" form to request a license:
