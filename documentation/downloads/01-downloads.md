@@ -11,116 +11,118 @@ description: Download all iGRCanalytics information
 
 > [!warning] Descartes by default **requires** the use of IAP version **1.8 or higher**!  
 > For more information, check the [release overview](../../iap-3.2/identity-analytics/iap-release/01-iap-release-overview.md) guide.  
-> If you have questions on the compatibility of your version of IAP please contact the support services.
+> If you have questions about the compatibility of your version of Identity Analytics, contact the Radiant Logic support team.
 
 ### Database migration
 
 > [!note] If you are migrating from a version of the product prior to **Curie R3** see [**here**](../igrc-platform/installation-and-deployment/07-database/04-schema-35-upgrade-procedure/index.md) for the detailed procedure.
 
-## Version Descartes R6
+## Descartes R6
 
-We are pleased to announce the release of the latest version of the product: **Descartes R6**
+Descartes R6 is the latest release of iGRCanalytics. For a complete list of changes, see the [release notes](./08-release-notes-descartes-r6.md).
 
-Please see the [release notes](./08-release-notes-descartes-r6.md) for the full list of changes.
+Download the installers from the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). After signing in, go to Home > Customer Downloads > Installers > IDA.
 
-Please navigate to the following link to download the latest version of the product:
+If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
 
-- The installer files are available on the [Radiant Logic support site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). Once logged in, you can access it by navigating to Home > Customer Downloads > Installers > IDA.
+After downloading an installer, [verify its integrity](#verify-download-integrity).
 
-Contact [support@radiantlogic.com](mailto:support@radiantlogic.com) for access information.
+> [!note]
+> Identity Analytics is not supported on Linux.
+>
+> Use Linux deployments only to automate data loading in Batch mode or to deploy the web application. Perform all configuration through iGRCanalytics in a Microsoft Windows environment.
 
-See [below](#how-to-calculate-the-hash) for more information on how to check the integrity of your download.
+For additional version and environment information, see:
 
-> [!note] As a reminder Identity Analytics is provided without any support on Linux.  
-> Linux deployment should be used only for data loading automation through the "Batch" mode and for deploying the web application. The configuration performed through iGRCanalytics should be made under a Microsoft Windows environment.
-
-Looking for an older version? have a look at the [archived versions repository](03-archived-version)
-
-Please use the following link for the full list of the certified environments:
-
-[Certified Operating Environment for iGRCanalytics](../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)
-
-Please see [**here**](02-product-lifecycle) for more information on the product versions lifecycle, including the end of support dates.
+- [Archived versions](03-archived-version)
+- [Certified operating environments for iGRCanalytics](../igrc-platform/installation-and-deployment/04-brainwave-grc-certified-environments.md)
+- [Product lifecycle and end-of-support dates](02-product-lifecycle)
 
 ## Add-ons (facets)
 
-The Marketplace website (marketplace.radiantlogic.com) is offline for now. The add-ons (facets), including the IAP add-on (`bw_ias`) and the data extractors, are published on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4&directoryId=286e17e8-1c13-4d04-bea3-a37c4846939a#keycode=Niad1bODfyRmdW8PlGO-5In0mdRKsa0u6551qXXI1rA), in the same workspace as the product installers.
+The Marketplace website (marketplace.radiantlogic.com) is currently offline. Add-ons (facets), including the IAP add-on (`bw_ias`) and data extractors, are available on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4&directoryId=286e17e8-1c13-4d04-bea3-a37c4846939a#keycode=Niad1bODfyRmdW8PlGO-5In0mdRKsa0u6551qXXI1rA), in the same workspace as the product installers.
 
-If you don't have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
+To request access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
 
-## License key
+## Request a license key
 
-Please log into your RadiantLogic support account and use "the request a license" form to request a license:
+Sign in to your [Radiant Logic support account](https://support.radiantlogic.com) and complete the "Request a license" form.
 
-https://support.radiantlogic.com
+Copy the challenge from the product's "License key" field, shown in the following screenshot, and paste it into the request form. For details, see [iGRCanalytics license requests](https://support.radiantlogic.com/hc/en-us/articles/17805187130516-iGRCanalytics-licence-requests).
 
-> Challenge: Copy and paste the challenge found in the product (field "License key" in the following screenshot). See [here](https://support.radiantlogic.com/hc/en-us/articles/17805187130516-iGRCanalytics-licence-requests) for more information
+![Product license screen showing the challenge to copy](./images/challenge.png "Workstation fingerprint")
 
-![Challenge](./images/challenge.png "Workstation fingerprint")
+## Verify download integrity
 
-## Checking the integrity of the download
+Download the `.sha1` checksum file associated with your installer. This file contains the expected SHA-1 hash.
 
-In order to verify the integrity of the downloaded file you can also download the associated .sha1 checksum file that contains the correct sha1 hash.
+For example, the following installer:
 
-To verify the file:
-
-```sh
+```text
 iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
-You can download the checksum file:
+has this associated checksum file:
 
-```sh
+```text
 iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.sha1
 ```
 
-You can calculate the SHA1 of your downloaded file and it should match exactly with the hash in the ".sha1" file.
+Calculate the SHA-1 hash of the downloaded installer using one of the methods below. The result must match the hash in the `.sha1` file exactly.
 
-## How to calculate the hash?
+The examples below use a Descartes R5 SP3 installer. Replace the filename with the name of your downloaded installer.
 
 ### Windows
 
-#### Get-FileHash
+#### PowerShell
 
-In Powershell you can use the commandlet `Get-FileHash` to compute the hash value for a file by using a specified hash algorithm.
+Use the `Get-FileHash` cmdlet with the SHA-1 algorithm:
 
-Please use the following link for more information.
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6
+```powershell
+Get-FileHash -Path .\iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe -Algorithm SHA1
+```
+
+For details, see the [Get-FileHash documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6).
 
 #### Certutil
 
-In windows, you can use the command line tool certutil:
+Use the `certutil` command-line tool:
 
-```sh
-Certutil -hashfile iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe SHA1
+```shell
+certutil -hashfile iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe SHA1
 ```
 
 #### Microsoft File Checksum Integrity Verifier
 
-You can also download the Microsoft File Checksum Integrity Verifier (https://www.microsoft.com/en-us/download/details.aspx?id=11533)
+You can also use the [Microsoft File Checksum Integrity Verifier](https://www.microsoft.com/en-us/download/details.aspx?id=11533):
 
-```sh
+```shell
 fciv.exe -sha1 iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
 ### Unix/Linux
 
-Most unix-like operating systems include the tools shasum and/or sha1sum
+Most Unix-like operating systems include `shasum`, `sha1sum`, or both. Use either command to calculate the hash:
 
-```sh
+```shell
 shasum iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
+```
+
+```shell
 sha1sum iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.exe
 ```
 
-Finally, if shasum (or sha1sum) is available, the verification can done directly using the .sha1 file:
+To verify the installer directly against its checksum file, run:
 
-```bash
+```shell
 shasum -c iGRCAnalyticsSetup_win32_x64_Descartes-R5-SP3_2024-12-09.sha1
 ```
 
-## Drivers
+## Database drivers
 
-For legal reasons the `Oracle` and `Microsoft SQL server` drivers have been removed from the installation bundle. Please refer to the following pages for information on how to download and install the drivers :
+The Oracle and Microsoft SQL Server drivers are not included in the installation bundle for legal reasons. For download and installation instructions, see:
 
-- [How-To install and use Microsoft SQL server official driver](../how-to/database/sqlserver/install-sqlserver-driver)
-- [How-to install and use the official Oracle database driver](../how-to/database/oracle/install-orcl-driver)
+- [Install and use the official Microsoft SQL Server driver](../how-to/database/sqlserver/install-sqlserver-driver)
+- [Install and use the official Oracle database driver](../how-to/database/oracle/install-orcl-driver)
+
+
