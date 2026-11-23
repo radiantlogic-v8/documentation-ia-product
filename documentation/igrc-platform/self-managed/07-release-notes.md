@@ -4,6 +4,22 @@ This page covers release notes for self-managed Identity Analytics. For more inf
 
 See [vulnerability fixes](./08-vulnerability-fixes.md) for the complete list of patch versions that include vulnerability fixes in the images.
 
+## Version 3.8.1
+
+Release date: 2026-11-23
+
+This release contains vulnerability fixes only; it introduces no additional feature changes. It updates the Keycloak and APISIX images of Shared Services, and rebuilds the Identity Analytics images on up-to-date base images.
+
+> Recommended versions:
+>
+> - `Shared Services`: 3.6.1
+> - `CNPG`: 1.30
+> - `PostgreSQL`: 18.6
+
+See [vulnerability fixes](./08-vulnerability-fixes.md) for additional details.
+
+Software Bill of Materials (CycloneDX 1.5 JSON, all IDA 3.8.1 and Shared Services 3.6.1 container images): [IDA-3.8.1-SBOM.zip](./assets/sbom/IDA-3.8.1-SBOM.zip)
+
 ## Version 3.8.0
 
 Release date: 2026-11-10

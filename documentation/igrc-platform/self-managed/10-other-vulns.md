@@ -2,6 +2,23 @@
 
 The vulnerabilities listed on this page are reported exclusively against images built on ChainGuard base images. These are **probable false positives, currently under investigation**, and are tracked separately from the [non applicable vulnerabilities](09-non-applicable-vulns.md) list until they have been confirmed one way or the other.
 
+## Version 3.8.1
+
+| ISSUE SEVERITY | PROBLEM TITLE | CVE | IMAGE(S) |
+| :------------- | :------------ | :-: | :------- |
+| HIGH | A flaw was found in libxslt where the attribute type, atype, flags are modified in a way that corrupts internal memory management. When XSLT functions, such as the key() process, result in tree fragments, this corruption... | CVE-2025-7425 | radiantone/ida-apisix-fips:3.6.1 |
+| HIGH | `go.etcd.io/etcd/client/pkg/v3`: TLS handshakes on listeners created by `NewTLSListener` do not enforce a handshake deadline. | CVE-2026-73500 | radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | `golang.org/x/net/html`: quadratic memory allocation and copying when parsing input with many short text runs separated by ignored end tags. | CVE-2026-78661 | radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: a DANE-enabled TLS client may crash on an unusual combination of certificate and TLSA records. Reported on every image built on the current Chainguard base, no fixed version published yet. | CVE-2026-84786 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: a zero-length AAD update resets the AAD already supplied to AES-GCM-SIV, so the authentication tag no longer covers it. No fixed version published yet. | CVE-2026-88823 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: a retransmitted QUIC CRYPTO frame can cause a use after free in the QUIC client. No fixed version published yet. | CVE-2026-95691 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: an AES-GCM-SIV IV of the wrong length may cause a heap out-of-bounds read or let an attacker forge messages. No fixed version published yet. | CVE-2026-95692 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: `PEM_X509_INFO_read_bio_ex()` frees the entries of a caller-supplied stack on failure but leaves them in the stack (use after free). No fixed version published yet. | CVE-2026-107493 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: a malicious QUIC peer can make the stack queue an unlimited number of RETIRE_CONNECTION_ID frames (out of memory). No fixed version published yet. | CVE-2026-107494 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: CMS encryption to an EC certificate whose group order is 1 may loop indefinitely. No fixed version published yet. | CVE-2026-107496 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: verifying a crafted CMS or PKCS#7 SignedData message with CRL checking enabled may consume excessive CPU time. No fixed version published yet. | CVE-2026-121482 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+| HIGH | OpenSSL: a QUIC server may keep the state of rejected streams for the lifetime of the connection (memory exhaustion). No fixed version published yet. | CVE-2026-124709 | radiantone/ida-apisix-fips:3.6.1; radiantone/ida-etcd-fips:3.6.1 |
+
 ## Version 3.8.0
 
 | ISSUE SEVERITY | PROBLEM TITLE | CVE | IMAGE(S) |
