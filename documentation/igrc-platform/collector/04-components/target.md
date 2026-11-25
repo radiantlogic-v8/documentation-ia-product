@@ -498,6 +498,18 @@ Check the _Permission hierarchy collector_ checkbox when you want to activate th
 
 ![The Hierarchy Tab](./images/childperm5.png "The Hierarchy Tab")
 
+## Configuration item (CI) target
+
+This target creates a configuration item (CI) in the ledger: its key, its attributes (family, type, environment, network and hardware information...) and its managers.
+
+See [Configuration items (CI)](../../configuration-items#configuration-item-ci-target) for the details of each tab.
+
+## Configuration item (CI) link target
+
+This target creates a relationship between a source (configuration item, application, repository, organization, account or identity) and a target configuration item, with an optional semantic and description.
+
+See [Configuration items (CI)](../../configuration-items#configuration-item-ci-link-target) for the details and for the direction of the links.
+
 ## CSV Output target
 
 This **CSV Output** target component allows to write the result of a collect to a csv file, instead of writing to the database.  

@@ -124,6 +124,9 @@ For customers under maintenance/subscription contract as well as official partne
 > [Metadata](/ia/descartes/igrc-platform/metadata)  
 > This document provides information on how to extend IA data model using metadata.
 
+> [Configuration items (CI)](/ia/descartes/igrc-platform/configuration-items)  
+> This document provides information on configuration items (CI): how to load them, link them to the Identity Ledger concepts and use them in views.
+
 > [Pages](/ia/descartes/igrc-platform/pages)  
 > This document provides information on Pages. The in house data visualization technology that leverages the Identity Ledger data through the web portal.
 
