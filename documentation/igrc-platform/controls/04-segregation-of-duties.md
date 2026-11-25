@@ -156,7 +156,7 @@ A matrix can be loaded either by selecting one that already exists in the enviro
 
 ### Load a matrix
 
-> [!Warning] The `bw_sod_designer` facet must be deployed in the project to load a matrix configured with the SoD Designer.
+> [!Warning] The `bw_sod_designer` facet must be deployed in the project to load a matrix configured with the SoD Designer. It is available on the [Radiant Logic support site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4) (Home > Customer Downloads > Facets > bw_sod_designer).
 
 During matrix configuration, the `Load the matrix in the future execution plan` option can be checked before saving to include it in future execution plans.
 
