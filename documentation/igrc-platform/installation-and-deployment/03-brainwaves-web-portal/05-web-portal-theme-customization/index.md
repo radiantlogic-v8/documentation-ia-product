@@ -122,5 +122,4 @@ These pages should also be edited to bring the desired changes. Default `login.h
 
 ### Downloads
 
-[login.zip](https://download.brainwavegrc.com/index.php/s/r26nk67GTqKEaKw)  
-[web.xml](https://download.brainwavegrc.com/index.php/s/Fk62RHo5eBJowW2)
+`login.zip` and `web.xml` are available on the [Radiant Logic file sharing site](../../../../downloads/01-downloads#documentation-samples) (Customer Downloads > Documentation samples > How-to).

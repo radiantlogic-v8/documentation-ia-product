@@ -183,7 +183,7 @@ When editing the Dataset, parameters can be edited within the Parameters section
 
 ![Report Parameters property](./images/report_parameter_property.png "Report Parameters property")  
 
-Here you have an overview of all existing parameters declared in the View attached to the Dataset (see [Audit view editor: user guide](https://download.brainwavegrc.com/index.php/s/r9NKmP4BjrJd94m) for detail).  
+Here you have an overview of all existing parameters declared in the View attached to the Dataset (see the Audit view editor user guide, `Audit view editor user guide.pdf` on the [Radiant Logic file sharing site](../../downloads/01-downloads#documentation-samples) (Customer Downloads > Documentation samples > igrc-plateform), for detail).  
 
 You only have to map your Report parameter with the View parameter to pass value from Report to View.
 

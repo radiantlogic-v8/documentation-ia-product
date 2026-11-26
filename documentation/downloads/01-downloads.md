@@ -62,6 +62,12 @@ To see which JARs to deploy, see the page of the feature you set up, for example
 
 If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
 
+## Documentation samples
+
+The sample files that some documentation pages refer to (portal theme files, sample add-ons, Excel and SQL templates, the Audit view editor user guide) are available on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). After signing in, go to Home > Customer Downloads > Documentation samples. Each page gives the folder of its files.
+
+If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
+
 ## Request a license key
 
 Sign in to your [Radiant Logic support account](https://support.radiantlogic.com) and complete the "Request a license" form.
