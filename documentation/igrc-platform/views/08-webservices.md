@@ -389,7 +389,7 @@ By default the section is as follows, note that the URL `ws/*` is protected the 
 </security-role>
 ```
 
-In order to activate the web service call, you have to ensure that the authentication is performed prior to the URL access. Most of the time, as webservices systems have a hard time handling FORM authentication, you should deploy a Single Sign On system (SSO). If you don't have one, contact Professional Services or Support to obtain the Identity Analytics SSO valve for Tomcat. These libraries are not available for direct download.
+In order to activate the web service call, you have to ensure that the authentication is performed prior to the URL access. Most of the time, as webservices systems have a hard time handling FORM authentication, you should deploy a Single Sign On system (SSO). If you don't have one, use the Identity Analytics SSO valve for Tomcat, available on the [Radiant Logic file sharing site](../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons).
 
 > [!warning] Please note that this Valve is provided as an openSource component along with its source without any support.|
 
@@ -405,7 +405,7 @@ To activate Identity Analytics's Tomcat SSO Valve (`com.brainwave.tomcat.valve.P
 - `tomcat-addons-valve-passthrough-5.x.x.jar`
 - `tomcat-addons-common-5.x.x.jar`
 
-**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0-addons.java17-3.x.x.jar` on Java 17 or later.
+**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0.x-addons.java17-3.x.x.jar` on Java 17 or later.
 
 Then:
 - Edit your `/conf/server.xml` file and add the following section between the \<Host\> tags :

@@ -250,7 +250,7 @@ To implement this page, several variables have been declared in the declaration 
 The variables for the above examples are listed below. The first line contains the variable names and the the next lines contains the 5 values of each variables:  
 
 ![Excel table here](./images/structure_tableau_excel.png "Excel table here")  
-[Excel table here](https://download.brainwavegrc.com/index.php/s/rWb2DHR6Eq5aFaj)
+The Excel file (`View_structure_tableau_intro.xlsx`) is available on the [Radiant Logic file sharing site](../../downloads/01-downloads#documentation-samples) (Customer Downloads > Documentation samples > igrc-plateform).
 
 Having the same number of values in all multi-valued variables used in the review is very important for the workflow. These variables **must**  stay synchronized.  
 For example, if the permission 'Utilisateur HORIZ' (second line) is removed from the variable `permission_code`, the corresponding values from the other variables should be removed (C01 from `account_uid`, ABOURGET18 from `account_login`,...).  

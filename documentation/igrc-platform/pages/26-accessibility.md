@@ -232,4 +232,4 @@ The add-on below includes mandatory items to enable accessibility and a set of f
 | `searchIdentities_a11y.page`              | sample accessible search page on identities |
 | `report_page.page table_report.rptdesign` | sample accessible report page               |
 
-[Accessibility example add-on](https://download.brainwavegrc.com/index.php/s/qBnfXe3AD4JFyw9/download)
+The accessibility example add-on (`bw_a11y_1.1.facet`) is available on the [Radiant Logic file sharing site](../../downloads/01-downloads#documentation-samples) (Customer Downloads > Documentation samples > igrc-plateform > pages > Accessibility).

@@ -44,6 +44,30 @@ The Marketplace website (marketplace.radiantlogic.com) is currently offline. Add
 
 To request access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
 
+## Tomcat add-ons
+
+The Tomcat add-ons (authentication, realm and valve libraries for the web portal, with their third-party libraries) are available on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). After signing in, go to Home > Customer Downloads > Tomcat Add-ons, then open the folder of your add-on version:
+
+| Add-on version | Tomcat and Java | Folder |
+| --- | --- | --- |
+| 5.x (recommended) | Tomcat 11.0 (Jakarta), Java 21 or later | `tomcat-11-opensaml5/<version>` |
+| 4.x (recommended) | Tomcat 9.0, Java 8 or later | `tomcat-9.0-opensaml5/<version>` |
+| 3.x (not recommended) | Tomcat 9.0 | `tomcat-9.0/<version>` |
+
+Each version folder holds the add-on JARs (`tomcat-add-ons`) and the third-party libraries archives (`dependencies`). Recent versions also include their SBOM (`sbom`) and vulnerability scan (`grype`).
+
+3.x file names include the Tomcat 9.0 patch version the package was built for, and sometimes a build number, for example `bw-tomcat-9.0.98-addons.java17-3.3.11.jar` or `bw-tomcat-9.0.98-addons.java1.8-3.3.7-20250515.1.jar`. The other pages write them `bw-tomcat-9.0.x-addons.java17-3.x.x.jar`.
+
+To see which JARs to deploy, see the page of the feature you set up, for example [LDAP](../igrc-platform/installation-and-deployment/03-brainwaves-web-portal/02-parametrization/02-ldap) or [SAML](../igrc-platform/installation-and-deployment/03-brainwaves-web-portal/02-parametrization/03-saml/index).
+
+If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
+
+## Documentation samples
+
+The sample files that some documentation pages refer to (portal theme files, sample add-ons, Excel and SQL templates, the Audit view editor user guide) are available on the [Radiant Logic file sharing site](https://files.radiantlogic.com/receive/?packageCode=IX0qTSRyilShjhpxusLWpUDzzb4rduq2tO9F81NhEt4). After signing in, go to Home > Customer Downloads > Documentation samples. Each page gives the folder of its files.
+
+If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).
+
 ## Request a license key
 
 Sign in to your [Radiant Logic support account](https://support.radiantlogic.com) and complete the "Request a license" form.

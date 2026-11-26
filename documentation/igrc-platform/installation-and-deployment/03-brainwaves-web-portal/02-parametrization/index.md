@@ -173,13 +173,13 @@ The output should show the hash result of your password:
 
 A method has been developed to allow the encryption of the passwords used in the JNDI data source.
 
-This command is part of the Tomcat add-ons. These libraries are not available for direct download. Contact Professional Services or Support to obtain the files for your Tomcat and Java versions, and copy them into the `lib` folder of the Tomcat installation (`<TOMCAT_HOME>`).
+This command is part of the Tomcat add-ons. Download the files for your Tomcat and Java versions from the [Radiant Logic file sharing site](../../../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons), and copy them into the `lib` folder of the Tomcat installation (`<TOMCAT_HOME>`).
 
 **4.x (recommended)** — Tomcat 9.0, Java 8 or later. Run `com.github.ncredinburgh.tomcat.Main` with `tomcat-addons-secure-datasource-4.x.x.jar` and `tomcat-addons-common-4.x.x.jar` on the classpath.
 
 **5.x (recommended)** — Tomcat 11.0 (Jakarta), Java 21 or later. Same class and same two JARs, with the `5.x.x` version.
 
-**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0-addons.java17-3.x.x.jar` on Java 17 or later. On this line the commands below use `java -jar` with that file.
+**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0.x-addons.java17-3.x.x.jar` on Java 17 or later. On this line the commands below use `java -jar` with that file.
 
 > The following steps should only be done when you deploy initial version of Web Portal or if you need to update key (in that case don’t forget to encrypt your password again with the new key).
 
@@ -200,7 +200,7 @@ On 5.x, use `tomcat-addons-secure-datasource-5.x.x.jar` and `tomcat-addons-commo
 On 3.x:
 
 ```sh
-java -jar bw-tomcat-9.0-addons.java17-3.x.x.jar generateKey AES 256 <TOMCAT_HOME>\conf\db.key
+java -jar bw-tomcat-9.0.x-addons.java17-3.x.x.jar generateKey AES 256 <TOMCAT_HOME>\conf\db.key
 ```
 
 This key will be used to encrypt passwords of datasource and used by Tomcat to decrypt database service account password.
@@ -225,7 +225,7 @@ On 5.x, use the `5.x.x` JARs in the same command.
 On 3.x:
 
 ```sh
-java -jar bw-tomcat-9.0-addons.java17-3.x.x.jar encryptPassword "<clear password>" AES ECB PKCS5PADDING <TOMCAT_HOME>\conf\db.key
+java -jar bw-tomcat-9.0.x-addons.java17-3.x.x.jar encryptPassword "<clear password>" AES ECB PKCS5PADDING <TOMCAT_HOME>\conf\db.key
 ```
 
 The encrypted value will be used in next steps.

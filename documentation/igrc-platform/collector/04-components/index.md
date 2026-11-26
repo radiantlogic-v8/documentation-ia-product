@@ -77,7 +77,7 @@ The attached SODsample.facet includes an example of SoD rules collect, and SoD m
 
 ### Downloads
 
-[SODsample.facet](https://download.brainwavegrc.com/index.php/s/zZkRnaQe4DNQ8ER)
+`SODsample.facet` is available on the [Radiant Logic file sharing site](../../../downloads/01-downloads#documentation-samples) (Customer Downloads > Documentation samples > igrc-plateform).
 
 ## Depreciated Components
 
