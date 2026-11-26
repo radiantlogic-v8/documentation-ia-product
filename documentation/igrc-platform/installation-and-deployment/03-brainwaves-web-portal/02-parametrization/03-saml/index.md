@@ -102,8 +102,8 @@ Download the files for your Tomcat and Java versions from the [Radiant Logic fil
 
 **3.x (not recommended)** — Tomcat 9.0. Kept for existing installations. One library JAR and one SAML archive:
 
-- Java 8: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar` and `bw-tomcat-9.0-saml-libs-<sdk>.zip`
-- Java 17 or later: `bw-tomcat-9.0-addons.java17-3.x.x.jar` and `bw-tomcat-9.0-saml-libs-java17-<sdk>.zip`
+- Java 8: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar` and `bw-tomcat-9.0.x-saml-libs-<sdk>.zip`
+- Java 17 or later: `bw-tomcat-9.0.x-addons.java17-3.x.x.jar` and `bw-tomcat-9.0.x-saml-libs-java17-<sdk>.zip`
 
 `<sdk>` is the SAML library version included in that 3.x package. 4.x and 5.x ship a single `tomcat-addons-saml-libs.zip`. There is no separate Java 8 SAML archive and no `-java17` suffix on those lines.
 

@@ -47,8 +47,8 @@ Required libraries:
 
 Compatible with Tomcat 9.0. The valve is included in a single JAR file. Use the file that matches your Java version:
 
-- Java 8: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar`
-- Java 17 or later: `bw-tomcat-9.0-addons.java17-3.x.x.jar`
+- Java 8: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar`
+- Java 17 or later: `bw-tomcat-9.0.x-addons.java17-3.x.x.jar`
 
 Before you begin, ensure that:
 
@@ -130,7 +130,7 @@ This valve does not use `<auth-method>`.
 
 **5.x:** `tomcat-addons-authenticator-http-header-5.x.x.jar` and `tomcat-addons-common-5.x.x.jar`. Java 21 or later.
 
-**3.x:** the same single JAR as the valve (`bw-tomcat-9.0-addons.java1.8-3.x.x.jar` or `bw-tomcat-9.0-addons.java17-3.x.x.jar`).
+**3.x:** the same single JAR as the valve (`bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar` or `bw-tomcat-9.0.x-addons.java17-3.x.x.jar`).
 
 ```
 <Valve className="com.brainwave.tomcat.authenticator.HTTPHeaderAuthenticator"

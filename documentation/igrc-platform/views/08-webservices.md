@@ -405,7 +405,7 @@ To activate Identity Analytics's Tomcat SSO Valve (`com.brainwave.tomcat.valve.P
 - `tomcat-addons-valve-passthrough-5.x.x.jar`
 - `tomcat-addons-common-5.x.x.jar`
 
-**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0-addons.java17-3.x.x.jar` on Java 17 or later.
+**3.x (not recommended)** — Tomcat 9.0. One JAR: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar` on Java 8, or `bw-tomcat-9.0.x-addons.java17-3.x.x.jar` on Java 17 or later.
 
 Then:
 - Edit your `/conf/server.xml` file and add the following section between the \<Host\> tags :

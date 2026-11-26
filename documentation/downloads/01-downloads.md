@@ -56,6 +56,8 @@ The Tomcat add-ons (authentication, realm and valve libraries for the web portal
 
 Each version folder holds the add-on JARs (`tomcat-add-ons`) and the third-party libraries archives (`dependencies`). Recent versions also include their SBOM (`sbom`) and vulnerability scan (`grype`).
 
+3.x file names include the Tomcat 9.0 patch version the package was built for, and sometimes a build number, for example `bw-tomcat-9.0.98-addons.java17-3.3.11.jar` or `bw-tomcat-9.0.98-addons.java1.8-3.3.7-20250515.1.jar`. The other pages write them `bw-tomcat-9.0.x-addons.java17-3.x.x.jar`.
+
 To see which JARs to deploy, see the page of the feature you set up, for example [LDAP](../igrc-platform/installation-and-deployment/03-brainwaves-web-portal/02-parametrization/02-ldap) or [SAML](../igrc-platform/installation-and-deployment/03-brainwaves-web-portal/02-parametrization/03-saml/index).
 
 If you do not have access, contact [support@radiantlogic.com](mailto:support@radiantlogic.com).

@@ -48,8 +48,8 @@ Download the files for your Tomcat and Java versions from the [Radiant Logic fil
 
 **3.x (not recommended)** — Tomcat 9.0. One JAR contains every add-on:
 
-- Java 8: `bw-tomcat-9.0-addons.java1.8-3.x.x.jar`
-- Java 17 or later: `bw-tomcat-9.0-addons.java17-3.x.x.jar`
+- Java 8: `bw-tomcat-9.0.x-addons.java1.8-3.x.x.jar`
+- Java 17 or later: `bw-tomcat-9.0.x-addons.java17-3.x.x.jar`
 
 **Assumptions:**
 - Tomcat is installed and available
