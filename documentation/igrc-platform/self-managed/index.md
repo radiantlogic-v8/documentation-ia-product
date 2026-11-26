@@ -128,10 +128,9 @@ The `ida-shared-helm` chart must be deployed only once per cluster and is a prer
 global:
   externalProtocol: "https"
   externalDns: "<AUTHN_ENDPOINT>" # Provide the authentication DNS endpoint
-  imageCredentials:
-    private: true
-    registry: docker.io
-    existingSecret: ida-registry-credentials
+imageCredentials:
+  - registry: docker.io/radiantone
+    existingSecret: ida-registry-credentials # Secret created from ida-registry-credentials.yaml (next step)
 ingress:
   enabled: true
   className: "nginx"
@@ -143,7 +142,15 @@ keycloak:
     adminPassword: "" # Set a strong password
 ```
 
-4. **Install Shared Services**:
+4. **Create the Registry Credentials Secret**:
+   Apply the `ida-registry-credentials.yaml` file provided by Radiant Logic in the Shared Services namespace. The Secret must exist in each namespace where a chart is installed, and its name must match the `existingSecret` value.
+
+```bash
+kubectl create namespace <SHARED_NAMESPACE>
+kubectl apply -f ida-registry-credentials.yaml --namespace <SHARED_NAMESPACE>
+```
+
+5. **Install Shared Services**:
 
 ```bash
 helm upgrade --install rlss \
@@ -154,7 +161,7 @@ helm upgrade --install rlss \
   --values shared-minimal.values.yaml
 ```
 
-5. **Verify CRD Installation**:
+6. **Verify CRD Installation**:
 
 ```bash
 kubectl get crds
@@ -192,6 +199,9 @@ global:
   technicalAdmin:
     email: "<IDA_ADM_EMAIL>"
     password: "<IDA_ADM_INITIAL_PASSWORD>"
+imageCredentials:
+  - registry: docker.io/radiantone
+    existingSecret: ida-registry-credentials # Secret created from ida-registry-credentials.yaml (next step)
 ingress:
   enabled: true
   className: "<INGRESS_CLASS_NAME>"
@@ -225,7 +235,15 @@ smtp:
     displayName: "<SMTP_TO_DISPLAY>"
 ```
 
-3. **Install Identity Analytics**:
+3. **Create the Registry Credentials Secret**:
+   Apply the same `ida-registry-credentials.yaml` file in the Identity Analytics namespace.
+
+```bash
+kubectl create namespace <IDA_NAMESPACE>
+kubectl apply -f ida-registry-credentials.yaml --namespace <IDA_NAMESPACE>
+```
+
+4. **Install Identity Analytics**:
 
 ```bash
 helm upgrade --install rlia \
@@ -238,7 +256,7 @@ helm upgrade --install rlia \
   --values env01.values.yaml
 ```
 
-4. **Verify Deployment**:
+5. **Verify Deployment**:
 
 ```bash
 kubectl get pod --namespace <IDA_NAMESPACE>
