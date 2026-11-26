@@ -389,7 +389,7 @@ By default the section is as follows, note that the URL `ws/*` is protected the 
 </security-role>
 ```
 
-In order to activate the web service call, you have to ensure that the authentication is performed prior to the URL access. Most of the time, as webservices systems have a hard time handling FORM authentication, you should deploy a Single Sign On system (SSO). If you don't have one, contact Professional Services or Support to obtain the Identity Analytics SSO valve for Tomcat. These libraries are not available for direct download.
+In order to activate the web service call, you have to ensure that the authentication is performed prior to the URL access. Most of the time, as webservices systems have a hard time handling FORM authentication, you should deploy a Single Sign On system (SSO). If you don't have one, use the Identity Analytics SSO valve for Tomcat, available on the [Radiant Logic file sharing site](../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons).
 
 > [!warning] Please note that this Valve is provided as an openSource component along with its source without any support.|
 

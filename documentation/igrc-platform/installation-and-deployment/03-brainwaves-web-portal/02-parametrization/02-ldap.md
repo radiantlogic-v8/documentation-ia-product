@@ -30,7 +30,7 @@ This architecture works on Windows and Linux with:
 
 ## Prerequisites
 
-These libraries are not available for direct download. Contact Professional Services or Support to obtain the files for your Tomcat and Java versions.
+Download the files for your Tomcat and Java versions from the [Radiant Logic file sharing site](../../../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons).
 
 `RoleMappingRealm` (`com.brainwave.tomcat.realm.RoleMappingRealm`) is the Identity Analytics library used with `JNDIRealm`.
 

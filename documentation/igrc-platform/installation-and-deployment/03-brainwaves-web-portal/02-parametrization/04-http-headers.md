@@ -23,7 +23,7 @@ The following configuration has been validated on Windows and Linux:
 
 The `com.brainwave.tomcat.valve.HttpAuthenticationValve` component reads the login header, roles header, and role mapping.
 
-The required libraries are not available for direct download. Contact Professional Services or Support to obtain the files for your Tomcat and Java versions.
+Download the required libraries for your Tomcat and Java versions from the [Radiant Logic file sharing site](../../../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons).
 
 ### Version 4.x (recommended)
 

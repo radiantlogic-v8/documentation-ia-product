@@ -173,7 +173,7 @@ The output should show the hash result of your password:
 
 A method has been developed to allow the encryption of the passwords used in the JNDI data source.
 
-This command is part of the Tomcat add-ons. These libraries are not available for direct download. Contact Professional Services or Support to obtain the files for your Tomcat and Java versions, and copy them into the `lib` folder of the Tomcat installation (`<TOMCAT_HOME>`).
+This command is part of the Tomcat add-ons. Download the files for your Tomcat and Java versions from the [Radiant Logic file sharing site](../../../../downloads/01-downloads#tomcat-add-ons) (Customer Downloads > Tomcat Add-ons), and copy them into the `lib` folder of the Tomcat installation (`<TOMCAT_HOME>`).
 
 **4.x (recommended)** — Tomcat 9.0, Java 8 or later. Run `com.github.ncredinburgh.tomcat.Main` with `tomcat-addons-secure-datasource-4.x.x.jar` and `tomcat-addons-common-4.x.x.jar` on the classpath.
 
